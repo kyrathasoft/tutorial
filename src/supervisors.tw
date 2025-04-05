@@ -1,0 +1,33 @@
+:: SupervisorsOnly
+<<if $correctPasswordGiven>><<goto SupervisorsTOC>><</if>>
+<<set $answer to ''>><span class="red">''Warning!'' </span>\
+If you //aren't// a CS, I have already alerted Big Brother to your presence here. Be afraid. Be //very// afraid...<br>
+<<textbox '$answer' '' autofocus>>\
+<span id='textbox-submit'>\
+    <<button 'Submit CS password'>>
+        <<set $answer to $answer.trim().toLowerCase()>>
+        <<if hashStr($answer) == -737433671>>
+            <<replace '#textbox-submit'>>\
+				/* Removes the button */
+            <</replace>>
+            <<replace '#textbox-reply'>>\
+                <<set $correctPasswordGiven to true>><<unset $answer>><<goto SupervisorsTOC>>
+			<</replace>>
+            <<run $('#textbox-answer').attr('readonly', 'true');>>
+        <<else>>
+            <<replace '#textbox-reply'>>\
+                @@.alert;Incorrect.@@  Please try again.\
+            <</replace>>
+        <</if>>
+    <</button>>\
+</span>
+<<script>>
+$(document).one(":passagerender", function (ev) {
+	$(ev.content).find("#textbox-answer").on("keyup", function (e) {
+		if (e.keyCode === 13) {
+			$("#textbox-submit button").trigger("click");
+		}
+	});
+});
+<</script>>
+<span id='textbox-reply'></span>

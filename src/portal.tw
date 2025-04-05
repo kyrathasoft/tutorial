@@ -1,0 +1,17 @@
+:: Portal [portal nobr noreturn]
+You are in the $portalDescriptor.<br><br>
+
+<<include CheckForLinkageDefinitionInPortal>>
+<<include CheckForCohesionTopicInPortal>>
+
+<a data-passage=$return><img width="32" vspace="5" src="./assets/images/back-button.png" alt="back" /></a>
+
+/* The following passages allow for cleaner code at the top of portal.tw */
+
+:: CheckForLinkageDefinitionInPortal [nobr]
+<<if not visited('LinkageDefinition')>>
+    Quest [[for Linkage|LinkageDefinition]]<br><</if>>
+
+:: CheckForCohesionTopicInPortal [nobr]
+<<if not visited('CohesionPassage')>>    
+    Quest [[for Cohesion|CohesionPassage]]<br><</if>>

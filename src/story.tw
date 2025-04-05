@@ -1,0 +1,173 @@
+:: Start [nobr]
+
+<!-- The following to be commented-out after testing-->
+
+<<goto "TwineLesson007Passage027">>
+
+<!--The above to be commented-out after testing-->
+
+<<run UIBar.hide();>><center><img src="./assets/images/bg-light.png"><br><br>
+<span class="tab"><img width="32" src="./assets/images/grayscale-trainer.png"> <font size="+3">Hi, I'm your Interactive Trainer</font></span></center><br>
+
+<<if not hasVisited("AfterIntro")>>Visit the introductory tutorial?
+<ul>
+<li>[[Yes, please|IntroTutorial]]</li>
+<li><<link "No thanks" "DisplayTOC">><</link>></li>
+</ul><<else>><<goto DisplayTOC>><</if>>
+
+
+:: StoryStylesheet [stylesheet]
+
+.shadow {
+	text-shadow: 0.08em 0.08em 0.08em #FFF;
+}
+.emboss {
+	text-shadow: 0.08em 0.08em 0em #FFF;
+	color: black;
+}
+.blur {
+	color: transparent;
+	text-shadow: 0em 0em 0.08em #FFF;
+}
+.blurrier {
+	color: transparent;
+	text-shadow: 0em 0em 0.2em #FFF;
+}
+.blurrier::selection {
+	background-color: transparent;
+	color: transparent;
+}
+.blurrier::-moz-selection {
+	background-color: transparent;
+	color: transparent;
+}
+.smear {
+	color: transparent;
+	text-shadow:
+		 0em 0em 0.02em rgba(255,255,255,0.75),
+		-0.2em 0em 0.5em  rgba(255,255,255,0.5),
+		 0.2em  0em 0.5em  rgba(255,255,255,0.5);
+}
+.mirror {
+	display: inline-block;
+	transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+}
+.upside-down {
+	display: inline-block;
+	transform: scaleY(-1);
+	-webkit-transform: scaleY(-1);
+}
+
+@-webkit-keyframes fade-in-out {
+	0%,
+	to {opacity: 0}
+	50% {opacity: 1}
+}
+@keyframes fade-in-out {
+	0%,
+	to {opacity: 0}
+	50% {opacity: 1}
+}
+.fade-in-out {
+	text-decoration: none;
+	animation: fade-in-out 2s ease-in-out infinite alternate;
+	-webkit-animation: fade-in-out 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes rumble {
+	50% {
+		-webkit-transform: translateY(-.2em);
+		transform: translateY(-.2em)
+	}
+}
+@keyframes rumble {
+	50% {
+		-webkit-transform: translateY(-.2em);
+		transform: translateY(-.2em)
+	}
+}
+.rumble {
+	-webkit-animation: rumble linear 0.1s 0s infinite;
+	animation: rumble linear 0.1s 0s infinite;
+	display:inline-block;
+}
+
+@-webkit-keyframes shudder {
+	50% {
+		-webkit-transform: translateX(0.2em);
+		transform: translateX(0.2em)
+	}
+}
+@keyframes shudder {
+	50% {
+		-webkit-transform: translateX(0.2em);
+		transform: translateX(0.2em)
+	}
+}
+.shudder {
+	-webkit-animation: shudder linear 0.1s 0s infinite;
+	animation: shudder linear 0.1s 0s infinite;
+	display: inline-block;
+}
+
+@-webkit-keyframes pulse {
+	0%  { -webkit-transform: scale(0, 0); transform: scale(0, 0) }
+	20% { -webkit-transform: scale(1.2, 1.2); transform: scale(1.2, 1.2) }
+	40% { -webkit-transform: scale(0.9, 0.9); transform: scale(0.9, 0.9) }
+	60% { -webkit-transform: scale(1.05, 1.05); transform: scale(1.05, 1.05) }
+	80% { -webkit-transform: scale(0.925, 0.925); transform:scale(0.925, 0.925) }
+	to  { -webkit-transform: scale(1, 1); transform: scale(1, 1) }
+}
+@keyframes pulse {
+	0%  { -webkit-transform: scale(0, 0); transform: scale(0, 0) }
+	20% { -webkit-transform: scale(1.2, 1.2); transform: scale(1.2, 1.2) }
+	40% { -webkit-transform: scale(0.9, 0.9); transform: scale(0.9, 0.9) }
+	60% { -webkit-transform: scale(1.05, 1.05); transform: scale(1.05, 1.05) }
+	80% { -webkit-transform: scale(0.925, 0.925); transform: scale(0.925, 0.925) }
+	to  { -webkit-transform: scale(1, 1); transform: scale(1, 1) }
+}
+.pulse {
+	-webkit-animation: pulse 1s;
+	animation: pulse 1s;
+	display: inline-block;
+}
+
+#ui-dialog-body.saves ul.slots li:not(:last-child){
+	visibility: hidden;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 4em;
+}
+
+body.levelup{
+	background-color: ivory;
+}
+
+#passages {
+	position: relative;
+}
+.passage {
+	left: 0;
+	position: absolute;
+	top: 0;
+	transition: opacity 1s ease;
+}
+.passage-out {
+	opacity: 0;
+}
+
+
+#ui-bar-body {
+	height: calc(100% - 2.5em);
+	line-height: 1.2;
+	margin: 2.5em 0;
+	overflow: auto;
+	padding: 0 1.25em;
+}
+
+.tight-lines {
+  line-height: 1.1; /* Adjust this value to control line spacing */
+}

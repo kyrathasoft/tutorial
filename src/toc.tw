@@ -1,0 +1,55 @@
+:: DisplayTOC [nobr]
+
+<<script>>UIBar.show();<</script>><b>Table of Contents</b><br>
+<<first>><br>Brave knight, it looks like this is the very first time you've visited the Table of Contents.  You'll visit this page frequently, either to access the Adventure Portal, or to revisit one of your past crusades.
+<</first>>
+<ul>
+<<include DisplayTOC_SupervisorsOnly>>
+<<include DisplayTOC_IntroTutorial>>
+<<include DisplayHomepage>>
+<<include DisplayLinkageTopic>>
+<<include DisplayLinkageDefinitionSubtopic>>
+<<include DisplayCohesionSubtopic>>
+[[Deonna's Twine lessons|DeonnaLessonIndex]]<img align="middle" hspace="5" width="24" src="./assets/images/tutorial/twine-logo.png">
+
+
+	
+<li><a data-passage="Portal" data-setter="$linksClicked +=1" class="link-internal">$portalDescriptor</a></li>
+</ul>
+
+:: DisplayCohesionSubtopic
+<<if visited('CohesionPassage')>><ul><li><a data-passage="CohesionPassage" class="link-internal">Cohesion</a></li></ul><</if>>
+
+:: DisplayHomepage
+<li><a data-passage="Homepage" data-setter="$linksClicked +=1" class="link-internal">Homepage</a></li>
+
+:: DisplayLinkageTopic
+<<if visited('LinkageDefinition') || visited('CohesionPassage')>>
+	<li>Linkage</li><</if>>
+
+:: DisplayLinkageDefinitionSubtopic
+<<if visited('LinkageDefinition')>><ul><li><a data-passage="LinkageDefinition" data-setter="$linksClicked +=1" class="link-internal">Definition</a></li></ul><</if>>
+
+:: DisplayTOC_SupervisorsOnly
+<li><a data-passage="SupervisorsOnly" data-setter="" class="link-internal">Supervisors Only!</a></li>
+
+:: DisplayTOC_IntroTutorial
+<<if hasVisited("AfterIntro")>><li><a data-passage="IntroTutorial" data-setter="" class="link-internal">Intro Tutorial</a></li><</if>>
+
+
+
+<!-- 
+<nobr><ul>
+
+<li>Linkage</li>
+	<ul><li><a data-passage="LinkageDefinition" class="link-internal">Definition</a></li></ul>
+	<ul><li><a data-passage="CohesionPassage" class="link-internal">Cohesion</a></li></ul>
+<li>Interactive Simulations</li>
+	<ul><li><a data-passage="DemoIfThenElse" class="link-internal">Demo</a> of IF-THEN-ELSE scripting</li></ul>
+	<ul><li>Linking members based on shared interests/history</li></ul>
+	<ul><li>Leveraging shared member barriers to drive cohesion</li></ul>
+<li>Main Item</li>
+    <ul><li>SubItem 1</li></ul>
+    <ul><li>SubItem 2</li></ul>
+</ul></nobr>
+-->

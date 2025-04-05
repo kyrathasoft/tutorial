@@ -1,0 +1,26 @@
+:: AboutTheAuthor [nobr noreturn]
+<<set _color to '#AAFF00;'>>
+<center>
+<table>
+<tr><td>
+<img vspace=1 hspace=8 align="left" src="./assets/images/bryan-pencil.png">Bryan Miller 
+(<span class=_color>bryan.miller@joingroups.com)</span><br> LPCC-S</td></tr>
+<tr><td>
+<img vspace=1 hspace=8 align="left" src="./assets/images/deonna-pencil.png">Deonna Pinson 
+(<span class=_color>deonna.pinson@joingroups.com)</span><br> LPCC-S</td></tr>
+<tr><td>
+<img vspace=1 hspace=8 align="left" src="./assets/images/beca-pencil.png">Beca Kovar 
+(<span class=_color>rebeca.kovar@joingroups.com</span>)<br> MHS, CRC, LMHC</td></tr>
+<tr><td>
+<img vspace=1 hspace=8 align="left" src="./assets/images/ash-pencil.png">Ashley Metzger 
+(<span class=_color>ashley.metzger@joingroups.com</span>)<br>LPCC-S, LICDC</td></tr>
+<tr><td>
+<img vspace=1 hspace=8 align="left" src="./assets/images/amanda-pencil.png">Amanda Speakes
+(<span class=_color>amanda.speakes@joingroups.com</span>)<br>LPCC-S</td></tr>
+<tr><td>
+<img vspace=1 hspace=8 align="left" src="./assets/images/cat-pencil.png">Catherine Sayre
+(<span class=_color>catherine.sayre@joingroups.com</span>)<br></td></tr></table>
+
+<a data-passage=$return><img width="32" src="./assets/images/back-button.png" alt="back" /></a>
+</center>
+

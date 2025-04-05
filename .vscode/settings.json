@@ -1,0 +1,14 @@
+{
+    "twee3LanguageTools.storyformat.current": "sugarcube-2"
+}
+
+{
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "sub-dir": true,
+    },
+  }

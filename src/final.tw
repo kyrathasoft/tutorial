@@ -1,0 +1,282 @@
+:: StoryScript [script]
+
+// playtime.min.js, for SugarCube 2, by Chapel
+// v2.1.0, 2024-07-22, 336675ff2cabe5f729a5f30d86aa409cc8432726
+;!function(){"use strict";var e=!0,t="playtime",a="pausetimer";function n(){return Date.now()-State.variables[t]}function r(e){if(e&&!(e<0)&&"number"==typeof e){var t=[];return t.push(Math.floor(e/1e3)%60),t.push(Math.floor(e/6e4)%60),t.push(Math.floor(e/36e5)),t}}State.variables[t]=Date.now(),predisplay["start-playtime"]=function(e){delete predisplay[e],State.variables[t]||(State.variables[t]=Date.now())},prehistory["pause-playtime"]=function(e){tags().includes(a)&&(State.variables[t]+=time())};var i=["h","hr","hrs","hour","hours"],s=["m","min","mins","minute","minutes"],u=["s","sec","secs","second","seconds"];function o(e){return function(e,t){if(e&&Array.isArray(e)&&!(e.length<3)){var a=e[2]<10?"0"+e[2]:""+e[2],n=e[1]<10?"0"+e[1]:""+e[1],r=e[0]<10?"0"+e[0]:""+e[0];return t?"<b>"+a+":"+n+"</b>:"+r:a+":"+n+":"+r}}(r(n()),e)}setup.playTime=function(e){return"string"==typeof e?function(e){var t=n(),a=r(t);return i.includes(e)?a[2]:s.includes(e)?a[1]:u.includes(e)?a[0]:t}(e):o(e)},e&&(window.playTime=window.playTime||setup.playTime),Macro.add("playtime",{handler:function(){var e=this.args.map((function(e){return String(e).trim().toLowerCase()})),t=$(document.createElement("span")),a=o(e.includesAny(["format","f","fmt","b","bold","true"]));t.wiki(a).addClass("macro-"+this.name).appendTo(this.output)}})}();
+// end playtime.min.js
+
+// fading-macro-set.min.js, for SugarCube 2, by Chapel
+// v1.1.0, 2024-07-22, 336675ff2cabe5f729a5f30d86aa409cc8432726
+;Macro.add("fadein",{tags:null,handler:function(){var t,a,s=$(document.createElement("span")),e=this.payload[0].contents;if(0===this.args.length)return this.error("no arguments given");t=Util.fromCssTime(this.args[0]),a=this.args.length>1?Util.fromCssTime(this.args[1]):0,s.wiki(e).addClass("macro-"+this.name).appendTo(this.output).hide().delay(a).fadeIn(t)}}),Macro.add("fadeout",{tags:null,handler:function(){var t,a,s=$(document.createElement("span")),e=this.payload[0].contents;if(0===this.args.length)return this.error("no arguments given");t=Util.fromCssTime(this.args[0]),a=this.args.length>1?Util.fromCssTime(this.args[1]):0,s.wiki(e).addClass("macro-"+this.name).appendTo(this.output).delay(a).fadeOut(t)}});
+// end fading-macro-set.min.js
+
+// first-macro.min.js, for SugarCube 2, by Chapel
+// v1.1.1, 2024-07-22, 336675ff2cabe5f729a5f30d86aa409cc8432726
+;Macro.add("first",{skipArgs:!0,tags:["then","finally"],handler:function(){var a,t=$(document.createElement("span")),n=this.payload[this.payload.length-1],s=visited()-1;a=s<this.payload.length?this.payload[s].contents:"finally"===n.name?n.contents:"",t.wiki(a).addClass("macro-"+this.name).appendTo(this.output)}});
+// end first-macro.min.js
+
+/* Anchor Link to Passage - Start 
+if ("onhashchange" in window) {  // event supported
+	window.onhashchange = function () {
+		hashChanged();
+	};
+} else {  // event not supported
+	window.setInterval(function () {
+		if (window.location.hash != setup.storedHash) {
+			hashChanged();
+		}
+	}, 100);
+}
+function hashChanged() {
+	if (Engine.isIdle()) {
+		if (window.location.hash && (setup.storedHash != window.location.hash)) {
+			setup.storedHash = window.location.hash;
+			var anchor = decodeURI(window.location.hash.substring(1));
+			if (Story.has(anchor) && (passage() !== anchor)) {
+				Engine.play(anchor);
+			}
+		} else {
+			// Comment out the following line of code if you don't want the
+			// anchor link of the current passage displayed in the URL bar.
+			window.location.hash = encodeURI(passage());
+		}
+		// Comment out the following line of code if you don't want the
+		// title of the page set to the passage name.
+		document.title = passage();
+	} else {
+		setTimeout(hashChanged, 100);
+	}
+}
+$(document).on(':passageend', function () { hashChanged(); });
+/* Anchor Link to Passage - End */
+
+/* hashStr - Start */
+window.hashStr = function(txt) {
+	var hash = 0, i, chr;
+	if (txt.length === 0) return hash;
+	for (i = 0; i < txt.length; i++) {
+		chr   = txt.charCodeAt(i);
+		hash  = ((hash << 5) - hash) + chr;
+		hash |= 0; // Convert to 32bit integer
+	}
+return hash;
+};
+/* hashStr - End */
+
+/* Trigger the following code at the start of navigation to a new passage. */
+$(document).on(":passagestart", function (event) {
+	/* Make sure the current passage doesn't have a "noreturn" tag. */
+	if (!tags().includes("noreturn")) {
+		/* If it doesn't, then set $return to the current passage name. */
+		State.variables.return = passage();
+	}
+});
+
+setup.addVisits = (passageName, number = 1) => {
+  while (number--) {
+    State.expired.push(passageName);
+  }
+};
+
+/* setup.addVisits ("Chapter1Darkroom2", 59) << I was testing this on 3/2/25 */
+
+
+Config.history.controls = false;
+Config.saves.maxSlotSaves = 1
+Config.history.maxStates = 1
+
+/*
+Config.saves.isAllowed = function () {
+    if (passage() === "Start" || tags().includes("nosave")) {
+        return false;
+    }
+    return true;
+};
+*/
+
+/*
+Config.saves.onSave = function (save, details) {
+	if (settings.autoname) {
+	save.title = [State.getVar("$name"), State.getVar("$chapter")];
+	} else if (details.type == "autosave") {
+	save.title = "Autosave";
+	} else {
+	save.title = prompt("Enter Save Name:", save.title);
+	}
+}
+*/
+
+Setting.addToggle("autoname", {
+label : "Autoname Saves",
+default : false,
+});
+
+Setting.addToggle("gamify", {
+	label: "Gamification",
+	default: true,
+})
+
+setup.advancementMsg = "Congrats! You've advanced in your training!"
+setup.appTitle = "The Interactive Trainer"
+setup.headerGlyph = '<img alt text="alt" width="25" align="bottom" src="./assets/images/bullet-point.png">'
+setup.homepageLinkback = "<br>[[Homepage]]";
+setup.tocLinkback = "<center>[[TOC|DisplayTOC]]</center>";
+setup.tut3 = "./assets/images/tut-lessons-4-6/";
+setup.weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+setup.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+setup.Hi = function(name) {
+	if (name == undefined){
+		return "Hi!";
+	}else{
+		return "Hi, " + name + "!";
+	}
+};
+
+setup.DoubleIt = function(mynumber){
+	return 2*mynumber;
+};
+
+setup.getPassageNames = function() {
+			
+            const excludedNames = [
+				'Main',
+				'Menu',
+				'PassageFooter',
+				'PassageHeader',
+				'StoryAuthor',
+				'StoryBanner',
+				'StoryCaption',
+				'StoryInit', 
+				'StoryMenu',
+				'StorySubtitle',
+				'StoryTitle'
+				]; 
+
+				/* tag 'deonna' is so this function will reject passages that are 
+				dedicated to a tutorial series I'm writing for Deonna Pinson, a
+				coworker */
+				
+            const excludedTags = ['deonna', 'nonono', 'noreturn', 'test-only', 'widget'];
+            const passageNames = [];
+			let tot_psg = 0;
+            
+            $('tw-passagedata').each(function() {
+				tot_psg += 1;
+                const name = $(this).attr('name');
+                const tags = $(this).attr('tags');
+                let safeTags = true;
+                
+                    if (excludedNames.indexOf(name) === -1) {
+                      
+                      for (let i = 0; i < excludedTags.length; i++) {
+                        if (tags.includes(excludedTags[i])) {
+                            safeTags = false;
+                            break;
+                        }
+                      }
+                      
+                      if (safeTags) {
+                        passageNames.push(name);
+                      }  
+                }
+            });
+			// alert("Returning " + passageNames.length + " of " + tot_psg + " total passages...");
+            return passageNames; 
+        };
+
+setup.getTotalPassagesCount = function() {
+	return $('tw-passagedata').length;
+};
+
+setup.getTutorialPassagesCount = function(){
+	return (Story.lookup("tags", "deonna")).length;
+};
+
+setup.redify = function(arg1){
+	let x = "<span class='red'>" + arg1 + "</span>";
+	return x;
+};
+
+setup.greenify = function(arg1){
+	let x = "<span class='sea-green'>" + arg1 + "</span>";
+	return x;
+};
+
+setup.calculatePercentage = function(arg1, arg2) {
+  const percentage = (arg1 / arg2) * 100;
+  return Math.round(percentage);
+};
+
+:: StoryInit
+
+<<set setup.achievements to recall('achievements', { })>>
+
+<<set $correctDevPassword to false>>
+<<set $correctPasswordGiven to false>>
+
+<<set $knight to {
+	"bravery": 1,
+	"brawn": 1,
+	"improvementPoints": "3",
+	"intuition": 1,
+	"loot": 0,
+	"pastAdvancements": 0,
+	"prowess": 1,
+	"spentPoints": 0,
+	"quizQuestionsAnswered": 0,
+	"quizQuestionsCorrect": 0, 
+}>>
+
+<<set $bp to `{{{Build >> Play}}}`>>
+<<set $ct to "Continue">>
+<<set $ctl to "continue">>
+<<set $if to `''{{{if}}}''`>>
+<<set $itch to `<a target="_new" href="https://itch.io/games">itch.io</a>`>>
+<<set $ite to `''{{{If...Then...Else}}}''`>>
+<<set $js to `''{{{Javascript}}}''`>>
+<<set $md to `&mdash;`>>
+<<set $nonOpt to "That was a non-optimal response.">>
+<<set $portalDescriptor to "Adventure Portal">>
+<<set $sc to `''Sugarcube''`>>
+<<set $si to `''{{{StoryInit}}}''`>>
+<<set $sg to `''{{{story-game}}}''`>>
+<<set $st to `''{{{Story}}}''`>>
+<<set $ts to `''{{{TwineScript}}}''`>>
+<<set $tut_tit to `//A Campfire Tale//`>>
+<<set $tw to `''Twine''`>>
+
+
+<<set
+	window.GameDays to [
+		"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
+	];
+	window.GameMonths to [
+		"Jan", "Feb", "Mar", "Apr", "May", "Jun",
+		"Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+	];
+
+	/*
+		Below we have to use the multi-parameter version of the Date
+		constructor, rather than the date string version, because the
+		date string version treats a missing timezone offset as UTC.
+		While there are ways to determine players' timezone offsets,
+		so they could be added to a date string, it's more convenient
+		simply to use the multi-parameter constructor.
+
+		The point of this is so that you can simply initialize the game
+		world clock to whatever date and time you wish without having to
+		worry about the players' timezone offsets, while still ensuring
+		that they all see the same game world dates and times.
+	*/
+	/* params: year , month(0-based) , day , hour(24H) , minute [, second ] */
+	$gameDate to new Date(Date.now()); /* e.g. Mar 17, 2015 03:24 */
+>>
+
+:: StoryData
+{
+    "ifid": "4FB660BE-D8F0-403C-BD83-C0A4FCDB5545",
+    "format": "SugarCube",
+    "format-version": "2.37.3",
+    "start": "Start"
+}

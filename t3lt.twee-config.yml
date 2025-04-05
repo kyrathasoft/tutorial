@@ -1,0 +1,33 @@
+sugarcube-2:
+  macros:
+    playtime:
+      name: playtime
+    cont:
+      name: cont-macro-ignore
+    correct:
+      name: correct
+    fadein:
+      container: true
+      name: fadein
+    first:
+      name: first
+    date:
+      name: date
+    InitQuiz1:
+      name: InitQuiz1
+    knight-stats:
+      name: knight-stats
+    repeat:
+      name: repeat
+    gorandom:
+      name: gorandom
+    stop:
+      name: stop
+    storyicons:
+      name: storyicons
+    tut-links:
+      name: tutorial-links
+    tutorial-passages:
+      name: tutorial-passages
+    wrong:
+      name: wrong

@@ -1,0 +1,33 @@
+:: DevOnly [noreturn]
+<<if $correctDevPassword>><<goto DevNotes>><</if>>
+<<set $answer to ''>><span class="red">''Warning!'' </span>\
+Enter the correct password to view developer's notes...<br>
+<<textbox '$answer' '' autofocus>>\
+<span id='textbox-submit'>\
+    <<button 'Submit Dev password'>>
+        <<set $answer to $answer.trim().toLowerCase()>>
+        <<if hashStr($answer) == 881319781>>
+            <<replace '#textbox-submit'>>\
+				/* Removes the button */
+            <</replace>>
+            <<replace '#textbox-reply'>>\
+                <<set $correctDevPassword to true>><<goto DevNotes>>
+			<</replace>>
+            <<run $('#textbox-answer').attr('readonly', 'true');>>
+        <<else>>
+            <<replace '#textbox-reply'>>\
+                @@.alert;Incorrect.@@  Please try again.\
+            <</replace>>
+        <</if>>
+    <</button>>\
+</span>
+<<script>>
+$(document).one(":passagerender", function (ev) {
+	$(ev.content).find("#textbox-answer").on("keyup", function (e) {
+		if (e.keyCode === 13) {
+			$("#textbox-submit button").trigger("click");
+		}
+	});
+});
+<</script>>
+<span id='textbox-reply'></span>

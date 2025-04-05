@@ -1,0 +1,14 @@
+:: Homepage [nobr]
+<<silently>><<if hasVisited("AfterIntro")>><<run UIBar.show();>><</if>><</silently>>
+<div class="borderimg">
+<center><img src="./assets/images/bg-light.png"><br>
+<span class=_color><font size="+3">Interactive Trainer</font></span><br>
+A product of the Ky GRT Clinical Team<br><br>
+<font size="+1">
+<<include StorySubtitle>>
+</font><br><br>
+//visit the $portalDescriptor via the Table of Contents//
+</center>
+</div>
+
+<!--<b>Creating</b> linkages and <b>building</b> community $md that's <b>Groups: Recover Together</b>-->

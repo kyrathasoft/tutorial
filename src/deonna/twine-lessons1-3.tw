@@ -1,0 +1,357 @@
+:: TwineLesson001Passage001 [deonna]
+<h2>$tw & $sc <span class="pulse">Lesson # 1</span> $md Introduction</h2>
+<img align="left" width="64" vspace=5 hspace=10 src="./assets/images/tutorial/twine-logo.png">Welcome to the art of programming. What you'll be learning, if you choose to continue down this path, will open whole new worlds of possibilities for you. Knowing this, dare you click the next <<linkappend word?>> 
+    Apparently, you <i>do</i> dare... It would be very helpful if you could view this tutorial on one device while following its instructions and installing $tw on another [[computer|TwineLesson001Passage002]].<center><a data-passage="DeonnaLessonIndex" class="link-internal link-image"><img vspace="10" width="100" src="./assets/images/tutorial/tutorial-back.png"></a>\
+<<if hasVisited("TwineLesson001Passage002")>><a data-passage="TwineLesson001Passage002" class="link-internal link-image"><img width="100" vspace="10" src="./assets/images/tutorial/tutorial-forward.png"></a><</if>>
+</center><</linkappend>>
+
+:: TwineLesson001Passage002 [deonna]
+I recommend that you use the Chrome web browser for this tutorial series. It's the browser I used while writing these lessons.
+
+There are times when I write entire computer programs in my head as I'm falling asleep at night. Such is the attraction of a tool that so beatifully marries together the wonders of technology and the progeny of the human imagination. As Gandalf famously said, //“It's a dangerous business, Frodo, going out your door. You step onto the road, and if you don't keep your feet, there's no knowing where you might be swept [[off to|TwineLesson001Passage003]].”//
+
+<<tut-links "TwineLesson001Passage001" "TwineLesson001Passage003">>
+
+:: TwineLesson001Passage003 [deonna]
+<nobr><<run UIBar.show();>></nobr>
+<h3 align="center">What //is// Twine exactly?</h3>
+<center><img width="120" src="./assets/images/tutorial/twine-knot.png"></center>
+$tw is a program first released in 2009. It is regarded as a tool with a low barrier to entry, permitting laymen to craft stories and games that have the quality of interactivity. What this means is that there are choices within any work created by $tw $md choices that actually //matter// to the outcome of the game or <<linkappend story.>>
+
+And because these choices matter, they give the reader a sense of //agency//. To get started learning to write stories (or games) in Twine, you first need to download and install the //$tw// program onto your [[computer|TwineLesson001Passage004]].<</linkappend>>
+
+<<tut-links "TwineLesson001Passage002" "TwineLesson001Passage004">>
+
+:: TwineLesson001Passage004 [deonna]
+I'm going to assume that you $md Gentle Reader $md will be using $tw on Windows. But if you happen to use a Macintosh or Linux machine, there are versions for those operating systems as well. When you click the link at the end of this sentence, $tw will download to your //Downloads// <a href="https://github.com/klembot/twinejs/releases/download/2.10.0/Twine-2.10.0-Windows.exe">folder</a>. 
+
+If for some reason the previous link doesn't work, you can also download a recent version of $tw by clicking <a href="https://bryanmiller.us/twinery/Twine-2.10.0-Windows.exe">here</a> $md or, you can click <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImK5wVPDNXreVq5VmxA">here</a> to open a new browser tab that will let you download $tw from my Onedrive account.
+
+If you do need a Macintosh or Linux version of //$tw//, it can be found <a target="_new" href="https://github.com/klembot/twinejs/releases">here</a>.
+
+Go to your //Downloads// folder and double-click on the $tw [[installer|TwineLesson001Passage005]].
+
+<<tut-links "TwineLesson001Passage003" "TwineLesson001Passage005">>
+
+:: TwineLesson001Passage005 [deonna]
+You'll get a dialog that looks something like the following. Just click the //Next// button.
+
+<img src="./assets/images/tutorial/twine-install-dialog.png">
+
+[[Next|TwineLesson001Passage005b]]:
+
+<<tut-links "TwineLesson001Passage004" "TwineLesson001Passage005b">>
+
+:: TwineLesson001Passage005b [deonna]
+You //might// encounter this screen upon double-clicking the //$tw// installer. Sometimes Windows can be a bit paranoid. If you see the following screen, it means Windows isn't sure that //Twine// is safe software. It //is// perfectly safe.
+
+<img src="./assets/images/tutorial/more-info.png">
+
+Should you encounter the above screen, you'll need to click the //More info// link in the upper left of that dialog. And then on the [[next dialog|TwineLesson001Passage005c]]...
+
+<<tut-links "TwineLesson001Passage005" "TwineLesson001Passage005c">>
+
+:: TwineLesson001Passage005c [deonna]
+...go ahead and click the //Run Anyway// [[button|TwineLesson001Passage006]].
+
+<img src="./assets/images/tutorial/run-anyway.png">
+
+<<tut-links "TwineLesson001Passage005c" "TwineLesson001Passage006">>
+
+:: TwineLesson001Passage006 [deonna]
+The default install directory shown below is fine. I'd either install $tw in Program Files, or you could follow my preference and install it in //C:\$tw//. I would recommend C:\$tw instead of burying it several levels deep under your //AppData// directory. Go ahead and click the //Install// button. It will take a few seconds for $tw to be installed on your [[computer|TwineLesson001Passage007]].
+
+<img src="./assets/images/tutorial/default-install-location.png">
+
+<<tut-links "TwineLesson001Passage005" "TwineLesson001Passage007">>
+
+:: TwineLesson001Passage007 [deonna]
+Once the download completes and $tw has been installed, you'll get this screen. Leave the "Run Twine" checkbox checked, and click the //Finish// [[button|TwineLesson001Passage008]].
+
+<img src="./assets/images/tutorial/launch-twine.png">
+
+<<tut-links "TwineLesson001Passage006" "TwineLesson001Passage008">>
+
+:: TwineLesson001Passage008 [deonna]
+The desktop version of Twine (there's an online version as well) launches, in all its glory. You should click the //$tw// menu item in the upper-left of the screen, and then click on the //Check for Updates// menu [[item|TwineLesson001Passage009]]:
+
+<img src="./assets/images/tutorial/check-for-update.png">
+
+<<tut-links "TwineLesson001Passage007" "TwineLesson001Passage009">>
+
+:: TwineLesson001Passage009 [deonna]
+If there //is// an available update, you'll see something like the following dialog, and you //should// download and install any available update. At the time of this writing, version 2.10.0 was the most recent version of //$tw//.
+
+<img src="./assets/images/tutorial/download-newer-version.png">
+
+After installing any available update, you should again check for updates using the menu, and should see this:
+
+<img src="./assets/images/tutorial/have-newest-version.png">
+
+You should be all [[set!|TwineLesson001Passage010]]
+
+<<tut-links "TwineLesson001Passage008" "TwineLesson001Passage010">>
+
+:: TwineLesson001Passage010 [deonna]
+
+Once you have the newest version of //$tw// installed, you're ready to take a tour of this awesome piece of software. We'll do that in the next tutorial $md [[Lesson 2|TwineLesson002Passage001]]
+
+<img src="./assets/images/tutorial/twine-welcome-screen.png">
+
+<<tut-links "TwineLesson001Passage009" "TwineLesson002Passage001">>
+
+/************************************ */
+/* End Lesson One; Lesson Two Follows */
+
+:: TwineLesson002Passage001 [deonna]
+<h2>Twine & Sugarcube <span class="pulse">Lesson # 2</span> $md Tour of the $tw program</h2>
+Well, you've installed the //$tw// program, but it's unfamiliar. Let's take a tour of this marvelous piece of free software. If you noticed, when you ran //$tw// for the first time, it invited you to a mini-tour of its functions:
+
+<img src="./assets/images/tutorial/tour-twine.png">
+
+If you click the "Tell Me More" link, the software recommends and links to the //Twine [[Cookbook|TwineLesson002Passage002]]//.
+
+<<tut-links "TwineLesson001Passage010" "TwineLesson002Passage002">>
+
+:: TwineLesson002Passage002 [deonna]
+<img hspace=10 src="./assets/images/tutorial/twine-cookbook-cover.png">I cannot advise you on use of the $tw Cookbook, not yet having spent any appreciable time with it. I do know, however, that some incredibly good programmers are the joint-authors $md including Kris Klimas, the author or $tw, and Thomas Michael Edwards, the author of the awesome $sc story format. If you do want to spend some money, get a copy of the <a target="_new" href="https://www.amazon.com/Twine-Cookbook-Daniel-Cox/dp/B0DL8SZ35F">print</a> [[version|TwineLesson002Passage002b]].
+
+
+:: TwineLesson002Passage002b
+For your first few steps into the world of $tw, you'll be fine if you stick with ''this'' tutorial series. How's that for a shameless plug?
+
+<img src="./assets/images/tutorial/twine-cookbook-link.png">
+
+So instead of clicking the //$tw Cookbook// link in the $tw application, as shown above, instead I'd recommend that you click the //Next// link, which is in the lower left corner on the $tw welcome [[screen|TwineLesson002Passage003]].
+
+<<tut-links "TwineLesson002Passage001" "TwineLesson002Passage003">>
+
+:: TwineLesson002Passage003 [deonna]
+<img src="./assets/images/tutorial/twine-documents-folder.png">
+
+//$tw// informs us that it has created a '$tw' folder in your 'My Documents' folder. Now, I'm not saying //$tw// is dishonest, but I'm gonna go [[check|TwineLesson002Passage004]]...
+
+<<tut-links "TwineLesson002Passage002" "TwineLesson002Passage004">>
+
+:: TwineLesson002Passage004 [deonna]
+<img src="./assets/images/tutorial/verify-twine-folder.png">
+
+Okay, so I was worried for no reason. When I navigate into the ///My Documents/$tw// folder, sure enough there is the //Stories// folder, and I see another folder named //[[backup|TwineLesson002Passage005]]//.
+
+<<tut-links "TwineLesson002Passage003" "TwineLesson002Passage005">>
+
+:: TwineLesson002Passage005 [deonna]
+<img src="./assets/images/tutorial/backups-and-stories.png">
+
+All right. Nothing too complex. Your $tw folder's subfolders won't look exactly like mine do in this screenshot. If you have Microsoft Onedrive installed on your computer, the $tw folder is located in //its// Documents folder. Otherwise, it's located in the C:\Users\[your user name]\Documents folder. 
+
+If your $tw folder doesn't contain a Scratch folder, then at some point we'll want to fix that, but for the moment it's not a problem. The last screen looks like [[this|TwineLesson002Passage006]].
+
+<<tut-links "TwineLesson002Passage004" "TwineLesson002Passage006">>
+
+:: TwineLesson002Passage006 [deonna]
+<img src="./assets/images/tutorial/thats-all-folks.png">
+
+And, as you might guess, when we look in the /$tw/Stories folder, it's empty, since we only just now got //$tw// installed and haven't written any stories yet using the [[software|TwineLesson002Passage007]].
+
+<<tut-links "TwineLesson002Passage005" "TwineLesson002Passage007">>
+
+:: TwineLesson002Passage007 [deonna]
+<img src="./assets/images/tutorial/zero-stories.png">
+
+That's it. That's the tour. Now you're ready for Lesson 3 $md [[Building Your First Story|TwineLesson003Passage001]].
+
+<<tut-links "TwineLesson002Passage006" "TwineLesson003Passage001">>
+
+/****************************************/
+/* End Lesson Two; Lesson Three Follows */
+/****************************************/
+
+:: TwineLesson003Passage001 [deonna]
+<h2>$tw & $sc <span class="pulse">Lesson # 3</span> $md Building your first story</h2>
+Welcome to Lesson 3. Important Note: in this and succeeding Lessons in this series, there are going to be times when you're not sure what's going on, and you're just following my instructions. That's //okay//. You'll begin to notice a pattern in which I loop back to things you did in earlier lessons and I explain them. Or sometimes I //won't// explain them and you'll just have a Eureka moment.
+
+If it's not already running, launch the $tw program. Before we begin to //write code//, we need to select our desired {{{story format}}}. The relationship of story formats to the Twine program is sort of like the relationship between human communication and languages: people around the world communicate, but what that //sounds// like differs depending upon the language they're speaking.
+
+<img src="./assets/images/tutorial/story-format-explanation.png">
+
+I'm going to do you the huge favor of starting your $tw journey with the $sc story format, rather the default story format, [[Harlowe|TwineLesson003Passage002]].
+
+<<tut-links "TwineLesson002Passage007" "TwineLesson003Passage002">>
+
+:: TwineLesson003Passage002 [deonna]
+If this notion of story formats is confusing, don't worry about it. You can do great things with $tw without understanding its inner workings. Let's set up $tw now to use the $sc story format. As a reminder, these tutorials work better if you view them on one device (say, your tablet) while working in the $tw program in your desktop or laptop computer.
+
+<img src="./assets/images/tutorial/set-story-format.png">
+
+To change the {{{story format}}}, you'll click on "$tw" in the second row of options (Story, Library, Build, View, ''$tw.'') Then, you'll click on ''Story Formats'' as highlighted in yellow [[above|TwineLesson003Passage003]].<br><br>
+
+<<tut-links "TwineLesson003Passage001" "TwineLesson003Passage003">>
+
+:: TwineLesson003Passage003 [deonna]
+Next, looking down the right-hand side of the $tw program, you'll see (probably 5) pre-installed {{{story formats}}}. They have the following icons, and by default in a new $tw install, the selected format is Harlowe (hover over each image to see the format's name):
+<<nobr>><blockquote>
+<<storyicons>>
+</blockquote><</nobr>>
+Well, we //don't// want to use Harlowe. Not because it's a bad format. It's actually quite elegant and I've used it in the past to good effect. But we're going to use $sc because $md down the road, when you're a more experienced $tw coder $md it'll allow us more flexibility in how we code stories and [[games|TwineLesson003Passage004]].
+
+<<tut-links "TwineLesson003Passage002" "TwineLesson003Passage004">>
+
+:: TwineLesson003Passage004 [deonna]
+<img src="./assets/images/tutorial/harlowe-as-default.png">
+Most likely, Harlowe is shown in $tw as your default {{{story format}}}. See that I've highlighted this in yellow in the screenshot above. What you need to do is scroll down in $tw until we see the $sc option, as shown on the next page's [[screenshot|TwineLesson003Passage005]].
+
+<<tut-links "TwineLesson003Passage002" "TwineLesson003Passage005">>
+
+:: TwineLesson003Passage005 [deonna]
+<img src="./assets/images/tutorial/sugarcube-option.png">
+
+Notice in the screenshot above (see yellow highlight) that we have the option to use $sc as our default {{{story format}}}. Let's do that now by clicking in the $sc box where it says (in the lower left-hand corner) //Use As Default Story [[Format|TwineLesson003Passage006]]//.
+
+<<tut-links "TwineLesson003Passage004" "TwineLesson003Passage006">>
+
+:: TwineLesson003Passage006 [deonna]
+<img src="./assets/images/tutorial/sugarcube-is-default.png">
+Ta-Da! Sugarcube is now our default. Good work! You can close the {{{story formats}}} [[sub-window|TwineLesson003Passage007]].
+
+<<tut-links "TwineLesson003Passage005" "TwineLesson003Passage007">>
+
+:: TwineLesson003Passage007 [deonna]
+
+It's time to create a story. Do so by first clicking {{{story}}} (highlighted in yellow below), then clicking {{{New}}} $md also highlighted in yellow in this screenshot.
+
+<img src="./assets/images/tutorial/new-story.png">
+
+Now, we need to name our [[story|TwineLesson003Passage008]]...
+
+<<tut-links "TwineLesson003Passage006" "TwineLesson003Passage008">>
+
+:: TwineLesson003Passage008 [deonna]
+
+<img src="./assets/images/tutorial/story1.png">
+Just name it {{{Story1}}}. I know, not very original, but it'll suffice for some practice. Having supplied $tw a name, we now click the {{{Create}}} button and our story file is [[created|TwineLesson003Passage009]].
+
+<<tut-links "TwineLesson003Passage007" "TwineLesson003Passage009">>
+
+:: TwineLesson003Passage009 [deonna]
+
+$tw is what's known as a GUI $md a program with a graphic user-interface. Notice the background that looks sort of like graph paper. See the dotted-line square labeled {{{Untitled Passage}}}? $tw uses //passages//. A passage can contain text and //Twinescript//. See the little rocketship icon on the green circle? That's a visual indicator that the passage to which it's attached is the {{{Start}}} passage. That's the place $tw looks when we //run// or //play// the game or story that we're creating with [[$tw|TwineLesson003Passage010]].
+
+<img src="./assets/images/tutorial/untitled-passage.png">
+
+<<tut-links "TwineLesson003Passage008" "TwineLesson003Passage010">>
+
+:: TwineLesson003Passage010 [deonna]
+<img src="./assets/images/tutorial/untitled-passage.png">
+One thing to keep in mind is that $md whether your writing a story or a game $md $tw output is ''HTML''. Essentially, the stories and games that you make with $tw are webpages. Just like the tutorial you're reading at this very //moment// is a webpage. The two awesome things about webpages are that (1) they can host images, downloads, and you can make them look however you want, and (2) it's pretty easy to host them. Hosting a webpage means that it's on a special computer called a //server//. Guess what servers do? They //serve// webpages to other devices. Whenever you check your GMail or read a blog, you're taking advantage of //webpage// [[technology|TwineLesson003Passage011]].
+
+<<tut-links "TwineLesson003Passage009" "TwineLesson003Passage011">>
+
+:: TwineLesson003Passage011 [deonna]
+<img src="./assets/images/tutorial/edit-passage.png">
+Couple of things, here: you can click and hold down your left mouse button on a passage and you can then drag the passage around the screen and position it wherever you want. Also, let's rename the existing passage. Currently, it's named {{{Untitled Passage}}}. Let's double-click our mouse on this passage, in order to bring up the passage editor shown above. Notice I've yellow-highlighted the Rename button. Let's click that button now in order to rename the [[passage|TwineLesson003Passage012]].
+
+<<tut-links "TwineLesson003Passage010" "TwineLesson003Passage012">>
+
+:: TwineLesson003Passage012 [deonna]
+<img src="./assets/images/tutorial/rename-passage.png">
+Let's rename the passage to "Campfire", and then click the {{{Ok}}} button. Enter the following text into the passage editor, either by typing it in, or by copying and then pasting it: //You sit before a cheerful campfire, the crackling flames hypnotic, the warmth from the blaze soothing the cares from your knotted muscles.// Once you've done that, close the passage editor. On the next page, I show you what the passage editor looks like after you've entered the text and are about to click the X in the upper right to close the [[passage|TwineLesson003Passage013]].
+
+<<tut-links "TwineLesson003Passage011" "TwineLesson003Passage013">>
+
+:: TwineLesson003Passage013 [deonna]
+<img src="./assets/images/tutorial/lesson-3-campfire-psg-text.png">
+
+Have you closed the editor for the {{{Campfire}}} passage? Good deal! Now, in order to see what this will look like when your story or game (hereafter $sg) is actually //played//, we're going to click the Play button. On the next page, I show a screenshot with the Play button highlighted in [[yellow|TwineLesson003Passage014]].
+
+<<tut-links "TwineLesson003Passage012" "TwineLesson003Passage014">>
+
+:: TwineLesson003Passage014 [deonna]
+<img src="./assets/images/tutorial/play-button.png">
+Believe it or not, you just wrote your first story in Twine. //Technically//. Of course, if you publish it now, I don't imagine you'll get any stellar reviews. But let's see how this is going to look to someone playing your $sg. To do that, we're going to click the Play button, which I have highlighted in yellow [[above|TwineLesson003Passage015]].
+
+<<tut-links "TwineLesson003Passage013" "TwineLesson003Passage015">>
+
+:: TwineLesson003Passage015 [deonna]
+<img src="./assets/images/tutorial/playing-story1.png">
+In your default browser, the game opens and displays the text you entered into the {{{Campfire}}} passage in the $tw story which we've named {{{Story1}}}. You'll notice that by default, the $sc {{{story-format}}} uses white text on a black background. That can be changed fairly easily, and in a future lesson I'll show you how. Also, if you'd prefer a different color-scheme for these tutorials, <a href="mailto:kyrathasoft@gmail.com?subj=I would like a different tutorial color-scheme">let me know</a>. You can close that browser tab now, and we'll return to the $tw [[program|TwineLesson003Passage016]].
+
+<<tut-links "TwineLesson003Passage014" "TwineLesson003Passage016">>
+
+:: TwineLesson003Passage016 [deonna]
+What could make this $sg slightly more interesting? Well, what if we created some other locations around the campfire that you could visit? If it's not already open, re-open the {{{Campfire}}} passage editor (by double-clicking on that passage on the Twine grid $md also known as the ''Story Map''), and add the following words: //To the east, the ridge on which you're camped rises to an abrupt cliff overlooking a river.//
+
+<img src="./assets/images/tutorial/east-lies-river.png">
+
+Well, the addition of that sentence makes me want to go east and have a look at that river $md so it would probably make anyone else reading my $sg have that same impulse. Sit down and buckle up, because we're about to use one of the features that makes $tw so [[powerful|TwineLesson003Passage017]]...
+
+<<tut-links "TwineLesson003Passage015" "TwineLesson003Passage017">>
+
+:: TwineLesson003Passage017 [deonna]
+What we're going to do is edit this new sentence in the {{{Campfire}}} passage so that it looks like this (you may notice I've condensed the passage editor in the following screenshot; in reality, there are a couple rows of menus between the passage title and the text edit area):
+
+<img src="./assets/images/tutorial/link-to-psg-cliff.png">
+
+Don't let the pipe and square brackets scare you. The {{{pipe}}} character is the vertical line that separates the words "east" and "Cliff". And notice that are two left square brackets ... {{{[[}}} ... and two right square brackets ... {{{]]}}}. Let me break down what is happening here.
+
+We're telling $tw, "Hey, let's give the word "east" a hyperlink that, when clicked on, will transition to a passage named "Cliff". The left- and right-double brackets tell $tw, "Hey, I'm signaling a passage transition in the text of my $sg..." On the next page, we will see how the $tw program has [[updated|TwineLesson003Passage018]].
+
+<<tut-links "TwineLesson003Passage016" "TwineLesson003Passage018">>
+
+:: TwineLesson003Passage018 [deonna]
+<img src="./assets/images/tutorial/second-psg-created.png">
+Check it out: $tw has $md based upon our edit to the {{{Campfire}}} passage $md created a new passage named {{{Cliff}}}, and we can see an arrow leading from {{{Campfire}}} to {{{Cliff}}}, signaling us //Psst!, your// $sg //has a link connecting the {{{Campfire}}} passage to the {{{Cliff}}} passage.// On the next page, we're going to see how this translates into our //playable// [[story|TwineLesson003Passage019]].
+
+<<tut-links "TwineLesson003Passage017" "TwineLesson003Passage019">>
+
+:: TwineLesson003Passage019 [deonna]
+When we click the Play button, it may take a couple of seconds before the game launches in the default browser (or, it could be it's just my machine that's lagging as I write this). When the game launches, you'll see that $tw has interpreted our special bit of text, {{{[[east|Cliff]]}}} and turned the word "east" into a hyperlink. If you click that link, though, at the moment it'll just give you a blank screen. The reason for this is that $tw has navigated from the {{{Campfire}}} passage to the {{{Cliff}}} passage and discovered that the {{{Cliff}}} passage doesn't have any text to display.
+
+<img src="./assets/images/tutorial/ooh-my-first-link.png">
+
+Let's remedy that problem by editing the {{{Cliff}}} passage in [[$tw|TwineLesson003Passage020]].
+
+<<tut-links "TwineLesson003Passage018" "TwineLesson003Passage020">>
+
+:: TwineLesson003Passage020 [deonna]
+
+<img align="left" hspace="8" vspace="5" src="./assets/images/tutorial/edit-cliff-psg.png">We're going to edit the {{{Cliff}}} passage by double-clicking on that passage in $tw. When we do that, $tw opens a passage editor just like the one we used to enter text into the {{{Campfire}}} passage. Enter the following text into the {{{Cliff}}} passage, in $tw: //As you crest the ridge, trees give way to ragged stone, carved by the ages. Far below, a river courses southward, the rush of its passage a soothing white noise as it reaches your ears.//
+
+<img src="./assets/images/tutorial/add-river-description.png">
+
+Once you've added that text, close the editor for the {{{Cliff}}} [[passage|TwineLesson003Passage021]].
+
+<<tut-links "TwineLesson003Passage019" "TwineLesson003Passage021">>
+
+:: TwineLesson003Passage021 [deonna]
+
+Now play your story by clicking the Play button in $tw (Build > Play). Now, when you click the hyperlinked word "east", you're taken to the {{{Cliff}}} passage and are given a useful description. To get to the Play button, you must firt click Build. You'll first see the text from your {{{Campfire}}} passage. Then, upon clicking the hyperlinked word "east", you're taken to the {{{Cliff}}} passage, which now displays like this as you play your $sg:
+
+<img src="./assets/images/tutorial/play-to-cliff.png">
+
+Okay, nice! Now, if you'll recall, the text in passage {{{Campfire}}} stated that to the ''east'' lay the cliff. Well, doesn't that logically entail that there'd be some path west from the cliff back to our [[campfire|TwineLesson003Passage022]].
+
+<<tut-links "TwineLesson003Passage020" "TwineLesson003Passage022">>
+
+:: TwineLesson003Passage022 [deonna]
+Therefore, let's edit our {{{Cliff}}} passage by adding the following sentence: //About a rock's throw away to the west, you see the flickering light from your campfire.// Let's made the word "west" link back to the {{{Campfire}}} passage. Remember that to make a link, we use the word that will become a hyperlink (in this case, "west"), and the name of the passage to be linked to (in this case, {{{Campfire}}}). They're separated by the {{{pipe}}} character (a vertical line you can type by holding down Shift and clicking the button on your keyboard just beneath the Backspace button).
+
+The {{{Cliff}}} passage should now look like the following, in the $tw [[editor|TwineLesson003Passage023]]:
+
+<img src="./assets/images/tutorial/cliff-leads-west.png">
+
+<<tut-links "TwineLesson003Passage021" "TwineLesson003Passage023">>
+
+:: TwineLesson003Passage023 [deonna]
+If you haven't yet done so, close the browser tab where you most recently played through your $sg. It's always fine to close these tabs whenever you want. All we have to do to get them back is Play our $sg.
+
+Now play your $sg by clicking Play (found as a submenu of Build). You'll discover that you can move back and forth between the campfire and the cliff. And in $tw, we can visually see this ability to go back and forth between those two passages, because $tw now shows arrows linking the two passages in both [[directions|TwineLesson003Passage024]]:
+
+<img src="./assets/images/tutorial/bidirectional-linkage.png">
+
+<<tut-links "TwineLesson003Passage022" "TwineLesson003Passage024">>
+
+:: TwineLesson003Passage024 [deonna]
+Congratulations! You've learned how to add and edit passages, and how to create links between passages. In Lesson 4, we will add to this $sg we've begun in Lesson 3. Feel free to take break. When you're ready to press on, go to [[Lesson 4|TwineLesson004Passage001]].
+<<tut-links "TwineLesson003Passage023" "TwineLesson004Passage001">>
+

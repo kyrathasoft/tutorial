@@ -1,0 +1,18 @@
+<!--some test passages are in this twee3 file; their purpose is to test widget <<gorandom>> 
+that I created in the bryan_widgets.tw file
+
+Upon first creating the <<gorandom>> widget, I didn't have any passages tagged [random].
+I'm creating some here for testing purposes. Note that passages in this file should be
+marked with the [test-only] tag, so that setup.getPassageNames() will skip them-->
+
+:: TestRandom1 [random test-only]
+This is the first test-only passage tagged with {{{[random test-only]}}} and located in file {{{random_psgs.tw}}}.
+
+:: TestRandom2 [random test-only]
+This is the second test-only passage tagged with {{{[random test-only]}}} and located in file {{{random_psgs.tw}}}.
+
+:: TestRandom3 [random test-only]
+This is the third test-only passage tagged with {{{[random test-only]}}} and located in file {{{random_psgs.tw}}}.
+
+:: TestRandom4 [random test-only]
+This is the fourth test-only passage tagged with {{{[random test-only]}}} and located in file {{{random_psgs.tw}}}.

@@ -1,0 +1,7 @@
+    q10: "The preinstalled Story Formats are: Harlowe, Sugarcube, Paperthin, Chapbook, and (fill-in-the-blank).",
+    c10: "Snowman",
+    q10opt1: "Snowman",
+    q10opt2: "Arctic",
+    q10opt3: "Iceberg",
+    q10opt4: "Glacier",
+    q10ans: "",

@@ -1,0 +1,394 @@
+:: TwineLesson007Passage001 [deonna]
+<h2>$tw & $sc <span class="pulse">Lesson # 7</span> $md Our First Function & An Inventory</h2>
+Welcome to Lesson 7:
+<ul><li>improve the ''{{{YourBackpack}}}'' passage $ts</li>
+<li>learn how to assign values to variables</li>
+<li>learn about story versus temp variables</li>
+<li>learn to set multiple variables in a single line of $ts</li>
+<li>learn about //strings//</li>
+<li>learn about functions</li></ul>
+All of the above is in preparation for developing an inventory system and just generally increasing your knowledge.
+
+[[$ct|TwineLesson007Passage002]]
+
+<<tut-links "TwineLesson006Passage027" "TwineLesson007Passage002">>
+
+
+
+:: TwineLesson007Passage002 [deonna]
+If you launch our $sg $md $tut_tit $md and go into your tent and then into your backpack, you see this, and it's crystal clear that there are two packets of instant coffee available:
+
+<img src="./assets/images/tut-less-7-9/remaining-coffee.png">
+
+If we click the link "take a packet of Mount Hagen", the $sg just immediately returns us to the tent [[passage|TwineLesson007Passage003]].
+
+<<tut-links "TwineLesson007Passage001" "TwineLesson007Passage003">>
+
+
+
+:: TwineLesson007Passage003 [deonna]
+If we go back into ''{{{YourBackpack}}}'', now we see that instead of two packets, there is only one packet remaining:
+
+<img src="./assets/images/tut-less-7-9/single-packet-remains.png">
+
+Do it one more time and you get this:
+
+<img src="./assets/images/tut-less-7-9/out-of-coffee.png">
+
+It's functional, but clunky. Let's fix [[that|TwineLesson007Passage004]].
+
+<<tut-links "TwineLesson007Passage002" "TwineLesson007Passage004">>
+
+
+
+:: TwineLesson007Passage004 [deonna]
+Something important to know: When you alter the value of variables, $sc doesn't update the value held in the variables until a passage transition takes place. We're going to make a small addition to the $ts in passage ''{{{YourBackpack}}}''. I have shown the additional $ts in bold below:
+
+{{{<<if $instantCoffeePackets>> >> <<link "take a packet of Mount Hagen">><<set $instantCoffeePackets -- >>}}}''{{{<<goto YourBackpack>>}}}''{{{<<goto YourBackpack>><</link>><</if>> >> [[set backpack aside|YourTent]]}}}
+
+Let's edit the passage in the $tw [[editor|TwineLesson007Passage005]].
+
+<<tut-links "TwineLesson007Passage003" "TwineLesson007Passage005">>
+
+
+
+:: TwineLesson007Passage005 [deonna]
+
+Make the change by adding ''{{{<<goto YourBackpack>>}}}'' (in the place shown above) to your ''{{{YourBackpack}}}'' passage:
+
+<img src="./assets/images/tut-less-7-9/modify-yourbackpack-psg.png">
+
+After making this small change, re-launch $tut_tit, go to your tent, get your backpack, and take the coffee packets. This implementation is better, because the player no longer has to click a link to see the updated number of instant coffee packets.
+
+When no packets have been taken, or only one has been taken, the "Take a packet of Mount Hagen" link remains available. But when both packets have been taken from your backpack, the only thing left to do is click the "set backpack aside" [[link|TwineLesson007Passage006]].
+
+<<tut-links "TwineLesson007Passage004" "TwineLesson007Passage006">>
+
+
+:: TwineLesson007Passage006 [deonna]
+
+Now we have a decision to make. We could $md upon the player leaving the tent $md with one or both packets of instant coffee $md simply take author's liberty and describe the making of one lovely cup of Mount Hagen (1 packet), or one very bracingly strong coffee (two packets used). 
+
+Or, we could use $ts and programming logic to simulate the whole process. If this $sg were going to be a lengthy role-playing game of high adventure, I might go for the latter, and even incorporate a sophisticated inventory system. For our purposes, let's just create a simple [[inventory|TwineLesson007Passage007]].
+
+<<tut-links "TwineLesson007Passage005" "TwineLesson007Passage007">>
+
+
+
+:: TwineLesson007Passage007 [deonna]
+''Creating an inventory system: Step 1'''
+
+The first thing to do is to add a //function// to the Javascript section of $tw. A function? What the heck is that?
+
+I'm glad you asked. A //function// is a little snippet of code. When we (programmatically, through our $ts) tap the function on the shoulder, it turns toward us and performs it's function. Sometimes that function is to print some text, sometimes to manipulate a number. 
+
+To help illustrate how to create and use a function in your $tw, we're going to create one that should be fairly easy to [[grok|TwineLesson007Passage008]].
+
+<<tut-links "TwineLesson007Passage006" "TwineLesson007Passage008">>
+
+
+
+:: TwineLesson007Passage008 [deonna]
+You know what //grok// means, right? To //grok// something is to comprehend it, to wrap your mind around it, to have a light-bulb moment. With $tut_tit open in the $tw editor, click the $st menu item. You'll see some sub-menu items appear:
+
+<img src="./assets/images/tut-less-7-9/story-js.png">
+
+Click on the $js sub-menu [[item|TwineLesson007Passage009]].
+
+<<tut-links "TwineLesson007Passage007" "TwineLesson007Passage009">>
+
+
+
+:: TwineLesson007Passage009 [deonna]
+Clicking the $js menu item will bring up an editor window, and you're going to copy/paste (or type it in by hand) the following text:
+
+<pre>setup.DoubleIt = function(mynumber){
+	return 2*mynumber;
+};</pre>
+Yes, I know it looks [[complicated/scary|TwineLesson007Passage010]].
+
+<<tut-links "TwineLesson007Passage008" "TwineLesson007Passage010">>
+
+
+
+:: TwineLesson007Passage010 [deonna]
+
+The $js passage editor should now look like this:
+
+<img src="./assets/images/tut-less-7-9/function-double-it.png">
+
+Is that clear as mud? I'll break it down for you. ''setup'' is an object on which we can define functions. If functions were hats and caps, ''setup'' would be the peg board where you hang them.
+
+''DoubleIt'' is my intensely clever name for a function that ... wait for it ... {{{doubles}}} whatever number you give it.
+
+And what about ''mynumber'' that I've placed in [[parentheses|TwineLesson007Passage011]]? 
+
+<<tut-links "TwineLesson007Passage009" "TwineLesson007Passage011">>
+
+
+
+:: TwineLesson007Passage011 [deonna]
+<pre>setup.DoubleIt = function(mynumber){
+	return 2*mynumber;
+};</pre>
+Well, whatever we place in parentheses when we //call// a function (i.e., tap the function on the shoulder and say 'Do Yer Thang') $md that's called an //argument//.  ''{{{mynumber}}}'' serves as a placeholder for whatever //actual// number we want to send to our function.
+
+''{{{return}}}'' is the keyword that sends the function's result back to our $tw $sg.
+
+And ''{{{2*mynumber}}}'' tells the function: "Hey, take whatever number I give you, double it, and then give me the result."
+
+Let's test this [[function|TwineLesson007Passage012]].
+
+<<tut-links "TwineLesson007Passage010" "TwineLesson007Passage012">>
+
+
+
+:: TwineLesson007Passage012 [deonna]
+Let's test our shiny new function and see if it works. If you recall, back in Lesson 06 we created a passage named ''{{{CodeTest}}}''. In //that// lesson, we used this passage to test the {{{<<nobr>> <</nobr>>}}} tags. Let's edit that passage now and add the following two lines of code (I recommend you just copy/paste them). You can retain or get rid of the text we used in Lesson 06 to test the {{{<<nobr>>}}} tags.
+<pre>If I double the number 8 I get a result of {{{<<= setup.DoubleIt(8)>>}}}.
+If I double the number 4.5, I get a result of {{{<<= setup.DoubleIt(4.5)>>}}}.</pre>
+Now, let's temporarily make ''{{{CodeTest}}}'' the startup passage by (1) clicking the ''{{{Passage}}}'' menu item, then (2) selecting the ''{{{CodeTest}}}'' passage, then (3) clicking the ''{{{Start Story Here}}}'' [[button|TwineLesson007Passage013]].
+
+<<tut-links "TwineLesson007Passage011" "TwineLesson007Passage013">>
+
+
+
+:: TwineLesson007Passage013 [deonna]
+Here's what you should see in the $tw editor after following the above steps:
+<img src="./assets/images/tut-less-7-9/test-fn-double-it.png">
+
+Now launch the $sg using $bp and let's see our ''{{{Doubleit}}}'' function in [[action|TwineLesson007Passage014]].
+
+<<tut-links "TwineLesson007Passage012" "TwineLesson007Passage014">>
+
+
+
+:: TwineLesson007Passage014 [deonna]
+And voila! Here's our function strutting its stuff:
+
+<img src="./assets/images/tut-less-7-9/function-in-action.png">
+
+On the next page, we'll see the three things we need when it comes to functions: (a) defining the function, (b) calling the function, and (c) the function in [[action|TwineLesson007Passage015]].
+
+<<tut-links "TwineLesson007Passage013" "TwineLesson007Passage015">>
+
+
+
+
+:: TwineLesson007Passage015 [deonna]
+<img src="./assets/images/tut-less-7-9//do-u-grok-it.png">
+We'll look into the ''{{{<<=>>}}}'' structure on the next [[page|TwineLesson007Passage016]].
+
+<<tut-links "TwineLesson007Passage014" "TwineLesson007Passage016">>
+
+
+
+
+:: TwineLesson007Passage016 [deonna]
+So, what is this structure ''{{{<<=>>}}}'' that we're using to enclose our function calls? Well, it tells $sc, 'print out to the screen whatever the enclosed expression evaluates to'.
+
+So, when we write the following in our $ts, we're telling $tw, "Yo, homie! Process the number 8 through our {{{DoubleIt}}} function and then print the result to the screen": 
+
+''{{{<<= setup.DoubleIt(8)>>}}}''
+
+Let's look at a couple more [[examples|TwineLesson007Passage017]]. 
+
+<<tut-links "TwineLesson007Passage015" "TwineLesson007Passage017">>
+
+
+
+
+:: TwineLesson007Passage017 [deonna]
+Feel free to add the following into your ''{{{CodeTest}}}'' passage if you want to test them:
+
+{{{<<set $title to "The Dalai Lama", $profession to "monk", $path to "The Way of Peace">>}}}
+{{{<<= $title>> was a <<= $profession>> who followed <<= $path>>.}}}
+
+If you do, here is the output you'll get:
+
+<img src="./assets/images/tut-less-7-9/dalai-lama.png">
+
+Do you //grok// (see what I did there?) what's happening in the above [[code|TwineLesson007Passage018]]?
+
+<<tut-links "TwineLesson007Passage016" "TwineLesson007Passage018">>
+
+
+
+
+:: TwineLesson007Passage018 [deonna]
+(1) {{{<<set $title to "The Dalai Lama", $profession to "monk", $path to "The Way of Peace">>}}}
+(2) {{{<<= $title>> was a <<= $profession>> who followed <<= $path>>.}}}
+
+In the first line of $ts above, we're using {{{<<set>>}}} to set up three variables. In the $sc story format for $tw, a dollar sign that is the first character in a 'word' signals that we're dealing with a variable. Remember that a variable is just a box where we can store some information. So, were saying:
+
+{{{$title}}} is a box and we're putting this info into it: ''The Dalai Lama''
+{{{$profession}}} is a box and we're putting this info into it: ''monk''
+{{{$path}}} is a box and we're putting this info into it: ''The Way of Peace''
+
+When our $sg is played in the browser, we're just unboxing the info in those variables (i.e., boxes).  [[Capiche|TwineLesson007Passage019]]?
+
+<<tut-links "TwineLesson007Passage017" "TwineLesson007Passage019">>
+
+
+
+:: TwineLesson007Passage019 [deonna]
+Before continuing, why don't you try the following exercise: (1) in the ''{{{CodeTest}}}'' passage, use {{{<<set>>}}} to create a variable named {{{$coder}}} and set its information (i.e., its "value") to "a Twine/Sugarcube coder". (2) On the next line, create a sentence that reads "Aren't you proud that I'm becoming a Twine/Sugarcube coder?" $md but here's the catch: do it by using the {{{$coder}}} variable.
+
+Just give it a shot. No harm done if you don't [[succeed|TwineLesson007Passage020]].
+
+<<tut-links "TwineLesson007Passage018" "TwineLesson007Passage020">>
+
+
+
+:: TwineLesson007Passage020 [deonna]
+Well, how'd you do? Here is the text I put at the top of passage ''{{{CodeTest}}}'':
+
+{{{<<set $coder to "a Twine/Sugarcube coder">>}}}
+{{{Aren't you proud that I'm becoming <<= $coder>>?}}}
+
+<img align='left' width=55 src="./assets/images/tut-less-7-9/ball-of-string.png">Okay, it's now time (past time) that you learned about //strings//. in terms of computer programming a string is a collection of individual characters that is enclosed in single- or double-quotes. The quotes are what tell us where the string begins and ends, but are not usually part of the string itself. In the {{{<<set>>}}} above, the string is: ''a Twine/Sugarcube coder''
+
+And "''12345''" is a string, because it's enclosed in quotations, but 12345 is not a string; instead it's the number twelve-thousand three hundred [[forty-five|TwineLesson007Passage021]]
+
+<<tut-links "TwineLesson007Passage019" "TwineLesson007Passage021">>
+
+
+
+:: TwineLesson007Passage021 [deonna]
+To revisit an example we used earlier:
+
+{{{<<set $title to "The Dalai Lama">>}}}
+
+In the $ts above, {{{$title}}} is what's known in $sc as a {{{Story Variable}}}. It's a box we can put some information in; and once we put the information in it, it stays there $md until either we replace it with different data, or we destroy the box.
+
+''"The Dalai Lama"'' is a string. We've got this box labeled {{{$title}}} and we're sticking the phrase "The Dalai Lama" inside it for safekeeping. The word "to" assigns the {{{string}}} to the {{{Story Variable}}} that we've named ''{{{$title}}}''
+
+On the next page, we'll talk about variable //assignment//. Let's [[$ctl|TwineLesson007Passage022]]
+
+<<tut-links "TwineLesson007Passage020" "TwineLesson007Passage022">>
+
+
+
+:: TwineLesson007Passage022 [deonna]
+
+{{{<<set $title to "The Dalai Lama">>}}}
+
+Whether or not you realize it, you've actually used variables in the past. At least, if you took a pre-algebra course you have. The teacher said, "x + 5 equals 7; solve for x" $md and we all said ''"two!"''
+
+And just like in pre-algebra class, we can //assign// a value to a given variable. In the $sc story format, the way we do this is with the ''{{{to}}}'' keyword.
+
+In some programming languages, the equal sign is used for variable assignment (i.e., z = 3). If I told you to create a story variable named cash and assign it a value of 500, what $ts would you write? Give it a think, then see the answer on the next [[page|TwineLesson007Passage023]].
+
+<<tut-links "TwineLesson007Passage021" "TwineLesson007Passage023">>
+
+
+
+:: TwineLesson007Passage023 [deonna]
+''{{{<<set $cash to 500>>}}}''
+
+Above, I'm telling $sc to set a {{{Story Variable}}} named "cash" and assign it a value of 500. A {{{Story Variable}}} begins with a dollar sign. Don't use hyphens in naming a story variable, and variable names should never contain any spaces. 
+
+Why the term "Story Variable"? Because once we create a variable of this type and assign it a value with the ''{{{to}}}'' keyword, it is available from then on, all throughout our $sg.
+
+By contrast, there is another type of variable in $sc called a //temp variable// $md and it's temporary, so temporary in fact that it's only good for the passage in which it was created. When we move on to another passage in our $sg, any temp variables are done away with. I'll show you on the next page how to create a //temp variable//, and then we'll talk about when to [[use it|TwineLesson007Passage024]].
+
+<<tut-links "TwineLesson007Passage022" "TwineLesson007Passage024">>
+
+
+
+:: TwineLesson007Passage024 [deonna]
+Temp variables always start with an underscore character. We use them when we only need to store a value briefly during a single passage, and when our $sg has lots of {{{Story Variables}}} we may sometimes use a temp variable to avoid the risk of overwriting a like-named {{{Story Variable}}}. If you know you won't possibly need a particular variable except in the current passage, then make it temporary by prepending the variable name with an underscore:
+
+{{{_counter}}}
+{{{_temp}}}
+{{{_choice}}}
+
+You say, "I'm not really sure I //grok// the difference between story and temp variables." My response, "For short works coded in $tw and $sc, you probably can get by with using all ''{{{Story Variables}}}''." A couple more things about variables, and then we'll continue buidling our [[story|TwineLesson007Passage025]].
+
+<<tut-links "TwineLesson007Passage023" "TwineLesson007Passage025">>
+
+
+
+:: TwineLesson007Passage025 [deonna]
+I hear you: //this is too much like work; when do we get on with creating the $sg?// Well, we're laying a foundation. Variables are at the heart of all $tw stories other than the simplest. 
+
+Sometimes, we'll need a particular ''{{{StoryVariable}}}'' for a goodly length of time in a game, but not throughout the entire thing. Imagine that we're writing a story about a fighter working his way up through the ranks in the City Watch. For an extended period of time (perhaps several hours of play-time, or a few hundred passages) we might have a ''{{{StoryVariable}}}'' named {{{$earnedWages}}}, and the story may increment this variable periodically. But when our story's hero $md having attained the lofty rank of City Watch Captain $md happens to save the Duke's son, he's given a knighthood and lands. We no longer need the {{{$earnedWages}}} ''{{{Story Variable}}}''. To get rid of it and free the computer memory it's been using, we can [[unset it|TwineLesson007Passage026]]:
+
+<<tut-links "TwineLesson007Passage024" "TwineLesson007Passage026">>
+
+
+
+:: TwineLesson007Passage026 [deonna]
+
+When we unset a variable, it no longer exists:
+
+{{{<<unset $earnedWages>>}}}
+
+If we try to use an unset variable in our $ts, we'll get an error when you play the [[story|TwineLesson007Passage026b]]. 
+
+<<tut-links "TwineLesson007Passage025" "TwineLesson007Passage026b">>
+
+
+
+:: TwineLesson007Passage026b
+For example, go into the ''{{{CodeTest}}}'' passage and modify the existing $ts by adding a line to {{{unset}}} the {{{$coder}}} variable before we try to use it in a sentence:
+
+<img src="./assets/images/tut-less-7-9/unset-example.png">
+
+After making this change, play our $sg $md first making sure that ''{{{CodeTest}}}'' is still set as the Start passage, of [[course|TwineLesson007Passage027]].
+
+<<tut-links "TwineLesson007Passage026" "TwineLesson007Passage027">>
+
+
+
+:: TwineLesson007Passage027 [deonna]
+Whaddya know? We get this:
+
+<img src="./assets/images/tut-less-7-9/story-variable-undefined.png">
+
+Morale of the story: if you've {{{unset}}} a variable, you cannot use it anymore $md [[unless|TwineLesson007Passage028]]''...''
+
+<<tut-links "TwineLesson007Passage026" "TwineLesson007Passage028">>
+
+
+
+
+:: TwineLesson007Passage028 [deonna]
+Unless, of course, you re-create and assign that same variable once again. Something silly, like this:
+
+<img src="./assets/images/tut-less-7-9/resetting-an-unset-variable.png">
+
+But the above would be redundant: we don't have to unset a variable and recreate it later. Indeed, if we even __might__ need it later, we shouldn't {{{unset}}} it in the first [[place|TwineLesson007Passage029]].
+
+
+
+:: TwineLesson007Passage029 [deonna]
+And just so that you know, in the event that a variable were to be given multiple assignments, one right after the other, only the last (most recent) assignment matters:
+
+{{{<<set _x to 2>>}}}
+{{{<<set _x to 5>>}}}
+{{{<<set _x to 3>>}}}
+{{{<<print _x>>}}}
+
+If the above is our $ts, the value that will get printed to the screen in our game is ''3'.
+/*
+
+The anatomy of an inventory system:
+(a) the arbitrarily long return function
+(b) creating the YourInventory passage with a [noreturn] tag
+(c) creating the StoryMenu passage so we can link to YourInventory
+(d) give the player some starting inventory items (optional)
+
+
+<<nobr>><<set $inventory to []>>
+<<run $inventory.push('a sword');>>
+<<run $inventory.push('a coffee packet');>>
+<<run $inventory.push('a handkerchief');>>
+<<set $chest to ['a bag of gold', 'a dagger']>><</nobr>>
+
+Your inventory contains: <<= $inventory.length>> items. They are: <<= $inventory.join(', ')>>.
+<<set $inventory to $inventory.concat($chest)>>
+You add the chest's contents to your inventory.
+Now your inventory contains: <<= $inventory.join(', ')>>.
+<<if $inventory.includes('a sword')>><<if $inventory.includes('a dagger')>>Good idea. Dual wielded weapons!<</if>><</if>>
+*/

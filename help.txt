@@ -1,0 +1,32 @@
+STEP ONE: remove the StoryData passage from story.twee
+
+STEP TWO: compile with Tweego using bld.bat
+
+STEP THREE: Tweego will complain, giving the following (although the IFID # will differ...
+
+If you try to compile while missing a proper StoryData passage, Tweego will supply you the following info,
+although the ifid will differ:
+
+
+error: Story IFID not found; generating one for your project.
+
+Copy the following "StoryData" special passage into one of your project's twee source files:
+
+:: StoryData
+{
+        "ifid": "45314D2F-D080-46DF-9F11-B2132045927A"
+}
+
+STEP FOUR: add the above StoryData passage to your story.tw and then recompile. All set!
+
+If you want to enable saves and restart, then comment-out lines 196-199 in story.tw
+
+If you don't want any sidebar at all, replace lines 196-199 with:
+
+/* SugarCube 2.x without custom Settings. */
+#menu-core {
+	display: none;
+}
+
+formerly used font:
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Abril+Fatface&display=swap');

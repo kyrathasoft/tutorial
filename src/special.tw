@@ -1,0 +1,142 @@
+/* This is where special passages -- other than StoryData and StoryInit -- will live */
+
+:: PassageReady
+:: StoryAuthor [special]
+<center><img width="64" src="./assets/images/logo-alone.png"></center>
+
+:: StoryBanner [special]
+<center><!--<img width="40" vspace=1 hspace=1 align="center" src="./assets/images/swordsman64.png">--></center>
+
+:: StoryCaption [special]
+<img align="center" src="./assets/images/animated/lq-48.gif">
+Navigations: <<= State.turns>>
+<<date>>
+ 
+:: StoryMenu [noreturn nobr]
+[[Author Info|AboutTheAuthor]]<br>
+<<link "Fullscreen">><<run Fullscreen.toggle();>><</link>> or <<button "FS">><<run Fullscreen.toggle();>> <</button>><br>
+<<if hasVisited("AfterIntro")>><<link "Homepage">><<goto Homepage>><</link>><br><</if>>
+[[Menu]]<br>
+<<link "Table of Contents">><<goto DisplayTOC>><</link>><br>
+
+:: Menu [noreturn nobr]
+
+<center><span class="dark-blue">''Menu''</span><br><br>
+
+<<if Setting.getValue("gamify")>>[[Advancement Sub-menu|AdvancementSubmenu]]<br><</if>>
+
+[[Developer's Notes|DevOnly]]<br>
+
+<<if not Setting.getValue("gamify")>>
+	<br><br>//You have //gamify //turned off in Settings. Turn it on in order to access the Knight Advancement sub-menu.//
+<</if>>
+
+<br><br>
+<a data-passage="DisplayTOC"><img width="32" src="./assets/images/back-button.png" alt="go to Table of Contents" /></a>
+</center>
+
+
+:: StorySubtitle [special]
+<br>Creating linkage and<br> community in<br>home-group interactions
+
+:: StoryTitle [special]
+Interactive Trainer
+
+:: PassageHeader [header nobr]
+<!-- If you uncomment the following nested IF conditional, you'll also need to uncomment the Anchor Link to Passage code in final.tw (ln 18-51)
+<<if tags().includes('deonna')>>
+	<<if tags().includes('index')>>
+		<div style="float: right;"><a @href="encodeURI(decodeURI(document.location.href.match(/(^[^#]*)/)[0])+'#'+passage())" alt="A link directly to this passage." title="A link directly to this passage.">#</a></div>
+	<</if>>
+<</if>>
+-->
+<<if tags().includes('levelup')>>
+<center>''<<= setup.advancementMsg>>''<br>
+<!--commented out next line because i don't like the image (image removved)
+<img width=295 vspace=5 src="./assets/images/castle-montage.png"></center>-->
+<</if>>
+<<if tags().includes('portal')>><img width=295 hspace=15 vspace=15 align="center" src="./assets/images/portal.png"><</if>>
+<<if tags().includes('trainer-icon')>><img width=75 hspace=15 vspace=5 align="center" src="./assets/images/interactive-trainer.png"><</if>>
+<<if tags().includes('valiant-knight')>><img width=75 hspace=15 vspace=5 align="center" src="./assets/images/valiant-knight.png"><</if>>
+
+:: PassageFooter [footer nobr]
+<<if tags().includes('tutorial')>>
+    <<if visited() gt 1>><<= setup.homepageLinkback>><</if>>
+<</if>>
+
+:: CurrentDateAndTime [nobr]
+<silent>
+<!--This passage isn't needed, because I'm using TheMadExile's widgets:
+see passage :: MadExile and see use of the <<date>> widget in StoryCaption-->
+<<set $date to new Date()>>
+<<set _month to setup.months[$date.getMonth()]>>
+<<set _day to setup.weekdays[$date.getDay()]>>
+<<set _day_of_the_month to $date.getDate()>>
+<<set _yr to $date.getYear() + 1900>>
+<<unset $date>>
+</silent>
+
+<<= _day>>, <<= _month>> <<= _day_of_the_month>>, <<= _yr>>
+<!--
+<<print "The current time (in milliseconds since January 1, 1970 00:00:00 UTC) is " + Date.now()>>
+<<set $originalDate to new Date("October 20, 2018")>>
+<<set $timeDifference to Date.now() - $originalDate>>
+It has been $timeDifference milliseconds since October 20, 2018.
+ -->
+
+:: MadExile [widget]
+/*
+	Date & Time Advancement Widget Definitions
+*/
+/* Adds the specified number of minutes. */
+<<widget "addmins">>\
+<<run $gameDate.setMinutes($gameDate.getMinutes() + $args[0])>>\
+<</widget>>
+
+/* Adds the specified number of hours. */
+<<widget "addhours">>\
+<<run $gameDate.setHours($gameDate.getHours() + $args[0])>>\
+<</widget>>
+
+/* Adds the specified number of days. */
+<<widget "adddays">>\
+<<run $gameDate.setHours($gameDate.getHours() + $args[0] * 24)>>\
+<</widget>>
+
+<<widget "date">>\
+<<print String.format("{0} {1} {2}, {3}",
+	GameDays[$gameDate.getDay()],
+	GameMonths[$gameDate.getMonth()],
+	$gameDate.getDate(),
+	$gameDate.getFullYear()
+)>>\
+<</widget>>
+
+/* Prints the current time (12H). */
+<<widget "time12hr">>\
+<<if $gameDate.getHours() eq 0>>\
+12\
+<<elseif $gameDate.getHours() gt 12>>\
+<<print $gameDate.getHours() - 12>>\
+<<else>>\
+<<print $gameDate.getHours()>>\
+<</if>>:\
+<<if $gameDate.getMinutes() lt 10>>0<</if>><<print $gameDate.getMinutes()>> \
+<<if $gameDate.getHours() gte 12>>PM<<else>>AM<</if>>\
+<</widget>>
+
+/* Prints the current time (24H). */
+<<widget "time24hr">>\
+<<if $gameDate.getHours() lt 10>>0<</if>><<print $gameDate.getHours()>>:\
+<<if $gameDate.getMinutes() lt 10>>0<</if>><<print $gameDate.getMinutes()>>\
+<</widget>>
+
+/* Prints the current date and time (12H). Commented-out due to irritating 'problems' indicated by VSCode */
+<!--<<widget "datetime">><<date>> <<time12hr>> (<<time24hr>>)<</widget>>-->
+
+
+
+
+
+
+

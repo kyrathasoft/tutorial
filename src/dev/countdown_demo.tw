@@ -1,0 +1,24 @@
+:: CountdownDemo [noreturn]
+<<silent>>
+
+	You'll never see any of this!
+
+<</silent>>
+
+→ Hiding the guts of a countdown timer
+<<set $seconds to 5>>\
+Countdown: <span id="countdown">$seconds seconds remaining</span>!\
+<<silent>>
+	<<repeat 1s>>
+		<<set $seconds to $seconds - 1>>
+		<<if $seconds gt 0>>
+			<<replace "#countdown">>$seconds seconds remaining<</replace>>
+		<<else>>
+			<<replace "#countdown">>Too Late<</replace>>
+			/* do something useful here */
+			<<stop>>
+		<</if>>
+	<</repeat>>
+<</silent>>
+
+<<timed 6s>><center><a data-passage="DevNotes"><img width="32" src="./assets/images/back-button.png" alt="back" /></a></center><</timed>>

@@ -1,0 +1,95 @@
+:: DevNotes [noreturn]
+[[Developer Resources|DeveloperResources]]
+
+__Notes from 4/4/2025__might__
+# covered diff between temp and story variables
+# demonstrated unsetting a variable
+# showed examples of printing a variable's value
+
+__Notes from 4/3/2025__ 
+# got through passage 20 done in Lesson 007
+# added test function DoubleIt()
+# added a couple more reading Resources
+
+__Notes from 4/2/2025__
+# moved bryan_widgets.tw to dev folder
+# replaced 'mdash;' with $md throughout
+# implemented slicker coffee acquisition (see Lesson 7 in tutorial)
+# began setup on simple inventory system in tutorial game/story
+
+__Notes from 3/29/2025__
+# completed Lesson 5 of the tutorial series
+# began work on Lesson 6 off the same series
+
+__Notes from 3/27/2025__
+# fixed a misordered closing tag in psg TwineLesson004PostQuiz
+# tested / verified that quiz #1 grading works
+# blogged & embedded a Github gist of Twee3 code for quizzing
+# backed up some online copies of Gwentastic's Twee splitter
+
+__Notes from 3/26/2025__
+# fixed quiz-taking code
+# currently there are 5 questions in Quiz #1
+# Quiz #1 covers Lessons 1, 2, 3, and 4
+# Need to add at least 5 more questions to quiz
+
+__Notes from 3/24/2025__
+# added function redify on the setup object
+# added function greenify on the setup object
+# added macros {{{<<correct>>}}} and {{{<<wrong>>}}} to support quizzing
+# added first 3 quiz questions to Quiz #1
+# At some point, I'll want to go back and refactor quiz code
+
+__Notes from 3/22/2025__
+# Created widget {{{<<tut-links>>}}}
+<span class="tab">*</span> It looks through all tutorial passages
+<span class="tab">*</span> Tutorial psgs are tagged {{{[deonna]}}}
+
+__Notes from 3/20/2025__
+# Created custom widget {{{<<story-format-icons>>}}} for use in tutorial #3<br>
+<span class="tab">See line 188 in Twee3 file {{{twine-lesson-1.tw}}}
+
+__Notes from 3/19/2025__
+# Finished first two tutorial lessons for Deonna Pinson
+# replaced spelling out "Twine" with story variable {{{$tw}}}
+# replaced spelling "Sugarcube" with story variable {{{$sc}}}
+# I want to read/study https://learngitbranching.js.org/
+
+__Notes from 3/18/2025__
+# presented this twine to Ari Rosner, Sam Riker, and Amy Spier
+<span class="tab">I'm touched Beca believed in me and scheduled this presentation</span>
+
+__Notes from 3/17/2025__\
+<nobr><<set _lnk to "https://www.reddit.com/r/twinegames/comments/1jd2i3t/comment/mi7z24n">></nobr>
+# Was able to simplify my {{{getTotalPassagesCount()}}} function with [[GreyElf's help|_lnk]]
+# replaced 'paragragh' with 'sentence' in Start10 passage
+# eliminated {{{$introCompleted}}} variable; using {{{HasVisited("AfterIntro")}}} instead\
+<span class="tab">{{{return $('tw-passagedata').length;}}}</span>
+# [[test GoRandom widget|TestGoRandomWidget]]<nobr>
+for a GitHub gist of the code needed for the above test,<br>plug the following script into a webpage:<br>
+{{{<script src="https://gist.github.com/kyrathasoft/825e29d93fb333cddabebf5f3603c10a.js"></script>}}}</nobr>
+
+__Notes from 3/16/2025__\
+<nobr><<set _lnk to "https://marketplace.visualstudio.com/items?itemName=StephenGranade.twine-twee-language">></nobr>
+# Now the knight advancement submenu is hidden if //gamification// is off in Settings
+# There is a helpful main menu msg on how to regain access to the knight advancement submenu
+# Made a [[test|TestPassageFiltering]] of the setup.getPassageNames() function
+# Consider installing Stephen Granade's Twee3 [[extension|_lnk]]
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
+
+<nobr><<set _lnk to "https://www.reddit.com/r/twinegames/comments/1jbfeyk/need_help_with_border_image/">></nobr>
+__Notes from 3/14/2025__
+# HelloHelloHelpHello [[helped|_lnk]] me (14 Mar '25) get borderimg working as desired in homepage.tw.
+# Continue researching how to properly pass styling info as string parameter to {{{<<notify>>}}} macro
+# Decide on a stats system for our 'protagonist knight' (i.e., the user); prob can't simulate real combat
+# Removed toggle for gamification: users have to play along: tough noogies!
+# practicing [[countdown|CountdownDemo]] via the {{{repeat}}} and {{{stop}}} macros
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
+
+
+
+
+
+
+
+

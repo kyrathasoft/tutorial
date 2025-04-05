@@ -1,0 +1,33 @@
+name: Build
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Latest Tweego Release
+        run: |
+          TWEEGO_URL=$(curl -s -H "Authorization: token ${{ secrets.PERSONAL_TOKEN }}" \
+            https://api.github.com/repos/tmedwards/tweego/releases/latest \
+            | grep -o 'https://[^"]*linux-x64\.zip')
+          curl -L -o tweego.zip "$TWEEGO_URL"
+          unzip tweego.zip -d tweego
+          chmod +x tweego/tweego
+
+      - name: Build Game
+        run: |
+          mkdir -p ${{ vars.OUTPUT_DIRECTORY }}
+          tweego/tweego -o ${{ vars.OUTPUT_DIRECTORY }}/${{ vars.OUTPUT_FILENAME }} src
+
+      - name: Deploy to Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
+          publish_branch: pages
+          publish_dir: ./${{ vars.OUTPUT_DIRECTORY }}
+          cname: www.twinepractice.elleynn.com

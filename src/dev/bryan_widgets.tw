@@ -1,0 +1,97 @@
+:: KnightWidgets [widget nobr]
+<<widget "knight-stats">>
+<div class="tight-lines">Your knight has:<br>
+<span class="tab">''Bravery'' $knight.bravery</span><br> 
+<span class="tab">''Brawn'' $knight.brawn</span><br>
+<span class="tab">''Improvement Points'' $knight.improvementPoints</span><br>
+<span class="tab">''Intuition'' $knight.intuition</span><br>
+<span class="tab">''Loot'' $knight.loot</span><br>
+<span class="tab">''Past Advancements'' $knight.pastAdvancements</span><br>
+<span class="tab">''Prowess'' $knight.prowess</span><br>
+<span class="tab">''Spent Improvement Points'' $knight.spentPoints</span><br>
+</div>
+<</widget>>
+
+<<widget "gorandom">>
+    <<set _possiblePlaces = Story.lookup("tags", "random")>>
+    
+    <<if _possiblePlaces.length < 1>>
+        <<run alert('No random-tagged passages were found.')>>
+    <<else>>
+        <<set _possiblePlaces.shuffle()>>
+        <<set _selected to either(_possiblePlaces).title>>
+
+        <!-- if we wanted to select a passage that hadn't been visited
+        in 5 turns, we could use the following for loop-->
+
+        <!--
+        <<for _i to 0; _i lt _possiblePlaces.length; _i++>>
+            <<set _randomPassage = _possiblePlaces[_i]>>
+            <<if lastVisited(_randomPassage.title) gte 5>>
+                <<set _selected to _randomPassage.title>>
+                <<break>>
+            <</if>>
+        <</for>>
+        -->
+        
+        <<run alert('The selected random passage: ' + _selected)>>
+
+    <</if>>
+    
+<</widget>>
+
+<<widget "storyicons">>
+<div class="tooltip">
+  <img width="50" alt="chapbook" src="./assets/images/tutorial/chapbook.png">
+  <span class="tooltiptext">&nbsp;The Chapbook story format</span>
+</div>
+
+<div class="tooltip">
+  <img width="50" alt="harlowe" src="./assets/images/tutorial/harlowe.png">
+  <span class="tooltiptext">&nbsp;The Harlowe story format</span>
+</div>
+
+<div class="tooltip">
+  <img width="50" alt="paperthin" src="./assets/images/tutorial/paperthin.png">
+  <span class="tooltiptext">&nbsp;The Paperthin story format</span>
+</div>
+
+<div class="tooltip">
+  <img width="50" alt="snowman" src="./assets/images/tutorial/snowman.png">
+  <span class="tooltiptext">&nbsp;The Snowman story format</span>
+</div>
+
+<div class="tooltip">
+  <img width="50" alt="{$tw}" src="./assets/images/tutorial/sugarcube.png">
+  <span class="tooltiptext">&nbsp;The $sc story format</span>
+</div>
+
+<</widget>>
+
+<<widget "pseudo-widget">>
+<<if $args[0] eq undefined>>
+<<else>>
+    <<if $args[1] eq undefined>>
+      <<else>>
+        The args were $args[0] and $args[1].
+    <</if>>
+<</if>>
+<</widget>>
+
+<<widget "tut-links">>
+<<if Story.has($args[0])>>
+  <<if Story.has($args[1])>>
+            <center><a data-passage=$args[0] class="link-internal link-image"><img width="100" vspace="10" src="./assets/images/tutorial/tutorial-back.png"></a><<if hasVisited($args[1])>><a data-passage=$args[1] class="link-internal link-image"><img width="100" vspace="10" src="./assets/images/tutorial/tutorial-forward.png"></a><</if>></center>
+  <</if>>
+<</if>>
+<</widget>>
+
+/* Note: the [deonna] tag is what identifies a passage as being part of a tutorial */
+<<widget "tutorial-passages">>
+  <<set _tut_psgs to setup.getTutorialPassagesCount(), _total to setup.getTotalPassagesCount()>>
+  ''Out of _total total passages in this twine, _tut_psgs passages (<<= setup.calculatePercentage(_tut_psgs, _total)>>%) are dedicated to my $tw tutorial series.''
+<</widget>>
+
+<<widget no-wiki>>
+    <<print '<nowiki>' + Story.get(passage()).text + '</nowiki>'>>
+<</widget>>
