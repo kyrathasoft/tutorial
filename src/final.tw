@@ -106,22 +106,12 @@ Config.saves.onSave = function (save, details) {
 }
 */
 
-Setting.addToggle("autoname", {
-label : "Autoname Saves",
-default : false,
-});
 
-Setting.addToggle("gamify", {
-	label: "Gamification",
-	default: true,
-})
-
-setup.advancementMsg = "Congrats! You've advanced in your training!"
 setup.appTitle = "Beginner's Sugarcube Tutorial"
 setup.headerGlyph = '<img alt text="alt" width="25" align="bottom" src="./assets/images/bullet-point.png">'
 setup.homepageLinkback = "<br>[[Homepage]]";
 setup.tocLinkback = "<center>[[TOC|DisplayTOC]]</center>";
-setup.tut3 = "./assets/images/tut-lessons-4-6/";
+
 setup.weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 setup.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
