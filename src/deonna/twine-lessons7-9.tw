@@ -5,6 +5,7 @@ Welcome to Lesson 7:
 <li>learn how to assign values to variables</li>
 <li>learn about story versus temp variables</li>
 <li>learn to set multiple variables in a single line of $ts</li>
+<li>learn about the {{{setup}}} object and its use</li>
 <li>learn about //strings//</li>
 <li>learn about functions</li></ul>
 All of the above is in preparation for developing an inventory system and just generally increasing your knowledge.
@@ -370,7 +371,98 @@ And just so that you know, in the event that a variable were to be given multipl
 {{{<<set _x to 3>>}}}
 {{{<<print _x>>}}}
 
-If the above is our $ts, the value that will get printed to the screen in our game is ''3'.
+If the above is our $ts, the value that will get printed to the screen in our game is ''3''.  [[$ct|TwineLesson007Passage030]].
+
+<<tut-links "TwineLesson007Passage028" "TwineLesson007Passage030">>
+
+
+
+:: TwineLesson007Passage030 [deonna]
+Now let's talk about the {{{setup}}} object, which I've briefly mentioned before. You saw it used earlier in this lesson when we created a test function on the {{{setup}}} object in our story's Javascript section:
+
+<pre>setup.DoubleIt = function(mynumber){
+	return 2*mynumber;
+};</pre>
+[[$ct|TwineLesson007Passage031]]
+
+<<tut-links "TwineLesson007Passage029" "TwineLesson007Passage031">>
+
+
+
+:: TwineLesson007Passage031 [deonna]
+The {{{setup}}} object is for 'setting up' variable assignments and functions that will not change any throughout our $sg. For instance, say we want to assign a title to our $sg. That's something that $md once set $md isn't likely to change from playthrough to playthrough, and so it's a good candidate for the {{{setup}}} object. If we want the title to be //A Campfire Tale//, in italics, colored red, a bit larger than other text and centered at the top of the start passage, we could create the following in our story's Javascript section (accessed via menus ''{{{Story}}}'' > $js):
+
+{{{setup.Title = `//A Campfire Tale//`}}}
+
+Let's break down what's happening in the above line of $ts. [[$ct|TwineLesson007Passage032]].
+
+<<tut-links "TwineLesson007Passage030" "TwineLesson007Passage032">>
+
+
+
+:: TwineLesson007Passage032 [deonna]
+{{{setup.Title = `//A Campfire Tale//`}}}
+
+In our $sg's $js section, we might place the line of $ts shown above. This tells $sc "Place a variable named {{{Title}}} on the setup object. Assign it the {{{string}}} <font color='red'>A Campfire Tale</font> and style it with italics." In $sc, italics are specified using two forward slashes that immediate precede and follow the string we want to [[italicize|TwineLesson007Passage033]].
+
+<<tut-links "TwineLesson007Passage031" "TwineLesson007Passage033">>
+
+
+
+:: TwineLesson007Passage033 [deonna]
+See the little strange-looking characters that precede and follow ''{{{//A Campfire Tale//}}}''? They're called //backticks//, and below I'll make them larger and more pronounced, for clarity:
+
+<font size="+4">''{{{`}}}''</font>{{{//A Campfire Tale//}}}<font size="+4">''{{{`}}}''</font>
+
+These backticks in the following line tell $sc "Hey, treat everything between these backticks as $ts":
+
+{{{setup.Title = `//A Campfire Tale//`}}}
+
+On the next page, I'll show you how to make use of this variable in our [[story|TwineLesson007Passage034]].
+
+<<tut-links "TwineLesson007Passage032" "TwineLesson007Passage034">>
+
+
+
+:: TwineLesson007Passage034 [deonna]
+Make ''{{{Campfire}}}'' the startup passage and edit the passage, inserting at the top of the passage:
+
+<img src="./assets/images/tut-less-7-9/print-title.png">
+
+Run the $sg using $bp and let's see what [[happens|TwineLesson007Passage035]].
+
+<<tut-links "TwineLesson007Passage033" "TwineLesson007Passage035">>
+
+
+
+:: TwineLesson007Passage035 [deonna]
+<img align="left" hspace=10 vspace=8 src="./assets/images/tut-less-7-9/display-title-in-startup.png">Okay, it worked. You can see that it even retains the italics that we specified. We can alter this title's appearance further, if desired. Let's say we want it be centered on the screen, rather than left-aligned. How would we do that? It only requires a pair of HTML tags. Just as we've seen that there are start/end tags for no linebreak (i.e., {{{<<nobr>>}}} and {{{<</nobr>>}}}), there are centering tags we can use to get the desired text-centering. Let's go back into the $js section of our $sg in $tw and modify the {{{Title}}} variable on the setup object as demonstrated on the next [[page|TwineLesson007Passage036]].
+
+<<tut-links "TwineLesson007Passage034" "TwineLesson007Passage036">>
+
+
+
+:: TwineLesson007Passage036 [deonna]
+We're going to retain everything and just add the start/end tags for centering as shown below:
+
+<img src="./assets/images/tut-less-7-9/center-the-title.png">
+
+Sure enough, if you run the game you'll see that the title is now centered at the top of our ''{{{Campfire}}}'' passage. Perhaps you're like, "Mmmm, it's //okay// but I wish it stood out a bit more." Well, we can make the text a bit larger and turn it [[red|TwineLesson007Passage037]].
+
+<<tut-links "TwineLesson007Passage035" "TwineLesson007Passage037">>
+
+
+
+
+:: TwineLesson007Passage037 [deonna]
+Modify our variable on the {{{setup}}} object as shown below:
+
+<center>{{{setup.Title = `<font size="+2" color="red"><center>//A Campfire Tale//</center></font>`}}}</center>
+
+
+
+
+
 /*
 
 The anatomy of an inventory system:

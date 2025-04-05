@@ -11,15 +11,17 @@ body{
 	*/
 
 /* To revert to Quattrocento font, remove or comment-out the above, and uncomment the following
-two lines of code */
+few lines of code */
 
 
 /* @import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap'); */
  /* body { font-family: 'Quattrocento', sans-serif; font-size: 100%; font-weight: 400; line-height: 26.4px;} */
  
- @import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
  
- body { font-family: 'Roboto', sans-serif; font-size: 100%; font-weight: 200; line-height: 26.4px;}
+ @import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@500;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+ 
+ body { font-family: 'Roboto', sans-serif; font-size: 100%; font-weight: 500; line-height: 26px;}
+
 
 :root {
   --mainbg: white; /* light color */
