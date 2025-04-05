@@ -1,10 +1,9 @@
 :: TwineLesson007Passage001 [deonna]
-<h2>$tw & $sc <span class="pulse">Lesson # 7</span> $md Our First Function & An Inventory</h2>
+<h2>$tw & $sc <span class="pulse">Lesson # 7</span> $md Our First Function, Strings, & The Setup Object</h2>
 Welcome to Lesson 7:
 <ul><li>improve the ''{{{YourBackpack}}}'' passage $ts</li>
 <li>learn how to assign values to variables</li>
 <li>learn about story versus temp variables</li>
-<li>learn to set multiple variables in a single line of $ts</li>
 <li>learn about the {{{setup}}} object and its use</li>
 <li>learn about //strings//</li>
 <li>learn about functions</li></ul>
@@ -458,6 +457,41 @@ Sure enough, if you run the game you'll see that the title is now centered at th
 Modify our variable on the {{{setup}}} object as shown below:
 
 <center>{{{setup.Title = `<font size="+2" color="red"><center>//A Campfire Tale//</center></font>`}}}</center>
+
+If you didn't make a typo (I recommend copy/paste), then running the story now shows this (image is ~800 pixels wide, so if you're viewing it on a small device...). Let's see the [[results|TwineLesson007Passage037b]]...
+
+<<tut-links "TwineLesson007Passage036" "TwineLesson037Passage037b">>
+
+
+
+:: TwineLesson007Passage037b [deonna]
+<img src="./assets/images/tut-less-7-9/red-big-centered-title.png">
+
+And while we're focused on the aesthetics of our $sg, wouldn't it be nice to have the dancing flames of an actual campfire directly below our centered title? Imagine if, upon launching our $sg, the player saw [[this|TwineLesson007Passage038]].
+
+<<tut-links "TwineLesson007Passage037" "TwineLesson007Passage038">>
+
+
+
+:: TwineLesson007Passage038 [deonna black]
+<font size="+2" color="red"><center>//A Campfire Tale//<br>
+<img width=150 src="./assets/images/animated/campfire100w.gif"></center></font>
+
+You sit before a cheerful campfire, the crackling flames hypnotic, the warmth from the blaze soothing the cares from your knotted muscles. 
+
+<center><div id="theDiv">This isn't too difficult to accomplish, and I will show you how in a future lesson in this tutorial series. We've covered a lot in this lesson: functions, strings, //story// versus //temp// variables, and the {{{setup}}} object. In Lesson 08, we'll turn our attention to developing a simple inventory system.</div>
+
+[[$ct|TwineLesson008Passage001]] to Lesson 8.
+</center>
+
+
+
+/* End Lesson Seven; Lesson Eight Follows */
+
+
+:: TwineLesson008Passage001 [deonna]
+<h2>$tw & $sc <span class="pulse">Lesson # 8</span> $md A Simple Inventory System</h2>
+Welcome to Lesson 8! In this lesson, we'll develop a simple inventory system.
 
 
 

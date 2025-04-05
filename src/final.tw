@@ -117,7 +117,7 @@ Setting.addToggle("gamify", {
 })
 
 setup.advancementMsg = "Congrats! You've advanced in your training!"
-setup.appTitle = "The Interactive Trainer"
+setup.appTitle = "Beginner's Sugarcube Tutorial"
 setup.headerGlyph = '<img alt text="alt" width="25" align="bottom" src="./assets/images/bullet-point.png">'
 setup.homepageLinkback = "<br>[[Homepage]]";
 setup.tocLinkback = "<center>[[TOC|DisplayTOC]]</center>";

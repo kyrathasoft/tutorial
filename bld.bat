@@ -1,2 +1,2 @@
-tweego src -o interactive-trainer.html
-start "" interactive-trainer.html
+tweego src -o index.html
+start "" index.html

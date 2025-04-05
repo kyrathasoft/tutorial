@@ -335,3 +335,16 @@ body.forest {
 	background-size: cover; /* maybe contain, based on the image and goals */
 }
 
+body.black {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+#theDiv {
+	width: 400px;
+	border: solid darkgray 1px;
+	border-radius: 10px;
+	padding: 7px;
+	background-color: #36454F;
+  }
+
