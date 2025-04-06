@@ -484,7 +484,7 @@ You sit before a cheerful campfire, the crackling flames hypnotic, the warmth fr
 [[$ct|TwineLesson008Passage001]] to Lesson 8.
 </center>
 
-<<tut-links "TwineLesson007Passage037" "TwineLesson008Passage001">>
+<<tut-links "TwineLesson007Passage037b" "TwineLesson008Passage001">>
 
 
 
@@ -494,6 +494,15 @@ You sit before a cheerful campfire, the crackling flames hypnotic, the warmth fr
 :: TwineLesson008Passage001 [deonna]
 <h2>$tw & $sc <span class="pulse">Lesson # 8</span> $md A Simple Inventory System</h2>
 Welcome to Lesson 8! In this lesson, we'll develop a simple inventory system.
+
+Without further ado, let's jump right into the [[lesson|TwineLesson008Passage002]].
+
+<<tut-links "TwineLesson007Passage038" "TwineLesson008Passage002">>
+
+
+
+:: TwineLesson008Passage002 [deonna]
+psg 2
 
 
 
