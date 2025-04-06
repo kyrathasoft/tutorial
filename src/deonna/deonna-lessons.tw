@@ -1,6 +1,6 @@
 :: DeonnaLessonIndex [deonna index noreturn]
 <h2 align="center">$tw & $sc Lessons for the Gentle Reader</h2>
-    <br>To view these lessons comfortably, use a tablet, laptop, or desktop computer $md not your phone.
+    To view these lessons comfortably, use a tablet, laptop, or desktop computer $md not your phone.
     
     <<nobr>><center><<tutorial-passages>><br>''A couple other Twine tutorials:''<br>
         <img width="48" src="./assets/images/tutorial/twine-scissors.png"><br>
@@ -17,7 +17,7 @@
     # [[Lesson # 6|TwineLesson006Passage001]]: ''Of Coffee & Repressed Memories'' (27 passages)
     # [[Lesson # 7|TwineLesson007Passage001]]: ''Our First Function, Strings, & The Setup Object'' (38 passages)
 
-    <center>Tutorial images: 143 across 5 directories, totaling 1.30 Mb</center>
+    <center>Tutorial images: 118 across 5 directories, totaling 1.34 Mb</center>
     <<run UIBar.show();>>
     
     
