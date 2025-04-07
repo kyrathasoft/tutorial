@@ -1,6 +1,10 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 4/6/2025__ 
+# tweaked font size & spacing on tutorial index passage
+# added a back button the Dev Only password gate passage
+
 __Notes from 4/5/2025__
 # removed anigif of thinking head in profile view
 # the above had been displayed in {{{StoryCaption}}}

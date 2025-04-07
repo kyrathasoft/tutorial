@@ -198,6 +198,8 @@ setup.calculatePercentage = function(arg1, arg2) {
   return Math.round(percentage);
 };
 
+setup.imgs79 = "./assets/images/tut-less-7-9/";
+
 :: StoryInit
 
 <<set setup.achievements to recall('achievements', { })>>

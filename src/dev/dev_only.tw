@@ -31,3 +31,5 @@ $(document).one(":passagerender", function (ev) {
 });
 <</script>>
 <span id='textbox-reply'></span>
+
+<center><a data-passage=$return><img width="32" src="./assets/images/back-button.png" alt="back" /></a></center>

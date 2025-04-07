@@ -1,19 +1,10 @@
 :: Start [nobr]
 
 <!-- The following to be commented-out after testing-->
-<<goto TwineLesson007Passage038>>
-<!--<<goto "TwineLesson007Passage038">>
+<<goto TwineLesson008Passage006>>
+<!--<<goto DeonnaLessonIndex>>
 
 <!--The above to be commented-out after testing-->
-
-<<run UIBar.hide();>><center><img src="./assets/images/bg-light.png"><br><br>
-<span class="tab"><img width="32" src="./assets/images/grayscale-trainer.png"> <font size="+3">Hi, I'm your Interactive Trainer</font></span></center><br>
-
-<<if not hasVisited("AfterIntro")>>Visit the introductory tutorial?
-<ul>
-<li>[[Yes, please|IntroTutorial]]</li>
-<li><<link "No thanks" "DisplayTOC">><</link>></li>
-</ul><<else>><<goto DisplayTOC>><</if>>
 
 
 :: StoryStylesheet [stylesheet]

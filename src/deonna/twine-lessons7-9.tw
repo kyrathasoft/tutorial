@@ -502,8 +502,60 @@ Without further ado, let's jump right into the [[lesson|TwineLesson008Passage002
 
 
 :: TwineLesson008Passage002 [deonna]
-psg 2
+All right, I know that Lesson 007 was painful $md probably. If you've never encountered variables other than in school, it may have made your head ache. But it was //necessary//. I mean, you can make a branching narrative without variables, and it counts as interactive fiction insofar as the player's choices affect which way s/he goes at various branch points. [[But|TwineLesson008Passage003]]...
 
+<<tut-links "TwineLesson008Passage001" "TwineLesson008Passage003">>
+
+
+
+:: TwineLesson008Passage003 [deonna]
+But ... use of variables is where it's //at// when it comes to creating more complex experiences with $tw. Without variables, you can make chocolate pudding. With variables, you can whip out some Mississippi Mud Pie. The reason for this is that variables enable our $sg to be //stateful// $md stateful in the same way that many beloved video games are stateful, in that they portray and keep track of an entire universe on the head of a pin, so to speak. In short, variables enable //statefulness//, and statefulness creates verisimilitude $md because real life is complex and stories are therefore more absorbing when they mirror this [[complexity|TwineLesson008Passage004]].
+
+<<tut-links "TwineLesson008Passage002" "TwineLesson008Passage004">>
+
+
+
+:: TwineLesson008Passage004 [deonna]
+It turns out that givng the player of our game or the reader of our story an inventory can, for many people, be an enjoyable and engaging way of contributing to //statefulness//. Another benefit of inventory items is that, along with tracking which passages have been visited and how many times, their presence or absence can open or close various branching paths in our $sg. The most common way of implementing a player's inventory is by using arrays, a programming data [[structure|TwineLesson008Passage005]].
+
+<<tut-links "TwineLesson008Passage003" "TwineLesson008Passage005">>
+
+
+
+:: TwineLesson008Passage005 [deonna]
+<img width=40 src="./assets/images/tut-less-7-9/box.png">//Now wait just a minute!// you say. //I haven't finished digesting all that programming stuff from Lesson 7 yet!// I know, and that's okay. Turns out that arrays are just groups of variables. Remember how I told you to think of a variable as a box that can hold some information? Well, an array is a grouping of two or more variables of the same type. If I wanted to specify three {{{string}}} variables, I could put this in my $ts:
+
+{{{<<set $inventory to ['a canteen', 'a pocket knife', 'a handkerchief']>>}}}
+
+On the next page, I'll illustrate how an array [[works|TwineLesson008Passage006]].
+
+<<tut-links "TwineLesson008Passage004" "TwineLesson008Passage006">>
+
+
+
+:: TwineLesson008Passage006 [deonna]
+<center><img src="./assets/images/tut-less-7-9/array-boxes.png">
+
+{{{<<set $inventory to ['a canteen', 'a pocket knife', 'a handkerchief']>>}}}</center>
+Sticking with our analogy of variables being boxes that can store things in, you can see both the $ts and a visual representation of an array, which we load with three items we want the player to have in her inventory when our $sg [[begins|TwineLesson008Passage007]].
+
+<<tut-links "TwineLesson008Passage005" "TwineLesson008Passage007">>
+
+
+
+:: TwineLesson008Passage007 [deonna]
+<img align="left" hspace=10 vspace=8 src="./assets/images/tut-less-7-9/three-vars.png">Instead of using an array, we //could// instead use three separate string variables:
+{{{<<set $inventoryItem1 to "canteen">>}}}
+{{{<<set $inventoryItem2 to "pocket knife">>}}}
+{{{<<set $inventoryItem3 to "a handkerchief">>}}}<br>
+If using $tw is your first foray into programming, you won't yet understand the way that arrays can make our lives easier $md but by and by, you will. Now, let's take our first step toward creating an inventory for $tut_tit. [[$ct|TwineLesson008Passage008]].
+
+<<tut-links "TwineLesson008Passage006" "TwineLesson008Passage008">>
+
+
+
+:: TwineLesson008Passage008 [deonna]
+Psg 8
 
 
 
