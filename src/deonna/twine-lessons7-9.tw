@@ -537,7 +537,7 @@ On the next page, I'll illustrate how an array [[works|TwineLesson008Passage006]
 <center><img @src="setup.imgs79 + 'array-boxes.png'">
 
 {{{<<set $inventory to ['a canteen', 'a pocket knife', 'a handkerchief']>>}}}</center>
-Sticking with our analogy of variables being boxes that can store things in, you can see both the $ts and a visual representation of an array, which we load with three items we want the player to have in her inventory when our $sg [[begins|TwineLesson008Passage007]].
+Sticking with our analogy of variables being boxes that can store things in, you can see above both the $ts and a visual representation of an array, which we load with three items we want the player to have in her inventory when our $sg [[begins|TwineLesson008Passage007]].
 
 <<tut-links "TwineLesson008Passage005" "TwineLesson008Passage007">>
 
@@ -556,7 +556,6 @@ If using $tw is your first foray into programming, you won't yet understand the 
 
 :: TwineLesson008Passage008 [deonna]
 To take that first step, we'll need to add the following $ts to our {{{StoryInit}}} passage:
-
 {{{<<set $inventory to ['a canteen', 'a pocket knife', 'a handkerchief']>>}}}
 
 The above line creates an array with three //elements//. Based on previous lessons, can you tell what type of variable this array holds? If you guessed //string//, you're right. It's the quotes that give it [[away|TwineLesson008Passage009]].
@@ -566,11 +565,11 @@ The above line creates an array with three //elements//. Based on previous lesso
 
 
 :: TwineLesson008Passage009
-The next step is to create a new passage named {{{YourInventory}}}. After creating the passage, we're going to do something we haven't done previously in this tutorial series: add a //tag// to the passage. That tag should be the word "noreturn":
+<img hspace=5 @src="setup.imgs79 + 'tag-button.png'">The next step is to create a new passage named {{{YourInventory}}}. After creating the passage, we're going to do something we haven't done previously in this tutorial series: add a //tag// to the passage. That tag should be the word "noreturn". To add the tag, open the {{{YourInventory}}} passage in an editor window, then click the "Add Tag" button and type in 'noreturn' $md without the quotes:
 
 <img @src="setup.imgs79 + 'psg-your-inventory.png'">
 
-By placing this $ts in the {{{StoryInit}}} passage, the $inventory array's contents are immediately available as the player starts our [[story|TwineLesson007Passage010]].
+In the {{{YourInventory}}} passage, write "You're viewing your inventory..." We now have an array of three items forming the player's inventory, and we've created a passage to display the array's [[contents|TwineLesson008Passage010]].
 
 <<tut-links "TwineLesson008Passage008" "TwineLesson008Passage010">>
 
@@ -579,26 +578,70 @@ By placing this $ts in the {{{StoryInit}}} passage, the $inventory array's conte
 :: TwineLesson008Passage010
 Now, if there were only a way for the player to view the contents of their inventory when desired $md but it would stay out of sight and out of mind the rest of the time. Put this placeholder text in passage {{{YourInventory}}}: //you're viewing your inventory...// Now, instead of linking to this passage in the ordinary way, let's create another passage $md a special one named {{{StoryMenu}}}.
 
-/* NEXT STEPS:
+In {{{StoryMenu}}}, add the following line of $ts:
+{{{<<link "Inventory">><<goto YourInventory>><</link>><br>}}}
 
-(1) add passage StoryMenu and give it this TwineScript: <<link "Inventory">><<goto YourInventory>><</link>><br>
+Then save your [[changes|TwineLesson008Passage011]].
 
-(2) add the following function to the JS section of our story: */
+<<tut-links "TwineLesson008Passage009" "TwineLesson008Passage011">>
 
-/* Trigger the following code at the start of navigation to a new passage.*/ {{{
 
-	$(document).on(":passagestart", function (event) {
-	/* Make sure the current passage doesn't have a "noreturn" tag. */
-	if (!tags().includes("noreturn")) {
-		/* If it doesn't, then set $return to the current passage name. */
-		State.variables.return = passage();
-	}
+
+
+:: TwineLesson008Passage011
+Now, we're going to add a function to the javascript section of your story. To do that, click the {{{Story}}} menu item, then the {} {{{Javascript}}} button. Here is the function you'll copy/paste into the javascript section of your story (don't overwrite the other stuff that's already there $md just add this function above or below that stuff):
+ 
+ {{{$(document).on(":passagestart", function (event) {}}}
+<span class="tab">{{{/* Make sure the current passage doesn't have a "noreturn" tag. */}}}</span>
+<span class="tab">{{{if (!tags().includes("noreturn")) {}}}</span>
+<span class="tab"><span class="tab">{{{/* If it doesn't, then set $return to the current passage name. */}}}</span></span>
+<span class="tab"><{{{State.variables.return = passage();}}}</span>
+<span class="tab">}</span>
 });
-}}}
 
-/*
-(3)
-*/
+For the time being, don't worry too much about why the above function is important. Just know that it works hand-in-hand with the 'noreturn' tag that we added to the {{{YourInventory}}} [[passage|TwineLesson008Passage012]]. 
+
+<<tut-links "TwineLesson008Passage010" "TwineLesson008Passage012">>
+
+
+
+:: TwineLesson008Passage012
+<img align="left" hspace=10 vspace=3 @src="setup.imgs79 + 'inventory-button.png'">Let's launch our $sg and see what we have wrought. In the game, as it runs in your default browser, notice that there is now an Inventory button in the sidebar. That's because of the StoryMenu passage we added, and the $ts we put in that passage. If you click on it, what it shows isn't particularly helpful, but you can then just use the Back button to get back to wherever you were before clicking on the sidebar's Inventory button. On the next page, we'll work on making our {{{YourInventory}}} passage more [[helpful|TwineLesson008Passage013]].
+
+<<tut-links "TwineLesson008Passage011" "TwineLesson008Passage013">>
+
+
+
+
+:: TwineLesson008Passage013
+Now, let's replace the current text in our {{{YourInventory}}} passage with:
+{{{<<nobr>>Your inventory contains:}}} 
+
+{{{<<if $inventory.length lt 1>>nothing<<elseif $inventory.length eq 1>>1 item
+<<else>><<= $inventory.length>> items<</if>>}}}
+
+{{{<br><br>}}}
+{{{<<if $inventory.length eq 1>>$inventory[0]<</if>>}}}
+{{{<<if $inventory.length gt 1>>}}}
+<span class="tab">{{{<<= $inventory.join(`<br>`)>><br>}}}</span>
+{{{<</if>>}}}
+{{{<</nobr>>}}}
+
+It might be best to copy/paste the above $ts into the {{{YourInventory}}} [[passage|TwineLesson008Passage014]].
+
+<<tut-links "TwineLesson008Passage012" "TwineLesson008Passage014">>
+
+
+
+:: TwineLesson008Passage014
+After adding the $ts from the previous page to the {{{YourInventory}}} passage, run the $sg again and click on the Inventory button in the sidebar. You'll get a much more helpful printout to the screen this time:
+
+<img @src="setup.imgs79 + 'useful-inventory-msg.png'">
+
+Well now, that's a much more useful message, right?
+
+
+
 
 
 
