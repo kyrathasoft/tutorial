@@ -1,6 +1,15 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 4/7/2025__ 
+# used attribute directive markup to shorten {{{<img src>}}} in Lesson 1
+# used attrib directive markup to shorten {{{<img src>}}} in Lesson 2
+# used attrib directive markup to shorten {{{<img src>}}} in Lesson 3
+# used attrib directive markup to shorten {{{<img src>}}} in Lesson 4
+# corrected markup in Lesson 5 Passage 5
+# used attrib directive markup to shorten {{{<img src>}}} in Lesson 5
+# used attrib directive markup to shorten {{{<img src>}}} in Lesson 6
+
 __Notes from 4/6/2025__ 
 # tweaked font size & spacing on tutorial index passage
 # added a back button the Dev Only password gate passage

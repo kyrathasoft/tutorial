@@ -523,7 +523,7 @@ It turns out that givng the player of our game or the reader of our story an inv
 
 
 :: TwineLesson008Passage005 [deonna]
-<img width=40 src="./assets/images/tut-less-7-9/box.png">//Now wait just a minute!// you say. //I haven't finished digesting all that programming stuff from Lesson 7 yet!// I know, and that's okay. Turns out that arrays are just groups of variables. Remember how I told you to think of a variable as a box that can hold some information? Well, an array is a grouping of two or more variables of the same type. If I wanted to specify three {{{string}}} variables, I could put this in my $ts:
+<img width=40 @src="setup.imgs79 + 'box.png'">//Now wait just a minute!// you say. //I haven't finished digesting all that programming stuff from Lesson 7 yet!// I know, and that's okay. Turns out that arrays are just groups of variables. Remember how I told you to think of a variable as a box that can hold some information? Well, an array is a grouping of two or more variables of the same type. If I wanted to specify three {{{string}}} variables, I could put this in my $ts:
 
 {{{<<set $inventory to ['a canteen', 'a pocket knife', 'a handkerchief']>>}}}
 
@@ -534,7 +534,7 @@ On the next page, I'll illustrate how an array [[works|TwineLesson008Passage006]
 
 
 :: TwineLesson008Passage006 [deonna]
-<center><img src="./assets/images/tut-less-7-9/array-boxes.png">
+<center><img @src="setup.imgs79 + 'array-boxes.png'">
 
 {{{<<set $inventory to ['a canteen', 'a pocket knife', 'a handkerchief']>>}}}</center>
 Sticking with our analogy of variables being boxes that can store things in, you can see both the $ts and a visual representation of an array, which we load with three items we want the player to have in her inventory when our $sg [[begins|TwineLesson008Passage007]].
@@ -544,7 +544,7 @@ Sticking with our analogy of variables being boxes that can store things in, you
 
 
 :: TwineLesson008Passage007 [deonna]
-<img align="left" hspace=10 vspace=8 src="./assets/images/tut-less-7-9/three-vars.png">Instead of using an array, we //could// instead use three separate string variables:
+<img align="left" hspace=10 vspace=8 @src="setup.imgs79 + 'three-vars.png'">Instead of using an array, we //could// instead use three separate string variables:
 {{{<<set $inventoryItem1 to "canteen">>}}}
 {{{<<set $inventoryItem2 to "pocket knife">>}}}
 {{{<<set $inventoryItem3 to "a handkerchief">>}}}<br>

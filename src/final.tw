@@ -198,7 +198,9 @@ setup.calculatePercentage = function(arg1, arg2) {
   return Math.round(percentage);
 };
 
-setup.imgs79 = "./assets/images/tut-less-7-9/";
+setup.imgs13 = "assets/images/tutorial/";
+setup.imgs46 = "assets/images/tut-lessons-4-6/";
+setup.imgs79 = "assets/images/tut-less-7-9/";
 
 :: StoryInit
 

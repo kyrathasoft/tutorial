@@ -14,14 +14,14 @@ Let's [[proceed|TwineLesson004Passage002]].
 
 The first thing let's do in this lesson is change the name of our story. To do that, we'll click the Story menu item, and then the Re-name submenu item [[below it|TwineLesson004Passage003]].
 
-<img src="./assets/images/tut-lessons-4-6/story-rename.png">
+<img @src="setup.imgs46 + 'story-rename.png'">
 
 <<tut-links "TwineLesson004Passage001" "TwineLesson004Passage003">>
 
 :: TwineLesson004Passage003 [deonna]
 Rename the story to //A Campfire Tale//.
 
-<img src="./assets/images/tut-lessons-4-6/renamed.png">
+<img @src="setup.imgs46 + 'renamed.png'">
 
 After entering the new name for the story, click the OK [[button|TwineLesson004Passage004]]. 
 
@@ -31,7 +31,7 @@ After entering the new name for the story, click the OK [[button|TwineLesson004P
 
 Then, play the story by clicking ''Build'' then ''Play''. Here is what you should see, when $tw opens a new tab in your default web browser and presents the story:
 
-<img src="./assets/images/tut-lessons-4-6/playing1.png">
+<img @src="setup.imgs46 + 'playing1.png'">
 
 Let's break down the parts that we're [[seeing|TwineLesson004Passage005]].
 
@@ -41,7 +41,7 @@ Let's break down the parts that we're [[seeing|TwineLesson004Passage005]].
 
 Understand that the entire $sg runs in your web browser. But for the sake of clarity, let's break down that interface into two parts $md the Sidebar, and the Main View.
 
-<img src="./assets/images/tut-lessons-4-6/parts.png">
+<img @src="setup.imgs46 + 'parts.png'">
 
 The Main View is where the $sc story format displays the text of our story. I should point out that ''Main View'' is a term of my own creation. The ''Sidebar'', however, is known as such across most groups of $tw enthusiasts. So, what about this [[Sidebar|TwineLesson004Passage006]]?
 
@@ -49,19 +49,19 @@ The Main View is where the $sc story format displays the text of our story. I sh
 
 :: TwineLesson004Passage006 [deonna]
 
-<img src="./assets/images/tut-lessons-4-6/parts.png"> 
+<img @src="setup.imgs46 + 'parts.png'"> 
 The Sidebar is shown by default for any $tw $sg created with the $sc story format. It can be hidden by the author, but ordinarily it's displayed. I want to point out something to you. As the running game is displayed in your browser, click the hyperlinked word "east" in the first passage. This will take you from the passage named {{{Campfire}}} to the passage named {{{Cliff}}}. You'll remember those from Lesson 03. After making this passage [[transition|TwineLesson004Passage007]]...
 
 <<tut-links "TwineLesson004Passage005" "TwineLesson004Passage007">>
 
 :: TwineLesson004Passage007 [deonna]
-<img src="./assets/images/tutorial/play-to-cliff.png">
+<img @src="setup.imgs46 + 'play-to-cliff.png'">
 ... you'll see the above displayed in the Main View. It should look familiar. You saw it in Lesson 3. Now, in your running $sg, look at the Sidebar. You'll notice it shows a left-pointing and right-pointing arrow at the top of the Sidebar. These are highlighted on the next [[page|TwineLesson004Passage008]].
 
 <<tut-links "TwineLesson004Passage006" "TwineLesson004Passage008">>
 
 :: TwineLesson004Passage008 [deonna]
-<img src="./assets/images/tut-lessons-4-6/back-and-forward-hx-controls.png">
+<img @src="setup.imgs46 + 'back-and-forward-hx-controls.png'">
 
 You'll notice in the screenshot above that I've circled the {{{Back}}} and {{{Forward}}} history controls in yellow, just to draw your attention to them. In the actual running $sg, they aren't circled, and you'll notice that the left arrow (which we call the {{{Back}}} history control button) is enabled (bright white), while the right arrow (which we call the {{{Forward}}} history control) is disabled (faded). What [[gives|TwineLesson004Passage009]]?
 
@@ -70,7 +70,7 @@ You'll notice in the screenshot above that I've circled the {{{Back}}} and {{{Fo
 :: TwineLesson004Passage009 [deonna]
 Well, you're in the {{{Cliff}}} passage. You can't go any farther; you can only reverse course and return to the campfire. Therefore, the {{{Forward}}} history button is disabled. But notice that the {{{Back}}} button //is// enabled:
 
-<img align="left" hspace=10 vspace=8 src="./assets/images/tut-lessons-4-6/back-enabled-forward-disabled.png"> If you click on the {{{Back}}} button, the story will rewind a step. In the Main View, you'll see the text description change from that of the {{{Cliff}}} passage to that of the {{{Campfire}}} passage. You'll notice the {{{Forward}}} history button has now become enabled (a bright white arrow), and if you click it, you'll be taken back to the {{{Cliff}}} [[passage|TwineLesson004Passage010]].
+<img align="left" hspace=10 vspace=8 @src="setup.imgs46 + 'back-enabled-forward-disabled.png'"> If you click on the {{{Back}}} button, the story will rewind a step. In the Main View, you'll see the text description change from that of the {{{Cliff}}} passage to that of the {{{Campfire}}} passage. You'll notice the {{{Forward}}} history button has now become enabled (a bright white arrow), and if you click it, you'll be taken back to the {{{Cliff}}} [[passage|TwineLesson004Passage010]].
 
 <<tut-links "TwineLesson004Passage008" "TwineLesson004Passage010">>
 
@@ -93,7 +93,7 @@ These buttons are also known as ''Undo'' and ''Redo''. Undo reverses the last ac
 
 If the undo or redo button is disabled, that's because there's nothing to undo or redo yet. Here is an animation showing how $md in our current two-passage story $md we can use these buttons to go back and forth between the [[passages|TwineLesson004Passage012]].
 
-<img src="./assets/images/animated/undoRedo.gif">
+<img src="assets/images/animated/undoRedo.gif">
 
 <<tut-links "TwineLesson004Passage010b" "TwineLesson004Passage012">>
 
@@ -102,8 +102,8 @@ If the undo or redo button is disabled, that's because there's nothing to undo o
 So, what do we call the area of $tw shown above? The graph-paper-like background is known as the Story Map. On it, we place Passages, and those Passages contain discrete chunks of our $sg. In some cases, individual Passages may represent distinct locations the player can visit, as we've done thus far in //A Campfire Tale//. The individual boxes representing each passage are called [[Cards|TwineLesson004Passage013]].
 
 :: TwineLesson004Passage013 [deonna]
-<img src="./assets/images/tut-lessons-4-6/story-map-labels.png">
-So, the Story Map contains Cards representing passages. We can drag these passages around the Story Map using our mouse, in order to arrange them into clusters that aid our mind in keep our $sg organized as our project gets larger. There is some additional detail about navigating the Story Map that can be read <a target="_new" href="https://twinery.org/reference/en/editing-stories/navigating.html">here</a>. Let's [[$ct|TwineLesson004Passage014]].
+<img @src="setup.imgs46 + 'story-map-labels.png'">
+So, the Story Map contains Cards representing passages. We can drag these passages around the Story Map using our mouse, in order to arrange them into clusters that aid our mind in keeping our $sg organized as our project gets larger. There is some additional detail about navigating the Story Map that can be read <a target="_new" href="https://twinery.org/reference/en/editing-stories/navigating.html">here</a>. Let's [[$ct|TwineLesson004Passage014]].
 
 <<tut-links "TwineLesson004Passage012" "TwineLesson004Passage014">>
 
@@ -127,40 +127,40 @@ In this lesson, we'll expand our story a bit, adding not only a few more passage
 <<tut-links "TwineLesson005Passage001" "TwineLesson005Passage003">>
 
 :: TwineLesson005Passage003 [deonna]
-<img align="left" hspace=10 vspace=8 src="./assets/images/tut-lessons-4-6/third-passage.png">To add a third passage to our $sg, we'll click the New button in the $tw menu, so that a new, unnamed passage is added to our Story Map (remember, the Story Map is the area in $tw that looks sort of like graphing paper).<br><br>When we first add the new passage, it'll appear near the center of the Story Map, but in the screenshot above, you see that I've dragged it with my mouse and placed it underneath our Start passage. One of the things a lot of people new to $tw find helpful is this ability to visually arrange the nodes of their story. As our campfire tale develops, you'll begin to see how useful the Story Map can be in aiding your brain in keeping the project organized. If you want to see how confusing an unorganized Story Map can look as a project grows in size, click <a target="_new" href="https://bryanmiller.us/2025/03/complex-unorganized-storymap-in-twine">here</a> to open a page in a new browser tab.
+<img align="left" hspace=10 vspace=8 @src="setup.imgs46 + 'third-passage.png'">To add a third passage to our $sg, we'll click the New button in the $tw menu, so that a new, unnamed passage is added to our Story Map (remember, the Story Map is the area in $tw that looks sort of like graphing paper).<br><br>When we first add the new passage, it'll appear near the center of the Story Map, but in the screenshot above, you see that I've dragged it with my mouse and placed it underneath our Start passage. One of the things a lot of people new to $tw find helpful is this ability to visually arrange the nodes of their story. As our campfire tale develops, you'll begin to see how useful the Story Map can be in aiding your brain in keeping the project organized. If you want to see how confusing an unorganized Story Map can look as a project grows in size, click <a target="_new" href="https://bryanmiller.us/2025/03/complex-unorganized-storymap-in-twine">here</a> to open a page in a new browser tab.
 
 When you're ready to continue, click [[here|TwineLesson005Passage004]].
 
 <<tut-links "TwineLesson005Passage002" "TwineLesson005Passage004">>
 
 :: TwineLesson005Passage004 [deonna]
-<img align="left" vspace=8 hspace=10 src="./assets/images/tut-lessons-4-6/dot-graph-3-passages.png">We can visualize our current $sg as shown in the image on the left. This is called a dot-graph representation. Notice that our Start passage is shown as a double-circle. And you can see that the {{{Campfire}}} and {{{Cliff}}} passages are hyperlinked to one another. Remember in a previous lesson we saw that the player can move back and forth between these two passages. The third passage, currently un-named, isn't connected to either of the other two passages, because we've not created any [[links yet|TwineLesson005Passage005]].
+<img align="left" vspace=8 hspace=10 @src="setup.imgs46 + 'dot-graph-3-passages.png'">We can visualize our current $sg as shown in the image on the left. This is called a dot-graph representation. Notice that our Start passage is shown as a double-circle. And you can see that the {{{Campfire}}} and {{{Cliff}}} passages are hyperlinked to one another. Remember in a previous lesson we saw that the player can move back and forth between these two passages. The third passage, currently un-named, isn't connected to either of the other two passages, because we've not created any [[links yet|TwineLesson005Passage005]].
 
 <<tut-links "TwineLesson005Passage003" "TwineLesson005Passage005">>
 
 :: TwineLesson005Passage005 [deonna]
-Let's rename it our newly added third passage, and add some text to it. Use the Rename button in the menu and rename 'Untitled Passage' to 'SkeletonHollow' $md sans the single-quotes. And then enter this text into the passage: //You are standing in a sunken area nestled into a copse of firs and evergreens, a minute's hike from your [[campfire->Campfire]].// Save your work by closing the passage editor.
+Let's rename it our newly added third passage, and add some text to it. Use the Rename button in the menu and rename 'Untitled Passage' to 'SkeletonHollow' $md sans the single-quotes. And then enter this text into the passage: //You are standing in a sunken area nestled into a copse of firs and evergreens, a minute's hike from your {{{[[campfire->Campfire]]}}}.// Save your work by closing the passage editor.
 
-<img src="./assets/images/tut-lessons-4-6/skeletonHollow.png">
+<img @src="setup.imgs46 + 'skeletonHollow.png'">
 
 We created linkage between our start passage {{{Campfire}}} and this newest passage, {{{SkeletonHollow}}}. On the next page, we'll see that our StoryMap has updated to [[reflect this|TwineLesson005Passage006]].
 
 <<tut-links "TwineLesson005Passage004" "TwineLesson005Passage006">>
 
 :: TwineLesson005Passage006 [deonna]
-<img src="./assets/images/tut-lessons-4-6/third-to-first-psg-link.png">
+<img @src="setup.imgs46 + 'third-to-first-psg-link.png'">
 You'll see I've yellow-highlighted the arrow that connects our new passage back to passage {{{Campfire}}}. Now I'll show you a neat trick. We can temporarily change the Start passage from {{{Campfire}}} to {{{SkeletonHollow}}}. To do this, click the {{{Passage}}} menu item, then select the newest passage $md {{{SkeletonHollow}}}. If you have correctly selected the {{{SkeletonHollow}}} passage, it will have a darker shade than the other two passages. Next we're going to //temporarily// change the [[starting passage|TwineLesson005Passage007]].
 
 <<tut-links "TwineLesson005Passage005" "TwineLesson005Passage007">>
 
 :: TwineLesson005Passage007 [deonna]
-<img src="./assets/images/tut-lessons-4-6/change-start-psg.png">
+<img @src="setup.imgs46 + 'change-start-psg.png'">
 Normally, the green rocketship is attached to our {{{Campfire}}} passage, signifying that //that// passage is where our $sg launches $md or //Takes off!// We've temporarily reassigned the rocketship to the {{{SkeletonHollow}}} passage. See the screenshot above. Now click the {{{Build}}} menu, then click the {{{Play}}} button. Here is [[the result|TwineLesson005Passage008]].
 
 <<tut-links "TwineLesson005Passage006" "TwineLesson005Passage008">>
 
 :: TwineLesson005Passage008 [deonna]
-<img src="./assets/images/tut-lessons-4-6/play-from-third-psg.png">
+<img @src="setup.imgs46 + 'play-from-third-psg.png'">
 You aren't the only one learning new things, here. I love learning as I create these types of tutorials. Look as the passage as you're playing our $sg in your browser. See that the last word in the text is a hyperlink? Click on it. Sure enough, when you do, it takes you to the {{{Campfire}}} passage. Imagine later on, after our $sg has grown to over a dozen passages. This ability to temporarily change the Start passage will come in handy for testing, [[right|TwineLesson005Passage009]]?
 
 <<tut-links "TwineLesson005Passage007" "TwineLesson005Passage009">>
@@ -171,7 +171,7 @@ Close out of the browser window or tab in which you're playing the $sg, and retu
 <<tut-links "TwineLesson005Passage008" "TwineLesson005Passage010">>
 
 :: TwineLesson005Passage010 [deonna]
-<img src="./assets/images/tut-lessons-4-6/from-campfire-to-hollow.png">
+<img @src="setup.imgs46 + 'from-campfire-to-hollow.png'">
 Double-click on the {{{Campfire}}} passage in order to edit it, and enter the following sentence after the two sentences that are already there: //The mossy knoll on which you're campfire is located slopes gradually downhill to the {{{[[southwest->SkeletonHollow]]}}}, leading to a copse of firs and evergreens.// 
 
 Your {{{Campfire}}} passage should now look like the above [[screenshot|TwineLesson005Passage011]].
@@ -185,18 +185,18 @@ Be sure that the special linkage code reads exactly like this:
 
 If you entered everything correctly without any typos, you'll now see arrows indicating two-way linkage between {{{Campfire}}} and {{{SkeletonHollow}}}:
 
-<img align="left" hspace="10" vspace="8" src="./assets/images/tut-lessons-4-6/campfire-hollow-bidirectional-linkage.png">Now let's close out the passage editor and play our $sg by using the {{{Build >> Play}}} menu [[path|TwineLesson005Passage012]].
+<img align="left" hspace="10" vspace="8" @src="setup.imgs46 + 'campfire-hollow-bidirectional-linkage.png'">Now let's close out the passage editor and play our $sg by using the {{{Build >> Play}}} menu [[path|TwineLesson005Passage012]].
 
 <<tut-links "TwineLesson005Passage010" "TwineLesson005Passage012">>
 
 :: TwineLesson005Passage012 [deonna]
-<img src="./assets/images/tut-lessons-4-6/updated-campfire-psg.png">
+<img @src="setup.imgs46 + 'updated-campfire-psg.png'">
 The hyperlinked word //southwest// in the last sentence of {{{Campfire}}} now lets you navigate to {{{SkeletonHollow}}}, and the hyperlinked word //campfire// in {{{SkeletonHollow}}} lets you navigate back to passage {{{Campfire}}}. Let's take a look at a symbolic, dot-graph representation of our [[story|TwineLesson005Passage013]].
 
 <<tut-links "TwineLesson005Passage011" "TwineLesson005Passage013">>
 
 :: TwineLesson005Passage013 [deonna]
-<img align="left" hspace=10 vspace=8 src="./assets/images/tut-lessons-4-6/three-psg-dot-graph.png">When a work created with $tw gets longer, this dot-graph representation can be super helpful in giving us an overview of our story's structure. Notice that {{{Campfire}}} connects bidirectionally to each of the other two passages. If you're interested, you can <a target="_new" href="https://bryanmiller.us/2025/03/work-twine-28th-march-2025-osage">see</a> various dot-graph representations of my current $tw project for my employer. Okay, back to the [[tutorial|TwineLesson005Passage014]].
+<img align="left" hspace=10 vspace=8 @src="setup.imgs46 + 'three-psg-dot-graph.png'">When a work created with $tw gets longer, this dot-graph representation can be super helpful in giving us an overview of our story's structure. Notice that {{{Campfire}}} connects bidirectionally to each of the other two passages. If you're interested, you can <a target="_new" href="https://bryanmiller.us/2025/03/work-twine-28th-march-2025-osage">see</a> various dot-graph representations of my current $tw project for my employer. Okay, back to the [[tutorial|TwineLesson005Passage014]].
 
 <<tut-links "TwineLesson005Passage012" "TwineLesson005Passage014">>
 
@@ -222,7 +222,7 @@ Let's [[$ct|TwineLesson005Passage016]]...
 <<tut-links "TwineLesson005Passage014" "TwineLesson005Passage016">>
 
 :: TwineLesson005Passage016 [deonna]
-<img align="left" width=90 src="./assets/images/tut-lessons-4-6/skeleton.png">Well, you've been more than patient, and you may be thinking //This is cool, but surely there's more you can do with $tw than just create places for the Gentle Reader to visit!// And you would be correct in thinking that. We've simply been laying some foundation for more advanced work in $tw as we develop this $sg. Perhaps you lifted an eyebrow when I had you create the third passage and name it {{{SkeletonHollow}}}. &ldquo;//Skeletons be in this here tutorial? Color me intrigued!//&rdquo; you thought to yourself. Yes, well, that was the [[intention|TwineLesson005Passage017]].
+<img align="left" width=90 @src="setup.imgs46 + 'skeleton.png'">Well, you've been more than patient, and you may be thinking //This is cool, but surely there's more you can do with $tw than just create places for the Gentle Reader to visit!// And you would be correct in thinking that. We've simply been laying some foundation for more advanced work in $tw as we develop this $sg. Perhaps you lifted an eyebrow when I had you create the third passage and name it {{{SkeletonHollow}}}. &ldquo;//Skeletons be in this here tutorial? Color me intrigued!//&rdquo; you thought to yourself. Yes, well, that was the [[intention|TwineLesson005Passage017]].
 
 <<tut-links "TwineLesson005Passage015" "TwineLesson005Passage017">>
 
@@ -239,7 +239,7 @@ Here's a real-life {{{conditional}}}: if I've had two strong cups of coffee, I c
 :: TwineLesson005Passage019 [deonna]
 Let's create a special passage in $tw named {{{StoryInit}}}. To do that, use menu path {{{Passage >> New}}}. $tw will create a new passage in the center of the StoryMap, giving it the name {{{Untitled Passage}}}. Rename that passage to the following, using the exact capitalization shown: {{{StoryInit}}}. Then, drag that passage up next to the {{{Cliff}}} passage. Here's what your StoryMap should look like after doing this:
 
-<img src="./assets/images/tut-lessons-4-6/story-init-psg.png">
+<img @src="setup.imgs46 + 'story-init-psg.png'">
 
 As it's name suggests, the $si passage is a special passage we can use to set up any initial story conditions for our $sg. Let's edit the $si passage now and add the following mysterious line of programming: {{{<<set $cupsOfCoffee to 0>>}}}. Let's [[$ct|TwineLesson005Passage020]].
 
@@ -248,7 +248,7 @@ As it's name suggests, the $si passage is a special passage we can use to set up
 :: TwineLesson005Passage020 [deonna]
 Here is what the $si passage should look like after you've added this line of $ts:
 
-<img src="./assets/images/tut-lessons-4-6//story-init-set-coffee-variable.png">
+<img @src="setup.imgs46 + 'story-init-set-coffee-variable.png'">
 
 There have been a few times, now, in this tutorial series where you've ecountered the symbols shown below. They are known as the {{{left-shift operator}}} and the {{{right-shift operator}}}:
 
@@ -259,14 +259,14 @@ So, now you can look at the line of $ts shown in the above screenshot and say, "
 <<tut-links "TwineLesson005Passage019" "TwineLesson005Passage021">>
 
 :: TwineLesson005Passage021 [deonna]
-<img src="./assets/images/tut-lessons-4-6//story-init-set-coffee-variable.png">
+<img @src="setup.imgs46 + 'story-init-set-coffee-variable.png'">
 
 So, looking at that line of $ts that you put in the $si passage, can you guess what part of that is a {{{variable}}}? Give it your best shot. If you said ''{{{$cupsOfCoffee}}}'', you're right! What about that word {{{set}}}. Wonder what it [[does|TwineLesson005Passage022]]?
 
 <<tut-links "TwineLesson005Passage020" "TwineLesson005Passage022">>
 
 :: TwineLesson005Passage022 [deonna]
-<img src="./assets/images/tut-lessons-4-6//story-init-set-coffee-variable.png">
+<img @src="setup.imgs46 + 'story-init-set-coffee-variable.png'">
 
 Yes, ''{{{set}}}'' //sets// our ''{{{$cupsOfCoffee}}}'' variable to an initial value. From the screenshot above, what value do you think we've given variable ''{{{$cupsOfCoffee}}}''? It's okay if you're not sure. If you guess ''0'' (zero), you're right! You can now close the editor for passage $si and we'll then [[$ct|TwineLesson005Passage023]].
 
@@ -310,7 +310,7 @@ Given the above example {{{conditionals}}}, how would we write a conditional in 
 :: TwineLesson005Passage026 [deonna]
 In $tw, open the {{{Campfire}}} passage and add the following as the last text in the passage: //{{{<<if}}} $cupsOfCoffee eq 0>>You yawn. As much as you enjoy camping out, you never sleep as well in a tent as you do in your bed.{{{<</if>>}}}//. After doing so, your passage should look like this:
 
-<img src="./assets/images/tut-lessons-4-6/campfire-coffee-conditional.png">
+<img @src="setup.imgs46 + 'campfire-coffee-conditional.png'">
 
 Close the passage editor and test your $sg by using $bp from the [[menu|TwineLesson005Passage027]]. 
 
@@ -319,7 +319,7 @@ Close the passage editor and test your $sg by using $bp from the [[menu|TwineLes
 :: TwineLesson005Passage027 [deonna]
 Here is what is produced when you run the game in your browser:
 
-<img src="./assets/images/tut-lessons-4-6/yawn-at-campfire.png">
+<img @src="setup.imgs46 + 'yawn-at-campfire.png'">
 
 What condition had to be satisfied in order for $tw to display that last [[sentence|TwineLesson005Passage028]]?
 
@@ -340,6 +340,8 @@ Congratulations! You just used a {{{variable}}} to conditionally control the out
 In this lesson, you were introduced to a dot-graph of your $sg's layout. You learned about the left-shift and right-shift operators. You learned about the $if conditional, and you officially became a programmer by using a {{{variable}}} to control the computer's output. Whenever you're good and ready, let's continue to [[Lesson 06|TwineLesson006Passage001]].
 
 <<tut-links "TwineLesson005Passage028" "TwineLesson006Passage001">>
+
+/* End Lesson 5, Begin Lesson 6 */
 
 :: TwineLesson006Passage001 [deonna]
 <h2>$tw & $sc <span class="pulse">Lesson # 6</span> $md Of Coffee & Repressed Memories</h2>
@@ -374,7 +376,7 @@ The first thing let's do is take another peek at the {{{variable}}} in our {{{St
 
 Let's rename this variable to ''{{{$cupsOfCoffeeDrank}}}''. And let's create another variable $md ''{{{$instantCoffeePackets}}}'', which will represent how many servings of coffee are available.
 
-<img src="./assets/images/tut-lessons-4-6/second-var-in-story-init.png">
+<img @src="setup.imgs46 + 'second-var-in-story-init.png'">
 
 One important call-out here. If you ever decide to change a variable name in a $tw you're writing, it's crucial that you rename every instance of that variable in your entire [[story|TwineLesson006Passage005]].
 
@@ -383,7 +385,7 @@ One important call-out here. If you ever decide to change a variable name in a $
 :: TwineLesson006Passage005 [deonna]
 What we want to do is search our entire $tw for any instances of ''{{{$cupsOfCoffee}}}'' so that we can replace them with ''{{{$cupsOfCoffeeDrank}}}''. To do this, we'll use $tw's Search & Replace function. To access it, click {{{Story}}} in the menu. Doing so will cause all the Story sub-menu items to appear:
 
-<img src="./assets/images/tut-lessons-4-6/story-submenus.png">
+<img @src="setup.imgs46 + 'story-submenus.png'">
 
 We'll click the Find & Replace button and will [[use it|TwineLesson006Passage006]].
 
@@ -391,7 +393,7 @@ We'll click the Find & Replace button and will [[use it|TwineLesson006Passage006
 
 :: TwineLesson006Passage006 [deonna]
 
-<img src="./assets/images/tut-lessons-4-6/replace-in-all-passages.png">
+<img @src="setup.imgs46 + 'replace-in-all-passages.png'">
 
 Notice that $tw finds the variable ''{{{$cupsOfCoffee}}}'' in two passages, and even highlights those passages to draw our attention to them. We simply type in the desired changed variable name in the //Replace With// textbox, then click on  //Replace In All Passages// $md which is highlighted in yellow [[above|TwineLesson006Passage007]].
 
@@ -419,7 +421,7 @@ Over the next several pages, I'll unpack what is going on in the above block of 
 :: TwineLesson006Passage008 [deonna]
 First, let's wrangle the ''{{{<<nobr>>}}}'' tag. When we enclose text in the starting and ending tags for no-break, it will cause our running $sg to output text without any line-breaks $md even //if// there actually //are// line-breaks in the text. What's that you say? You want to see a simpler example of these no-line-break tags in action? Hmm, okay. Create a new passage in the $tw editor and name it ''{{{CodeTest}}}'', then drag it with your mouse and place it next to our {{{StoryInit}}} passage:
 
-<img src="./assets/images/tut-lessons-4-6/code-test-psg.png">
+<img @src="setup.imgs46 + 'code-test-psg.png'">
 
 Very good. Let's [[$ct|TwineLesson006Passage009]].
 
@@ -428,14 +430,14 @@ Very good. Let's [[$ct|TwineLesson006Passage009]].
 :: TwineLesson006Passage009 [deonna]
 Now let's edit the ''{{{CodeTest}}}'' passage and add the following text to it (feel free to copy/paste from the text below):
 
-<img align="left" hspace=10 vspace=8 src="./assets/images/tut-lessons-4-6/code-test-edit.png">You should enter each word on a separate line in the passage editor, just as I've shown it on the left. There is no need to add a space after each word. After you've edited the ''{{{CodeTest}}}'' passage, close it. Next, let's temporarily make passage ''{{{CodeTest}}}'' our Start passage, by moving the green rocketship so that it is attached: click the ''{{{Passage}}}'' menu item, then click to highlight the ''{{{CodeTest}}}'' passage, then click the ''{{{Start Story Here}}}'' button. You will see the following in the StoryMap if you've correctly made this temporary reassignment:<br><br><center><img src="./assets/images/tut-lessons-4-6/code-test-temp-start.png"></center><br><br>The green rocketship should be attached to passage ''{{{CodeTest}}}'' as shown [[above|TwineLesson006Passage010]].
+<img align="left" hspace=10 vspace=8 src="./assets/images/tut-lessons-4-6/code-test-edit.png">You should enter each word on a separate line in the passage editor, just as I've shown it on the left. There is no need to add a space after each word. After you've edited the ''{{{CodeTest}}}'' passage, close it. Next, let's temporarily make passage ''{{{CodeTest}}}'' our Start passage, by moving the green rocketship so that it is attached: click the ''{{{Passage}}}'' menu item, then click to highlight the ''{{{CodeTest}}}'' passage, then click the ''{{{Start Story Here}}}'' button. You will see the following in the StoryMap if you've correctly made this temporary reassignment:<br><br><center><img @src="setup.imgs46 + 'code-test-temp-start.png'"></center><br><br>The green rocketship should be attached to passage ''{{{CodeTest}}}'' as shown [[above|TwineLesson006Passage010]].
 
 <<tut-links "TwineLesson006Passage008" "TwineLesson006Passage010">>
 
 :: TwineLesson006Passage010 [deonna]
 Now $md with the ''{{{CodeTest}}}'' passage selected $md click ''{{{Build}}}'' then ''{{{Play}}}''. Here is the output you'll see once $tw launches our $sg in your default web browser:
 
-<img src="./assets/images/tut-lessons-4-6/nobr-example.png">
+<img @src="setup.imgs46 + 'nobr-example.png'">
 
 Our no line-break opening and closing tags $md ''{{{<<nobr>>}}}'' and ''{{{<</nobr>>}}}'' have caused the text that lies between them to be stripped of line-breaks. A line-break is a special character that gets inserted into an editor when we click the Return/Enter [[key|TwineLesson006Passage011]]. 
 
@@ -475,7 +477,7 @@ After you've edited the ''{{{CodeTest}}}'' passage to match, test it by [[runnin
 
 Here is the output you will see from passage ''{{{CodeTest}}}'':
 
-<img src="./assets/images/tut-lessons-4-6/no-extraneous-whitespace.png">
+<img @src="setup.imgs46 + 'no-extraneous-whitespace.png'">
 
 My use of the {{{<<nobr>>}}} tags permitted me to use line breaks and indentation in the chunk of text at the bottom of passage ''{{{Campfire}}}'' $md which makes it somewhat easier to read. //Everthing// between the ''{{{<<nobr>>}}}'' and the ''{{{<</nobr>>}}}'' tags is effected. Now let's turn our attention to the outermost opening and closing pair of ''{{{<<if>>}}}'' tags and explain their [[use|TwineLesson006Passage014]].
 
@@ -495,7 +497,7 @@ Looking just at the above, I can $md in my mind's eye $md simplify the 11 lines 
 <<tut-links "TwineLesson006Passage013" "TwineLesson006Passage015">>
 
 :: TwineLesson006Passage015 [deonna]
-<img src="./assets/images/tut-lessons-4-6/nested-if-conditionals.png">
+<img @src="setup.imgs46 + 'nested-if-conditionals.png'">
 
 See that I've highlighted in yellow the outer {{{if conditional}}} in the screenshot above. //Everything// on lines 3 through 9 will happen ''{{{if}}}'' we've not yet drank any coffee. Were it the case that some coffee had already been drunk, then nothing after line #2 would be executed. But we //know// that ''{{{$cupsOfCoffeeDrank}}}'' does indeed equal zero, because we made sure of it by assigning zero to that variable in our {{{StoryInit}}} passage:
 
@@ -504,7 +506,7 @@ So it's safe to assume that the condition for the outer {{{if conditional}}} wil
 <<tut-links "TwineLesson006Passage014" "TwineLesson006Passage016">>
 
 :: TwineLesson006Passage016 [deonna]
-<img src="./assets/images/tut-lessons-4-6/lines-3-to-9.png">
+<img @src="setup.imgs46 + 'lines-3-to-9.png'">
 
 The first two lines above will execute because their condition (cups of coffee drank is zero) is true. But the rest of the text, starting with the word ''realize'' and ending with ''tent'' will only be printed (i.e., shown on the screen in our browser) ''{{{if}}}'' we have one or more packets of instant coffee remaining.
 
@@ -533,7 +535,7 @@ We saw in Lesson 05 that there is a variation of passage linking that I called a
 
 If you look in our StoryMap, you'll see that $tw did indeed create the {{{YourTent}}} passage:
 
-<img src="./assets/images/tut-lessons-4-6/your-tent.png">
+<img @src="setup.imgs46 + 'your-tent.png'">
 
 The dotted lines around the passage indicate that it was created dynamically from within our $ts somewhere, rather than manually by us using the $tw [[editor|TwineLesson006Passage019]].
 
@@ -542,7 +544,7 @@ The dotted lines around the passage indicate that it was created dynamically fro
 :: TwineLesson006Passage019 [deonna]
 Our ''{{{YourTent}}}'' passage doesn't yet have any content, but you may recall that text elsewhere in our $sg alludes to there being a backpack inside a tent, said backpack containing a couple of instant coffee packets. Where does this happen in our story? It's in the chunk of text at the bottom of passage ''{{{Campfire}}}'' $md the chunk of text we just spent several pages unpacking and discussing. Let's once more make ''{{{Campfire}}}'' our Start passage by (a) clicking the ''{{{Passage}}}'' menu item, then (b) ensuring we click on the ''{{{Campfire}}}'' passage to select it, and finally (c) clicking the ''{{{Start Story Here}}}'' button.
 
-<img align="left" hspace=10 vspace=8 src="./assets/images/tut-lessons-4-6/campfire-is-starting-psg.png">If you followed those instructions correctly, the green rocketship should once again be attached to the ''{{{Campfire}}}'' [[passage|TwineLesson006Passage020]].
+<img align="left" hspace=10 vspace=8 @src="setup.imgs46 + 'campfire-is-starting-psg.png'">If you followed those instructions correctly, the green rocketship should once again be attached to the ''{{{Campfire}}}'' [[passage|TwineLesson006Passage020]].
 
 <<tut-links "TwineLesson006Passage018" "TwineLesson006Passage020">>
 
@@ -588,7 +590,7 @@ Close the passage editor for passage ''{{{YourBackpack}}}'' and go to the next p
 :: TwineLesson006Passage022 [deonna]
 Now play the $sg and in the ''{{{Campfire}}}'' passage, click the hyperlinked word, "tent" $md it's the last word in the passage. Clicking it takes you into your tent. In the ''{{{YourTent}}}'' passage, you'll note that there are hyperlinks leading back to your campfire, and also to your backpack:
 
-<img src="./assets/images/tut-lessons-4-6/inside-your-tent.png">
+<img @src="setup.imgs46 + 'inside-your-tent.png'">
 
 Test the "campfire" link to ensure it does indeed take you to the ''{{{Campfire}}}'' passage, and then return to the [[tent|TwineLesson006Passage023]]. 
 
@@ -597,14 +599,14 @@ Test the "campfire" link to ensure it does indeed take you to the ''{{{Campfire}
 :: TwineLesson006Passage023 [deonna]
 Now, from the ''{{{YourTent}}}'' passage, click on the "backpack" hyperlink. You'll see that there are ''two'' packets of coffee in the backpack. Use the " take a packet of Mount Hagen" link by clicking on it. When you do that, mechanically speaking $tw does two things: (1) it decrements the variable ''{{{$instantCoffeePackets}}}'' and (2) it moves you back to the ''{{{YourTent}}}'' passage. But in terms of story it's implied that you took a packet of instant coffee (by clicking on the appropriate link).
 
-<img align="right" width=48 src="./assets/images/tut-lessons-4-6/coffee.png">If you now click the "backpack" link again, the $sg shows you that there is only a single packet of instant coffee remaining. Take it using the Mount Hagen link and once again you're sitting in your tent. Click yet again on the backpack link. Notice it now says ''Aww, man! You're completely out of your favorite coffee for outdoor excursions.'' We've reduced the value of variable ''{{{$cupsOfCoffeeDrank}}}'' to zero. And because it's zero, our {{{if conditional}}} ''<span color="rusty-red">{{{<<if $instantCoffeePackets>>}}}</span>'' evaluates to {{{false}}} $md well, it evaluates to zero, which is same-as false $md and so we don't provide the coffee link [[anymore|TwineLesson006Passage024]].
+<img align="right" width=48 @src="setup.imgs46 + 'coffee.png'">If you now click the "backpack" link again, the $sg shows you that there is only a single packet of instant coffee remaining. Take it using the Mount Hagen link and once again you're sitting in your tent. Click yet again on the backpack link. Notice it now says ''Aww, man! You're completely out of your favorite coffee for outdoor excursions.'' We've reduced the value of variable ''{{{$cupsOfCoffeeDrank}}}'' to zero. And because it's zero, our {{{if conditional}}} ''<span color="rusty-red">{{{<<if $instantCoffeePackets>>}}}</span>'' evaluates to {{{false}}} $md well, it evaluates to zero, which is same-as false $md and so we don't provide the coffee link [[anymore|TwineLesson006Passage024]].
 
 <<tut-links "TwineLesson006Passage022" "TwineLesson006Passage024">>
 
 :: TwineLesson006Passage024 [deonna]
 So far, Lesson 06 has been a significant step up in sophistication/difficulty, in comparison to the first five lessons in this series. So, if you're feeling a bit out of your depth, that's okay. I will provide some practice exercises to help you come to grips with {{{if conditionals}}} and other concepts.
 
-<img align="left" width=32 src="./assets/images/tut-lessons-4-6/coffee.png">For now, let's stick with our coffee implementation just a bit longer. Have you noticed that when you take a packet of instant coffee from your backpack, the $sg doesn't say how/if you use it, and we haven't implemented an inventory system, so it's only //implied// that you're holding/carrying the packet(s) of instant [[coffee|TwineLesson006Passage025]].
+<img align="left" width=32 @src="setup.imgs46 + 'coffee.png'">For now, let's stick with our coffee implementation just a bit longer. Have you noticed that when you take a packet of instant coffee from your backpack, the $sg doesn't say how/if you use it, and we haven't implemented an inventory system, so it's only //implied// that you're holding/carrying the packet(s) of instant [[coffee|TwineLesson006Passage025]].
 
 <<tut-links "TwineLesson006Passage023" "TwineLesson006Passage025">>
 
