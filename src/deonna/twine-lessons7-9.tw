@@ -555,7 +555,52 @@ If using $tw is your first foray into programming, you won't yet understand the 
 
 
 :: TwineLesson008Passage008 [deonna]
-Psg 8
+To take that first step, we'll need to add the following $ts to our {{{StoryInit}}} passage:
+
+{{{<<set $inventory to ['a canteen', 'a pocket knife', 'a handkerchief']>>}}}
+
+The above line creates an array with three //elements//. Based on previous lessons, can you tell what type of variable this array holds? If you guessed //string//, you're right. It's the quotes that give it [[away|TwineLesson008Passage009]].
+
+<<tut-links "TwineLesson008Passage007" "TwineLesson008Passage009">>
+
+
+
+:: TwineLesson008Passage009
+The next step is to create a new passage named {{{YourInventory}}}. After creating the passage, we're going to do something we haven't done previously in this tutorial series: add a //tag// to the passage. That tag should be the word "noreturn":
+
+<img @src="setup.imgs79 + 'psg-your-inventory.png'">
+
+By placing this $ts in the {{{StoryInit}}} passage, the $inventory array's contents are immediately available as the player starts our [[story|TwineLesson007Passage010]].
+
+<<tut-links "TwineLesson008Passage008" "TwineLesson008Passage010">>
+
+
+
+:: TwineLesson008Passage010
+Now, if there were only a way for the player to view the contents of their inventory when desired $md but it would stay out of sight and out of mind the rest of the time. Put this placeholder text in passage {{{YourInventory}}}: //you're viewing your inventory...// Now, instead of linking to this passage in the ordinary way, let's create another passage $md a special one named {{{StoryMenu}}}.
+
+/* NEXT STEPS:
+
+(1) add passage StoryMenu and give it this TwineScript: <<link "Inventory">><<goto YourInventory>><</link>><br>
+
+(2) add the following function to the JS section of our story: */
+
+/* Trigger the following code at the start of navigation to a new passage.*/ {{{
+
+	$(document).on(":passagestart", function (event) {
+	/* Make sure the current passage doesn't have a "noreturn" tag. */
+	if (!tags().includes("noreturn")) {
+		/* If it doesn't, then set $return to the current passage name. */
+		State.variables.return = passage();
+	}
+});
+}}}
+
+/*
+(3)
+*/
+
+
 
 
 
