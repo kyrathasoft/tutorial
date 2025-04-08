@@ -638,7 +638,17 @@ After adding the $ts from the previous page to the {{{YourInventory}}} passage, 
 
 <img @src="setup.imgs79 + 'useful-inventory-msg.png'">
 
-Well now, that's a much more useful message, right?
+Well now, that's a much more useful message, [[right|TwineLesson008Passage015]]?
+
+<<tut-links "TwineLesson008Passage013" "TwineLesson008Passage015">>
+
+
+
+:: TwineLesson008Passage015
+Conventiently, thanks to the function we added to our story javascript section, after using the sidebar's Inventory button, you can simply click the back button to return to wherevver you were before examining your inventory. For instance, if before clicking the Inventory button you had navigated to your tent, then upon clicking the Back button after viewing your inventory, you'd be taken back to the following passage:
+
+<img @src="setup.imgs79 + 'tent-psg-desc.png'">
+
 
 
 
