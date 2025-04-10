@@ -791,7 +791,58 @@ For convenience, I have a Github <a target="_new" href="https://gist.github.com/
 
 
 :: TwineLesson008Passage024
-Psg 24
+Let's examine the first widget, {{{<<InventoryItemCount>>}}}:
+
+<<nobr>>''{{{<<widget "InventoryItemCount">>}}}''<br>
+{{{/* This widget prints a message to the browser window telling the player how many items are in her inventory. */ }}}<br>
+{{{<<nobr>>Your inventory contains:}}}<br>
+{{{<<if $inventory.length lt 1>>}}}<br>
+<span class="tab">nothing</span><br>
+{{{<<elseif $inventory.length eq 1>>}}}<br>
+<span class="tab">1 item</span><br>
+{{{<<else>>}}}<br>
+<span class="tab">{{{<<= $inventory.length>> items}}}</span>
+{{{<</if>>}}}<br>
+{{{<</nobr>>}}}''{{{<</widget>>}}}''<</nobr>>
+
+You will notice that there are opening and closing widget tags (shown in ''bold'' in the above [[code-listing|TwineLesson008Passage025]]).
+
+<<tut-links "TwineLesson008Passage023" "TwineLesson008Passage025">>
+
+
+
+:: TwineLesson008Passage025
+<<nobr>>{{{<<widget "InventoryItemCount">>}}}<br>
+{{{/* This widget prints a message to the browser window telling the player how many items are in her inventory. */ }}}<br>
+''{{{<<nobr>>}}}''{{{Your inventory contains:}}}<br>
+{{{<<if $inventory.length lt 1>>}}}<br>
+<span class="tab">nothing</span><br>
+{{{<<elseif $inventory.length eq 1>>}}}<br>
+<span class="tab">1 item</span><br>
+{{{<<else>>}}}<br>
+<span class="tab">{{{<<= $inventory.length>> items}}}</span>
+{{{<</if>>}}}<br>
+''{{{<</nobr>>}}}''{{{<</widget>>}}}<</nobr>>
+
+Similarly, notice the opening and closing no-line-break tags (shown in ''bold'' in the above code-listing'). The placement of opening and closing tags is important. Because the {{{<<widget>>}}} tag is at the very beginning of the above code-listing, its closing tag must be at the very end. Similarly, the opening no-line-break tag comes immediately //after// the opening widget tag, and therefore its closing tag must come immediately //prior// to the closing widget tag. This maintains appropriate nesting [[order|TwineLesson008Passage026]].
+
+<<tut-links "TwineLesson008Passage024" "TwineLesson008Passage026">>
+
+
+
+:: TwineLesson008Passage026
+{{{<<if $inventory.length lt 1>>}}}
+Let's be sure we understand what's going on in the above line of $ts. You've seen {{{$inventory}}} before. In passage {{{StoryInit}}}, we defined an array named ''$inventory'' and we initialized it to contain three items:
+
+{{{<<set $inventory to ['a canteen', 'a pocket knife', 'a handkerchief']>>}}}
+
+What do you suppose {{{$inventory.length}}} signifies? It represents the number of //items// held in the {{{$inventory}}} array. Currently, that is [[equal to 3|TwineLesson008Passage027]].
+
+<<tut-links "TwineLesson008Passage025" "TwineLesson008Passage027">>
+
+
+
+:: TwineLesson008Passage027
 
 
 
