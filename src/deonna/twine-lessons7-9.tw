@@ -843,6 +843,20 @@ What do you suppose {{{$inventory.length}}} signifies? It represents the number 
 
 
 :: TwineLesson008Passage027
+Well, of what possible use is knowing the inventory array's length? Well, if we know it's zero then we wouldn't expect to be able to retrieve an item from our inventory, would we? 
+
+Here's another thought experiment: I hand you a bag and tell you "This bag contain two items that may or may not be useful to you at some point." The bag is opaque, so you can't see what it contains. Is it possible that it contains a $100 bill? Sure, it's //possible//. Is it possible that bag contains a copperhead snake? Um, I suppose $md though I struggle to imagine how //that// could be useful to you.
+
+On the next page, we'll see how to //test// our array to see if it contains a particular [[item|TwineLesson008Passage028]].
+
+<<tut-links "TwineLesson008Passage026" "TwineLesson008Passage028">>
+
+
+
+:: TwineLesson008Passage028
+Psg 28
+
+
 
 
 
