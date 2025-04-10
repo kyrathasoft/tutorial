@@ -672,10 +672,59 @@ Well, we have an inventory and we can access it by using the dedicated button in
 <span class="tab">{{{<<= $inventory.join(`<br>`)>><br>}}}</span><br>
 {{{<</if>>}}}<br>
 {{{<</nobr>>}}}</td>
-<td>explain</td>
+
+<td>You look at the accompanying $ts and say that you understand //Your inventory contains:// but then not much else!<br><br>Well, that's why you're reading this tutorial $md to learn. You'll notice that all the other text comes sandwiched between opening and closing no-break tags: {{{<<nobr>>}}} and {{{<</nobr>>}}}. What that means is that there won't be any line breaks in the text produced by this passage $md unless we explicitly add this code to tell the browser to add a line-break: {{{<br>}}}.<br><br>
+
+So, we can mentally simplify the actual code to this pseudo-code:<br><br>
+''+ print "Your inventory contains:" on a line at the top, by itself''<br>
+''+ print some other stuff if the right conditions are met''<br><br>
+
+We're going to divide this //conditional// code into a couple of sections by introduce {{{widgets}}}.<br><br>
+You may have to scroll down for the Next Page link...
+</td>
 </tr>
-</table></center>
+</table><br><br>When you're ready, [[$ctl|TwineLesson008Passage017]] to the next page.</center>
 <</nobr>>
+
+<<tut-links "TwineLesson008Passage015" "TwineLesson008Passage017">>
+
+
+
+:: TwineLesson008Passage017
+We're going to create a pair of {{{widgets}}}, each of which will encapsulate some of our conditionals (our {{{<<if>>...<</if>>}}} structures in our {{{YourInventory}}} passage).
+
+<img align="left" hspace=10 vspace=10 @src="setup.imgs79 + 'mywidgets-psg.png'">So, create a new passage and name it {{{MyWidgets}}}. Then add to this passage a tag named {{{widget}}} (singular, no 's').  
+
+On the next page we'll pull part of the $ts from our {{{YourInventory}}} passage and place it into a {{{widget}}}. Widgets are denoted by the following opening and closing tags: {{{<<widget>>}}} and {{{<</widget>>}}}.
+
+Let's [[$ctl|TwineLesson008Passage018]].
+
+<<tut-links "TwineLesson008Passage016" "TwineLesson008Passage018">>
+
+
+
+:: TwineLesson008Passage018
+In the {{{MyWidgets}}} passage, add the following:
+
+{{{<<widget "InventoryItemCount">>}}}
+{{{<</widget>>}}}
+
+Congratulations, you just created your first $sc {{{widget}}}. It doesn't yet //do// anything, but we'll get to [[that|TwineLesson008Passage019]].
+
+<<tut-links "TwineLesson008Passage017" "TwineLesson008Passage019">>
+
+
+
+:: TwineLesson008Passage019
+You've created your first {{{widget}}}. How about we score another //first//? Let's add a comment into the {{{MyWidgets}}} passage. Modify the contents of the {{{MyWidgets}}} passage to the following:
+
+{{{<<widget "InventoryItemCount">>}}}
+{{{/* This widget prints a message to the browser window telling the player how many items are in her inventory. I still need to add the Twinescript needed to accomplish this -- but all I have to do is copy/paste it from the YourInventory passage. */}}}
+{{{<</widget>>}}}
+
+A //comment// is text that $tw ignores but which is helpful to us as the $sg writer. Comments are used to explain why we're writing the $ts, or how it works. We can also use comments to leave ourselves reminders, such as a TO-DO list.
+
+
 
 
 
