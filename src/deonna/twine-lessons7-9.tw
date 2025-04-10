@@ -722,7 +722,77 @@ You've created your first {{{widget}}}. How about we score another //first//? Le
 {{{/* This widget prints a message to the browser window telling the player how many items are in her inventory. I still need to add the Twinescript needed to accomplish this -- but all I have to do is copy/paste it from the YourInventory passage. */}}}
 {{{<</widget>>}}}
 
-A //comment// is text that $tw ignores but which is helpful to us as the $sg writer. Comments are used to explain why we're writing the $ts, or how it works. We can also use comments to leave ourselves reminders, such as a TO-DO list.
+A //comment// is text that $tw ignores but which is helpful to us as the $sg writer. Comments are used to explain why we're writing the $ts, or how it works. We can also use comments to leave ourselves reminders, such as a TO-DO [[list|TwineLesson008Passage020]].
+
+<<tut-links "TwineLesson008Passage018" "TwineLesson008Passage020">>
+
+
+
+:: TwineLesson008Passage020
+{{{<<widget "InventoryItemCount">>}}}
+{{{/* This widget prints a message to the browser window telling the player how many items are in her inventory. I still need to add the Twinescript needed to accomplish this -- but all I have to do is copy/paste it from the YourInventory passage. */}}}
+{{{<</widget>>}}}
+
+In the above code, the comment begins with this pair of characters: ''{{{/*}}}'' and ends with this pair: ''{{{*/}}}''. This is known as C-style commenting, because it originated in the programming language ''C''. Writing comments with your code is a good habit to form. When programming, we can get into //the zone// and feel like we totally understand everything we're typing $md but coming back to the script a week or a month later, you may find yourself very glad you added [[comments|TwineLesson008Passage021]].
+
+<<tut-links "TwineLesson008Passage019" "TwineLesson008Passage021">>
+
+
+
+:: TwineLesson008Passage021
+Adding the needed $ts and modifying the comment, our macro should now look like this:
+
+<<nobr>>{{{<<widget "InventoryItemCount">>}}}<br>
+{{{/* This widget prints a message to the browser window telling the player how many items are in her inventory. */ }}}<br>
+{{{<<nobr>>Your inventory contains:}}}<br>
+{{{<<if $inventory.length lt 1>>}}}<br>
+<span class="tab">nothing</span><br>
+{{{<<elseif $inventory.length eq 1>>}}}<br>
+<span class="tab">1 item</span><br>
+{{{<<else>>}}}<br>
+<span class="tab">{{{<<= $inventory.length>> items}}}</span>
+{{{<</if>>}}}<br>
+{{{<</nobr>><</widget>>}}}<</nobr>>
+
+Drop down a couple lines past the end of our {{{InventoryItemCount}}} widget and we'll add another [[widget|TwineLesson008Passage022]].
+
+<<tut-links "TwineLesson008Passage020" "TwineLesson008Passage022">>
+
+
+
+:: TwineLesson008Passage022
+{{{<<widget "InventoryItemListing">>}}}
+{{{/* This widget prints the inventory's items,
+one per line */}}}
+{{{<<nobr>><<if $inventory.length eq 1>>}}}
+<span class="tab">$inventory[0]</span>
+{{{<</if>>}}}
+{{{<<if $inventory.length gt 1>>}}}
+<span class="tab">{{{<<= $inventory.join(`<br>`)>><br>}}}</span>
+{{{<</if>>}}}
+{{{<</nobr>><</widget>>}}}
+
+Now we can return to our {{{YourInventory}}} passage and simplify its $ts to the [[following|TwineLesson008Passage023]].
+
+<<tut-links "TwineLesson008Passage021" "TwineLesson008Passage023">>
+
+
+
+:: TwineLesson008Passage023
+{{{<<nobr>>}}}
+{{{<<InventoryItemCount>>}}}
+{{{<<InventoryItemListing>>}}}
+{{{<</nobr>>}}}
+
+For convenience, I have a Github <a target="_new" href="https://gist.github.com/kyrathasoft/b6153bd47a0fa0a9bd1c8559df6ed7c9">gist</a> showing the $ts for both widgets and for calling them from passage {{{YourInventory}}}. Let's [[$ctl|TwineLesson008Passage024]].
+
+<<tut-links "TwineLesson008Passage022" "TwineLesson008Passage021">>
+
+
+
+:: TwineLesson008Passage024
+Psg 24
+
 
 
 
