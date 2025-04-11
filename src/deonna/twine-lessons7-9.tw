@@ -564,7 +564,7 @@ The above line creates an array with three //elements//. Based on previous lesso
 
 
 
-:: TwineLesson008Passage009
+:: TwineLesson008Passage009 [deonna]
 <img hspace=5 @src="setup.imgs79 + 'tag-button.png'">The next step is to create a new passage named {{{YourInventory}}}. After creating the passage, we're going to do something we haven't done previously in this tutorial series: add a //tag// to the passage. That tag should be the word "noreturn". To add the tag, open the {{{YourInventory}}} passage in an editor window, then click the "Add Tag" button and type in 'noreturn' $md without the quotes:
 
 <img @src="setup.imgs79 + 'psg-your-inventory.png'">
@@ -575,7 +575,7 @@ In the {{{YourInventory}}} passage, write "You're viewing your inventory..." We 
 
 
 
-:: TwineLesson008Passage010
+:: TwineLesson008Passage010 [deonna]
 Now, if there were only a way for the player to view the contents of their inventory when desired $md but it would stay out of sight and out of mind the rest of the time. Put this placeholder text in passage {{{YourInventory}}}: //you're viewing your inventory...// Now, instead of linking to this passage in the ordinary way, let's create another passage $md a special one named {{{StoryMenu}}}.
 
 In {{{StoryMenu}}}, add the following line of $ts:
@@ -588,7 +588,7 @@ Then save your [[changes|TwineLesson008Passage011]].
 
 
 
-:: TwineLesson008Passage011
+:: TwineLesson008Passage011 [deonna]
 Now, we're going to add a function to the javascript section of your story. To do that, click the {{{Story}}} menu item, then the {} {{{Javascript}}} button. Here is the function you'll copy/paste into the javascript section of your story (don't overwrite the other stuff that's already there $md just add this function above or below that stuff):
  
  {{{$(document).on(":passagestart", function (event) {}}}
@@ -605,7 +605,7 @@ For the time being, don't worry too much about why the above function is importa
 
 
 
-:: TwineLesson008Passage012
+:: TwineLesson008Passage012 [deonna]
 <img align="left" hspace=10 vspace=3 @src="setup.imgs79 + 'inventory-button.png'">Let's launch our $sg and see what we have wrought. In the game, as it runs in your default browser, notice that there is now an Inventory button in the sidebar. That's because of the StoryMenu passage we added, and the $ts we put in that passage. If you click on it, what it shows isn't particularly helpful, but you can then just use the Back button to get back to wherever you were before clicking on the sidebar's Inventory button. On the next page, we'll work on making our {{{YourInventory}}} passage more [[helpful|TwineLesson008Passage013]].
 
 <<tut-links "TwineLesson008Passage011" "TwineLesson008Passage013">>
@@ -613,7 +613,7 @@ For the time being, don't worry too much about why the above function is importa
 
 
 
-:: TwineLesson008Passage013
+:: TwineLesson008Passage013 [deonna]
 Now, let's replace the current text in our {{{YourInventory}}} passage with:
 {{{<<nobr>>Your inventory contains:}}} 
 
@@ -633,7 +633,7 @@ It might be best to copy/paste the above $ts into the {{{YourInventory}}} [[pass
 
 
 
-:: TwineLesson008Passage014
+:: TwineLesson008Passage014 [deonna]
 After adding the $ts from the previous page to the {{{YourInventory}}} passage, run the $sg again and click on the Inventory button in the sidebar. You'll get a much more helpful printout to the screen this time:
 
 <img @src="setup.imgs79 + 'useful-inventory-msg.png'">
@@ -644,14 +644,14 @@ Well now, that's a much more useful message, [[right|TwineLesson008Passage015]]?
 
 
 
-:: TwineLesson008Passage015
+:: TwineLesson008Passage015 [deonna]
 Conventiently, thanks to the function we added to our story javascript section, after using the sidebar's Inventory button, you can simply click the back button to return to wherevver you were before examining your inventory. For instance, if before clicking the Inventory button you had navigated to your tent, then upon clicking the Back button after viewing your inventory, you'd be taken back to the following [[passage|TwineLesson008Passage016]]:
 
 <img @src="setup.imgs79 + 'tent-psg-desc.png'">
 
 
 
-:: TwineLesson008Passage016
+:: TwineLesson008Passage016 [deonna]
 Well, we have an inventory and we can access it by using the dedicated button in the sidebar. But you may not understand the $ts that actually displays our inventory items (I've formatted the code to be a bit more readable):
 <<nobr>><center><table border=1 id='codeExplain'>
 
@@ -690,7 +690,7 @@ You may have to scroll down for the Next Page link...
 
 
 
-:: TwineLesson008Passage017
+:: TwineLesson008Passage017 [deonna]
 We're going to create a pair of {{{widgets}}}, each of which will encapsulate some of our conditionals (our {{{<<if>>...<</if>>}}} structures in our {{{YourInventory}}} passage).
 
 <img align="left" hspace=10 vspace=10 @src="setup.imgs79 + 'mywidgets-psg.png'">So, create a new passage and name it {{{MyWidgets}}}. Then add to this passage a tag named {{{widget}}} (singular, no 's').  
@@ -703,7 +703,7 @@ Let's [[$ctl|TwineLesson008Passage018]].
 
 
 
-:: TwineLesson008Passage018
+:: TwineLesson008Passage018 [deonna]
 In the {{{MyWidgets}}} passage, add the following:
 
 {{{<<widget "InventoryItemCount">>}}}
@@ -715,7 +715,7 @@ Congratulations, you just created your first $sc {{{widget}}}. It doesn't yet //
 
 
 
-:: TwineLesson008Passage019
+:: TwineLesson008Passage019 [deonna]
 You've created your first {{{widget}}}. How about we score another //first//? Let's add a comment into the {{{MyWidgets}}} passage. Modify the contents of the {{{MyWidgets}}} passage to the following:
 
 {{{<<widget "InventoryItemCount">>}}}
@@ -728,7 +728,7 @@ A //comment// is text that $tw ignores but which is helpful to us as the $sg wri
 
 
 
-:: TwineLesson008Passage020
+:: TwineLesson008Passage020 [deonna]
 {{{<<widget "InventoryItemCount">>}}}
 {{{/* This widget prints a message to the browser window telling the player how many items are in her inventory. I still need to add the Twinescript needed to accomplish this -- but all I have to do is copy/paste it from the YourInventory passage. */}}}
 {{{<</widget>>}}}
@@ -739,7 +739,7 @@ In the above code, the comment begins with this pair of characters: ''{{{/*}}}''
 
 
 
-:: TwineLesson008Passage021
+:: TwineLesson008Passage021 [deonna]
 Adding the needed $ts and modifying the comment, our macro should now look like this:
 
 <<nobr>>{{{<<widget "InventoryItemCount">>}}}<br>
@@ -760,7 +760,7 @@ Drop down a couple lines past the end of our {{{InventoryItemCount}}} widget and
 
 
 
-:: TwineLesson008Passage022
+:: TwineLesson008Passage022 [deonna]
 {{{<<widget "InventoryItemListing">>}}}
 {{{/* This widget prints the inventory's items,
 one per line */}}}
@@ -778,7 +778,7 @@ Now we can return to our {{{YourInventory}}} passage and simplify its $ts to the
 
 
 
-:: TwineLesson008Passage023
+:: TwineLesson008Passage023 [deonna]
 {{{<<nobr>>}}}
 {{{<<InventoryItemCount>>}}}
 {{{<<InventoryItemListing>>}}}
@@ -790,7 +790,7 @@ For convenience, I have a Github <a target="_new" href="https://gist.github.com/
 
 
 
-:: TwineLesson008Passage024
+:: TwineLesson008Passage024 [deonna]
 Let's examine the first widget, {{{<<InventoryItemCount>>}}}:
 
 <<nobr>>''{{{<<widget "InventoryItemCount">>}}}''<br>
@@ -811,7 +811,7 @@ You will notice that there are opening and closing widget tags (shown in ''bold'
 
 
 
-:: TwineLesson008Passage025
+:: TwineLesson008Passage025 [deonna]
 <<nobr>>{{{<<widget "InventoryItemCount">>}}}<br>
 {{{/* This widget prints a message to the browser window telling the player how many items are in her inventory. */ }}}<br>
 ''{{{<<nobr>>}}}''{{{Your inventory contains:}}}<br>
@@ -830,7 +830,7 @@ Similarly, notice the opening and closing no-line-break tags (shown in ''bold'' 
 
 
 
-:: TwineLesson008Passage026
+:: TwineLesson008Passage026 [deonna]
 {{{<<if $inventory.length lt 1>>}}}
 Let's be sure we understand what's going on in the above line of $ts. You've seen {{{$inventory}}} before. In passage {{{StoryInit}}}, we defined an array named ''$inventory'' and we initialized it to contain three items:
 
@@ -842,7 +842,7 @@ What do you suppose {{{$inventory.length}}} signifies? It represents the number 
 
 
 
-:: TwineLesson008Passage027
+:: TwineLesson008Passage027 [deonna]
 Well, of what possible use is knowing the inventory array's length? Well, if we know it's zero then we wouldn't expect to be able to retrieve an item from our inventory, would we? 
 
 Here's another thought experiment: I hand you a bag and tell you "This bag contain two items that may or may not be useful to you at some point." The bag is opaque, so you can't see what it contains. Is it possible that it contains a $100 bill? Sure, it's //possible//. Is it possible that bag contains a copperhead snake? Um, I suppose $md though I struggle to imagine how //that// could be useful to you.
@@ -853,8 +853,94 @@ On the next page, we'll see how to //test// our array to see if it contains a pa
 
 
 
-:: TwineLesson008Passage028
-Psg 28
+:: TwineLesson008Passage028 [deonna]
+If we want to test whether our inventory array contains a particular object, we can do that like this:
+
+{{{<<if $inventory.includes('item name')>>An 'item name' was found<</if>>}}}
+
+Let's perform a test. On the next page, we'll set our {{{CodeTest}}} passage to temporarily being the startup passage for our $sg. Let's do that [[now|TwineLesson008Passage029]].
+
+<<tut-links "TwineLesson008Passage027" "TwineLesson008Passage029">>
+
+
+
+:: TwineLesson008Passage029 [deonna]
+Remember how to set a different start passage? Click {{{Passage}}} in the menu, then select the {{{CodeTest}}} passage with your mouse, then click the {{{Start Story Here}}} button. Once you've done that, add the following code to the top of the passage:
+
+{{{<<if $inventory.includes("a copperhead")>>As you sit enjoying your campfire, a copperhead snake sinks its fangs into your leg. This campout really isn't going well...<<else>>You hear a rattling noise. As you leap instinctively to your feet, a copperhead slithers into the trees at the edge of your firelight.<</if>>}}}
+
+Now test it by launching the [[game|TwineLesson008Passage030]].
+
+<<tut-links "TwineLesson008Passage028" "TwineLesson008Passage030">>
+
+
+
+:: TwineLesson008Passage030 [deonna]
+<img @src="setup.imgs79 + 'snake-test.png'">
+As you can see, clearly our {{{$inventory}}} array does //not// contain "a copperhead". The if-conditional that we added to the top of passage {{{CodeTest}}} obviously evaluated to ''false'', and thus its ''else'' contingency was [[triggered|TwineLesson008Passage031]].
+
+<<tut-links "TwineLesson008Passage029" "TwineLesson008Passage031">>
+
+
+
+:: TwineLesson008Passage031 [deonna]
+<img align="left" hspace=7 @src="setup.imgs79 + 'misspelled-inventory.png'">What do you think would happen if we misspelled the name of our inventory array? Let's test it. Go to the top of passage {{{CodeTest}}} and add an extra 'y' to the end of ''$inventory'' $md then launch the game to test this change. Here's what you'll see:
+
+<img align="left" hspace=10 @src="setup.imgs79 + 'undefined-array.png'">We get this error because no array named <font color="blue">$inventory</font><font color="red">''y''</font> exists $md it hasn't been defined in our $ts. Let's [[$ctl|TwineLesson008Passage032]].
+
+<<tut-links "TwineLesson008Passage030" "TwineLesson008Passage032">>
+
+
+
+:: TwineLesson008Passage032 [deonna]
+{{{<<if $inventory.length lt 1>>}}}
+
+I want to return to one line (shown above) of $ts from our {{{InventoryItemCount}}} widget. What do you think ''lt'' means? Well, it's position in between {{{$inventory.length}}} and the number ''1'' may provide some context: we're asking //if the length of our inventory is ''lt'' than 1//... ''less than'' $md in $sc, ''lt'' means 'less than'. So the expression above is saying //if the length of the inventory array is less than one, then...//  
+
+Well, if the length of ''$inventory'' is less [[than one|TwineLesson008Passage033]]...
+
+<<tut-links "TwineLesson008Passage031" "TwineLesson008Passage033">>
+
+
+
+:: TwineLesson008Passage033 [deonna]
+If ''$inventory''&rsquo;s length is ''lt'' 1, that'd make it zero, right? So you can understand, then, why the //next// line in the {{{InventoryItemCount}}} is:
+<span class="tab">''nothing''</span>
+
+Our code is saying //if there are zero items in $inventory, then print "nothing" to the browser window. Makes sense. And now that you know 'lt' means 'less than', you can probably discern what 'eq' means in the next line of that [[widget|TwineLesson008Passage034]].
+
+<<tut-links "TwineLesson008Passage032" "TwineLesson008Passage034">>
+
+
+
+
+:: TwineLesson008Passage034 [deonna]
+{{{<<elseif $inventory.length eq 1>>}}}
+
+Now that you know 'lt' means 'less than', I'm sure you can fathom the meaning of ''eq'' above, right? ''Equals!'' //if the length of $inventory (i.e., the number of items it contains) is equal to one//...
+
+look at the next line in the widget: it prints "1 item" to the browser window. Again, makes sense, right?
+
+Hopefully, if you now study the {{{InventoryItemCount}}} widget, it is beginning to make more [[sense|TwineLesson008Passage035]].
+
+<<tut-links "TwineLesson008Passage033" "TwineLesson008Passage035">>
+
+
+
+:: TwineLesson008Passage035 [deonna]
+If 0 items in $inventory, the widget prints "nothing"; if one item, it prints "1 item", and if 2+ items, we print the number of items and then add the word "items". 
+
+Congratulations! You've built a rudimentary inventory system, learned the less-than and equal operators, learned how to create widgets. We've learned that if we try to reference a variable or array that hasn't been created in our $ts, we'll get an {{{undefined}}} error. Good work! And remember, if you don't fully understand everything we've covered, that's okay. Just keep reading and following the instructions. It's called [[Learning By Doing|TwineLesson009Passage001]].
+
+<<tut-links "TwineLesson008Passage034" "TwineLesson009Passage001">>
+
+/* End Lesson 8, Begin Lesson 9 */
+
+:: TwineLesson009Passage001 [deonna]
+<h2>$tw & $sc <span class="pulse">Lesson # 9</span> $md Making Use of Inventory</h2>
+Welcome to Lesson 9! In this lesson, we'll demonstrate the use of the player inventory.
+
+
 
 
 
