@@ -938,7 +938,58 @@ Congratulations! You've built a rudimentary inventory system, learned the less-t
 
 :: TwineLesson009Passage001 [deonna]
 <h2>$tw & $sc <span class="pulse">Lesson # 9</span> $md Making Use of Inventory</h2>
-Welcome to Lesson 9! In this lesson, we'll demonstrate the use of the player inventory.
+Welcome to Lesson 9! In this lesson, we'll learn how to add to, and remove items from, the player's inventory. And we'll add some story elements that make use of items in the [[inventory|TwineLesson009Passage002]].
+
+<<tut-links "TwineLesson008Passage035" "TwineLesson009Passage002">>
+
+
+
+:: TwineLesson009Passage002 [deonna]
+The first thing let's do is make our {{{YourInventory}}} passage more robust $md and add a temporary line of $ts at the bottom. We'll implement this first, and then I'll explain. Open the {{{YourInventory}}} passage. Modify the passage's contents to (you may wanna copy/paste):
+
+{{{<<nobr>>}}}
+{{{<<if $inventory eq undefined>>}}}
+<span class="tab">Inventory is undefined</span>
+{{{<<else>>}}}
+<span class="tab">{{{<<InventoryItemCount>>}}}</span>
+<span class="tab">{{{<<InventoryItemListing>>}}}</span>
+{{{<</if>>}}}
+{{{<</nobr>>}}}
+{{{/* we'll remove the following line after doing some testing */}}}
+Coffee Packets in backpack = {{{<<= $instantCoffeePackets>>}}}
+
+[[$ct|TwineLesson009Passage003]]
+
+<<tut-links "TwineLesson009Passage001" "TwineLesson009Passage003">>
+
+
+
+:: TwineLesson009Passage003 [deonna]
+After altering the contents of passage {{{YourInventory}}}, launch the game in a browser window and then click on the Inventory button in the sidebar:
+
+<img align="left" hspace=7 @src="setup.imgs79 + 'coffee-packets.png'">If you recall, in the special passage {{{StoryInit}}} we had set up a variable to track how many packets of instant coffee remain in our backpack, which is stowed in our tent: 
+{{{<<set $instantCoffeePackets to 2>>}}}
+You may wonder why I haven't simply added "a backpack" to the ''$inventory'' array. Well, if you think about it, the backpack could be considered an inventory unto itself. After all, it can hold numerous items. And so we'd need to implement an array for the backpack's contents. I didn't want that level of complication in an introductory [[tutorial|TwineLesson009Passage004]].
+
+<<tut-links "TwineLesson009Passage002" "TwineLesson009Passage004">>
+
+
+
+:: TwineLesson009Passage004 [deonna]
+So, right or wrong, I chose to leave the backpack in the tent and to just use a variable to track the number of instant coffee packets it holds. Now that we're implementing our inventory, we need to modify the code in passage {{{YourBackpack}}}. Instead of listing that code below, it's easier to view <a target="_new" href="https://gist.github.com/kyrathasoft/f5d64c2d48844c52d49900004c1cc0af">this gist</a> of it. Alternatively, you can download the $ts source <a target="_new" href="https://bryanmiller.us/twinery/Recover/ts-listings/backpackLesson9.zip">here</a>, or <a target="_new" href="http://twinery.42web.io/tutorial/ts-listings/backpackLesson9.zip">here</a>, or <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMAxlEosNr-jE5NKjA">here</a>.
+
+Let's [[$ctl|TwineLesson009Passage005]].
+
+<<tut-links "TwineLesson009Passage003" "TwineLesson009Passage005">>
+
+
+
+:: TwineLesson009Passage005 [deonna]
+With these changes made to {{{YourInventory}}} and {{{YourBackpack}}}, launch the game in your browser. Navigate to your backpack and take one of the two instant coffee packets from your backpack $md then, click the Inventory button in the sidebar and the browser will show what I've put in the left frame; if you back out of the Inventory and take the second (and last) packet of instant coffee, then //again// view your Inventory, you'll see what I show in the right-hand frame below:
+
+<img align="left" hspace=7 @src="setup.imgs79 + 'one-inventory-coffee.png'">Notice that the two packets of coffee aren't named identically $md even though, presumably, they came from the same original container. Also, notice that our variable that tracks the number of instant coffee packets in the backpack $md {{{$instantCoffeePackets}}} $md  has decremented. 
+
+
 
 
 
