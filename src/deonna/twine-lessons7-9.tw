@@ -991,6 +991,11 @@ With these changes made to {{{YourInventory}}} and {{{YourBackpack}}}, launch th
 
 
 
+:: TwineLesson009Passage006 [deonna]
+You may be wondering why the two packets of coffee are represented as different strings in our ''{{{$inventory}}}'' array. The reason is that 
+
+
+
 
 
 

@@ -95,3 +95,14 @@
 <<widget no-wiki>>
     <<print '<nowiki>' + Story.get(passage()).text + '</nowiki>'>>
 <</widget>>
+
+<<widget 'spell'>>\
+	<<nobr>>
+		<<set _output to []>>
+		<<for _output.length lt $args[0]>>
+			<<run _output.push(setup.magicWords.pluck())>>
+		<</for>>
+		<<print _output.join(', ')>>
+		<<set setup.magicWords to setup.magicWords.concat(_output)>>
+	<</nobr>>\
+<</widget>>
