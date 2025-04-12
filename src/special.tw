@@ -25,6 +25,7 @@ Navigations: <<= State.turns>>
 <a target="_new" href="https://bryanmiller.us/twinery/web/index.html#/">Hosted Twine</a><br>
 <a target="_new" href="https://www.tads.org/ifidgen/ifidgen">IFID Generator</a>
 
+<br><center><a data-passage=$return><img width="32" src="./assets/images/back-button.png" alt="go back" /></a></center>
 
 
 :: StorySubtitle [special]

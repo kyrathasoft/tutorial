@@ -1,8 +1,15 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 4/12/2025__ 
+# corrected a typo in passage {{{Campfire}}}
+# updated $ts in {{{YourBackpack}}} to update inventory when coffee taken
+# added return button to daily devnotes that lacked it
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
+
 __Notes from 4/10/2025__ 
 # completed Lesson 08
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 4/7/2025__ 
 # used attribute directive markup to shorten {{{<img src>}}} in Lesson 1
@@ -12,48 +19,57 @@ __Notes from 4/7/2025__
 # corrected markup in Lesson 5 Passage 5
 # used attrib directive markup to shorten {{{<img src>}}} in Lesson 5
 # used attrib directive markup to shorten {{{<img src>}}} in Lesson 6
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 4/6/2025__ 
 # tweaked font size & spacing on tutorial index passage
 # added a back button the Dev Only password gate passage
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 4/5/2025__
 # removed anigif of thinking head in profile view
 # the above had been displayed in {{{StoryCaption}}}
 # now {{{StoryCaption}}} displays bryan.jpg
 # perused ChoiceScript to SugarCube Guide
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 4/4/2025__
 # covered diff between temp and story variables
 # demonstrated unsetting a variable
 # showed examples of printing a variable's value
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 4/3/2025__ 
 # got through passage 20 done in Lesson 007
 # added test function DoubleIt()
 # added a couple more reading Resources
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 4/2/2025__
 # moved bryan_widgets.tw to dev folder
 # replaced 'mdash;' with $md throughout
 # implemented slicker coffee acquisition (see Lesson 7 in tutorial)
 # began setup on simple inventory system in tutorial game/story
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 3/29/2025__
 # completed Lesson 5 of the tutorial series
 # began work on Lesson 6 off the same series
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 3/27/2025__
 # fixed a misordered closing tag in psg TwineLesson004PostQuiz
 # tested / verified that quiz #1 grading works
 # blogged & embedded a Github gist of Twee3 code for quizzing
 # backed up some online copies of Gwentastic's Twee splitter
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 3/26/2025__
 # fixed quiz-taking code
 # currently there are 5 questions in Quiz #1
 # Quiz #1 covers Lessons 1, 2, 3, and 4
 # Need to add at least 5 more questions to quiz
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 3/24/2025__
 # added function redify on the setup object
@@ -61,15 +77,18 @@ __Notes from 3/24/2025__
 # added macros {{{<<correct>>}}} and {{{<<wrong>>}}} to support quizzing
 # added first 3 quiz questions to Quiz #1
 # At some point, I'll want to go back and refactor quiz code
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 3/22/2025__
 # Created widget {{{<<tut-links>>}}}
 <span class="tab">*</span> It looks through all tutorial passages
 <span class="tab">*</span> Tutorial psgs are tagged {{{[deonna]}}}
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 3/20/2025__
 # Created custom widget {{{<<story-format-icons>>}}} for use in tutorial #3<br>
 <span class="tab">See line 188 in Twee3 file {{{twine-lesson-1.tw}}}
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 3/19/2025__
 # Finished first two tutorial lessons for Deonna Pinson
@@ -80,6 +99,7 @@ __Notes from 3/19/2025__
 __Notes from 3/18/2025__
 # presented this twine to Ari Rosner, Sam Riker, and Amy Spier
 <span class="tab">I'm touched Beca believed in me and scheduled this presentation</span>
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 3/17/2025__\
 <nobr><<set _lnk to "https://www.reddit.com/r/twinegames/comments/1jd2i3t/comment/mi7z24n">></nobr>
@@ -90,6 +110,7 @@ __Notes from 3/17/2025__\
 # [[test GoRandom widget|TestGoRandomWidget]]<nobr>
 for a GitHub gist of the code needed for the above test,<br>plug the following script into a webpage:<br>
 {{{<script src="https://gist.github.com/kyrathasoft/825e29d93fb333cddabebf5f3603c10a.js"></script>}}}</nobr>
+<br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 3/16/2025__\
 <nobr><<set _lnk to "https://marketplace.visualstudio.com/items?itemName=StephenGranade.twine-twee-language">></nobr>

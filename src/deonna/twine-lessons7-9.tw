@@ -994,8 +994,34 @@ With these changes made to {{{YourInventory}}} and {{{YourBackpack}}}, launch th
 
 
 :: TwineLesson009Passage006 [deonna]
-Now, some simulationist buffs might implement all of this just to be implementing it, but not us. We're going to use the instant coffee to unlock a part of the story. Use of inventory items is a common gating mechanism in many games $md meaning that if you //have// a certain inventory item, or when you //use// a certain inventory item, a gate that formerly barred entry into part of our story unlocks. 
+<img align="left" hspace=10 @src="setup.imgs79 + 'both-coffee-packets-in-inventory.png'">Now, some simulationist buffs might implement all of this just to be implementing it, but not us. We're going to use the instant coffee to unlock a part of the story. Use of inventory items is a common gating mechanism in many games $md meaning that if you //have// a certain inventory item, or when you //use// a certain inventory item, a gate that formerly barred entry into part of our story unlocks. 
 
+If you take both packets of coffee from your backpack, then check your inventory, it should look like the accompanying image shown on this page.
+
+Remember, the line at the bottom of our inventory, "Coffee Packets in backpack", is only temporary. We'll remove it before releasing our $sg. Let's [[$ctl|TwineLesson009Passage007]].
+
+<<tut-links "TwineLesson009Passage005" "TwineLesson009Passage007">>
+
+
+
+:: TwineLesson009Passage007 [deonna]
+Shortly, we're going to implement coffee drinking and the accompanying depletion of instant coffee packets. But first, I want to give you an example of adding a Setting to your $tw game. Various settings can be added to a $sg in order to give the player more options. Many players appreciate having access to various game settings so that they can fine-tune their playing experience.
+
+Go to {{{Story}}} $js and add the following function:
+
+{{{Setting.addToggle("brevity", {}}}
+<span class="tab">label : "set to true for shorter passage descriptions",</span>
+<span class="tab">default: false</span>
+{{{});}}} 
+
+[[$ct|TwineLesson009Passage008]]
+
+<<tut-links "TwineLesson009Passage006" "TwineLesson009Passage008">>
+
+
+
+:: TwineLesson009Passage008 [deonna]
+<img align="left" hspace=10 @src="setup.imgs79 + 'sidebar-buttons.png'">"Brevity is the soul of wit." This quote, attributed to Polonius in Shakespeare's //Hamlet//, suggests that conciseness and succinctness are key to intelligence and cleverness. Some players, particularly those who enjoy parser games, like the option of toggling off verbose descriptions after they've been seen once by the player. After adding the //brevity// setting, launch the game and you'll note that there is now an additional sidebar button, "Settings".
 
 
 
