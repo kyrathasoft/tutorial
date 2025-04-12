@@ -1,0 +1,25 @@
+https://gist.github.com/kyrathasoft/7049d22d77bac20c2057d951f20bae05
+
+/* Campfire passage for tutorial lesson 9 */
+
+<<= setup.Title>><<set _brief to Setting.getValue("brevity")>>
+
+You sit before a cheerful campfire<<if not _brief>>, the crackling flames hypnotic, the warmth from the blaze soothing the cares from your knotted muscles<</if>>.
+
+To the [[east|Cliff]], the ridge <<if not _brief>>on which you're camped<</if>> rises to an abrupt cliff<<if not _brief>> overlooking a river<</if>>.
+
+The<<if not _brief>> mossy<</if>> knoll <<if not _brief>>on which your campfire is located<</if>> slopes gradually downhill to the [[southwest->SkeletonHollow]]<<if not _brief>>, leading to a copse of firs and evergreens<</if>>.
+
+<<nobr>>
+<<if $cupsOfCoffeeDrank eq 0>>
+	You yawn. <<if not _brief>>As much as you enjoy camping out, you never sleep as 
+    well in a tent as you do in your bed. <</if>><<if not _brief>>Through a mental fog, you<<else>>You<</if>> 
+    	<<if $instantCoffeePackets gt 0>> realize that you have some instant coffee 
+        	in your backpack &mdash; which is in your [[tent->YourTent]].<<else>>berate yourself 
+        	for using up all your instant coffee yesterday. 
+        	You could really use some right now.
+        <</if>>
+<</if>>
+<</nobr>>
+
+/* With brevity set to true, and $cupsOfCoffeeDrank at 0, psg Campfire outputs 42 words; otherwise 105 */

@@ -1010,7 +1010,7 @@ Shortly, we're going to implement coffee drinking and the accompanying depletion
 Go to {{{Story}}} $js and add the following function:
 
 {{{Setting.addToggle("brevity", {}}}
-<span class="tab">label : "set to true for shorter passage descriptions",</span>
+<span class="tab">label : "set to Brevity to true for shorter passage descriptions",</span>
 <span class="tab">default: false</span>
 {{{});}}} 
 
@@ -1025,7 +1025,32 @@ Go to {{{Story}}} $js and add the following function:
 
 
 
+:: TwineLesson009Passage009 [deonna]
+Now, let's make use of the //brevity// setting by modifying the $ts of our {{{Campfire}}} passage. You can view the needed updated $ts <a target="_new" href="https://gist.github.com/kyrathasoft/7049d22d77bac20c2057d951f20bae05">here</a>, or download it from <a target="_new" href="http://twinery.42web.io/tutorial/ts-listings/campfirePsgLesson9.zip">here</a>, <a target="_new" href="https://bryanmiller.us/twinery/Recover/ts-listings/campfirePsgLesson9.zip">here</a>, or <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMB1NED3E92vSp7gRA">here</a>.
 
+After updating the {{{Campfire}}} passage's code to take advantage of our //brevity// setting, run the [[game|TwineLesson009Passage010]].
+
+<<tut-links "TwineLesson009Passage008" "TwineLesson009Passage010">>
+
+
+
+:: TwineLesson009Passage010 [deonna]
+<img @src="setup.imgs79 + 'brevity-setting.png'">
+Upon launching the game in-browser, click the Settings button in the sidebar and you'll be shown the above. Notice that, by default, //brevity// is disabled (i.e., turned "off"), meaning we'll get the full verbosity of all our passages' text. If you toggle //brevity// to true, then the //next// time you enter the {{{Campfire}}} passage, the text will be brief $md 42 words as opposed to 105. You'll notice I made good use of a temp variable, {{{_brief}}} by setting it at the very top of the passage to {{{Setting.getValue("brevity")}}}. This is a good use for a temp variable. It makes the code in the remainder of the passage shorter and easier to read, and it saves space in the compiled game [[file|TwineLesson009Passage011]].
+
+<<tut-links "TwineLesson009Passage009", "TwineLesson009Passage011">>
+
+
+
+:: TwineLesson009Passage011 [deonna]
+The link color seems just a wee bit too dark. If you agree, you can (optionally) add the following to the Stylesheet sectiion of your $tw:
+{{{
+a {
+	color: skyblue; !important;
+}
+}}}
+
+However, it's very much a matter of preference. I've //brevified// our story's main passages to accommodate a verbose/brief setting. The code of these passages can be viewed <a target="_new" href="https://gist.github.com/kyrathasoft/079627777a374f9670e014dca9394895">here</a> as a Github gist. Alternatively, you can download it <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMEOG1BzFMAwHVbtNQ">here</a>, <a target="_new" href="https://bryanmiller.us/twinery/Recover/ts-listings/five-brief-psgs.zip">here</a>, or <a target="_new" href="http://twinery.42web.io/tutorial/ts-listings/five-brief-psgs.zip">here</a>.
 
 
 
