@@ -1,11 +1,10 @@
-<<silent>><<set _packet1 to "a packet of Mount Hagen", _packet2 to "a wrinkled Mt. Hagen packet">><</silent>>You pull your Gregory Zulu 45 over next to you and rummage around in a side pocket. <<if $instantCoffeePackets gt 0>> Sure enough, just as you remembered there <<if $instantCoffeePackets eq 1>>is a single packet<<else>>are <<= $instantCoffeePackets>> packets <</if>> of Mount Hagen single serve coffee. <<else>> Aww, man! You're completely out of your favorite coffee for outdoor excursions. <</if>>
+<<silent>><<set _packet to "a packet of Mount Hagen">><</silent>>You pull your Gregory Zulu 45 over next to you and rummage around in a side pocket. <<if $instantCoffeePackets gt 0>> Sure enough, just as you remembered there <<if $instantCoffeePackets eq 1>>is a single packet<<else>>are <<= $instantCoffeePackets>> packets <</if>> of Mount Hagen single serve coffee. <<else>> Aww, man! You're completely out of your favorite coffee for outdoor excursions. <</if>>
 
 <<nobr>>
 <<if $instantCoffeePackets>>
 	+<<link "take a packet of Mount Hagen">>
 		<<set $instantCoffeePackets -- >>
-    	<<if not $inventory.includes(_packet1)>><<set $inventory.push(_packet1)>><<else>>
-        	<<set $inventory.push(_packet2)>><</if>>
+    	<<set $inventory.push(_packet)>>
         <<goto YourBackpack>>
     <</link>><br>
 <</if>> 

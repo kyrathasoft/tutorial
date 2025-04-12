@@ -987,12 +987,14 @@ Let's [[$ctl|TwineLesson009Passage005]].
 :: TwineLesson009Passage005 [deonna]
 With these changes made to {{{YourInventory}}} and {{{YourBackpack}}}, launch the game in your browser. Navigate to your backpack and take one of the two instant coffee packets from your backpack $md then, click the Inventory button in the sidebar and the browser will show what I've put in the left frame; if you back out of the Inventory and take the second (and last) packet of instant coffee, then //again// view your Inventory, you'll see what I show in the right-hand frame below:
 
-<img align="left" hspace=7 @src="setup.imgs79 + 'one-inventory-coffee.png'">Notice that the two packets of coffee aren't named identically $md even though, presumably, they came from the same original container. Also, notice that our variable that tracks the number of instant coffee packets in the backpack $md {{{$instantCoffeePackets}}} $md  has decremented. 
+<img align="left" hspace=7 @src="setup.imgs79 + 'one-inventory-coffee.png'">Notice that our variable that tracks the number of instant coffee packets in the backpack $md {{{$instantCoffeePackets}}} $md  has decremented. When we see the variable ''{{{$instantCoffeePackets}}}'' we should understand that we're talking about packets of instant coffee that are in our [[backpack|TwineLesson009Passage006]].
+
+<<tut-links "TwineLesson009Passage004" "TwineLesson009Passage006">>
 
 
 
 :: TwineLesson009Passage006 [deonna]
-You may be wondering why the two packets of coffee are represented as different strings in our ''{{{$inventory}}}'' array. The reason is that 
+Now, some simulationist buffs might implement all of this just to be implementing it, but not us. We're going to use the instant coffee to unlock a part of the story. Use of inventory items is a common gating mechanism in many games $md meaning that if you //have// a certain inventory item, or when you //use// a certain inventory item, a gate that formerly barred entry into part of our story unlocks. 
 
 
 
