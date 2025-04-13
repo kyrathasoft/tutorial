@@ -1,0 +1,14 @@
+<<nobr>><<silent>><<set _brief to Setting.getValue("brevity")>><</silent>>You are <<if not _brief>>standing in a sunken area nestled into a copse of firs and evergreens,<</if>> a minute's hike from your [[campfire->Campfire]]. 
+	
+		You sense that you've visited this place many times. 
+    	<<if $cupsOfCoffeeDrank lt 1>>
+    		Something about this spot causes the breeze of remembrance to sigh through the cobwebs of your memory &mdash; but not strongly enough to blow free a solid recollection. You yawn, trying to concentrate. If only you could temporarily stave off the fogginess following last night's poor sleep.
+    	<</if>>
+    	<<if $cupsOfCoffeeDrank eq 1>>
+    		That cup of coffee is starting to kick in. You look around this hollow and the fingers of recall caress you once ... twice. Agh! This is so frustrating! You can sense that you're on the brink of recapturing a lost chunk of your past.
+    	<</if>>
+    	<<if $cupsOfCoffeeDrank eq 2>>
+    		You glance around the hollow at the surrounding pines and firs, at the boulder lying at its center, and then ... you [[remember|Remembrance]]!
+    	<</if>>
+   
+<</nobr>>

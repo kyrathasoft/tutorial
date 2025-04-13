@@ -1052,6 +1052,25 @@ a {
 
 However, it's very much a matter of preference. I've //brevified// our story's main passages to accommodate a verbose/brief setting. The code of these passages can be viewed <a target="_new" href="https://gist.github.com/kyrathasoft/079627777a374f9670e014dca9394895">here</a> as a Github gist. Alternatively, you can download it <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMEOG1BzFMAwHVbtNQ">here</a>, <a target="_new" href="https://bryanmiller.us/twinery/Recover/ts-listings/five-brief-psgs.zip">here</a>, or <a target="_new" href="http://twinery.42web.io/tutorial/ts-listings/five-brief-psgs.zip">here</a>.
 
+[[$ct|TwineLesson009Passage012]]
+
+<<tut-links "TwineLesson009Passage010" "TwineLesson009Passage012">>
+
+
+
+:: TwineLesson009Passage012 [deonna]
+I took us on a tangent there, but the whole //brevity// setting and passages editing are optional. Now we want to turn our attention back to our ''{{{$inventory}}}'' array and making use of it in our $sg. So now, let's return to our ''{$inventory}}'' array and put that aromatic Mount Hagen coffee to good use. The first thing we'll do is modify the {{{SkeletonHollow}}} passage, so that it will be ready to handle the game state when the player has drank one (or two) cups of coffee. <a target="_new" href="https://gist.github.com/kyrathasoft/9bc579818e2c3de50b7d30bb23be56be">Here</a> is a code listing. And you can download the code <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMFdNFKVwZe2dYt5EQ">here</a>, and <a target="_new" href="https://bryanmiller.us/twinery/Recover/ts-listings/skeletonHollowLesson9.zip">here</a>, and <a target="_new" href="http://twinery.42web.io/tutorial/ts-listings/skeletonHollowLesson9.zip">here</a>.
+
+[[$ct|TwineLesson009Passage013]]
+
+<<tut-links "TwineLesson009Passage011" "TwineLesson009Passage013">>
+
+
+
+
+:: TwineLesson009Passage013 [deonna]
+Just like expectant parents prepare a nursery for the baby's arrival, we have prepared passage {{{SkeletonHollow}}} for the time when the player triggers the right conditions. If you view the code listing for the passage, you'll see that the passage can handle three different game states: when no coffee has been drunk, when one cup has been consumed, and when the player has downed two cups $md using up both packets of Mount Hagen.
+
 
 
 
