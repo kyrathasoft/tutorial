@@ -1118,7 +1118,7 @@ PLACEHOLDER TEXT
 
 
 
-<img align="left" hspace=10 @src="setup.imgs79 + 'library-import.png'">Somewhere in the last short while, I've introduced a syntax error. Rather than hunt through and update the previous Github gist code listing and zip archive downloads, I will simply point you to download <a target="_new" href="http://twinery.42web.io/twinery/campfire-tale/less9psg15/campfireTale.zip">this</a> file and extract the index.html. After extracting {{{index.html}}}, import it into $tw using {{{Library -> Import}}}. That will insure you have the same code I have at the time of this [[writing|TwineLesson009Passage017]].
+<img align="left" hspace=10 @src="setup.imgs79 + 'library-import.png'">Somewhere in the last short while, I've introduced a syntax error. Rather than hunt through and update the previous Github gist code listing and zip archive downloads, I will simply point you to download <a target="_new" href="http://twinery.42web.io/twinery/campfire-tale/less9psg15/campfireTale.zip">this</a> file and extract the index.html. After extracting {{{index.html}}}, import it into $tw using {{{Library -> Import}}}. <a target="_new" href="https://bryanmiller.us/twinery/Recover/campfireTale.zip">Here</a> is an alternative download link. That will insure you have the same code I have at the time of this [[writing|TwineLesson009Passage017]].
 
 <<tut-links "TwineLesson009Passage015" "TwineLesson009Passage017">>
 
@@ -1132,10 +1132,50 @@ You should now be able to take one (or both) coffee packets from your pack. When
 
 
 :: TwineLesson009Passage018
+"Well now," you say, "I'm keenly interested in what sort of Eureka moment the two cups of strong coffee have triggered." We'll go there next. But let's take the time to examine and understand how our packets of Mount Hagen coffee were added to the player's inventory, and then also how they were removed from the inventory as they were used to prepare coffee. This is important because arrays are hugely versatile in $tw games. Before getting into those two things, I'll note that $md although I used temp variables to represent "a packet of Mount Hagen" in multiple passages $md in retrospect it would probably be better to have used a single story variable, ''{{{$hagen}}}'', perhaps. Why? Because in using different temp variables in various passages, I increased the likelihood of introding an error via a [[typo|TwineLesson009Passage019]].
+
+<<tut-links "TwineLesson009Passage017" "TwineLesson009Passage019">>
 
 
 
+:: TwineLesson009Passage019
+Perhaps I will go back and refactor the code. If I do, I'll bring you along on the journey, and wll explain what I'm doing, and why. But right now, let's examine how we add new elements to an array, and how we remove them. In passage {{{YourBackpack}}}, we used a temp variable to store the string of text that represents our coffee packets $md {{{<<set _packet to "a packet of Mount Hagen">>}}}. Then, when the player takes a packet of Mount Hagen from his backpack, we decrement the ''{{{$instantCoffeePacket}}}'' variable. On the next page, I show the small bit of $ts used, and will explain why tracking the value held by ''{{{$instantCoffeePacket}}}'' is [[important|TwineLesson009Passage020]].
 
+<<tut-links "TwineLesson009Passage018" "TwineLesson009Passage020">>
+
+
+
+:: TwineLesson009Passage020
+<img align="left" hspace=10 vspace=15 @src="setup.imgs79 + 'ts-to-take-coffee.png'">That's not a pipe character after {{{<<goto YourBackpack>>}}}: I just accidentally had my mouse cursor in the area I screen-shotted. It's important that you understand what's happening here. Everything in between the opening and closing {{{if}}} tags only happens //if// the condition evaluates to true. But it may not be immediately obvious what that condition is. Look at the opening {{{if}}} tag: {{{<<if $instantCoffeePackets>>}}}. I could have made the conditional more explicit by writing it like this: {{{<<if $instantCoffeePackets gt 0>>}}}. If ''{{{$instantCoffeePackets}}}'' holds the value zero, that evaluates to //falsy//, but if it's the value ''1'' or ''2'', it evaluates to //truthy//. Thus, the contents of the {{{if}}} will be used/run if ''{{{$instantCoffeePackets}}}'' holds a value greater than [[zero|TwineLesson009Passage021]].
+
+<<tut-links "TwineLesson009Passage019" "TwineLesson009Passage021">>
+
+
+
+:: TwineLesson009Passage021
+<img align="left" hspace=10 vspace=15 @src="setup.imgs79 + 'if-conditional-evals-to-true.png'">So, the lines of $ts highlighted in yellow will be executed (run, implemented, carried out) as long as variable ''{{{$instantCoffeePackets}}}'' is one or greater.
+
+"Great!" you say. "Now, if only I knew what the hell those highlighted lines //did//..."
+
+Let's break it down so we can understand what's [[happening|TwineLesson009Passage022]].
+
+<<tut-links "TwineLesson009Passage020" "TwineLesson009Passage022">>
+
+
+
+:: TwineLesson009Passage022
+<img align="left" hspace=10 vspace=15 @src="setup.imgs79 + 'link-take-coffee-packet.png'">You know, from playing the sample game we're creating, that if you start a fresh game (not load a save-game) $md which is the only thing we've been doing $md and navigate to your backpack, you'll see a link that says "take a packet of Mount Hagen". Here's what that looks like running the game on my laptop: 
+
+<img @src="setup.imgs79+'link-screenshot-from-backpack.png'">
+
+Note: the ''+'' symbol precedes the link just as a stylistic choice on my part. It's completely optional. The addition symbol is not part of the link at all. Let's continue parsing through this $ts to gain a better understanding of what is [[happening|TwineLesson009Passage023]].
+
+<<tut-links "TwineLesson009Passage021" "TwineLesson009Passage023">>
+
+
+
+:: TwineLesson009Passage023
+The format of a link in the $sc story format is {{{<<link "some text">>do something(s)<</link>>}}}.
 
 
 
