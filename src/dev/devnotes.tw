@@ -9,6 +9,7 @@ __Notes from 4/12/2025__
 # modded {{{Campfire}}} to respond when //brevity// is true
 # made {{{Campfire}}} & {{{YourBackpack}}} brevity-compliant
 # made {{{Cliff}}} and {{{YourTent}}} brevity-compliant
+# prepared {{{SkeletonHollow}}} to deal with caffeination states
 <br><a data-passage="Menu"><img width="32" src="./assets/images/back-button.png" alt="go to Menu" /></a>
 
 __Notes from 4/10/2025__ 
