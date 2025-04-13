@@ -1070,9 +1070,13 @@ I took us on a tangent there, but the whole //brevity// setting and passages edi
 
 :: TwineLesson009Passage013 [deonna]
 Just like expectant parents prepare a nursery for the baby's arrival, we have prepared passage {{{SkeletonHollow}}} for the time when the player triggers the right conditions. If you view the code listing for the passage, you'll see that the passage can handle three different game states: when no coffee has been drunk, when one cup has been consumed, and when the player has downed two cups $md using up both packets of Mount Hagen. To do this, we'll:
-<span class="tab">add passage {{{MakeCoffee}}}</span>
-<span class="tab">add passage {{{EnjoyCoffee}}}</span>
-<span class="tab">Modify passage {{{Campfire}}} to interact with our array and two variables</span>
+
+<span class="tab">+ add passage {{{MakeCoffee}}}</span>
+<span class="tab">+ add passage {{{EnjoyCoffee}}}</span>
+<span class="tab">+ Modify passage {{{Campfire}}} to interact with our array<sup>1</sup> and two variables<sup>2,3</sup></span><font size=-1>
+1. ''{{{$inventory}}}''
+2. ''{{{$cupsOfCoffeeDrank}}}''
+3. ''{{{$instantCoffeePackets}}}'' (packets still in our backpack)</font>
 
 [[$ct|TwineLesson009Passage014]]
 
@@ -1083,7 +1087,9 @@ Just like expectant parents prepare a nursery for the baby's arrival, we have pr
 :: TwineLesson009Passage014 [deonna]
 Add a new passage and name it {{{MakeCoffee}}}. <a target="_new" href="https://gist.github.com/kyrathasoft/76f5ee223f97c74ee67a17eaaf1573e4">Here</a> is the $ts you should enter into passage {{{MakeCoffee}}}. Make another passage and name it {{{EnjoyCoffee}}}. <a target="_new" href="https://gist.github.com/kyrathasoft/e0ecabf504eae62a5e405a8f22b6bca1">Here</a> is the $ts you should put in that passage.
 
-Edit passage {{{Campfire}}} and put <a target="_new" href="https://gist.github.com/kyrathasoft/88bfc56a574e5058761926e22b34dafa">this</a> $ts in it. Notice that passage {{{MakeCoffee}}} removes a packet of instant coffee from our inventory, and that passage {{{EnjoyCoffee}}} increments variable ''{{{$cupsOfCoffeeDrank}}}''.
+Edit passage {{{Campfire}}} and put <a target="_new" href="https://gist.github.com/kyrathasoft/88bfc56a574e5058761926e22b34dafa">this</a> $ts in it. Notice that passage {{{MakeCoffee}}} removes a packet of instant coffee from our inventory, and that passage {{{EnjoyCoffee}}} increments variable ''{{{$cupsOfCoffeeDrank}}}''. Let's [[$ctl|TwineLesson009Passage015]].
+
+<<tut-links "TwineLesson009Passage013" "TwineLesson009Passage015">>
 
 
 
@@ -1095,6 +1101,37 @@ And, finally, notice that {{{SkeletonHollow}}} creates a new passage, {{{Remembr
 PLACEHOLDER TEXT
 
 {{{[[Campfire]]}}}
+
+<a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMIHPbK-D9mzsbM8Og">Here</a> is a download containing the $ts for passages {{{Campfire, EnjoyCoffee, MakeCoffey, Remembrance}}} and {{{SkeletonHollow}}}. This can also be downloaded <a target="_new" href="https://bryanmiller.us/twinery/Recover/ts-listings/FourPsgsAndCoffee.zip">here</a> and <a target="_new" href="http://twinery.42web.io/twinery/tutorial/ts-listings/FourPsgsAndCoffee.zip">here</a>.
+
+[[$ct|TwineLesson009Passage016]]
+
+<<tut-links "TwineLesson009Passage014" "TwineLesson009Passage016">>
+
+
+
+:: TwineLesson009Passage016
+<img align="left" hspace=10 @src="setup.imgs79 + 'struct-less9-psg15.png'">Here is our current story structure. Note: you can playthrough the $sg (as it exists at this particular point of the tutorial) <a target="_new" href="http://twinery.42web.io/campfire-tale/less9psg15/index.html">here</a>. Clicking the link will open the $sg in another browser tab.
+
+
+
+
+
+
+<img align="left" hspace=10 @src="setup.imgs79 + 'library-import.png'">Somewhere in the last short while, I've introduced a syntax error. Rather than hunt through and update the previous Github gist code listing and zip archive downloads, I will simply point you to download <a target="_new" href="http://twinery.42web.io/twinery/campfire-tale/less9psg15/campfireTale.zip">this</a> file and extract the index.html. After extracting {{{index.html}}}, import it into $tw using {{{Library -> Import}}}. That will insure you have the same code I have at the time of this [[writing|TwineLesson009Passage017]].
+
+<<tut-links "TwineLesson009Passage015" "TwineLesson009Passage017">>
+
+
+
+:: TwineLesson009Passage017
+You should now be able to take one (or both) coffee packets from your pack. When you do so, they'll be added to your inventory. If you have one or both packets, then when you return to {{{Campfire}}}, the game provides a way to make coffee (but doesn't force you to do so). If you prepare and drink two cups $md by using up both coffee packets $md you'll find that they're no longer in your inventory. If you then go to the {{{SkeletonHollow}}} passage, you have a Eureka moment in which you remember something traumatic but of great importance (you'll notice that we've put some placeholder text in passage {{{Remembrance}}}, as well as a link back to {{{Campfire}}}). Let's [[$ctl|TwineLesson009Passage018]].
+
+<<tut-links "TwineLesson009Passage016" "TwineLesson009Passage018">>
+
+
+
+:: TwineLesson009Passage018
 
 
 

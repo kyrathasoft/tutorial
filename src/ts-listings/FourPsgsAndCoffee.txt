@@ -1,0 +1,68 @@
+/* twinescript for four passages updated to interact with and/or react appropriately to the consumption of coffee */
+
+/* Passage Campfire follows */
+
+<<= setup.Title>><<set _brief to Setting.getValue("brevity", _flag to false)>>
+
+You sit before a cheerful campfire<<if not _brief>>, the crackling flames hypnotic, the warmth from the blaze soothing the cares from your knotted muscles<</if>>.
+
+To the [[east|Cliff]], the ridge <<if not _brief>>on which you're camped<</if>> rises to an abrupt cliff<<if not _brief>> overlooking a river<</if>>.
+
+The<<if not _brief>> mossy<</if>> knoll <<if not _brief>>on which your campfire is located<</if>> slopes gradually downhill to the <<if visited("Remembrance")>>frightful hollow you'll never set foot in again.<<else>>[[southwest->SkeletonHollow]]<</if>><<if not _brief>>, leading to a copse of firs and evergreens<</if>>.
+
+<<nobr>>
+<<if $cupsOfCoffeeDrank lt 2>>
+	You yawn. <<if not _brief>>As much as you enjoy camping out, you never sleep as 
+    well in a tent as you do in your bed. <</if>>
+    
+    <<if not _brief>>Through a mental fog, you<<else>>You<</if>> 
+    	
+        <<if $instantCoffeePackets gt 0>> realize that you have some instant coffee 
+        	in your backpack &mdash; which is in your [[tent->YourTent]]. <<if $inventory.count("a packet of Mount Hagen") eq 1>>You also have one packet of the instant coffee in your shirt pocket.<<set _flag to true>><</if>>
+            
+            <<else>><<if $inventory.count("a packet of Mount Hagen") lt 1>>berate yourself 
+        	for using up all your instant coffee yesterday. 
+        	You could really use some right now.<</if>>
+            
+            <<if $inventory.count("a packet of Mount Hagen") gt 0>><<if not _flag>>You have instant coffee in your shirt pocket. <</if>><<if $inventory.count("a packet of Mount Hagen") eq 2>>In fact, you have //two// packets.<</if>><</if>>
+            
+        <</if>>
+        
+<</if>><br><br>
+
+<<if $inventory.count("a packet of Mount Hagen") gt 0>>
+	You [[consider->MakeCoffee]] making a<<if $cupsOfCoffeeDrank eq 1>>nother<</if>> cup of coffee.
+<</if>>
+
+<</nobr>>
+
+
+/* Passage EnjoyCoffee follows */
+
+<<nobr>><<set $cupsOfCoffeeDrank to $cupsOfCoffeeDrank + 1, _hagen to "a packet of Mount Hagen">>You make a <<if $cupsOfCoffeeDrank eq 2>>second<</if>> cup of Mount Hagen, enjoying the aroma and the warmth it causes to bloom within you. <<if $cupsOfCoffeeDrank eq 2>>Ooh, that second cup of java is really starting to [[kick in|Campfire]]!<</if>><br>
+
+<<if $inventory.count(_hagen)>>You [[debate|MakeCoffee]] whether to make a second cup.<br>
+<</if>>
+
+<<if $cupsOfCoffeeDrank eq 1>>Mmm, that was really good but that's enough coffee for [[now|Campfire]].<</if>>
+
+<</nobr>>
+
+/* Passage MakeCoffee follows */
+
+<<nobr>>
+<<set _hagen to "a packet of Mount Hagen">>
+A cup of coffee does sound good.<br><br>
+<<if $inventory.count(_hagen)>>
+	+ <<link "Make coffee">><<set $inventory.deleteFirst(_hagen),>><<goto "EnjoyCoffee">><</link>>
+<</if>>
+<br>
++ [[Go back|Campfire]]
+
+<</nobr>>
+
+/* Passage Remembrance follows */
+
+PLACEHOLDER TEXT
+
+[[Campfire]]
