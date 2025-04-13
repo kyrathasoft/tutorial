@@ -1069,8 +1069,32 @@ I took us on a tangent there, but the whole //brevity// setting and passages edi
 
 
 :: TwineLesson009Passage013 [deonna]
-Just like expectant parents prepare a nursery for the baby's arrival, we have prepared passage {{{SkeletonHollow}}} for the time when the player triggers the right conditions. If you view the code listing for the passage, you'll see that the passage can handle three different game states: when no coffee has been drunk, when one cup has been consumed, and when the player has downed two cups $md using up both packets of Mount Hagen.
+Just like expectant parents prepare a nursery for the baby's arrival, we have prepared passage {{{SkeletonHollow}}} for the time when the player triggers the right conditions. If you view the code listing for the passage, you'll see that the passage can handle three different game states: when no coffee has been drunk, when one cup has been consumed, and when the player has downed two cups $md using up both packets of Mount Hagen. To do this, we'll:
+<span class="tab">add passage {{{MakeCoffee}}}</span>
+<span class="tab">add passage {{{EnjoyCoffee}}}</span>
+<span class="tab">Modify passage {{{Campfire}}} to interact with our array and two variables</span>
 
+[[$ct|TwineLesson009Passage014]]
+
+<<tut-links "TwineLesson009Passage012" "TwineLesson009Passage014">>
+
+
+
+:: TwineLesson009Passage014 [deonna]
+Add a new passage and name it {{{MakeCoffee}}}. <a target="_new" href="https://gist.github.com/kyrathasoft/76f5ee223f97c74ee67a17eaaf1573e4">Here</a> is the $ts you should enter into passage {{{MakeCoffee}}}. Make another passage and name it {{{EnjoyCoffee}}}. <a target="_new" href="https://gist.github.com/kyrathasoft/e0ecabf504eae62a5e405a8f22b6bca1">Here</a> is the $ts you should put in that passage.
+
+Edit passage {{{Campfire}}} and put <a target="_new" href="https://gist.github.com/kyrathasoft/88bfc56a574e5058761926e22b34dafa">this</a> $ts in it. Notice that passage {{{MakeCoffee}}} removes a packet of instant coffee from our inventory, and that passage {{{EnjoyCoffee}}} increments variable ''{{{$cupsOfCoffeeDrank}}}''.
+
+
+
+:: TwineLesson009Passage015
+Passage {{{SkeletonHollow}}} should contain <a target="_new" href="https://gist.github.com/kyrathasoft/f3e1ea216814abb0eec6caaadf9dfd31">this</a> $ts so that it handles caffeination correctly.
+
+And, finally, notice that {{{SkeletonHollow}}} creates a new passage, {{{Remembrance}}}, simply by linking to it. For now, {{{Remembrance}}} should simply have this $ts:
+
+PLACEHOLDER TEXT
+
+{{{[[Campfire]]}}}
 
 
 
