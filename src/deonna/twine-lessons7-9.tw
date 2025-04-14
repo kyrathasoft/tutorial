@@ -1175,9 +1175,35 @@ Note: the ''+'' symbol precedes the link just as a stylistic choice on my part. 
 
 
 :: TwineLesson009Passage023
-The format of a link in the $sc story format is {{{<<link "some text">>do something(s)<</link>>}}}.
+The format of a link in the $sc story format is {{{<<link "some text">>do something(s)<</link>>}}}. The "some text" part is the text you want used as link-text when your $tw is running in a browser. It's possible to have a link that does nothing. For instance, click <<link this>><</link>> link. It doesn't do anything. That's because I wrote it like this in the $ts source code: {{{<<link this>><</link>>}}}. It's a link named {{{this}}} that doesn't have anything between the opening and closing link [[tags|TwineLesson009Passage024]].
+
+<<tut-links "TwineLesson009Passage022" "TwineLesson009Passage024">>
 
 
+
+:: TwineLesson009Passage024
+<img align="left" hspace=10 vspace=10 @src="setup.imgs79+'decrement-coffee-packets.png'">To make it useful, we have to //do something// between the opening and closing link tags. Look at the $ts highlighted in yellow. What's going on there? Well, the ''$'' tells us we're dealing with a {{{story variable}}}. And {{{set}}} tells us we're going to modify the variable in some way. That leaves the two minus signs that come after the variable name and before the {{{>>}}}. The two minus signs ''- -'' signal $sc to //decrement// the value stored in ''$instantCoffeePackets''. When we decrement a variable that contains a number, we simply subtract 1 from the current value. Wouldn't it be handy if we could somehow see what {{{<<set $instantCoffeePackets -- >>}}} is doing in //real time// as we play our [[story|TwineLesson009Passage025]]?
+
+<<tut-links "TwineLesson009Passage023" "TwineLesson009Passage025">>
+
+
+
+:: TwineLesson009Passage025
+<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'test-btn.png'">We've been playing our $sg intermittently by using the {{{Play}}} button, but you may have noticed there is also a {{{Test}}} button. I'm going to demonstrate how to use the {{{Test}}} button to run our $sg in //Debug// mode. Just a heads-up: in Debug mode the passages look kinda weird. Run the game in Debug mode by clicking the {{{Test}}} button and stay on the initial passage: {{{Campfire}}}. We'll orient ourselves to what we're [[seeing|TwineLesson009Passage026]].
+
+<<tut-links "TwineLesson009Passage024" "TwineLesson009Passage026">>
+
+
+
+:: TwineLesson009Passage026
+<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'story-init-in-debug.png'">Our $sg's title, <<= $tut_tit>> is still there, centered and colored red, so //that// looks familiar. At the top of the page we see "StoryInit" followed by three {{{<<set>>}}}, each on a new line. What this is telling us is that even though we're in the startup (blast-off) passage, everything in the special {{{StoryInit}}} passage is executed even before the startup passage is shown. If you hover over each {{{<<set>>}}}, you'll see what that {{{<<set>>}}} is doing. The first two initialize variables, and the third declares and initializes our ''{{{$inventory}}}'' array, so that it contains a canteen, a pocket knife, and a [[handkerchief|TwineLesson009Passage027]].
+
+<<tut-links "TwineLesson009Passage025" "TwineLesson009Passage027">>
+
+
+
+:: TwineLesson009Passage027
+<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'print-game-title.png'">Below the {{{StoryInit}}} and its {{{<<set>>}}}s, you'll see the $sc shorthand for {{{<<print>>}}}. Hover over {{{<<=>>}}} in your browser as it's presenting in Test/Debug mode. When you hover over it, you'll see this text pop-up: {{{<<= setup.Title>>}}}. What's that mean? Well, if you look in the $js passage of your $sg, you'll find this line of script: {{{setup.Title = `<font size="+2" color="red"><center>//A Campfire Tale//</center></font>}}}. Earlier in this tutorial series, I created the {{{Title}}} variable on the {{{setup}}} object. This object is a handy place to define variables whose values won't (or at least are unlikely to) change during our story.
 
 
 
