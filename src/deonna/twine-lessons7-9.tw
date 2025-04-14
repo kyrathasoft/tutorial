@@ -1203,8 +1203,28 @@ The format of a link in the $sc story format is {{{<<link "some text">>do someth
 
 
 :: TwineLesson009Passage027
-<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'print-game-title.png'">Below the {{{StoryInit}}} and its {{{<<set>>}}}s, you'll see the $sc shorthand for {{{<<print>>}}}. Hover over {{{<<=>>}}} in your browser as it's presenting in Test/Debug mode. When you hover over it, you'll see this text pop-up: {{{<<= setup.Title>>}}}. What's that mean? Well, if you look in the $js passage of your $sg, you'll find this line of script: {{{setup.Title = `<font size="+2" color="red"><center>//A Campfire Tale//</center></font>}}}. Earlier in this tutorial series, I created the {{{Title}}} variable on the {{{setup}}} object. This object is a handy place to define variables whose values won't (or at least are unlikely to) change during our story.
+<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'print-game-title.png'">Below the {{{StoryInit}}} and its {{{<<set>>}}}s, you'll see the $sc shorthand for {{{<<print>>}}}. Hover over {{{<<=>>}}} in your browser as it's presenting in Test/Debug mode. When you hover over it, you'll see this text pop-up: {{{<<= setup.Title>>}}}. What's that mean? Well, if you look in the $js passage of your $sg, you'll find this line of script: {{{setup.Title = `<font size="+2" color="red"><center>//A Campfire Tale//</center></font>`}}}. Earlier in this tutorial series, I created the {{{Title}}} variable on the {{{setup}}} object. This object is a handy place to define variables whose values won't (or at least are unlikely to) change during our [[story|TwineLesson009Passage028]].
 
+<<tut-links "TwineLesson009Passage026" "TwineLesson009Passage028">>
+
+
+
+:: TwineLesson009Passage028
+<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'debug-button.png'">I won't go into detail (yet) about the text assigned to {{{setup.Title}}}, except to say that it codes for $ts that will format our title (color it, center it) when {{{<<= setup.Title>>}}} prints it to the browser window. If you hover your mouse over either the opening or closing no-break tag (''{{{<<nobr>>}}}'' and ''{{{<</nobr>>}}}''), a pop-up will show you the $ts that is enclosed by those tags. Now, while you're still in the {{{Campfire}}} passage running in a Test/Debug session because you launched the game with the {{{Test}}} button, we're going to to make use of the debugger (a tool that helps you get rid of 'bugs' in your code). If you look in the bottom right of the browser window where our $sg is displayed, you'll see a background image pointing to a button (see the image on this page: that's what you're looking for in the browser window of our running $sg.)  [[Continue|TwineLesson009Passage029]].
+
+<<tut-links "TwineLesson009Passage027" "TwineLesson009Passage029">>
+
+
+
+:: TwineLesson009Passage029
+<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'yellow-btn-debug-bar.png'">In the brower window in which the game is running you should click on the button that triggers the Debug Bar. For emphasis, I've highlighted that button in yellow in this page's screen-shot. Clicking that button will cause the debug bar to appear, as shown on the next [[page|TwineLesson009Passage030]].
+
+<<tut-links "TwineLesson009Passage028" "TwineLesson009Passage030">>
+
+
+
+:: TwineLesson009Passage030
+<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'debug-bar.png'">
 
 
 
