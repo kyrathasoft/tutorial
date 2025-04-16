@@ -1224,8 +1224,43 @@ The format of a link in the $sc story format is {{{<<link "some text">>do someth
 
 
 :: TwineLesson009Passage030
-<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'debug-bar.png'">
+<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'var-watch-list.png'">If you hover your mouse just to the left of the ''{{{+}}}'' button, a downward-pointing rectangle will appear. If you click that downward-pointing triangle, a list of your story's variables will pop-up. Use that list to select variable ''{{{$instantCoffeePackets}}}'' and array ''{{{$inventory}}}''. If you click them in the list and hit the Enter key, they should appear at the top of the debug bar &md indicating that they're being //watched//. Now, if you click the //Views// button at the bottom-left of the debug bar, it will get rid of all the meta-info and the {{{Campfire}}} passage will appear the way we're accustomed to it looking. To see a screenshot of what you should now see in your running game launched with the //Test// button, go to the next [[page|TwineLesson009Passage031]].
 
+<<tut-links "TwineLesson009Passage029" "TwineLesson009Passage031">>
+
+
+
+
+:: TwineLesson009Passage031
+<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'watched-variables.png'">You'll note that the variables we selected are now shown at the top of the debug bar. Notice that it reports that the value of ''{{{$instantCoffeePackets}}}'' is 2, and that the value of ''{{{$inventory}}}'' is an array with these contents: ''{{{["a canteen", "a pocket knife", "a handkerchief"]}}}''. Leave the debug bar visible, and click the hyperlinked word "tent" to navigate to passage {{{YourTent}}}. Then, click the hyperlinked word "backpack" to navigate to passage {{{YourBackpack}}}.  Once there, I want you to click the "take a packet of Mount Hagen" link, but do so while watching the two //watched variables// in the debug [[bar|TwineLesson009Passage032]].
+
+<<tut-links "TwineLesson009Passage030" "TwineLesson009Passage032">>
+
+
+
+:: TwineLesson009Passage032
+<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'watched-vars-changed.png'">Whaddya know? Variable ''{{{$instantCoffeePackets}}}'' decrements to 1, and our inventory array gains a fourth item. Remember that we initially created variable ''{{{$instantCoffeePackets}}}'' to track the number of instant coffee packets //in your backpack//. So, logically, when you clicked the "take a packet of Mount Hagen" link, this value went from 2 down to 1 packet remaining in the backpack. Simultaneously, an instant coffee packet gets added to your inventory. If you click the "take a packet of Mount Hagen" link a second time, the link disappears (because there are no more packets to be taken from the backpack). The value in variable ''{{{$instantCoffeePackets}}}'' drops to zero, and you gain a 5th inventory [[item|TwineLesson009Passage033]].
+
+<<tut-links "TwineLesson009Passage031" "TwineLesson009Passage033">>
+
+
+
+:: TwineLesson009Passage033
+<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'inv-full-of-coffee.png'">As you can see, running the game in //Test// mode has the advantage that we can set watches on various variables. That's a significant advantage of working in the $tw editor. We have seen in the last few pages (by using //Test// mode and watching some variables) how $tw keeps track of coffee packets in the backpack, versus those we've taken out of the backpack and are now carrying on our person. You should now be comfortable with decrementing a variable (i.e, subtracting one from its current value, and setting the result to that ''new'' value.) Let's revisit the $ts at the bottom of our {{{YourBackpack}}} [[passage|TwineLesson009Passage034]].
+
+<<tut-links "TwineLesson009Passage032" "TwineLesson009Passage034">>
+
+
+
+:: TwineLesson009Passage034
+<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'push-to-inventory.png'">The two lines of $ts that I've highlighted in yellow are responsible for making the //watched variables// change when we ran in //Test// mode and used the Debug Bar. But it may be helpful to look at the push method of the array. Not only can we assign initial values to an array when we first create the array, but we can also add additional values to the array at a later time. And that's what happens when you're using the link to move a packet of instant coffee from your backpack to your inventory. Let's play around a bit with a couple of sample arrays. I'll be using our {{{CodeTest}}} passage for the exploration of the array.push() and array.pop() [[methods|TwineLesson009Passage035]].
+
+<<tut-links "TwineLesson009Passage033" "TwineLesson009Passage035">>
+
+
+
+:: TwineLesson009Passage035
+So, we used the array.push() method at the bottom of our {{{YourBackpack}}} passage. Here is the line of code we used there: {{{<<set $inventory.push(_packet)>>}}}. 
 
 
 
