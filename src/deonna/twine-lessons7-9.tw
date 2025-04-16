@@ -1285,11 +1285,32 @@ On the next page, we'll create a second array, and then I'll show you how to add
 
 
 :: TwineLesson009Passage037
-Let's create another array. {{{<<set _saladMix to ['lettuce', 'crouton', tomato']>>}}}<<set _saladMix to ['lettuce', 'crouton', 'tomato']>> What if we want to add this new array's items to our other array ({{{$myArray}}}), which currently holds ''$myArray''? Would we have to //push()// each item of the {{{_saladMix}}} array onto {{{$myArray}}}? Nope. We can simply do this:
+Create a new array and initilize its contents. {{{<<set _saladMix to ['lettuce', 'crouton', tomato']>>}}}<<set _saladMix to ['lettuce', 'crouton', 'tomato']>> What if we want to add this new array's items to our other array ({{{$myArray}}}), which currently holds ''$myArray''? Would we have to //push()// each item of the {{{_saladMix}}} array onto {{{$myArray}}}? Nope. We can simply do this:
 
 {{{<<set $myArray to $myArray.concat(_saladMix)>>}}}<<set $myArray to $myArray.concat(_saladMix)>>
 
-And the above line of code //concatenates// {{{_saladMix's}}} array items onto array ''{{{$myArray}}}'' So now, the contents of {{{$myArray}}} are: ''<<= $myArray>>''
+And the above line of code //concatenates// {{{_saladMix's}}} array items onto array ''{{{$myArray}}}'' So now, the contents of {{{$myArray}}} are: ''<<= $myArray>>'' But now I asked myself the following [[question|TwineLesson009Passage038]].
+
+<<tut-links "TwineLesson009Passage036" "TwineLesson009Passage038">>
+
+
+
+:: TwineLesson009Passage038
+What if I reassign our {{{$myArray}}} with different items, including some //duplicates//:
+
+<<set $myArray to ['egg', 'carrot', 'raisin', 'egg', 'tomato', 'lettuce', 'lettuce', 'crouton' ]>>{{{<<set $myArray to ['egg', 'carrot, 'raisin', 'egg', 'tomato', 'lettuce', 'lettuce', 'crouton' ]>>}}}
+
+Print {{{$myArray}}} contents with {{{<= $myArray>}}}: ''<<= $myArray>>'' 
+
+If I only want unique values in {{{$myArray}}} (no duplicates), I could do a bunch of programming gymnastics by looping, or I could just use $sc's built-in $sc way of doing it: {{{<<set $myArray to $myArray.toUnique()>>}}}<<set $myArray to $myArray.toUnique()>>
+
+Now, when I print the array's contents, I get: ''<<= $myArray>>'' See? Only unique values, no [[duplicates|TwineLesson009Passage039]].
+
+<<tut-links "TwineLesson009Passage037" "TwineLesson009Passage039">>
+
+
+
+:: TwineLesson009Passage039
 
 
 
