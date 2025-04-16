@@ -1260,7 +1260,36 @@ The format of a link in the $sc story format is {{{<<link "some text">>do someth
 
 
 :: TwineLesson009Passage035
-So, we used the array.push() method at the bottom of our {{{YourBackpack}}} passage. Here is the line of code we used there: {{{<<set $inventory.push(_packet)>>}}}. 
+So, we used the array.push() method at the bottom of our {{{YourBackpack}}} passage. Here is the line of code we used there: {{{<<set $inventory.push(_packet)>>}}}. In $sc, an array's {{{push()}}} method takes one or more //arguments//, which are then appended to the end of the array. You're free to follow along by coding in the {{{CodeTest}}} passage $md or, you can just read along.
+
+Create an array: {{{<<set $myArray to []>>}}} <<set $myArray to []>>{{{$myArray}}} holds <<= $myArray.length>> items.
+Add item: {{{<<set $myArray.push("egg")>>}}} <<set $myArray.push("egg")>> array holds <<= $myArray.length>> item. {{{//}}} an egg
+Add item: {{{<<set $myArray.push("carrot")>>}}} <<set $myArray.push("carrot")>> array holds <<= $myArray.length>> items. {{{//}}} egg, carrot
+
+The array has two //elements//, currently. Arrays in $sc are zero-based, meaning that the first item's //index// is [[zero|TwineLesson009Passage036]].
+
+<<tut-links "TwineLesson009Passage034" "TwineLesson009Passage036">>
+
+
+
+:: TwineLesson009Passage036
+The contents of {{{$myArray}}} are currently: ''<<= $myArray>>''; the first item we //pushed// to the array was 'egg'. It is located at index 0 in the array, and the second item we added, 'carrot', is at index 1:
+
+{{{<<print $myArray[0] equals>> <<= $myArray[0]>>}}} will yield ''{{{$myArray[0]}}} equals <<= $myArray[0]>>''
+{{{<<print $myArray[1] equals>> <<= $myArray[1]>>}}} will yield ''{{{$myArray[1]}}} equals <<= $myArray[1]>>''
+
+On the next page, we'll create a second array, and then I'll show you how to add its contents to the first [[array|TwineLesson009Passage037]].
+
+<<tut-links "TwineLesson009Passage035" "TwineLesson009Passage037">>
+
+
+
+:: TwineLesson009Passage037
+Let's create another array. {{{<<set _saladMix to ['lettuce', 'crouton', tomato']>>}}}<<set _saladMix to ['lettuce', 'crouton', 'tomato']>> What if we want to add this new array's items to our other array ({{{$myArray}}}), which currently holds ''$myArray''? Would we have to //push()// each item of the {{{_saladMix}}} array onto {{{$myArray}}}? Nope. We can simply do this:
+
+{{{<<set $myArray to $myArray.concat(_saladMix)>>}}}<<set $myArray to $myArray.concat(_saladMix)>>
+
+And the above line of code //concatenates// {{{_saladMix's}}} array items onto array ''{{{$myArray}}}'' So now, the contents of {{{$myArray}}} are: ''<<= $myArray>>''
 
 
 
@@ -1284,4 +1313,18 @@ Your inventory contains: <<= $inventory.length>> items. They are: <<= $inventory
 You add the chest's contents to your inventory.
 Now your inventory contains: <<= $inventory.join(', ')>>.
 <<if $inventory.includes('a sword')>><<if $inventory.includes('a dagger')>>Good idea. Dual wielded weapons!<</if>><</if>>
+
+//if you pop() an empty array, you get undefined"
+//if you pop() the last remaining array item, the array is then empty, i.e., []
+
+<<set $myArray to []>><<run $myArray.push("nut", "grape", "raisin")>>
+{{{$myArray}}} items: ''<<= $myArray>>''
+{{{<<run _pop1 to $myArray.pop()>>}}}<<run _pop1 to $myArray.pop()>> First popped value: ''<<= _pop1>>''
+{{{$myArray}}} now holds: ''<<= $myArray>>''
+{{{<<run _pop2 to $myArray.pop()>>}}}<<run _pop2 to $myArray.pop()>> Second popped value: ''<<= _pop2>>''
+{{{$myArray}}} now holds: ''<<= $myArray>>''
+{{{<<run _pop3 to $myArray.pop()>>}}}<<run _pop3 to $myArray.pop()>> Third popped value: ''<<= _pop3>>''
+{{{$myArray}}} now holds: ''<<= $myArray>>'' <<if $myArray.length eq 0>>//empty array//<</if>>
+{{{<<run _pop4 to $myArray.pop()>>}}}<<run _pop4 to $myArray.pop()>> Fourth popped value: ''<<= _pop4>>''
+
 */
