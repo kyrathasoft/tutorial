@@ -17,6 +17,7 @@
     # [[Lesson # 6|TwineLesson006Passage001]]: ''Of Coffee & Repressed Memories'' (27 passages)
     # [[Lesson # 7|TwineLesson007Passage001]]: ''Our First Function, Strings, & The Setup Object'' (38 passages)
     # [[Lesson # 8|TwineLesson008Passage001]]: ''Buiding an Inventory system'' (35 passages)
+    # [[Lesson # 9|TwineLesson009Passage001]]: ''Making Use of Inventory'' (41 passages)
 </font>
     <center>Tutorial images: 132 across 5 directories, totaling 1.24 Mb</center>
     <<run UIBar.show();>>

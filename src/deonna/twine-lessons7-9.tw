@@ -1093,7 +1093,7 @@ Edit passage {{{Campfire}}} and put <a target="_new" href="https://gist.github.c
 
 
 
-:: TwineLesson009Passage015
+:: TwineLesson009Passage015 [deonna]
 Passage {{{SkeletonHollow}}} should contain <a target="_new" href="https://gist.github.com/kyrathasoft/f3e1ea216814abb0eec6caaadf9dfd31">this</a> $ts so that it handles caffeination correctly.
 
 And, finally, notice that {{{SkeletonHollow}}} creates a new passage, {{{Remembrance}}}, simply by linking to it. For now, {{{Remembrance}}} should simply have this $ts:
@@ -1110,11 +1110,8 @@ PLACEHOLDER TEXT
 
 
 
-:: TwineLesson009Passage016
+:: TwineLesson009Passage016 [deonna]
 <img align="left" hspace=10 @src="setup.imgs79 + 'struct-less9-psg15.png'">Here is our current story structure. Note: you can playthrough the $sg (as it exists at this particular point of the tutorial) <a target="_new" href="http://twinery.42web.io/campfire-tale/less9psg15/index.html">here</a>. Clicking the link will open the $sg in another browser tab.
-
-
-
 
 
 
@@ -1124,35 +1121,35 @@ PLACEHOLDER TEXT
 
 
 
-:: TwineLesson009Passage017
+:: TwineLesson009Passage017 [deonna]
 You should now be able to take one (or both) coffee packets from your pack. When you do so, they'll be added to your inventory. If you have one or both packets, then when you return to {{{Campfire}}}, the game provides a way to make coffee (but doesn't force you to do so). If you prepare and drink two cups $md by using up both coffee packets $md you'll find that they're no longer in your inventory. If you then go to the {{{SkeletonHollow}}} passage, you have a Eureka moment in which you remember something traumatic but of great importance (you'll notice that we've put some placeholder text in passage {{{Remembrance}}}, as well as a link back to {{{Campfire}}}). Let's [[$ctl|TwineLesson009Passage018]].
 
 <<tut-links "TwineLesson009Passage016" "TwineLesson009Passage018">>
 
 
 
-:: TwineLesson009Passage018
+:: TwineLesson009Passage018 [deonna]
 "Well now," you say, "I'm keenly interested in what sort of Eureka moment the two cups of strong coffee have triggered." We'll go there next. But let's take the time to examine and understand how our packets of Mount Hagen coffee were added to the player's inventory, and then also how they were removed from the inventory as they were used to prepare coffee. This is important because arrays are hugely versatile in $tw games. Before getting into those two things, I'll note that $md although I used temp variables to represent "a packet of Mount Hagen" in multiple passages $md in retrospect it would probably be better to have used a single story variable, ''{{{$hagen}}}'', perhaps. Why? Because in using different temp variables in various passages, I increased the likelihood of introding an error via a [[typo|TwineLesson009Passage019]].
 
 <<tut-links "TwineLesson009Passage017" "TwineLesson009Passage019">>
 
 
 
-:: TwineLesson009Passage019
+:: TwineLesson009Passage019 [deonna]
 Perhaps I will go back and refactor the code. If I do, I'll bring you along on the journey, and wll explain what I'm doing, and why. But right now, let's examine how we add new elements to an array, and how we remove them. In passage {{{YourBackpack}}}, we used a temp variable to store the string of text that represents our coffee packets $md {{{<<set _packet to "a packet of Mount Hagen">>}}}. Then, when the player takes a packet of Mount Hagen from his backpack, we decrement the ''{{{$instantCoffeePacket}}}'' variable. On the next page, I show the small bit of $ts used, and will explain why tracking the value held by ''{{{$instantCoffeePacket}}}'' is [[important|TwineLesson009Passage020]].
 
 <<tut-links "TwineLesson009Passage018" "TwineLesson009Passage020">>
 
 
 
-:: TwineLesson009Passage020
+:: TwineLesson009Passage020 [deonna]
 <img align="left" hspace=10 vspace=15 @src="setup.imgs79 + 'ts-to-take-coffee.png'">That's not a pipe character after {{{<<goto YourBackpack>>}}}: I just accidentally had my mouse cursor in the area I screen-shotted. It's important that you understand what's happening here. Everything in between the opening and closing {{{if}}} tags only happens //if// the condition evaluates to true. But it may not be immediately obvious what that condition is. Look at the opening {{{if}}} tag: {{{<<if $instantCoffeePackets>>}}}. I could have made the conditional more explicit by writing it like this: {{{<<if $instantCoffeePackets gt 0>>}}}. If ''{{{$instantCoffeePackets}}}'' holds the value zero, that evaluates to //falsy//, but if it's the value ''1'' or ''2'', it evaluates to //truthy//. Thus, the contents of the {{{if}}} will be used/run if ''{{{$instantCoffeePackets}}}'' holds a value greater than [[zero|TwineLesson009Passage021]].
 
 <<tut-links "TwineLesson009Passage019" "TwineLesson009Passage021">>
 
 
 
-:: TwineLesson009Passage021
+:: TwineLesson009Passage021 [deonna]
 <img align="left" hspace=10 vspace=15 @src="setup.imgs79 + 'if-conditional-evals-to-true.png'">So, the lines of $ts highlighted in yellow will be executed (run, implemented, carried out) as long as variable ''{{{$instantCoffeePackets}}}'' is one or greater.
 
 "Great!" you say. "Now, if only I knew what the hell those highlighted lines //did//..."
@@ -1163,7 +1160,7 @@ Let's break it down so we can understand what's [[happening|TwineLesson009Passag
 
 
 
-:: TwineLesson009Passage022
+:: TwineLesson009Passage022 [deonna]
 <img align="left" hspace=10 vspace=15 @src="setup.imgs79 + 'link-take-coffee-packet.png'">You know, from playing the sample game we're creating, that if you start a fresh game (not load a save-game) $md which is the only thing we've been doing $md and navigate to your backpack, you'll see a link that says "take a packet of Mount Hagen". Here's what that looks like running the game on my laptop: 
 
 <img @src="setup.imgs79+'link-screenshot-from-backpack.png'">
@@ -1174,56 +1171,56 @@ Note: the ''+'' symbol precedes the link just as a stylistic choice on my part. 
 
 
 
-:: TwineLesson009Passage023
+:: TwineLesson009Passage023 [deonna]
 The format of a link in the $sc story format is {{{<<link "some text">>do something(s)<</link>>}}}. The "some text" part is the text you want used as link-text when your $tw is running in a browser. It's possible to have a link that does nothing. For instance, click <<link this>><</link>> link. It doesn't do anything. That's because I wrote it like this in the $ts source code: {{{<<link this>><</link>>}}}. It's a link named {{{this}}} that doesn't have anything between the opening and closing link [[tags|TwineLesson009Passage024]].
 
 <<tut-links "TwineLesson009Passage022" "TwineLesson009Passage024">>
 
 
 
-:: TwineLesson009Passage024
+:: TwineLesson009Passage024 [deonna]
 <img align="left" hspace=10 vspace=10 @src="setup.imgs79+'decrement-coffee-packets.png'">To make it useful, we have to //do something// between the opening and closing link tags. Look at the $ts highlighted in yellow. What's going on there? Well, the ''$'' tells us we're dealing with a {{{story variable}}}. And {{{set}}} tells us we're going to modify the variable in some way. That leaves the two minus signs that come after the variable name and before the {{{>>}}}. The two minus signs ''- -'' signal $sc to //decrement// the value stored in ''$instantCoffeePackets''. When we decrement a variable that contains a number, we simply subtract 1 from the current value. Wouldn't it be handy if we could somehow see what {{{<<set $instantCoffeePackets -- >>}}} is doing in //real time// as we play our [[story|TwineLesson009Passage025]]?
 
 <<tut-links "TwineLesson009Passage023" "TwineLesson009Passage025">>
 
 
 
-:: TwineLesson009Passage025
+:: TwineLesson009Passage025 [deonna]
 <img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'test-btn.png'">We've been playing our $sg intermittently by using the {{{Play}}} button, but you may have noticed there is also a {{{Test}}} button. I'm going to demonstrate how to use the {{{Test}}} button to run our $sg in //Debug// mode. Just a heads-up: in Debug mode the passages look kinda weird. Run the game in Debug mode by clicking the {{{Test}}} button and stay on the initial passage: {{{Campfire}}}. We'll orient ourselves to what we're [[seeing|TwineLesson009Passage026]].
 
 <<tut-links "TwineLesson009Passage024" "TwineLesson009Passage026">>
 
 
 
-:: TwineLesson009Passage026
+:: TwineLesson009Passage026 [deonna]
 <img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'story-init-in-debug.png'">Our $sg's title, <<= $tut_tit>> is still there, centered and colored red, so //that// looks familiar. At the top of the page we see "StoryInit" followed by three {{{<<set>>}}}, each on a new line. What this is telling us is that even though we're in the startup (blast-off) passage, everything in the special {{{StoryInit}}} passage is executed even before the startup passage is shown. If you hover over each {{{<<set>>}}}, you'll see what that {{{<<set>>}}} is doing. The first two initialize variables, and the third declares and initializes our ''{{{$inventory}}}'' array, so that it contains a canteen, a pocket knife, and a [[handkerchief|TwineLesson009Passage027]].
 
 <<tut-links "TwineLesson009Passage025" "TwineLesson009Passage027">>
 
 
 
-:: TwineLesson009Passage027
+:: TwineLesson009Passage027 [deonna]
 <img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'print-game-title.png'">Below the {{{StoryInit}}} and its {{{<<set>>}}}s, you'll see the $sc shorthand for {{{<<print>>}}}. Hover over {{{<<=>>}}} in your browser as it's presenting in Test/Debug mode. When you hover over it, you'll see this text pop-up: {{{<<= setup.Title>>}}}. What's that mean? Well, if you look in the $js passage of your $sg, you'll find this line of script: {{{setup.Title = `<font size="+2" color="red"><center>//A Campfire Tale//</center></font>`}}}. Earlier in this tutorial series, I created the {{{Title}}} variable on the {{{setup}}} object. This object is a handy place to define variables whose values won't (or at least are unlikely to) change during our [[story|TwineLesson009Passage028]].
 
 <<tut-links "TwineLesson009Passage026" "TwineLesson009Passage028">>
 
 
 
-:: TwineLesson009Passage028
+:: TwineLesson009Passage028 [deonna]
 <img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'debug-button.png'">I won't go into detail (yet) about the text assigned to {{{setup.Title}}}, except to say that it codes for $ts that will format our title (color it, center it) when {{{<<= setup.Title>>}}} prints it to the browser window. If you hover your mouse over either the opening or closing no-break tag (''{{{<<nobr>>}}}'' and ''{{{<</nobr>>}}}''), a pop-up will show you the $ts that is enclosed by those tags. Now, while you're still in the {{{Campfire}}} passage running in a Test/Debug session because you launched the game with the {{{Test}}} button, we're going to to make use of the debugger (a tool that helps you get rid of 'bugs' in your code). If you look in the bottom right of the browser window where our $sg is displayed, you'll see a background image pointing to a button (see the image on this page: that's what you're looking for in the browser window of our running $sg.)  [[Continue|TwineLesson009Passage029]].
 
 <<tut-links "TwineLesson009Passage027" "TwineLesson009Passage029">>
 
 
 
-:: TwineLesson009Passage029
+:: TwineLesson009Passage029 [deonna]
 <img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'yellow-btn-debug-bar.png'">In the brower window in which the game is running you should click on the button that triggers the Debug Bar. For emphasis, I've highlighted that button in yellow in this page's screen-shot. Clicking that button will cause the debug bar to appear, as shown on the next [[page|TwineLesson009Passage030]].
 
 <<tut-links "TwineLesson009Passage028" "TwineLesson009Passage030">>
 
 
 
-:: TwineLesson009Passage030
+:: TwineLesson009Passage030 [deonna]
 <img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'var-watch-list.png'">If you hover your mouse just to the left of the ''{{{+}}}'' button, a downward-pointing rectangle will appear. If you click that downward-pointing triangle, a list of your story's variables will pop-up. Use that list to select variable ''{{{$instantCoffeePackets}}}'' and array ''{{{$inventory}}}''. If you click them in the list and hit the Enter key, they should appear at the top of the debug bar &md indicating that they're being //watched//. Now, if you click the //Views// button at the bottom-left of the debug bar, it will get rid of all the meta-info and the {{{Campfire}}} passage will appear the way we're accustomed to it looking. To see a screenshot of what you should now see in your running game launched with the //Test// button, go to the next [[page|TwineLesson009Passage031]].
 
 <<tut-links "TwineLesson009Passage029" "TwineLesson009Passage031">>
@@ -1231,35 +1228,35 @@ The format of a link in the $sc story format is {{{<<link "some text">>do someth
 
 
 
-:: TwineLesson009Passage031
+:: TwineLesson009Passage031 [deonna]
 <img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'watched-variables.png'">You'll note that the variables we selected are now shown at the top of the debug bar. Notice that it reports that the value of ''{{{$instantCoffeePackets}}}'' is 2, and that the value of ''{{{$inventory}}}'' is an array with these contents: ''{{{["a canteen", "a pocket knife", "a handkerchief"]}}}''. Leave the debug bar visible, and click the hyperlinked word "tent" to navigate to passage {{{YourTent}}}. Then, click the hyperlinked word "backpack" to navigate to passage {{{YourBackpack}}}.  Once there, I want you to click the "take a packet of Mount Hagen" link, but do so while watching the two //watched variables// in the debug [[bar|TwineLesson009Passage032]].
 
 <<tut-links "TwineLesson009Passage030" "TwineLesson009Passage032">>
 
 
 
-:: TwineLesson009Passage032
+:: TwineLesson009Passage032 [deonna]
 <img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'watched-vars-changed.png'">Whaddya know? Variable ''{{{$instantCoffeePackets}}}'' decrements to 1, and our inventory array gains a fourth item. Remember that we initially created variable ''{{{$instantCoffeePackets}}}'' to track the number of instant coffee packets //in your backpack//. So, logically, when you clicked the "take a packet of Mount Hagen" link, this value went from 2 down to 1 packet remaining in the backpack. Simultaneously, an instant coffee packet gets added to your inventory. If you click the "take a packet of Mount Hagen" link a second time, the link disappears (because there are no more packets to be taken from the backpack). The value in variable ''{{{$instantCoffeePackets}}}'' drops to zero, and you gain a 5th inventory [[item|TwineLesson009Passage033]].
 
 <<tut-links "TwineLesson009Passage031" "TwineLesson009Passage033">>
 
 
 
-:: TwineLesson009Passage033
+:: TwineLesson009Passage033 [deonna]
 <img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'inv-full-of-coffee.png'">As you can see, running the game in //Test// mode has the advantage that we can set watches on various variables. That's a significant advantage of working in the $tw editor. We have seen in the last few pages (by using //Test// mode and watching some variables) how $tw keeps track of coffee packets in the backpack, versus those we've taken out of the backpack and are now carrying on our person. You should now be comfortable with decrementing a variable (i.e, subtracting one from its current value, and setting the result to that ''new'' value.) Let's revisit the $ts at the bottom of our {{{YourBackpack}}} [[passage|TwineLesson009Passage034]].
 
 <<tut-links "TwineLesson009Passage032" "TwineLesson009Passage034">>
 
 
 
-:: TwineLesson009Passage034
+:: TwineLesson009Passage034 [deonna]
 <img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'push-to-inventory.png'">The two lines of $ts that I've highlighted in yellow are responsible for making the //watched variables// change when we ran in //Test// mode and used the Debug Bar. But it may be helpful to look at the push method of the array. Not only can we assign initial values to an array when we first create the array, but we can also add additional values to the array at a later time. And that's what happens when you're using the link to move a packet of instant coffee from your backpack to your inventory. Let's play around a bit with a couple of sample arrays. I'll be using our {{{CodeTest}}} passage for the exploration of the array.push() and array.pop() [[methods|TwineLesson009Passage035]].
 
 <<tut-links "TwineLesson009Passage033" "TwineLesson009Passage035">>
 
 
 
-:: TwineLesson009Passage035
+:: TwineLesson009Passage035 [deonna]
 So, we used the array.push() method at the bottom of our {{{YourBackpack}}} passage. Here is the line of code we used there: {{{<<set $inventory.push(_packet)>>}}}. In $sc, an array's {{{push()}}} method takes one or more //arguments//, which are then appended to the end of the array. You're free to follow along by coding in the {{{CodeTest}}} passage $md or, you can just read along.
 
 Create an array: {{{<<set $myArray to []>>}}} <<set $myArray to []>>{{{$myArray}}} holds <<= $myArray.length>> items.
@@ -1272,7 +1269,7 @@ The array has two //elements//, currently. Arrays in $sc are zero-based, meaning
 
 
 
-:: TwineLesson009Passage036
+:: TwineLesson009Passage036 [deonna]
 The contents of {{{$myArray}}} are currently: ''<<= $myArray>>''; the first item we //pushed// to the array was 'egg'. It is located at index 0 in the array, and the second item we added, 'carrot', is at index 1:
 
 {{{<<print $myArray[0] equals>> <<= $myArray[0]>>}}} will yield ''{{{$myArray[0]}}} equals <<= $myArray[0]>>''
@@ -1284,7 +1281,7 @@ On the next page, we'll create a second array, and then I'll show you how to add
 
 
 
-:: TwineLesson009Passage037
+:: TwineLesson009Passage037 [deonna]
 Create a new array and initilize its contents. {{{<<set _saladMix to ['lettuce', 'crouton', tomato']>>}}}<<set _saladMix to ['lettuce', 'crouton', 'tomato']>> What if we want to add this new array's items to our other array ({{{$myArray}}}), which currently holds ''$myArray''? Would we have to //push()// each item of the {{{_saladMix}}} array onto {{{$myArray}}}? Nope. We can simply do this:
 
 {{{<<set $myArray to $myArray.concat(_saladMix)>>}}}<<set $myArray to $myArray.concat(_saladMix)>>
@@ -1295,7 +1292,7 @@ And the above line of code //concatenates// {{{_saladMix's}}} array items onto a
 
 
 
-:: TwineLesson009Passage038
+:: TwineLesson009Passage038 [deonna]
 What if I reassign our {{{$myArray}}} with different items, including some //duplicates//:
 
 <<set $myArray to ['egg', 'carrot', 'raisin', 'egg', 'tomato', 'lettuce', 'lettuce', 'crouton' ]>>{{{<<set $myArray to ['egg', 'carrot, 'raisin', 'egg', 'tomato', 'lettuce', 'lettuce', 'crouton' ]>>}}}
@@ -1310,42 +1307,29 @@ Now, when I print the array's contents, I get: ''<<= $myArray>>'' See? Only uniq
 
 
 
-:: TwineLesson009Passage039
+:: TwineLesson009Passage039 [deonna]
+What if we wanted to choose a greeting at random from the following array? 
+{{{<<set _salut to ['Salutations!', 'Greetings!', 'Wassup?', 'Howdy!']>>}}}<<set _salut to ['Salutations!', 'Greetings!', 'Wassup?', 'Howdy!']>> You could use any of the next three ways to randomly select one of the array's elements:
+
+1. {{{<<= either(_salut)>>}}}
+2. {{{<<= _salut[random(0, _salut.length - 1)]>>}}}
+3. {{{<<= _salut.random()>>}}}
+
+{{{# 2}}} above is doing it the hard way; I'd use either # 1 or # 3, to pick one member of the array [[randomly|TwineLesson009Passage040]]. 
+
+<<tut-links "TwineLesson009Passage038" "TwineLesson009Passage040">>
 
 
 
-/*
+:: TwineLesson009Passage040 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'if-conditional-evals-to-true.png'">Well, I hope that wasn't too onerous a detour into arrays. We'll come back to arrays again and again because of their extreme utility. Let's wrap-up lesson 9 by looking at and ensuring that we are {{{grokking}}} what's happening in the displayed code snippet: we enter passage {{{YourBackpack}}}. When we get to this section of code, we check if any coffee packets remain in the backpack. If so, then we provide the player a link to take a packet and $md if the player //does// $md then we decrement ''{{{$instantCoffeePackets}}}'' and push a packet onto our ''{{{$inventory}}}'' array. And ''then'' we initiate a passage transition back to the same {{{YourBackpack}}} passage. Why? So that if there is still a packet remaining in the backpack, we give the player an opportunity to [[get it|TwineLesson009Passage041]].
 
-The anatomy of an inventory system:
-(a) the arbitrarily long return function
-(b) creating the YourInventory passage with a [noreturn] tag
-(c) creating the StoryMenu passage so we can link to YourInventory
-(d) give the player some starting inventory items (optional)
+<<tut-links "TwineLesson009Passage039" "TwineLesson009Passage041">>
 
 
-<<nobr>><<set $inventory to []>>
-<<run $inventory.push('a sword');>>
-<<run $inventory.push('a coffee packet');>>
-<<run $inventory.push('a handkerchief');>>
-<<set $chest to ['a bag of gold', 'a dagger']>><</nobr>>
 
-Your inventory contains: <<= $inventory.length>> items. They are: <<= $inventory.join(', ')>>.
-<<set $inventory to $inventory.concat($chest)>>
-You add the chest's contents to your inventory.
-Now your inventory contains: <<= $inventory.join(', ')>>.
-<<if $inventory.includes('a sword')>><<if $inventory.includes('a dagger')>>Good idea. Dual wielded weapons!<</if>><</if>>
+:: TwineLesson009Passage041 [deonna]
+In lesson 10, we'll enjoy more array goodness. We'll take a look at the code in passages {{{MakeCoffee}}} and {{{EnjoyCoffee}}}. And we'll flesh out some content for passage {{{Remembrance}}} where we'll learn what caffeine-salvaged traumatic memory has surfaced in the protagonist's [[mind|TwineLesson009Quiz001]].<<unset $myArray>>
 
-//if you pop() an empty array, you get undefined"
-//if you pop() the last remaining array item, the array is then empty, i.e., []
+<<tut-links "TwineLesson009Passage040" "TwineLesson009Quiz001">>
 
-<<set $myArray to []>><<run $myArray.push("nut", "grape", "raisin")>>
-{{{$myArray}}} items: ''<<= $myArray>>''
-{{{<<run _pop1 to $myArray.pop()>>}}}<<run _pop1 to $myArray.pop()>> First popped value: ''<<= _pop1>>''
-{{{$myArray}}} now holds: ''<<= $myArray>>''
-{{{<<run _pop2 to $myArray.pop()>>}}}<<run _pop2 to $myArray.pop()>> Second popped value: ''<<= _pop2>>''
-{{{$myArray}}} now holds: ''<<= $myArray>>''
-{{{<<run _pop3 to $myArray.pop()>>}}}<<run _pop3 to $myArray.pop()>> Third popped value: ''<<= _pop3>>''
-{{{$myArray}}} now holds: ''<<= $myArray>>'' <<if $myArray.length eq 0>>//empty array//<</if>>
-{{{<<run _pop4 to $myArray.pop()>>}}}<<run _pop4 to $myArray.pop()>> Fourth popped value: ''<<= _pop4>>''
-
-*/
