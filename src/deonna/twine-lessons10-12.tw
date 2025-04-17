@@ -7,4 +7,4 @@ Welcome to Lesson 10! In this lesson, we'll learn more ways to interact with arr
 
 
 :: TwineLesson010Passage002
-We've really been in the coding weeds for the last //several// pages. If you've read this far, you're either learning, or being entertained $md or both. We'll turn our attention now to passage {{{Remembrance}}}. If you've been paying attention, you know that the only way to get to that passage if by drinking two mugs of coffee $md using up your last two packets of Mount Hagen.
+We've really been in the coding weeds for the last //several// pages. If you've read this far, you're either learning, or being entertained $md or both. We'll turn our attention now to passage {{{Remembrance}}}. If you've been paying attention, you know that the only way to get to that passage is by drinking two mugs of coffee $md using up your last two packets of Mount Hagen. This is because passage {{{Remembrance}}} doesn't represent a physical location (as do most of the other passages $md {{{Campfire}}}, {{{YourTent}}}, {{{Cliff}}}, etc). Rather, it represents an event $md that of //remembering//.
