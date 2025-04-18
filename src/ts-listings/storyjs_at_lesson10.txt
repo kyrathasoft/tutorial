@@ -1,0 +1,79 @@
+/* Trigger the following code at the start of navigation to a new passage. */
+$(document).on(":passagestart", function (event) {
+	/* Make sure the current passage doesn't have a "noreturn" tag. */
+	if (!tags().includes("noreturn")) {
+		/* If it doesn't, then set $return to the current passage name. */
+		State.variables.return = passage();
+	}
+});
+
+setup.DoubleIt = function(mynumber){
+	return 2*mynumber;
+};
+
+setup.Title = `<font size="+2" color="red"><center>//A Campfire Tale//</center></font>`
+
+Setting.addToggle("brevity", {
+	label : "set Brevity to true for shorter passage descriptions",
+  default: false
+}); 
+
+
+setup.addVisits = (passageName, number = 1) => {
+  while (number--) {
+    State.expired.push(passageName);
+  }
+};
+
+setup.getPassageNames = function() {
+			
+            const excludedNames = []; 
+            const excludedTags = [];
+            const passageNames = [];
+			let tot_psg = 0;
+            
+            $('tw-passagedata').each(function() {
+				tot_psg += 1;
+                const name = $(this).attr('name');
+                const tags = $(this).attr('tags');
+                let safeTags = true;
+                
+                    if (excludedNames.indexOf(name) === -1) {
+                      
+                      for (let i = 0; i < excludedTags.length; i++) {
+                        if (tags.includes(excludedTags[i])) {
+                            safeTags = false;
+                            break;
+                        }
+                      }
+                      
+                      if (safeTags) {
+                        passageNames.push(name);
+                      }  
+                }
+            });
+			// alert("Returning " + passageNames.length + " of " + tot_psg + " total passages...");
+            return passageNames; 
+        };
+
+setup.getTotalPassagesCount = function() {
+	return $('tw-passagedata').length;
+};
+
+setup.startAtRemembrance = function(){
+  setup.StartupSituation = "Remembrance";
+  setup.addVisits("Campfire")
+  setup.addVisits("YourTent")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourTent")
+  setup.addVisits("Campfire")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("Campfire")  
+};
+
+setup.startAtRemembrance();

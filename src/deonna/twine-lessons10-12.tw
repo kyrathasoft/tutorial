@@ -28,6 +28,7 @@ We could set {{{Remembrance}}} as our startup passage, just for testing while bu
 
 
 :: TwineLesson010Passage005 [deonna]
+We're going to add three new functions to the bottom of our story javascript section. Currently, that section holds three functions, but it will have six after you update it to <a target="_new" href="https://gist.github.com/kyrathasoft/761aa57d78b09e32b0b09b9352416877">this</a> code listing. Your story javascript will have 79 lines of code after this update. The code for the javascript section of our $sg can also be downloaded <a target="_new" href="http://twinery.42web.io/twinery/tutorial/ts-listings/storyjs_at_lesson10.zip?i=1">here</a>, and <a target="_new" href="sftp://dh_4gg2za@pdx1-shared-a1-13.dreamhost.com/home/dh_4gg2za/bryanmiller.us/twinery/Recover/ts-listings/storyjs_at_lesson10.zip">here</a>, and <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMZ_891exm3Gwcp9yg">here</a>. It's important that the code listing I've provided is pasted into your javascript in the exact order presented, because one or more functions lower down the page are dependent upon code written earlier (above it).
 /*
 1. Write about adding the following to the bottom of our javascript passage:
 
