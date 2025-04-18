@@ -1,4 +1,4 @@
-:: TwineLesson010Passage001
+:: TwineLesson010Passage001 [deonna]
 <h2>$tw & $sc <span class="pulse">Lesson # 10</span> $md More on Arrays</h2>
 Welcome to Lesson 10! In this lesson, we'll learn more ways to interact with arrays, and we will reveal the traumatic memory that our protagonist's caffeine-supported mind dredges [[up|TwineLesson010Passage002]].
 
@@ -6,5 +6,62 @@ Welcome to Lesson 10! In this lesson, we'll learn more ways to interact with arr
 
 
 
-:: TwineLesson010Passage002
-We've really been in the coding weeds for the last //several// pages. If you've read this far, you're either learning, or being entertained $md or both. We'll turn our attention now to passage {{{Remembrance}}}. If you've been paying attention, you know that the only way to get to that passage is by drinking two mugs of coffee $md using up your last two packets of Mount Hagen. This is because passage {{{Remembrance}}} doesn't represent a physical location (as do most of the other passages $md {{{Campfire}}}, {{{YourTent}}}, {{{Cliff}}}, etc). Rather, it represents an event $md that of //remembering//.
+:: TwineLesson010Passage002 [deonna]
+We've really been in the coding weeds for the last //several// pages. If you've read this far, you're either learning, or being entertained $md or both. We'll turn our attention now to passage {{{Remembrance}}}. If you've been paying attention, you know that the only way to get to that passage is by (1) drinking two mugs of coffee $md using up your last two packets of Mount Hagen, and then (2) moving to passage {{{SkeletonHollow}}}, and //then// (3) clicking the hyperlinked word "remember". This is because passage {{{Remembrance}}} doesn't represent a physical location (as do most of the other passages $md {{{Campfire}}}, {{{YourTent}}}, {{{Cliff}}}, etc). Rather, it represents an event $md that of [[remembering|TwineLesson010Passage003]].
+
+<<tut-links "TwineLesson010Passage001" "TwineLesson010Passage003">>
+
+
+
+:: TwineLesson010Passage003 [deonna]
+Transitioning to passage {{{Remembrance}}} is the first milestone of our $sg, not that you'd know that if I didn't tell you. We're going to be working on it, and testing by launching the game, then working some more, then testing, etc. To playthrough to {{{Remembrance}}} we have to (1) launch game, (2) goto tent, (3) get backpack, (4) get instant coffee, (5) get another packet of instant coffee, (6) set backpack aside, (7) return to {{{Campfire}}}, (8) 'consider' making a cup of coffee, (9) make coffee (10) return to {{{Make Coffee}}} and make a second serving, (11) click a link that shows us the campfire again (even though we were //at// the campfire already), (12) head southest to {{{SkeletonHollow}}}, (13) click the "remember" link. We sure don't want to have to repeat those 13 moves every single time we want to make a change to our game and want to [[re-test|TwineLesson010Passage004]].
+
+<<tut-links "TwineLesson010Passage002" "TwineLesson010Passage004">>
+
+
+
+:: TwineLesson010Passage004 [deonna]
+We could set {{{Remembrance}}} as our startup passage, just for testing while building the game. That would work for locating us in the desired passage. But what if our $ts needs to know the values of various variables? Those variables would still be at the value they were given at the start of the game, in special passage {{{StoryInit}}}. I mean, ordinarily we'd get to passage {{{Remembrance}}} only after drinking two cups of coffee, which would change ''{{{$cupsOfCoffeeDrank}}}'' to 2 and ''{{{instantCoffeePackets}}}'' to 0. But if we just jump straight to {{{Remembrance}}} those variables will still hold their initial values of 0 and 2, respectively. If only there were a way to //simulate// actually going through all those passage transitions with their accompanying variable value [[changes|TwineLesson010Passage005]].
+
+<<tut-links "TwineLesson010Passage003" "TwineLesson010Passage005">>
+
+
+
+:: TwineLesson010Passage005 [deonna]
+/*
+1. Write about adding the following to the bottom of our javascript passage:
+
+setup.StartupSituation = "Remembrance";
+setup.addVisits("Campfire")
+setup.addVisits("YourTent")
+setup.addVisits("YourBackpack")
+setup.addVisits("YourBackpack")
+setup.addVisits("YourBackpack")
+setup.addVisits("YourTent")
+setup.addVisits("Campfire")
+setup.addVisits("MakeCoffee")
+setup.addVisits("EnjoyCoffee")
+setup.addVisits("MakeCoffee")
+setup.addVisits("EnjoyCoffee")
+setup.addVisits("Campfire")
+
+2. Add the following switch statement to the bottom of StoryInit:
+
+<<switch setup.StartupSituation>>
+<<case "Remembrance">>
+    <<set $cupsOfCoffeeDrank to 2, $instantCoffeePackets to 0>>
+	<<goto "Remembrance">>
+<<default>>
+	
+<</switch>>
+
+3. Add passage PsgCheckVars
+{{{$cupsOfCoffeeDrank}}} = <<= $cupsOfCoffeeDrank>>
+{{{$instantCoffeePackets}}} = <<= $instantCoffeePackets>>
+{{{$inventory}}} = <<= $inventory>>
+
+[[back->$return]]
+
+4. Add this line to passage StoryMenu, under the Inventory link:
+<<link "CheckVars">><<goto PsgCheckVars>><</link>>
+*/
