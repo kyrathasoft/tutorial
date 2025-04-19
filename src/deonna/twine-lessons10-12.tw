@@ -140,5 +140,54 @@ All those {{{setup.addVisits()}}} function calls are making use of the following
 4<span class="tab"><span class="tab">{{{}}}}</span></span>
 5<span class="tab">{{{};}}}</span>''
 </font>
-What's happening in this function is that we're pushing &ldquo;visits&rdquo; onto the {{{State}}} object's {{{expired}}} array. $sc uses that array to keep a record of passage visits throughout a given playthrough.
+What's happening in this function is that we're pushing &ldquo;visits&rdquo; onto the {{{State}}} object's {{{expired}}} array. $sc uses that array to keep a record of passage visits throughout a given playthrough. So, in our javascript section {{{setup.startAtRemembrance()}}} function, we're programmatically simulating passage visits, rather than accruing them in the normal way by playing through various [[passages|TwineLesson010Passage016]].
+
+<<tut-links "TwineLesson010Passage014" "TwineLesson010Passage016">>
+
+
+
+:: TwineLesson010Passage016 [deonna]
+So what we have accomplished is that we've programmatically given ourselves a way to simulate playthrough to passage {{{Remembrance}}}, also simulating using up our two packets of instant coffee by drinking two cups of coffee. And the only thing we'd need to do in order to revert to the default behavior of the game starting at passage {{{Campfire}}} would be to go into our javascript section and add the following at the bottom, just below the {{{setup.startAtRemembrance()}}} function:
+
+<font size=-1>''{{{setup.startAtNewGame = function(){}}}
+  <span class="tab">setup.StartupSituation = "NewGame";</span>
+{{{};}}}
+
+{{{/* setup.startAtRemembrance(); */}}}
+{{{setup.startAtNewGame();}}}''</font>
+
+Go ahead and make the above changes, then go to the next [[page|TwineLesson010Passage017]].
+
+<<tut-links "TwineLesson010Passage015" "TwineLesson010Passage017">>
+
+
+
+:: TwineLesson010Passage017 [deonna]
+
+You'll need to update the {{{<<switch>>}}} statement in the {{{StoryInit}}} passage to the following:
+
+<font size=-1>''{{{<<switch setup.StartupSituation>>}}}
+{{{<<case "NewGame">>}}}
+    <span class="tab">{{{/*}}} we're in startup passage Campfire... {{{*}}}/</span>
+	<span class="tab">{{{<<set $cupsOfCoffeeDrank to 0>>}}}</span>
+    <span class="tab">{{{<<set $instantCoffeePackets to 2>>}}}</span>
+{{{<<case "Remembrance">>}}}
+	<span class="tab">{{{<<set $cupsOfCoffeeDrank to 2>>}}}</span>
+    <span class="tab">{{{<<set $instantCoffeePackets to 0>>}}}</span>
+	<span class="tab">{{{<<goto "Remembrance">>}}}</span>
+{{{<<default>>}}}
+	<span class="tab">{{{/*}}} do nothing  {{{*/}}}</span>
+{{{<</switch>>}}}''</font>
+    
+Now, the game will start at the [[beginning|TwineLesson010Passage018]].
+
+<<tut-links "TwineLesson010Passage016" "TwineLesson010Passage018">>
+
+
+
+:: TwineLesson010Passage018 [deonna]
+<img align="left" hspace=15 vspace=5 @src="setup.imgs79 + 'js-to-start-at-remembrance.png'">As we continue development of our $sg, we can add additional {{{setup.startAt*}}} functions as needed, and then simply modify the {{{<<switch>>}}} statement in our {{{StoryInit}}} passage. For now, modify the last few lines of our story's javascript section to match what is shown in this page's screenshot. You're wrapping the call to function {{{setup.startAtNewGame()}}} in C-style comment tags so that it's 'commented-out' (i.e., invisible to $sc). And, you're making sure that function {{{setup.startAtRemembrance()}}} is //not// commented-out. Test your changes by running the game: it should take you to passage {{{Remembrance}}}.
+
+
+
 
