@@ -125,5 +125,19 @@ Let's [[$ctl|TwineLesson010Passage014]].
 
 
 :: TwineLesson010Passage014 [deonna]
-Well, all right! That's a lot of work we've done, and you may not (in fact, //probably// won't) understand every single thing. I do want to take a little time and explain what's going on in our {{{setup.startAtRemembrance()}}} function.
+<img align="left" hspace=15 vspace=5 @src="setup.imgs79 + 'fn-start-at-remembrance.png'">Well, all right! That's a lot of work we've done, and you may not (in fact, //probably// won't) understand every single thing. I do want to take a little time and explain what's going on in our {{{setup.startAtRemembrance()}}} function. When this function is called as the $sg is loading, the function tells the web browser "Hey, the player has already navigated to (i.e., visited) the following passages..." The calls that you see to {{{addVisits()}}} are arranged in the actual order of play through the passages necessary to reach passage {{{Remembrance}}}. Count them: there are ''12'' calls to {{{addVisits()}}}. See that three of those are for {{{Campfire}}}. Apparently, $sc places the player momentarily in the Twine-defined startup passage {{{Campfire}}} before the switch statement in {{{StoryInit}}} takes them to {{{Remembrance}}}. Therefore, if you launch the game and click sidebar button {{{CHKVARS}}}, you'll see it reports ''4'' visits to {{{Campfire}}} $md the three we added using {{{addVisits()}}}, plus a millisecond-duration visit initially to {{{Campfire}}} before the {{{switch}}} statement [[kicks in|TwineLesson010Passage015]].
+
+<<tut-links "TwineLesson010Passage013" "TwineLesson010Passage015">>
+
+
+
+:: TwineLesson010Passage015 [deonna]
+All those {{{setup.addVisits()}}} function calls are making use of the following function, which is defined earlier in the same section of javascript for our story:
+<font size=-1>
+''1<span class="tab">{{{setup.addVisits = (passageName, number = 1) => {}}}</span>
+2<span class="tab"><span class="tab">while (number - -) {{{{}}}</span></span>
+3<span class="tab"><span class="tab"><span class="tab">{{{State.expired.push(passageName);}}}</span></span></span>
+4<span class="tab"><span class="tab">{{{}}}}</span></span>
+5<span class="tab">{{{};}}}</span>''
+</font>
 
