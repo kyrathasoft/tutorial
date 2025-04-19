@@ -140,4 +140,5 @@ All those {{{setup.addVisits()}}} function calls are making use of the following
 4<span class="tab"><span class="tab">{{{}}}}</span></span>
 5<span class="tab">{{{};}}}</span>''
 </font>
+What's happening in this function is that we're pushing &ldquo;visits&rdquo; onto the {{{State}}} object's {{{expired}}} array. $sc uses that array to keep a record of passage visits throughout a given playthrough.
 
