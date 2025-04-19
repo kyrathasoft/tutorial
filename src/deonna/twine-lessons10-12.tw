@@ -48,60 +48,59 @@ Notice that at the very end of our story javascript section, we //call// (i.e., 
 
 
 :: TwineLesson010Passage007 [deonna]
-Psg 007
+We've modified our javascript as needed. Next, we need to modify our {{{StoryInit}}} to have <a target="_new" href="https://gist.github.com/kyrathasoft/7c08dc4db389769276eb08adeb83fa9e">this</a> code. I you prefer, you can download a zip archive holding this code <a target="_new" href="https://bryanmiller.us/twinery/Recover/ts-listings/story-init-less10-psg7-of-tutorial.zip">here</a>, <a target="_new" href=" http://twinery.42web.io/tutorial/ts-listings/story-init-less10-psg7-of-tutorial.zip">here</a>, or <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMcz_HngFRe7eIsPNQ">here</a>. Make changes to passage {{{StoryInit}}} now, before [[continuing|TwineLesson010Passage008]].
+
+<<tut-links "TwineLesson010Passage006" "TwineLesson010Passage008">>
 
 
 
-:: TwineLesson010Passage037 [deonna]
-<a target="_new" href="https://bryanmiller.us/twinery/backups/A%20Campfire%20Tale.zip">Here</a> is a backup coffee of the game's HTML as it should be at the end of Lesson 10. If needed, you can download this archive, unzip it, and import the HTML "A Campfire Tale.html" file back into Twine. It can also be downloaded from <a target="_new" href=" http://twinery.42web.io/backups/A%20Campfire%20Tale.zip">here</a>. And <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMcnxCcd6kSuxHMacg">here</a> is a copy on my Onedrive cloud account.
-/*
-1. Write about adding the following to the bottom of our javascript passage:
+:: TwineLesson010Passage008 [deonna]
+Add a new passage and name it {{{PsgCheckVars}}}. Add <a target="_new" href="https://gist.github.com/kyrathasoft/4f9030120b73cfedd9818d408363a1fc">this</a> code to it. Ensure that you give it these two tags (all lowercase): {{{noreturn}}} and {{{nobr}}}.
 
-DONE ALREADY
+If preferred, you can download the {{{PsgCheckVars}}} code <a target="_new" href="https://bryanmiller.us/twinery/Recover/ts-listings/psg-checkvars-less10-psg8.zip">here</a>, or <a target="_new" href="http://twinery.42web.io/tutorial/ts-listings/psg-checkvars-less10-psg8.zip">here</a>, or <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMc3Yvp6DSovfKWd4A">here</a>. [[$ct|TwineLesson010Passage009]].
 
-2. Modify StoryInit to the following:
-
-/* We can modify $inventory contents based on setup.StartupSituation 
-<<set $inventory to ['a canteen', 'a pocket knife', 'a handkerchief']>>
-
-setup.StartupSituation = "Remembrance";
-
-<<switch setup.StartupSituation>>
-<<case "NewGame">>
-	<<set $cupsOfCoffeeDrank to 0>>
-    <<set $instantCoffeePackets to 2>>
-<<case "Remembrance">>
-	<<set $cupsOfCoffeeDrank to 2>>
-    <<set $instantCoffeePackets to 0>>
-	<<goto "Remembrance">>
-<<default>>
-	/* do nothing  
-<</switch>>
+<<tut-links "TwineLesson010Passage007" "TwineLesson010Passage009">>
 
 
 
-3. Add passage PsgCheckVars
-<<silent>><<set $psgs to setup.getPassageNames()>><</silent>>{{{$cupsOfCoffeeDrank}}} = <<= $cupsOfCoffeeDrank>><br>
-{{{$instantCoffeePackets}}} = <<= $instantCoffeePackets>><br>
-{{{$inventory}}} = <<= $inventory>><br>
+:: TwineLesson010Passage009 [deonna]
+That takes care of updating javascript and {{{StoryInit}}}, and we've added new passage {{{PsgCheckVars}}}. One more thing: add the following line in passage {{{StoryMenu}}}, directly beneath the line that creates a sidebar button that links us to our player's inventory:
 
-<br>
+{{{<<link "CheckVars">><<goto PsgCheckVars>><</link>>}}}
 
-Number of psgs: <<= setup.getTotalPassagesCount()>><br>
-/* could have used $psgs.length... 
-<br>
+Passage {{{StoryMenu}}} should now look like this:
 
-Passage Visits:<<set _trans to 0>>
-<<for _i to 0; _i lt $psgs.length; _i++>>
-	Psg $psgs[_i] visited <<= visited($psgs[_i])>> times<br><<silent>>
-    <<if visited($psgs[_i]) gt 0>><<set _trans += visited($psgs[_i])>><</if>><</silent>>
-<</for>>
+{{{<<link "Inventory">><<goto YourInventory>><</link>><br>}}}
+{{{<<link "CheckVars">><<goto PsgCheckVars>><</link>>}}}
 
-<br>Total passage transitions: <<= _trans>><br><br>
+If you've followed these instructions carefully and I haven't made a mistake, we should be ready to test this newest iteration of our $sg. Just in case I've made a mistake in this documentation, <a target="_new" href="http://twinery.42web.io/backups/CampfireTaleLesson010Passage009.zip">  here</a> is an archive of this story's HTML. If needed, you can download and extract it, then import the HTML into Twine $md and this will ensure you're operating with the exact same version of our sample game that I am, as of the writing of this very passage. You can also grab this <a target="_new" href="https://bryanmiller.us/twinery/backups/CampfireTaleLesson010Passage009.zip">here</a>, or <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMc7Zj6fOkL6uO_SYg">here</a>. 
 
-[[back->$return]]
+[[$ct|TwineLesson010Passage010]]
 
-4. Modify StoryMenu to:
-<<link "Inventory">><<goto YourInventory>><</link>><br>
-<<link "CheckVars">><<goto PsgCheckVars>><</link>>
-*/
+<<tut-links "TwineLesson010Passage008" "TwineLesson010Passage010">>
+
+
+
+:: TwineLesson010Passage010 [deonna]
+<img align="left" hspace=15 vspace=5 @src="setup.imgs79 + 'psgRemembrance-tut-less10-psg09.png'">Now, when you run $tut_tit, it should take you to passage {{{Remembrance}}}, and that passage should appear as indicated by the screenshot on this page. You see some placeholder text at the top, which we'll soon replace. At the bottom you see a hyperlink back to passage {{{Campfire}}}. Between the two, you see "Turns: 14". What's that? Well, that is displayed because I added the following temporary line of code to the passage: {{{Turns: <<= State.turns>>}}} Why? In order to test that function {{{setup.startAtRemembrance()}}}, which we //call// from the last line of our story javascript, is working as [[intended|TwineLesson010Passage011]].
+
+<<tut-links "TwineLesson010Passage009" "TwineLesson010Passage011">>
+
+
+
+
+:: TwineLesson010Passage011 [deonna]
+Let's tweak the code in {{{PsgCheckVars}}} so that it reflects <a target="_new" href="https://gist.github.com/kyrathasoft/14f34600b1989fd3150c4144bd665f61">this</a> code listing. Then, re-run our story and in the sidebar click the {{{CHKVARS}}} [[button|TwineLesson010Passage012]].
+
+<<tut-links "TwineLesson010Passage010" "TwineLesson010Passage012">>
+
+
+
+:: TwineLesson010Passage012 [deonna] 
+<img align="left" hspace=15 vspace=5 @src="setup.imgs79 + 'chkvars-output.png'">Here is what you'll see upon clicking the sidebar's {{{CHKVARS}}} button.
+
+
+
+:: TwineLesson010Passage013 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'fn-start-at-remembrance.png'">This is the function that gets called at the very end of our story javascript section. Remember, everything in the javascript section gets executed before the first passage is even displayed to the player. And, in fact, our story javascript execution even precedes the excecution of the contents of {{{StoryInit}}}. Count the number of programmatically-made passage //visits// are in the function: twelve. Add to that 
+

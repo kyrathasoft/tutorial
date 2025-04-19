@@ -1,0 +1,17 @@
+/* We can modify $inventory contents based on setup.StartupSituation */
+<<set $inventory to ['a canteen', 'a pocket knife', 'a handkerchief']>>
+
+setup.StartupSituation = "Remembrance";
+
+<<switch setup.StartupSituation>>
+<<case "NewGame">>
+	<<set $cupsOfCoffeeDrank to 0>>
+    <<set $instantCoffeePackets to 2>>
+<<case "Remembrance">>
+	<<set $cupsOfCoffeeDrank to 2>>
+    <<set $instantCoffeePackets to 0>>
+	<<goto "Remembrance">>
+<<default>>
+	/* do nothing  */
+<</switch>>
+
