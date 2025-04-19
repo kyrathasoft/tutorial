@@ -28,6 +28,11 @@ setup.addVisits = (passageName, number = 1) => {
 setup.getPassageNames = function() {
 			
             const excludedNames = []; 
+
+				/* tag 'deonna' is so this function will reject passages that are 
+				dedicated to a tutorial series I'm writing for Deonna Pinson, a
+				coworker */
+				
             const excludedTags = [];
             const passageNames = [];
 			let tot_psg = 0;

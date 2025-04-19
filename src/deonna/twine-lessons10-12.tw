@@ -28,41 +28,67 @@ We could set {{{Remembrance}}} as our startup passage, just for testing while bu
 
 
 :: TwineLesson010Passage005 [deonna]
-We're going to add three new functions to the bottom of our story javascript section. Currently, that section holds three functions, but it will have six after you update it to <a target="_new" href="https://gist.github.com/kyrathasoft/761aa57d78b09e32b0b09b9352416877">this</a> code listing. Your story javascript will have 79 lines of code after this update. The code for the javascript section of our $sg can also be downloaded <a target="_new" href="http://twinery.42web.io/twinery/tutorial/ts-listings/storyjs_at_lesson10.zip?i=1">here</a>, and <a target="_new" href="sftp://dh_4gg2za@pdx1-shared-a1-13.dreamhost.com/home/dh_4gg2za/bryanmiller.us/twinery/Recover/ts-listings/storyjs_at_lesson10.zip">here</a>, and <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMZ_891exm3Gwcp9yg">here</a>. It's important that the code listing I've provided is pasted into your javascript in the exact order presented, because one or more functions lower down the page are dependent upon code written earlier (above it).
+We're going to add three new functions to the bottom of our story javascript section. Currently, that section holds three functions, but it will have six after you update it to <a target="_new" href="https://gist.github.com/kyrathasoft/761aa57d78b09e32b0b09b9352416877">this</a> code listing. Your story javascript will have 79 lines of code after this update. The code for the javascript section of our $sg can also be downloaded <a target="_new" href="http://twinery.42web.io/twinery/tutorial/ts-listings/storyjs_at_lesson10.zip?i=1">here</a>, and <a target="_new" href="sftp://dh_4gg2za@pdx1-shared-a1-13.dreamhost.com/home/dh_4gg2za/bryanmiller.us/twinery/Recover/ts-listings/storyjs_at_lesson10.zip">here</a>, and <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMZ_891exm3Gwcp9yg">here</a>. It's important that the code listing I've provided is pasted into your javascript in the exact order presented, because one or more functions lower down the page are dependent upon code written earlier (above it). [[$ct|TwineLesson010Passage006]]
+
+<<tut-links "TwineLesson010Passage004" "TwineLesson010Passage006">>
+
+
+
+:: TwineLesson010Passage006 [deonna]
+So, what did I have you add to story javascript, and why? We added the code shown on lines 28 to 79 <a target="_new" href="https://gist.github.com/kyrathasoft/761aa57d78b09e32b0b09b9352416877">here</a>.
+
+''{{{getPassageNames}}}'': as its name suggests, this function returns an array of the names of all passages.
+''{{{getTotalPassagesCount}}}'': tells us how many passages are in our $tw story.
+''{{{setup.startAtRemembrance}}}'': will simulate playing through to passage {{{Remembrance}}}.
+
 /*
 1. Write about adding the following to the bottom of our javascript passage:
 
-setup.StartupSituation = "Remembrance";
-setup.addVisits("Campfire")
-setup.addVisits("YourTent")
-setup.addVisits("YourBackpack")
-setup.addVisits("YourBackpack")
-setup.addVisits("YourBackpack")
-setup.addVisits("YourTent")
-setup.addVisits("Campfire")
-setup.addVisits("MakeCoffee")
-setup.addVisits("EnjoyCoffee")
-setup.addVisits("MakeCoffee")
-setup.addVisits("EnjoyCoffee")
-setup.addVisits("Campfire")
+DONE ALREADY
 
-2. Add the following switch statement to the bottom of StoryInit:
+2. Modify StoryInit to the following:
+
+/* We can modify $inventory contents based on setup.StartupSituation 
+<<set $inventory to ['a canteen', 'a pocket knife', 'a handkerchief']>>
+
+setup.StartupSituation = "Remembrance";
 
 <<switch setup.StartupSituation>>
+<<case "NewGame">>
+	<<set $cupsOfCoffeeDrank to 0>>
+    <<set $instantCoffeePackets to 2>>
 <<case "Remembrance">>
-    <<set $cupsOfCoffeeDrank to 2, $instantCoffeePackets to 0>>
+	<<set $cupsOfCoffeeDrank to 2>>
+    <<set $instantCoffeePackets to 0>>
 	<<goto "Remembrance">>
 <<default>>
-	
+	/* do nothing  
 <</switch>>
 
+
+
 3. Add passage PsgCheckVars
-{{{$cupsOfCoffeeDrank}}} = <<= $cupsOfCoffeeDrank>>
-{{{$instantCoffeePackets}}} = <<= $instantCoffeePackets>>
-{{{$inventory}}} = <<= $inventory>>
+<<silent>><<set $psgs to setup.getPassageNames()>><</silent>>{{{$cupsOfCoffeeDrank}}} = <<= $cupsOfCoffeeDrank>><br>
+{{{$instantCoffeePackets}}} = <<= $instantCoffeePackets>><br>
+{{{$inventory}}} = <<= $inventory>><br>
+
+<br>
+
+Number of psgs: <<= setup.getTotalPassagesCount()>><br>
+/* could have used $psgs.length... 
+<br>
+
+Passage Visits:<<set _trans to 0>>
+<<for _i to 0; _i lt $psgs.length; _i++>>
+	Psg $psgs[_i] visited <<= visited($psgs[_i])>> times<br><<silent>>
+    <<if visited($psgs[_i]) gt 0>><<set _trans += visited($psgs[_i])>><</if>><</silent>>
+<</for>>
+
+<br>Total passage transitions: <<= _trans>><br><br>
 
 [[back->$return]]
 
-4. Add this line to passage StoryMenu, under the Inventory link:
+4. Modify StoryMenu to:
+<<link "Inventory">><<goto YourInventory>><</link>><br>
 <<link "CheckVars">><<goto PsgCheckVars>><</link>>
 */
