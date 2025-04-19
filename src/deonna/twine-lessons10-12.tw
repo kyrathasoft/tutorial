@@ -39,8 +39,21 @@ So, what did I have you add to story javascript, and why? We added the code show
 
 ''{{{getPassageNames}}}'': as its name suggests, this function returns an array of the names of all passages.
 ''{{{getTotalPassagesCount}}}'': tells us how many passages are in our $tw story.
-''{{{setup.startAtRemembrance}}}'': will simulate playing through to passage {{{Remembrance}}}.
+''{{{setup.startAtRemembrance}}}'': will simulate $md with help from {{{StoryInit}}} $md playing through to passage {{{Remembrance}}}.
 
+Notice that at the very end of our story javascript section, we //call// (i.e., "invoke") function {{{startAtRemembrance}}}. One thing this function does, upon being called, is to set a variable, {{{StartupSituation}}}, on the setup object to a value of {{{Remembrance}}}. That's key, as we'll be checking for this value in our {{{StoryInit}}}. But let's get other needed code in place, and then we can talk about how it all hangs [[together|TwineLesson010Passage007]].
+
+<<tut-links "TwineLesson010Passage005" "TwineLesson010Passage007">>
+
+
+
+:: TwineLesson010Passage007 [deonna]
+Psg 007
+
+
+
+:: TwineLesson010Passage037 [deonna]
+<a target="_new" href="https://bryanmiller.us/twinery/backups/A%20Campfire%20Tale.zip">Here</a> is a backup coffee of the game's HTML as it should be at the end of Lesson 10. If needed, you can download this archive, unzip it, and import the HTML "A Campfire Tale.html" file back into Twine. It can also be downloaded from <a target="_new" href=" http://twinery.42web.io/backups/A%20Campfire%20Tale.zip">here</a>. And <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMcnxCcd6kSuxHMacg">here</a> is a copy on my Onedrive cloud account.
 /*
 1. Write about adding the following to the bottom of our javascript passage:
 
