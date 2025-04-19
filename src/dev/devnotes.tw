@@ -3,7 +3,7 @@
 
 __Notes from 4/19/2025__ 
 # added all the internals needed to simulate playthrough to psg {{{Remembrance}}}
-# provided
+# in the process of providing an explanation of how {{{setup.addVisits()}}} works
 
 __Notes from 4/17/2025__ 
 # added sidebar button CheckVars via StoryMenu
