@@ -188,6 +188,17 @@ Now, the game will start at the [[beginning|TwineLesson010Passage018]].
 :: TwineLesson010Passage018 [deonna]
 <img align="left" hspace=15 vspace=5 @src="setup.imgs79 + 'js-to-start-at-remembrance.png'">As we continue development of our $sg, we can add additional {{{setup.startAt*}}} functions as needed, and then simply modify the {{{<<switch>>}}} statement in our {{{StoryInit}}} passage. For now, modify the last few lines of our story's javascript section to match what is shown in this page's screenshot. You're wrapping the call to function {{{setup.startAtNewGame()}}} in C-style comment tags so that it's 'commented-out' (i.e., invisible to $sc). And, you're making sure that function {{{setup.startAtRemembrance()}}} is //not// commented-out. Test your changes by running the game: it should take you to passage {{{Remembrance}}}.
 
+If anything isn't working correctly as you're following along in $tw, <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMgRT3JghwnRVQyUew">here</a> is a current snapshot of our sample game, which you can download and import. I've also made this snapshot available <a target="_new" href="https://bryanmiller.us/twinery/backups/CampfireTaleLesson010Passage018.zip">here</a> and <a target="_new" href=" http://twinery.42web.io/backups/CampfireTaleLesson010Passage018.zip">here</a> for [[download|TwineLesson010Passage019]].
+
+<<tut-links "TwineLesson010Passage017" "TwineLesson010Passage019">>
+
+
+
+:: TwineLesson010Passage019 [deonna]
+<<tutorial-passages>>
+
+
+
 
 
 
