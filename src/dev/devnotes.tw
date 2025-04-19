@@ -1,6 +1,10 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 4/19/2025__ 
+# added all the internals needed to simulate playthrough to psg {{{Remembrance}}}
+# provided
+
 __Notes from 4/17/2025__ 
 # added sidebar button CheckVars via StoryMenu
 # click CheckVars btn to see current story var values

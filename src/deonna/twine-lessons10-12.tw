@@ -97,10 +97,33 @@ Let's tweak the code in {{{PsgCheckVars}}} so that it reflects <a target="_new" 
 
 
 :: TwineLesson010Passage012 [deonna] 
-<img align="left" hspace=15 vspace=5 @src="setup.imgs79 + 'chkvars-output.png'">Here is what you'll see upon clicking the sidebar's {{{CHKVARS}}} button.
+<img align="left" hspace=15 vspace=5 @src="setup.imgs79 + 'chkvars-output.png'">Here is what you'll see upon clicking the sidebar's {{{CHKVARS}}} button. The two variables and the array at the top have the values we'd expect, had the player actually played through the game to reach passage {{{Remembrance}}}.  
+
+The fourth line of text tells us that our $sg contains 15 passages, currently. You can go into the $tw editor to verify this. We're getting that value from the {{{getTotalPassagesCount()}}} function that we added to the {{{setup}}} object in our javascript section. 
+
+And then we see a readout of the passages in our game that have been visited, and how many times each. Note that I wrote the code in passage {{{PsgCheckVars}}} to omit passages with zero visits.
+
+In our for-loop, I use a temporary variable, {{{_trans}}} (short for passage [trans]itions) to count up total passage transitions.
+
+Finally, at the bottom of passage {{{PsgChkVars}}} there is a link to take us back to the previous passage we were in before clicking the {{{CHKVARS}}} button in the sidebar. Were this $sg ever to be released for play (rather than solely as a vehicle for practicing our twinery), we'd probably want to suppress that sidebar [[button|TwineLesson010Passage013]].
 
 
 
 :: TwineLesson010Passage013 [deonna]
-<img align="left" hspace=10 vspace=5 @src="setup.imgs79 + 'fn-start-at-remembrance.png'">This is the function that gets called at the very end of our story javascript section. Remember, everything in the javascript section gets executed before the first passage is even displayed to the player. And, in fact, our story javascript execution even precedes the excecution of the contents of {{{StoryInit}}}. Count the number of programmatically-made passage //visits// are in the function: twelve. Add to that 
+So, we'll keep passage {{{PsgCheckVars}}} for awhile $md probably the entire duration of this tutorial, and we'll update it occasionally (when we add new story variables, etc.). It's a handy way to see if our {{{setup.startAtRemembrance()}}} function and {{{StoryInit}}} passage are cooperating the way we want. And because it's accessed through a sidebar button, passage {{{PsgCheckVars}}} is unobtrusive. It stays out of our way until we want to view its contents. Make the following slight tweak to Passage {{{Remembrance}}}:
+
+''PLACEHOLDER TEXT
+
+Turns: {{{<<= State.turns>>}}}, plus the goto in {{{StoryInit}}} to come to THIS passage makes {{{<<= State.turns + 1>>}}}. And if you now click the {{{CHKVARS}}} sidebar button, it will tell you there've been {{{<<=State.turns + 2>>}}} turns, because you did another passage transition into passage {{{PsgCheckVars}}}.
+
+{{{[[Campfire]]}}}''
+
+Let's [[$ctl|TwineLesson010Passage014]].
+
+<<tut-links "TwineLesson010Passage012" "TwineLesson010Passage014">>
+
+
+
+:: TwineLesson010Passage014 [deonna]
+Well, all right! That's a lot of work we've done, and you may not (in fact, //probably// won't) understand every single thing. I do want to take a little time and explain what's going on in our {{{setup.startAtRemembrance()}}} function.
 
