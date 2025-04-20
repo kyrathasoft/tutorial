@@ -195,6 +195,59 @@ If anything isn't working correctly as you're following along in $tw, <a target=
 
 
 :: TwineLesson010Passage019 [deonna]
+I wrote a few pages ago that reaching passaage {{{Remembrance}}} is a game milestone. So what's so important about it? Let's modify that passage. Currently, it contains the following text/$ts:
+
+''PLACEHOLDER TEXT
+
+Turns: {{{<<= State.turns>>}}}, plus the goto in &lcub; &lcub; &lcub; StoryInit &rcub; &rcub; &rcub; to come to THIS passage makes {{{<<= State.turns + 1>>}}} . And if you now click the &lcub; &lcub; &lcub; CHKVARS &rcub; &rcub; &rcub; sidebar button, it will tell you there've been {{{<<=State.turns + 2>>}}} turns, because you did another passage transition into passage &lcub; &lcub; &lcub; PsgCheckVars &rcub; &rcub; &rcub;.
+
+{{{[[Campfire]]}}}''
+
+We're going to //comment-out// the Turns info (we can uncomment it again at any time if needed/desired). Let's make the link back to passage {{{Campfire}}} a bit more descriptive, and then we'll think about what text to replace ''PLACEHOLDER TEXT'' [[with|TwineLesson010Passage020]].
+
+<<tut-links "TwineLesson010Passage018" "TwineLesson010Passage020">>
+
+
+
+:: TwineLesson010Passage020 [deonna]
+<img align="left" hspace=20 vspace=10 @src="setup.imgs1012 + 'remembrance-less10-psg20.png'">Okay, have you updated {{{Remembrance}}} to match the screenshot code? Good. You'll notice we've replaced the link to {{{Campfire}}} with a link to {{{SkeletonHollow}}}. This is because I realized that the important memory hits the player while the player is physically in Skeleton Hollow, so it makes sense he's there after coming back to himself after a shocking recollection. However, this introduces a problem. To see the problem, launch our $sg in your browser and click the "After remembering" link. It'll take you back to {{{SkeletonHollow}}} all, right, but then you can click on link "remember" and //again// return to {{{SkeletonHollow}}} $md and so on, bouncing back and forth between [[passages|TwineLesson010Passage021]].
+
+<<tut-links "TwineLesson010Passage019" "TwineLesson010Passage021">>
+
+
+
+:: TwineLesson010Passage021 [deonna]
+Clearly, our intent has been that {{{Remembrance}}} is a one-visit-only milestone passage. So what do we do? Let's modify the end of passage {{{SkeletonHollow}}}, starting with line {{{<<if $cupsOfCoffeeDrank eq 2>>}}} and ending just before the closing {{{<</nobr>>}}} tag:
+
+''{{{<<if $cupsOfCoffeeDrank eq 2>>}}}
+    <span class="tab">{{{<<if not visited("Remembrance")>>}}}</span>
+    		<span class="tab"><span class="tab">Your mind is in caffeine-fueled overdrive. You glance around the hollow at the surrounding pines and firs, at the boulder lying at its center, and then ... you {{{[[remember|Remembrance]]}}}!</span></span>
+    <span class="tab">{{{<<else>>}}}</span>
+        <span class="tab"><span class="tab">The hairs on the back of your neck stand up and you get goosebumps from the memory of what happened to you here. You resolve firmly not to return here again.</span></span>
+    <span class="tab">{{{<</if>>}}}</span>
+{{{<</if>>}}}''
+
+The above is an example of nested conditionals. The outer ''if'' conditional is satifisfied when variable ''{{{$cupsOfCoffeeDrank}}}'' is equal to 2. But then after //that// condition is satisfied, one of two possible blocks of text is shown to the player, depending upon whether or not the player has visited passage {{{Remembrance}}} before. If she //has// been here before, then the {{{else}}} class of the inner ''{{{if}}}'' is [[triggered|TwineLesson010Passage022]].
+
+<<tut-links "TwineLesson010Passage020" "TwineLesson010Passage022">>
+
+
+
+:: TwineLesson010Passage022 [deonna]
+And then, sure enough, when we return to {{{Campfire}}}, we read //The mossy knoll on which your campfire is located slopes gradually downhill to the frightful hollow you'll never set foot in again, leading to a copse of firs and evergreens.// $md and indeed, there is no longer a link to {{{SkeletonHollow}}}.
+
+What frightening recollection could prove so traumatizing that the main character of our story avoids the hollow? Our {{{Campfire}}} passage code should now look like <a target="_new" href="https://gist.github.com/kyrathasoft/e70451b12f47da48880a3f1f40b63f20">this</a>; {{{SkeletonHollow}}} like <a target="_new" href="https://gist.github.com/kyrathasoft/cd5fc81ccee3531dcdf38b21fdf2cac3">this</a>; and {{{Remembrance}}} like <a target="_new" href="https://gist.github.com/kyrathasoft/6dda05c4be56d7a430992252d4f7be18">this</a>.
+
+Let's [[$ct|TwineLesson010Passage023]]
+
+<<tut-links "TwineLesson010Passage021" "TwineLesson010Passage023">>
+
+
+
+:: TwineLesson010Passage023
+
+
+
 
 
 
