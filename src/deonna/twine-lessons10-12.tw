@@ -195,7 +195,14 @@ If anything isn't working correctly as you're following along in $tw, <a target=
 
 
 :: TwineLesson010Passage019 [deonna]
-<<tutorial-passages>>
+<<silent>><<set _array to [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]>><</silent>>
+Our initial array contents: <<= _array>>
+Let's remove the first occurrence of ''2''...<<silent>>
+    <<set _index to _array.indexOf(2)>><<if _index gt -1>><<set _tmp to _array.deleteAt(_index)>><</if>>
+<</silent>>The array now holds: <<= _array>><<silent>><<set _tmp to _array.deleteAll(3)>><</silent>>
+After deleting all ''3'': <<= _array>>
+
+
 
 
 
