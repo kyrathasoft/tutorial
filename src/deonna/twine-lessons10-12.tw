@@ -267,13 +267,25 @@ If you're interested in the details of the changes I've made $md with GreyElf's 
 
 
 :: TwineLesson010Passage025
-<img align="left" hspace=15 vspace=5 @src="setup.imgs1012 + 'unwanted-space-in-remembrance.png'">Why is that unwanted vertical space between our placeholder text and the link, in passage {{{Remembrance}}}? Because of the multiline comment I've left in the passage. Here's how we'll fix that: give passage {{{Remembrance}}} the 'nobr' tag. Then, add a pair of line-break in the <a target="_new" href="https://gist.github.com/kyrathasoft/24181f8af1dea803276cf945d228c5d5">right</a> places.
+<img align="left" hspace=15 vspace=5 @src="setup.imgs1012 + 'unwanted-space-in-remembrance.png'">Why is that unwanted vertical space between our placeholder text and the link, in passage {{{Remembrance}}}? Because of the multiline comment I've left in the passage. Here's how we'll fix that: give passage {{{Remembrance}}} the 'nobr' tag. Then, add a pair of line-break in the <a target="_new" href="https://gist.github.com/kyrathasoft/24181f8af1dea803276cf945d228c5d5">right</a> [[places|TwineLesson010Passage026]].
+
+<<tut-links "TwineLesson010Passage024" "TwineLesson010Passage026">>
 
 
 
+:: TwineLesson010Passage026
+We're going to replace our PLACEHOLDER TEXT in passage {{{Remembrance}}}, and in so doing I'm going to show you how to reuse the same passage multiple times. 
+
+Let's say that we've brainstormed and come up with three paragraphs that describe the ''Big Reveal'' regarding the main character's recollection of a past traumatic event here in the woods, in a hollow not far from the campfire. We could put all of it into the same passage, but some players don't like Walls-of-Text. Or, we could use a separate passage for each paragraph, but then we have to link the passages in the correct order, //and// our $tw storyboard would quickly fill up with passages. 
+
+Trust me that when working in the $tw graphical editor, once you get beyond a few dozen passages it becomes a hairy mess trying to keep everything organized $md more on an alternative $tw-coding setup (using Visual Studio code and Tweego) a bit later in this tutorial [[series|TwineLesson010Passage027]].
+
+<<tut-links "TwineLesson010Passage025" "TwineLesson010Passage027">>
 
 
 
+:: TwineLesson010Passage027
+<img align="left" hspace=15 vspace=5 @src="setup.imgs1012 + 'self-referencing-remembrance.png'">I'm going to ask you to copy/paste the $ts from <a target="_new" href="https://gist.github.com/kyrathasoft/a06aa5529e53d8bdce1b0b0a197a0bfa">here</a> into your {{{Remembrance}}} passage. Once you do this, look at the storyboard area of the $tw editor, where are the passages are visually depicted. You'll see that our {{{Remembrance}}} passage does indeed now loop back on itself.
 
 
 
