@@ -220,7 +220,7 @@ The&lt;&lt;if not _brief&gt;&gt; mossy&lt;&lt;/if&gt;&gt; knoll &lt;&lt;if not _
 
 </tw-passagedata><tw-passagedata pid="2" name="Cliff" tags="" position="400,25" size="100,100">&lt;&lt;silent&gt;&gt;&lt;&lt;set _brief to Setting.getValue(&quot;brevity&quot;)&gt;&gt;&lt;&lt;/silent&gt;&gt;As you crest the ridge, trees give way to a &lt;&lt;if not _brief&gt;&gt;ragged stone &lt;&lt;/if&gt;&gt;bluff&lt;&lt;if not _brief&gt;&gt;, carved by the ages&lt;&lt;/if&gt;&gt;. Far below, a river courses southward,&lt;&lt;if not _brief&gt;&gt; the rush of its passage a soothing white noise as it reaches &lt;&lt;else&gt;&gt; a dull roar reaching &lt;&lt;/if&gt;&gt;your ears. 
 
-&lt;&lt;if not _brief&gt;&gt;About a rock&#39;s throw away to &lt;&lt;else&gt;&gt;To &lt;&lt;/if&gt;&gt;the [[west|Campfire]], you see the flickering light from your campfire.</tw-passagedata><tw-passagedata pid="3" name="SkeletonHollow" tags="" position="150,150" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;&lt;silent&gt;&gt;&lt;&lt;set _brief to Setting.getValue(&quot;brevity&quot;)&gt;&gt;&lt;&lt;/silent&gt;&gt;You are &lt;&lt;if not _brief&gt;&gt;standing in a sunken area nestled into a copse of firs and evergreens,&lt;&lt;/if&gt;&gt; a minute&#39;s hike from your [[campfire-&gt;Campfire]]. 
+&lt;&lt;if not _brief&gt;&gt;About a rock&#39;s throw away to &lt;&lt;else&gt;&gt;To &lt;&lt;/if&gt;&gt;the [[west|Campfire]], you see the flickering light from your campfire.</tw-passagedata><tw-passagedata pid="3" name="SkeletonHollow" tags="" position="50,200" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;&lt;silent&gt;&gt;&lt;&lt;set _brief to Setting.getValue(&quot;brevity&quot;)&gt;&gt;&lt;&lt;/silent&gt;&gt;You are &lt;&lt;if not _brief&gt;&gt;standing in a sunken area nestled into a copse of firs and evergreens,&lt;&lt;/if&gt;&gt; a minute&#39;s hike from your [[campfire-&gt;Campfire]]. 
 	
 		You sense that you&#39;ve visited this place many times. 
     	&lt;&lt;if $cupsOfCoffeeDrank lt 1&gt;&gt;
@@ -241,7 +241,7 @@ The&lt;&lt;if not _brief&gt;&gt; mossy&lt;&lt;/if&gt;&gt; knoll &lt;&lt;if not _
 
 &lt;&lt;set $inventory to [&#39;a canteen&#39;, &#39;a pocket knife&#39;, &#39;a handkerchief&#39;]&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="5" name="YourTent" tags="" position="275,225" size="100,100">&lt;&lt;silent&gt;&gt;&lt;&lt;set _brief to Setting.getValue(&quot;brevity&quot;)&gt;&gt;&lt;&lt;/silent&gt;&gt;The inside of your tent &lt;&lt;if not _brief&gt;&gt;has the smell of plastic and polyeurethane, and &lt;&lt;/if&gt;&gt;is a lurid orange. Your [[backpack|YourBackpack]] lies near the rear tent pole. Your sleeping bag lies unzipped and opened. Beyond the flaps of your tent, your [[campfire|Campfire]] &lt;&lt;if not _brief&gt;&gt;crackles and pops, painting dancing shadows on the inner walls of your tent&lt;&lt;else&gt;&gt;blazes&lt;&lt;/if&gt;&gt;.</tw-passagedata><tw-passagedata pid="6" name="CodeTest" tags="" position="525,25" size="100,100">Create tmp array: {{{&lt;&lt;set _array to []&gt;&gt;}}} &lt;&lt;set _array to []&gt;&gt;The array holds &lt;&lt;= _array.length&gt;&gt; items.
+</tw-passagedata><tw-passagedata pid="5" name="YourTent" tags="" position="325,350" size="100,100">&lt;&lt;silent&gt;&gt;&lt;&lt;set _brief to Setting.getValue(&quot;brevity&quot;)&gt;&gt;&lt;&lt;/silent&gt;&gt;The inside of your tent &lt;&lt;if not _brief&gt;&gt;has the smell of plastic and polyeurethane, and &lt;&lt;/if&gt;&gt;is a lurid orange. Your [[backpack|YourBackpack]] lies near the rear tent pole. Your sleeping bag lies unzipped and opened. Beyond the flaps of your tent, your [[campfire|Campfire]] &lt;&lt;if not _brief&gt;&gt;crackles and pops, painting dancing shadows on the inner walls of your tent&lt;&lt;else&gt;&gt;blazes&lt;&lt;/if&gt;&gt;.</tw-passagedata><tw-passagedata pid="6" name="CodeTest" tags="" position="525,25" size="100,100">Create tmp array: {{{&lt;&lt;set _array to []&gt;&gt;}}} &lt;&lt;set _array to []&gt;&gt;The array holds &lt;&lt;= _array.length&gt;&gt; items.
 Add item: {{{&lt;&lt;set _array.push(&quot;egg&quot;)&gt;&gt;}}} &lt;&lt;set _array.push(&quot;egg&quot;)&gt;&gt; The array holds &lt;&lt;= _array.length&gt;&gt; item.
 Add item: {{{&lt;&lt;set _array.push(&quot;carrot&quot;)&gt;&gt;}}} &lt;&lt;set _array.push(&quot;carrot&quot;)&gt;&gt; The array holds &lt;&lt;= _array.length&gt;&gt; items.
 Another array: {{{&lt;&lt;set _saladMix to [&#39;lettuce&#39;, &#39;crouton&#39;, tomato&#39;]&gt;&gt;}}} &lt;&lt;set _saladMix to [&#39;lettuce&#39;, &#39;crouton&#39;, &#39;tomato&#39;]&gt;&gt; //holds &lt;&lt;= _saladMix.length&gt;&gt; items.
@@ -287,7 +287,7 @@ breaks
 in 
 it.  And       the           nobr tags     
             remove extraneous whitespace      as         well.
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="YourBackpack" tags="" position="275,350" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;&lt;silent&gt;&gt;&lt;&lt;set _packet to &quot;a packet of Mount Hagen&quot;, _brief to Setting.getValue(&quot;brevity&quot;)&gt;&gt;&lt;&lt;/silent&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="YourBackpack" tags="" position="325,475" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;&lt;silent&gt;&gt;&lt;&lt;set _packet to &quot;a packet of Mount Hagen&quot;, _brief to Setting.getValue(&quot;brevity&quot;)&gt;&gt;&lt;&lt;/silent&gt;&gt;
 
 You pull your &lt;&lt;if _brief&gt;&gt;backpack&lt;&lt;else&gt;&gt;Gregory Zulu 45&lt;&lt;/if&gt;&gt; over &lt;&lt;if not _brief&gt;&gt;next to you &lt;&lt;/if&gt;&gt;and rummage around in a side pocket. 
 
@@ -407,14 +407,34 @@ $numbers.countWith(Number.isInteger)  → Returns 3
 // 	{ name : &#39;Endurance potion&#39;, kind : &#39;potion&#39; },
 // 	{ name : &#39;Shortbow&#39;, kind : &#39;weapon&#39; }
 // ]
-$items.countWith(function (item) { return item.kind === &#39;junk&#39;; })  → Returns 1</tw-passagedata><tw-passagedata pid="12" name="Remembrance" tags="" position="25,250" size="100,100">PLACEHOLDER TEXT
+$items.countWith(function (item) { return item.kind === &#39;junk&#39;; })  → Returns 1</tw-passagedata><tw-passagedata pid="12" name="Remembrance" tags="nobr" position="250,200" size="100,100">/* BEGIN COMMENT
 
-/* Turns: &lt;&lt;= State.turns&gt;&gt;, plus the goto in {{{StoryInit}}} to come to THIS passage makes &lt;&lt;= State.turns + 1&gt;&gt;. And if you now click the {{{CHKVARS}}} sidebar button, it will tell you there&#39;ve been &lt;&lt;=State.turns + 2&gt;&gt; turns, because you did another passage transition into passage {{{PsgCheckVars}}}. */
+One really nice thing about tagging a passage with &#39;nobr&#39; is that you can then use plenty of whitespace for comments and to separate various blocks of twinescript:
 
-[[After remembering-&gt;SkeletonHollow]]
+Turns: &lt;&lt;= State.turns&gt;&gt;, plus the goto in {{{StoryInit}}} to come to THIS passage makes &lt;&lt;= State.turns + 1&gt;&gt;. And if you now click the {{{CHKVARS}}} sidebar button, it will tell you there&#39;ve been &lt;&lt;=State.turns + 2&gt;&gt; turns, because you did another passage transition into passage {{{PsgCheckVars}}}. 
+
+END COMMENT */
+
+&lt;&lt;set _v to visited(&quot;Remembrance&quot;)&gt;&gt;
+
+&lt;&lt;switch _v&gt;&gt;
+&lt;&lt;case 1&gt;&gt;
+	Saturday, May 29, 1999. You are at your favorite campsite, a nice comfortable spot up in the hills. It&#39;s a spot you&#39;ve camped many times over the years. Miles removed from town, and some three hundred feet above the river you canoed and rafted all through your teen &lt;&lt;linkreplace years.&gt;&gt;years.&lt;br&gt;&lt;br&gt; 
+    
+A tall, muscular young man, you&#39;ve sacrificed a party invitation and a more intimate invitation from Sheila in order to do this //solo//. This is your //man// thing &amp;mdash; your communion with &lt;&lt;linkreplace nature.&gt;&gt;nature.&lt;br&gt;&lt;br&gt;You sit before a crackling fire &amp;mdash; occasionally adjusting the position of a double foil-wrapped packet of roast, carrots, potatoes, and onions that rests on a bed of [[coals|Remembrance]].&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;
+&lt;&lt;case 2&gt;&gt;
+	2nd [[visit|Remembrance]]
+&lt;&lt;case 3&gt;&gt;
+	3rd [[visit|Remembrance]]
+&lt;&lt;default&gt;&gt;
+	beyond 3rd visit
+    &lt;br&gt;&lt;br&gt;
+    [[After remembering-&gt;SkeletonHollow]]
+&lt;&lt;/switch&gt;&gt;
 
 
-</tw-passagedata><tw-passagedata pid="13" name="MakeCoffee" tags="" position="500,525" size="100,100">&lt;&lt;nobr&gt;&gt;
+
+</tw-passagedata><tw-passagedata pid="13" name="MakeCoffee" tags="" position="450,425" size="100,100">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set _hagen to &quot;a packet of Mount Hagen&quot;&gt;&gt;
 A cup of coffee does sound good.&lt;br&gt;&lt;br&gt;
 &lt;&lt;if $inventory.count(_hagen) gt 0&gt;&gt;
@@ -424,7 +444,7 @@ A cup of coffee does sound good.&lt;br&gt;&lt;br&gt;
 
 &lt;&lt;/nobr&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="14" name="EnjoyCoffee" tags="" position="625,525" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;&lt;set $cupsOfCoffeeDrank to $cupsOfCoffeeDrank + 1&gt;&gt;&lt;&lt;set  _hagen to &quot;a packet of Mount Hagen&quot;&gt;&gt;You make a &lt;&lt;if $cupsOfCoffeeDrank eq 2&gt;&gt;second&lt;&lt;/if&gt;&gt; cup of Mount Hagen, enjoying the aroma and the warmth it causes to bloom within you. &lt;&lt;if $cupsOfCoffeeDrank eq 2&gt;&gt;Ooh, that second cup of java is really starting to [[kick in|Campfire]]!&lt;&lt;/if&gt;&gt;&lt;br&gt;
+</tw-passagedata><tw-passagedata pid="14" name="EnjoyCoffee" tags="" position="575,425" size="100,100">&lt;&lt;nobr&gt;&gt;&lt;&lt;set $cupsOfCoffeeDrank to $cupsOfCoffeeDrank + 1&gt;&gt;&lt;&lt;set  _hagen to &quot;a packet of Mount Hagen&quot;&gt;&gt;You make a &lt;&lt;if $cupsOfCoffeeDrank eq 2&gt;&gt;second&lt;&lt;/if&gt;&gt; cup of Mount Hagen, enjoying the aroma and the warmth it causes to bloom within you. &lt;&lt;if $cupsOfCoffeeDrank eq 2&gt;&gt;Ooh, that second cup of java is really starting to [[kick in|Campfire]]!&lt;&lt;/if&gt;&gt;&lt;br&gt;
 
 &lt;&lt;if $inventory.count(_hagen) gt 1&gt;&gt;You [[debate|MakeCoffee]] whether to make a second cup.&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
@@ -445,23 +465,17 @@ Number of psgs in our story: &lt;&lt;= setup.getTotalPassagesCount()&gt;&gt;&lt;
 &#39;&#39;Passage Visits&#39;&#39; (those with 0 visits are omitted):&lt;br&gt;&lt;&lt;set _trans to 0&gt;&gt;
 
 &lt;&lt;for _i to 0; _i lt $psgs.length; _i++&gt;&gt;
-    &lt;&lt;if $psgs[_i] eq &quot;StoryInit&quot;&gt;&gt;
-    		Psg $psgs[_i] visited 1 time&lt;br&gt;&lt;&lt;set _trans++&gt;&gt;
-    &lt;&lt;else&gt;&gt;
-    	&lt;&lt;if visited($psgs[_i]) gt 0&gt;&gt;
-				Psg $psgs[_i] visited &lt;&lt;= visited($psgs[_i])&gt;&gt; times&lt;br&gt;
-        &lt;&lt;/if&gt;&gt;
-        
-   		 &lt;&lt;if visited($psgs[_i]) gt 0&gt;&gt;&lt;&lt;set _trans += visited($psgs[_i])&gt;&gt;&lt;&lt;/if&gt;&gt;
-    
-    &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if visited($psgs[_i]) gt 0&gt;&gt;
+				Psg $psgs[_i] visited &lt;&lt;= visited($psgs[_i])&gt;&gt; times&lt;&lt;set _trans += visited($psgs[_i])&gt;&gt;&lt;br&gt;
+        &lt;&lt;/if&gt;&gt;   		 
 &lt;&lt;/for&gt;&gt;
 
 &#39;&#39;Total passage transitions: &lt;&lt;= _trans&gt;&gt;&#39;&#39;&lt;br&gt;&lt;br&gt;
 
-[[back-&gt;$return]]</tw-passagedata><tw-passagedata pid="16" name="TestingRemembrance" tags="debug" position="775,425" size="100,100">/* Thanks to GreyElf for suggesting a dedicated passage (in this case, with a tag named &quot;debug&quot;) for simulating playthrough to a certain place in the story, for debugging purposes.  There is a function defined on the setup object in the javascript section of this twine named runTestCase( ). It looks for a passage tagged &quot;debug&quot;. Finding one, it then executes whatever is in that passage via jQuery.wikiPassage(testcase.name) */
+[[back-&gt;$return]]</tw-passagedata><tw-passagedata pid="16" name="TestingRemembrance" tags="debug" position="775,275" size="100,100">/* Thanks to GreyElf for suggesting a dedicated passage (in this case, with a tag named &quot;debug&quot;) for simulating playthrough to a certain place in the story, for debugging purposes.  There is a function defined on the setup object in the javascript section of this twine named runTestCase( ). It looks for a passage tagged &quot;debug&quot;. Finding one, it then executes whatever is in that passage via jQuery.wikiPassage(testcase.name) */
 
 /* Code for padding history with the required Moments */
+ &lt;&lt;script&gt;&gt;
   setup.addVisits(&quot;Campfire&quot;)
   setup.addVisits(&quot;YourTent&quot;)
   setup.addVisits(&quot;YourBackpack&quot;)
@@ -474,6 +488,7 @@ Number of psgs in our story: &lt;&lt;= setup.getTotalPassagesCount()&gt;&gt;&lt;
   setup.addVisits(&quot;MakeCoffee&quot;)
   setup.addVisits(&quot;EnjoyCoffee&quot;)
   setup.addVisits(&quot;Campfire&quot;)  
+  &lt;&lt;/script&gt;&gt;
 
 /* Code for assigning alternative defaults to Story Variables */
 &lt;&lt;set $cupsOfCoffeeDrank to 2&gt;&gt;

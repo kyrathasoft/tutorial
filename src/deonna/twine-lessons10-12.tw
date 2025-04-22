@@ -278,14 +278,34 @@ We're going to replace our PLACEHOLDER TEXT in passage {{{Remembrance}}}, and in
 
 Let's say that we've brainstormed and come up with three paragraphs that describe the ''Big Reveal'' regarding the main character's recollection of a past traumatic event here in the woods, in a hollow not far from the campfire. We could put all of it into the same passage, but some players don't like Walls-of-Text. Or, we could use a separate passage for each paragraph, but then we have to link the passages in the correct order, //and// our $tw storyboard would quickly fill up with passages. 
 
-Trust me that when working in the $tw graphical editor, once you get beyond a few dozen passages it becomes a hairy mess trying to keep everything organized $md more on an alternative $tw-coding setup (using Visual Studio code and Tweego) a bit later in this tutorial [[series|TwineLesson010Passage027]].
+Trust me that when working in the $tw graphical editor, once you get beyond a few dozen passages it becomes a hairy mess trying to keep everything organized $md more on an alternative $tw-coding setup (using <a target="_new" href="https://code.visualstudio.com/">Visual Studio Code</a> and <a target="_new" href="https://www.motoslave.net/tweego/">Tweego</a>) a bit later in this tutorial [[series|TwineLesson010Passage027]].
 
 <<tut-links "TwineLesson010Passage025" "TwineLesson010Passage027">>
 
 
 
 :: TwineLesson010Passage027
-<img align="left" hspace=15 vspace=5 @src="setup.imgs1012 + 'self-referencing-remembrance.png'">I'm going to ask you to copy/paste the $ts from <a target="_new" href="https://gist.github.com/kyrathasoft/a06aa5529e53d8bdce1b0b0a197a0bfa">here</a> into your {{{Remembrance}}} passage. Once you do this, look at the storyboard area of the $tw editor, where are the passages are visually depicted. You'll see that our {{{Remembrance}}} passage does indeed now loop back on itself.
+<img align="left" hspace=15 vspace=5 @src="setup.imgs1012 + 'self-referencing-remembrance.png'">I'm going to ask you to copy/paste the $ts from <a target="_new" href="https://gist.github.com/kyrathasoft/a06aa5529e53d8bdce1b0b0a197a0bfa">here</a> into your {{{Remembrance}}} passage. Once you do this, look at the storyboard area of the $tw editor, where the passages are visually depicted. You'll see that our {{{Remembrance}}} passage does indeed now loop back on itself. If you now launch the $sg, you'll be take to {{{Remembrance}}} $md 1st visit. Click the link to return to the same passage $md 2nd visit; and again for 3rd. After that, we return to {{{SkeletonHollow}}}.
+
+We could just as easily use the same passage $md or //any// passage $md twenty times, or even [[ninety-nine|TwineLesson010Passage028]].
+
+<<tut-links "TwineLesson010Passage026" "TwineLesson010Passage028">>
+
+
+
+:: TwineLesson010Passage028
+<img align="left" hspace=15 vspace=5 @src="setup.imgs1012 + 'multi-visit-switch.png'">Do you understand why the screenshotted code works? We're setting a temp variable $md ''_v'' to the number of times passage {{{Remembrance}}} has been visited. Then, our {{{<<switch>>}}} statement causes different text and link to be shown for each visit.
+
+Let's now add our text for visit #1 to {{{Remembrance}}}: <a target="_new" href="https://gist.github.com/kyrathasoft/d4a6c5791c5e42380521ac3cd377930f">here</a> is what {{{Remembrance}}} should look like $md feel free to copy/paste. Once you've updated the passage, run our game again and test it. 
+
+Did you test it? Interesting results, eh? Unless you have had previous experience with the $sc story format, or some other format with a similar macro, you've not likely seen what you're seeing here: multiple links in the same passage, each revealing additional [[text|TwineLesson010Passage029]].
+
+<<tut-links "TwineLesson010Passage027" "TwineLesson010Passage029">>
+
+
+
+:: TwineLesson010Passage029
+Introducing the {{{<<linkreplace>>}}} macro.
 
 
 
