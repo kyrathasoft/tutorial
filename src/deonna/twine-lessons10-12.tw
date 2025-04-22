@@ -305,7 +305,35 @@ Did you test it? Interesting results, eh? Unless you have had previous experienc
 
 
 :: TwineLesson010Passage029
-Introducing the {{{<<linkreplace>>}}} macro.
+Introducing the {{{<<linkreplace>>}}} macro. To understand how to use the link replacement macro, you may want to try the following $ts in passage {{{CodeTest}}}. If you //do// want to do that, you'll need to temporarily remove the "debug" tag from passage {{{TestingRemembrance}}} and then temporarily make {{{CodeTest}}} your startup passage: click Passage button, the highlight {{{CodeTest}}} passage, then click the "Start Story Here" button.
+
+You see a shiny {{{<<linkreplace key.>>key, which you quickly transfer to your pocket.<</linkreplace>>}}}
+
+You see a gold coin. {{{<<linkreplace "Take it.">>//Taken.//<<set $inventory.push("a gold coin")>><</linkreplace>>}}}
+
+[[$ct|TwineLesson010Passage030]]
+
+<<tut-links "TwineLesson010Passage028" "TwineLesson010Passage030">>
+
+
+
+:: TwineLesson010Passage030
+In case you didn't want to go the trouble of testing the above $ts in our sample game, you can try it out below. The first sentence's {{{<<linkreplace>>}}} works just fine, but the second will throw an error:
+
+You see a shiny <<linkreplace key.>>key, which you quickly transfer to your pocket.<</linkreplace>>
+
+You see a gold coin. <<linkreplace "Take it.">>//Taken.//<<set $inventory.push("a gold coin")>><</linkreplace>>
+
+Why the error? Because in this twine in which I'm authoring the tutorial text, there isn't an array named {{{$inventory}}}.
+
+If you do decide to test this code in the sample game, use the sidebar to look at your inventory after taking the gold coin. You'll see it now appears in your [[inventory|TwineLesson010Passage031]].
+
+<<tut-links "TwineLesson010Passage029" "TwineLesson010Passage031">>
+
+
+
+:: TwineLesson010Passage031
+When we use the {{{<<linkreplace>>}}} macro, 
 
 
 
