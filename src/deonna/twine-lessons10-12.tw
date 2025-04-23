@@ -333,7 +333,34 @@ If you do decide to test this code in the sample game, use the sidebar to look a
 
 
 :: TwineLesson010Passage031
-When we use the {{{<<linkreplace>>}}} macro, 
+When we use the {{{<<linkreplace>>}}} macro, whatever argument we supply to the macro becomes a link $md a link that will be replaced when clicked. Below, I use the {{{<<linkreplace>>}}} macro to replace the numeral ''1'' with the word ''one''.
+
+{{{<<linkreplace 1>>one<</linkreplace>>}}} yields ... click the link to find out: <<linkreplace 1>>one<</linkreplace>>
+
+What if I want to be able to click on the word ''one'' to reveal the numeral ''2''? Well, for that we'd use a //nested// {{{<<linkreplace>>}}} macro:
+
+{{{<<linkreplace 1>><<linkreplace one>>2<</linkreplace>><</linkreplace>>}}} Test this below:
+
+<<linkreplace 1>><<linkreplace one>>2<</linkreplace>><</linkreplace>>
+
+As you can imagine, nested {{{<<linkreplace>>}}} macros can get convoluted really [[quickly|TwineLesson010Passage032]].
+
+    <<tut-links "TwineLesson010Passage030" "TwineLesson010Passage032">>
 
 
+
+:: TwineLesson010Passage032
+You may have noticed that we're using nested {{{<<linkreplace>>}}} macros in passage {{{Remembrance}}} see {{{<<<case 1>>>}}} under the {{{<<switch>>}}} statement. Something to be aware of: if you want more than a single word to serve as the link, you need to enclose the words in quotation marks.
+
+{{{<<linkreplace "click here">>Tada!<</linkreplace>>}}}
+
+Here's what happens if you fail to do this: even though I'm specifying two words ("click here"), because they're not enclosed in quotes, the link macro only linkifies the first word ("click"):
+
+<<linkreplace click here>>Tada!
+
+I still get the desired end-result ("Tada") but not the full two-word link I was going for.<</linkreplace>>
+
+
+
+:: TwineLesson010Passage033
 

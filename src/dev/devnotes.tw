@@ -1,6 +1,10 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 4/21/2025__ 
+# added micro-lesson on the {{{<<linkreplace>>}}} macro
+# called out need to quote-enclose multiword {{{<<linkreplace>>}}} arguments
+
 __Notes from 4/19/2025__ 
 # added all the internals needed to simulate playthrough to psg {{{Remembrance}}}
 # in the process of providing an explanation of how {{{setup.addVisits()}}} works
