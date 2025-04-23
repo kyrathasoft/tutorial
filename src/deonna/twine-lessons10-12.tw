@@ -358,9 +358,18 @@ Here's what happens if you fail to do this: even though I'm specifying two words
 
 <<linkreplace click here>>Tada!
 
-I still get the desired end-result ("Tada") but not the full two-word link I was going for.<</linkreplace>>
+I still get the desired end-result ("Tada") but not the full two-word link I was [[going for|TwineLesson010Passage033]].<</linkreplace>>
+
+<<tut-links "TwineLesson010Passage031" "TwineLesson010Passage033">>
 
 
 
 :: TwineLesson010Passage033
+<<set _inv to []>>You can use the {{{<<linkreplace>>}}} macro inline in the text of your story to do things such as take items and add them to your inventory. If you have {{{<<set $inv to []>>}}} then you might have the following line of $ts in your story:
 
+{{{There is a shiny brass key here. <<linkreplace "Take it.">><<run $inv.pushUnique("shiny brass key")>>//Taken.//<</linkreplace>>}}} Try this below:
+
+There is a shiny brass key here. <<linkreplace "Take it.">><<run _inv.pushUnique("a shiny brass key")>>//Taken.//
+
+    Your inventory now contains: ''<<= _inv>>''
+<</linkreplace>>
