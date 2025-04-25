@@ -371,5 +371,19 @@ I still get the desired end-result ("Tada") but not the full two-word link I was
 
 There is a shiny brass key here. <<linkreplace "Take it.">><<run _inv.pushUnique("a shiny brass key")>>//Taken.//
 
-    Your inventory now contains: ''<<= _inv>>''
-<</linkreplace>>
+Your inventory now contains: ''<<= _inv>>''
+
+Let's [[$ct|TwineLesson010Passage034]].<</linkreplace>>
+
+
+:: TwineLesson010Passage034
+I've read enough IF to know that what seems perfectly clear to the author may not always be clear to the reader. Therefore, let's make it a bit more explicit that what the reader is experiencing upon visiting {{{Remembrance}}} is a flashback, a memory. Modify the contents of passage {{{Remembrance}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/9fffe5f62be283ad28a8581502e869cb">this</a> code listing. For the sake of symmetry, let's also make a modificaton to the beginning of the story. To do that, add a passage named {{{SatIn2024}}}, adding this to the passage: {{{<font color="lightgray">Saturday, 5/18/2024</font><br>}}}. Then, modify the contents of the {{{Campfire}}} passage to <a target="_new" href="https://gist.github.com/kyrathasoft/be3c5cf334fbaa443f7a7043566fab1d">this</a>. 
+
+Now try the story again in your [[browser|TwineLesson010Passage035]].
+
+<<tut-links "TwineLesson010Passage033" "TwineLesson010Passage035">>
+
+
+
+:: TwineLesson010Passage035
+Let's continue working on the text of passage {{{Remembrance}}}. Update the contents of that passage to <a target="_new" href="https://gist.github.com/kyrathasoft/444ca2ae0ceab5aef7e2f44e959160ca">this</a>.
