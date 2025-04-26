@@ -393,4 +393,13 @@ Let's continue working on the text of passage {{{Remembrance}}}. Update the cont
 
 
 :: TwineLesson010Passage036
-<<tutorial-passages>>
+Let's update passage {{{Remembrance}}} just a bit more, so that it contains <a target="_new" href="https://gist.github.com/kyrathasoft/d4300286124cdf379da8e6098a29d917">this</a> $ts. Add a new passage, {{{TheCreature}}} and paste <a target="_new" href="https://gist.github.com/kyrathasoft/ff70fd4af9a9a348666523b655a9faa9">this</a> into it. Next, update passage {{{TestingRemembrance}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/178efd46f54d0be444a85c53e39a49fe">this</a> listing, and then remove the 'Debug' tag from the passage.
+
+Now, create passage {{{TestingTheCreature}}} and paste <a target="_new" href="https://gist.github.com/kyrathasoft/83916874b2f6de62aea7d9eceb0d3d3b">this</a> $ts into it. Add the tag 'Debug' (sans the single quotes) to {{{TestingTheCreature}}}. If you followed these steps carefully, then when you next test the game in your browser, the $sg should start at passage {{{TheCreature}}} with the words //You see it! There, maybe sixty [[feet away|TwineLesson010Passage037]].//
+
+<<tut-links "TwineLesson010Passage035" "TwineLesson010Passage037">>
+
+
+
+:: TwineLesson010Passage037
+Psg 37
