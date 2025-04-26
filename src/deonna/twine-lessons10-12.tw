@@ -402,4 +402,12 @@ Now, create passage {{{TestingTheCreature}}} and paste <a target="_new" href="ht
 
 
 :: TwineLesson010Passage037
-Psg 37
+Perhaps you noticed that I've added a flashlight and a .357 magnum revolver to the MC's inventory (not in terms of code, but by writing them into the narrative). Let's update our inventory array to reflect that: go to special passage {{{StoryInit}}} and updating the line of $ts that sets the inventory contents:
+
+{{{<<set $inventory to ['a canteen', 'a pocket knife', 'a handkerchief', 'a flashlight', 'a revolver']>>}}} Then, in passage {{{YourInventory}}}, we can comment-out that final line of $ts. By only commenting it out rather than deleting it, we can easily use it again in the future if needed. The contents of {{{YourInventory}}} should now mirror <a target="_new" href="https://gist.github.com/kyrathasoft/96f74217af8a0f580993bded0d7305bd">this</a> code [[listing|TwineLesson010Passage038]].
+
+<<tut-links "TwineLesson010Passage036" "TwineLesson010Passage038">>
+
+
+
+:: TwineLesson010Passage038
