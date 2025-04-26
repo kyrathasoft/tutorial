@@ -386,4 +386,4 @@ Now try the story again in your [[browser|TwineLesson010Passage035]].
 
 
 :: TwineLesson010Passage035
-Let's continue working on the text of passage {{{Remembrance}}}. Update the contents of that passage to <a target="_new" href="https://gist.github.com/kyrathasoft/444ca2ae0ceab5aef7e2f44e959160ca">this</a>.
+Let's continue working on the text of passage {{{Remembrance}}}. Update the contents of that passage to <a target="_new" href="https://gist.github.com/kyrathasoft/444ca2ae0ceab5aef7e2f44e959160ca">this</a>. Now, when you test the game, you're able to click through multiple hyperlinks, each revealing more text, until you reach "3rd visit". We need to add text for the 3rd visit to {{{Remembrance}}}.
