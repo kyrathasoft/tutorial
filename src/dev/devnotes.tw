@@ -1,6 +1,16 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 4/26/2025__ 
+# finished passage {{{Remembrance}}}
+# finished passage {{{TheCreature}}}
+# removed Debug tag from {{{TestingRemembrance}}}
+# created passage {{{TestingTheCreature}}}; tagged it Debug
+# we don't check {{{_brevity}}} in {{{Remembrance}}}; verbose needed
+# we don't check {{{_brevity}}} in {{{TheCreature}}}; verbose needed
+# made blog post on how to create an inventory system for sugarcube:
+    https://bryanmiller.us/2025/04/sugarcube-recipe-for-inventory-system
+
 __Notes from 4/21/2025__ 
 # added micro-lesson on the {{{<<linkreplace>>}}} macro
 # called out need to quote-enclose multiword {{{<<linkreplace>>}}} arguments
