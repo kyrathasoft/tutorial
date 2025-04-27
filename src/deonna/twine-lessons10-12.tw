@@ -411,3 +411,16 @@ Perhaps you noticed that I've added a flashlight and a .357 magnum revolver to t
 
 
 :: TwineLesson010Passage038
+<img @src="setup.imgs1012 + 'passages19inv5.png'">
+Ensure that passage {{{TheCreature}}} has been assigned a {{{nobr}}} tag. Launch the game in your browser to test it and then click the {{{CHKVARS}}} sidebar button. You should show five inventory items. Now, we're going to update our {{{TheCreature}}} passage to <a target="_new" href="https://gist.github.com/kyrathasoft/e5c2c19c24be391729fd16dfdac19b65">this</a> listing. Admittedly, it's a bit convoluted, with one outer and eight nested {{{<<linkreplace>>}}} macros. 
+
+The updated code-listing for passage {{{TheCreature}}} will cause desktop Twine to create a new passage named {{{CreatureDown}}}. You should add this sentence to that new passage, and then test the game by running it in your browser: {{{The scent of gunpowder and the coppery tang of blood ride the night air.}}}
+
+Let's [[$ct|TwineLesson010Passage039]]
+
+<<tut-links "TwineLesson010Passage037" "TwineLesson010Passage039">>
+
+
+
+:: TwineLesson010Passage039
+<<tutorial-passages>>
