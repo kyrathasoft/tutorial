@@ -1,6 +1,10 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 4/27/2025__ 
+# added a generic object to the setup object for alien desc in key/value pairs
+
+
 __Notes from 4/26/2025__ 
 # finished passage {{{Remembrance}}}
 # finished passage {{{TheCreature}}}

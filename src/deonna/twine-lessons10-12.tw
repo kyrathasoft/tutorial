@@ -244,7 +244,7 @@ Let's [[$ct|TwineLesson010Passage023]]
 
 
 
-:: TwineLesson010Passage023
+:: TwineLesson010Passage023 [deonna]
 <a target="_new" href="https://intfiction.org/u/greyelf/summary">GreyElf</a>, a very knowledgeable poster on intfiction.org <a target="_new" href="https://intfiction.org/t/does-state-turns-include-a-visit-to-storyinit/74571/9">provided</a> me a superior way to do testing starting from the {{{Remembrance}}} passage. As a result, the contents on the javascript section of our sample game have changed, as have the contents of {{{StoryInit}}}.
 
 The easiest way to bring you copy of the sample game up-to-date is to download and extract <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImMh-rphifMBO88NBXg">this</a> HTML and import it back into Twine $md or get it <a target="_new" href=" http://twinery.42web.io/backups/CampfireTaleLesson010Passage023.zip">here</a> or <a target="_new" href="https://bryanmiller.us/twinery/backups/CampfireTaleLesson010Passage023.zip">here</a>.
@@ -257,7 +257,7 @@ Let's [[$ct|TwineLesson010Passage024]]
 
 
 
-:: TwineLesson010Passage024
+:: TwineLesson010Passage024 [deonna]
 If you're interested in the details of the changes I've made $md with GreyElf's help $md to the start-at-psg-Remembrance code, I'll get into it later. For now, just know that this change decreases the likelihood of introducing bugs into our $sg. 
 
 [[$ct|TwineLesson010Passage025]]
@@ -266,14 +266,14 @@ If you're interested in the details of the changes I've made $md with GreyElf's 
 
 
 
-:: TwineLesson010Passage025
+:: TwineLesson010Passage025 [deonna]
 <img align="left" hspace=15 vspace=5 @src="setup.imgs1012 + 'unwanted-space-in-remembrance.png'">Why is that unwanted vertical space between our placeholder text and the link, in passage {{{Remembrance}}}? Because of the multiline comment I've left in the passage. Here's how we'll fix that: give passage {{{Remembrance}}} the 'nobr' tag. Then, add a pair of line-break in the <a target="_new" href="https://gist.github.com/kyrathasoft/24181f8af1dea803276cf945d228c5d5">right</a> [[places|TwineLesson010Passage026]].
 
 <<tut-links "TwineLesson010Passage024" "TwineLesson010Passage026">>
 
 
 
-:: TwineLesson010Passage026
+:: TwineLesson010Passage026 [deonna]
 We're going to replace our PLACEHOLDER TEXT in passage {{{Remembrance}}}, and in so doing I'm going to show you how to reuse the same passage multiple times. 
 
 Let's say that we've brainstormed and come up with three paragraphs that describe the ''Big Reveal'' regarding the main character's recollection of a past traumatic event here in the woods, in a hollow not far from the campfire. We could put all of it into the same passage, but some players don't like Walls-of-Text. Or, we could use a separate passage for each paragraph, but then we have to link the passages in the correct order, //and// our $tw storyboard would quickly fill up with passages. 
@@ -284,7 +284,7 @@ Trust me that when working in the $tw graphical editor, once you get beyond a fe
 
 
 
-:: TwineLesson010Passage027
+:: TwineLesson010Passage027 [deonna]
 <img align="left" hspace=15 vspace=5 @src="setup.imgs1012 + 'self-referencing-remembrance.png'">I'm going to ask you to copy/paste the $ts from <a target="_new" href="https://gist.github.com/kyrathasoft/a06aa5529e53d8bdce1b0b0a197a0bfa">here</a> into your {{{Remembrance}}} passage. Once you do this, look at the storyboard area of the $tw editor, where the passages are visually depicted. You'll see that our {{{Remembrance}}} passage does indeed now loop back on itself. If you now launch the $sg, you'll be take to {{{Remembrance}}} $md 1st visit. Click the link to return to the same passage $md 2nd visit; and again for 3rd. After that, we return to {{{SkeletonHollow}}}.
 
 We could just as easily use the same passage $md or //any// passage $md twenty times, or even [[ninety-nine|TwineLesson010Passage028]].
@@ -293,7 +293,7 @@ We could just as easily use the same passage $md or //any// passage $md twenty t
 
 
 
-:: TwineLesson010Passage028
+:: TwineLesson010Passage028 [deonna]
 <img align="left" hspace=15 vspace=5 @src="setup.imgs1012 + 'multi-visit-switch.png'">Do you understand why the screenshotted code works? We're setting a temp variable $md ''_v'' to the number of times passage {{{Remembrance}}} has been visited. Then, our {{{<<switch>>}}} statement causes different text and link to be shown for each visit.
 
 Let's now add our text for visit #1 to {{{Remembrance}}}: <a target="_new" href="https://gist.github.com/kyrathasoft/d4a6c5791c5e42380521ac3cd377930f">here</a> is what {{{Remembrance}}} should look like $md feel free to copy/paste. Once you've updated the passage, run our game again and test it. 
@@ -304,7 +304,7 @@ Did you test it? Interesting results, eh? Unless you have had previous experienc
 
 
 
-:: TwineLesson010Passage029
+:: TwineLesson010Passage029 [deonna]
 Introducing the {{{<<linkreplace>>}}} macro. To understand how to use the link replacement macro, you may want to try the following $ts in passage {{{CodeTest}}}. If you //do// want to do that, you'll need to temporarily remove the "debug" tag from passage {{{TestingRemembrance}}} and then temporarily make {{{CodeTest}}} your startup passage: click Passage button, the highlight {{{CodeTest}}} passage, then click the "Start Story Here" button.
 
 You see a shiny {{{<<linkreplace key.>>key, which you quickly transfer to your pocket.<</linkreplace>>}}}
@@ -317,7 +317,7 @@ You see a gold coin. {{{<<linkreplace "Take it.">>//Taken.//<<set $inventory.pus
 
 
 
-:: TwineLesson010Passage030
+:: TwineLesson010Passage030 [deonna]
 In case you didn't want to go the trouble of testing the above $ts in our sample game, you can try it out below. The first sentence's {{{<<linkreplace>>}}} works just fine, but the second will throw an error:
 
 You see a shiny <<linkreplace key.>>key, which you quickly transfer to your pocket.<</linkreplace>>
@@ -332,7 +332,7 @@ If you do decide to test this code in the sample game, use the sidebar to look a
 
 
 
-:: TwineLesson010Passage031
+:: TwineLesson010Passage031 [deonna]
 When we use the {{{<<linkreplace>>}}} macro, whatever argument we supply to the macro becomes a link $md a link that will be replaced when clicked. Below, I use the {{{<<linkreplace>>}}} macro to replace the numeral ''1'' with the word ''one''.
 
 {{{<<linkreplace 1>>one<</linkreplace>>}}} yields ... click the link to find out: <<linkreplace 1>>one<</linkreplace>>
@@ -349,7 +349,7 @@ As you can imagine, nested {{{<<linkreplace>>}}} macros can get convoluted reall
 
 
 
-:: TwineLesson010Passage032
+:: TwineLesson010Passage032 [deonna]
 You may have noticed that we're using nested {{{<<linkreplace>>}}} macros in passage {{{Remembrance}}} see {{{<<<case 1>>>}}} under the {{{<<switch>>}}} statement. Something to be aware of: if you want more than a single word to serve as the link, you need to enclose the words in quotation marks.
 
 {{{<<linkreplace "click here">>Tada!<</linkreplace>>}}}
@@ -364,7 +364,7 @@ I still get the desired end-result ("Tada") but not the full two-word link I was
 
 
 
-:: TwineLesson010Passage033
+:: TwineLesson010Passage033 [deonna]
 <<set _inv to []>>You can use the {{{<<linkreplace>>}}} macro inline in the text of your story to do things such as take items and add them to your inventory. If you have {{{<<set $inv to []>>}}} then you might have the following line of $ts in your story:
 
 {{{There is a shiny brass key here. <<linkreplace "Take it.">><<run $inv.pushUnique("shiny brass key")>>//Taken.//<</linkreplace>>}}} Try this below:
@@ -376,7 +376,7 @@ Your inventory now contains: ''<<= _inv>>''
 Let's [[$ct|TwineLesson010Passage034]].<</linkreplace>>
 
 
-:: TwineLesson010Passage034
+:: TwineLesson010Passage034 [deonna]
 I've read enough IF to know that what seems perfectly clear to the author may not always be clear to the reader. Therefore, let's make it a bit more explicit that what the reader is experiencing upon visiting {{{Remembrance}}} is a flashback, a memory. Modify the contents of passage {{{Remembrance}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/9fffe5f62be283ad28a8581502e869cb">this</a> code listing. For the sake of symmetry, let's also make a modificaton to the beginning of the story. To do that, add a passage named {{{SatIn2024}}}, adding this to the passage: {{{<font color="lightgray">Saturday, 5/18/2024</font><br>}}}. Then, modify the contents of the {{{Campfire}}} passage to <a target="_new" href="https://gist.github.com/kyrathasoft/be3c5cf334fbaa443f7a7043566fab1d">this</a>. 
 
 Now try the story again in your [[browser|TwineLesson010Passage035]].
@@ -385,14 +385,14 @@ Now try the story again in your [[browser|TwineLesson010Passage035]].
 
 
 
-:: TwineLesson010Passage035
+:: TwineLesson010Passage035 [deonna]
 Let's continue working on the text of passage {{{Remembrance}}}. Update the contents of that passage to <a target="_new" href="https://gist.github.com/kyrathasoft/444ca2ae0ceab5aef7e2f44e959160ca">this</a>. Now, when you test the game, you're able to click through multiple hyperlinks, each revealing more text, until you reach "3rd visit". We need to add text for the 3rd visit to {{{Remembrance}}}. <a target="_new" href=" http://twinery.42web.io/backups/CampfireTaleLess10Psg35OfTutorial.zip">Here</a> is a snapshot of the entire sample game we're creating, as it exists at the time I'm writing this page in the tutorial. It can also be downloaded <a target="_new" href="https://bryanmiller.us/twinery/backups/CampfireTaleLess10Psg35OfTutorial.zip">here</a>. If you download it, import it into desktop [[Twine|TwineLesson010Passage036]].
 
 <<tut-links "TwineLesson010Passage034" "TwineLesson010Passage036">>
 
 
 
-:: TwineLesson010Passage036
+:: TwineLesson010Passage036 [deonna]
 Let's update passage {{{Remembrance}}} just a bit more, so that it contains <a target="_new" href="https://gist.github.com/kyrathasoft/d4300286124cdf379da8e6098a29d917">this</a> $ts. Add a new passage, {{{TheCreature}}} and paste <a target="_new" href="https://gist.github.com/kyrathasoft/ff70fd4af9a9a348666523b655a9faa9">this</a> into it. Next, update passage {{{TestingRemembrance}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/178efd46f54d0be444a85c53e39a49fe">this</a> listing, and then remove the 'Debug' tag from the passage.
 
 Now, create passage {{{TestingTheCreature}}} and paste <a target="_new" href="https://gist.github.com/kyrathasoft/83916874b2f6de62aea7d9eceb0d3d3b">this</a> $ts into it. Add the tag 'Debug' (sans the single quotes) to {{{TestingTheCreature}}}. If you followed these steps carefully, then when you next test the game in your browser, the $sg should start at passage {{{TheCreature}}} with the words //You see it! There, maybe sixty [[feet away|TwineLesson010Passage037]].//
@@ -401,7 +401,7 @@ Now, create passage {{{TestingTheCreature}}} and paste <a target="_new" href="ht
 
 
 
-:: TwineLesson010Passage037
+:: TwineLesson010Passage037 [deonna]
 Perhaps you noticed that I've added a flashlight and a .357 magnum revolver to the MC's inventory (not in terms of code, but by writing them into the narrative). Let's update our inventory array to reflect that: go to special passage {{{StoryInit}}} and updating the line of $ts that sets the inventory contents:
 
 {{{<<set $inventory to ['a canteen', 'a pocket knife', 'a handkerchief', 'a flashlight', 'a revolver']>>}}} Then, in passage {{{YourInventory}}}, we can comment-out that final line of $ts. By only commenting it out rather than deleting it, we can easily use it again in the future if needed. The contents of {{{YourInventory}}} should now mirror <a target="_new" href="https://gist.github.com/kyrathasoft/96f74217af8a0f580993bded0d7305bd">this</a> code [[listing|TwineLesson010Passage038]].
@@ -410,11 +410,11 @@ Perhaps you noticed that I've added a flashlight and a .357 magnum revolver to t
 
 
 
-:: TwineLesson010Passage038
+:: TwineLesson010Passage038 [deonna]
 <img @src="setup.imgs1012 + 'passages19inv5.png'">
 Ensure that passage {{{TheCreature}}} has been assigned a {{{nobr}}} tag. Launch the game in your browser to test it and then click the {{{CHKVARS}}} sidebar button. You should show five inventory items. Now, we're going to update our {{{TheCreature}}} passage to <a target="_new" href="https://gist.github.com/kyrathasoft/e5c2c19c24be391729fd16dfdac19b65">this</a> listing. Admittedly, it's a bit convoluted, with one outer and eight nested {{{<<linkreplace>>}}} macros. 
 
-The updated code-listing for passage {{{TheCreature}}} will cause desktop Twine to create a new passage named {{{CreatureDown}}}. You should add this sentence to that new passage, and then test the game by running it in your browser: {{{The scent of gunpowder and the coppery tang of blood ride the night air.}}}
+The updated code-listing for passage {{{TheCreature}}} will cause desktop Twine to create a new passage named {{{CreatureDown}}}. You should add this sentence to that new passage, and then test the game by running it in your browser: {{{The scent of gunpowder and the coppery tang of blood ride the night air.}}}  
 
 Let's [[$ct|TwineLesson010Passage039]]
 
@@ -422,5 +422,28 @@ Let's [[$ct|TwineLesson010Passage039]]
 
 
 
-:: TwineLesson010Passage039
-<<tutorial-passages>>
+:: TwineLesson010Passage039 [deonna]
+<img @src="setup.imgs1012 + 'boom-boom.png'"><br>Did you test the game? The main character (i.e., MC) has fired his revolver twice. Wonder if we hit anything? Notice the indentation shown in the screenshot. And you know from the previous page that to accomplish that, we used {{{<span>}}} tags of class 'doubletab' and 'tripletab'. <a target="_new" href="https://gist.github.com/kyrathasoft/af5d1e84c12ab55478c02eb7390aa81f">Here</a> is what you'll need in the story stylesheet. If you don't like the indentation, just go into passage {{{TheCreature}}} and remove the spans. You might want to do this if you want to play the game on a small screen, such as a [[phone|TwineLesson010Passage040]].
+
+<<tut-links "TwineLesson010Passage038" "TwineLesson010Passage040">>
+
+
+
+:: TwineLesson010Passage040 [deonna]
+Now we turn our attention to passage {{{CreatureDown}}}. Update it's text to the following: {{{The scent of gunpowder and the coppery tang of blood ride the night air. You have widened your stance still further, dropping into a squat, back to the elm tree.}}}
+
+What I want to do now is provide multiple choices to the player, and I want to do it using an invisible table that centers the multiple choices. And since I can imagine using such a tool repeatedly, let's create a {{{widget}}} that can take an even number of arguments: 2, 4, 6, or 8. The arguments should come in pairs of one {{{string}}} representing the text to become a clickable link and the other representing the name of a passage to go-to upon clicking that [[link|TwineLesson010Passage041]].
+
+<<tut-links "TwineLesson010Passage039" "TwineLesson010Passage041">>
+
+
+
+:: TwineLesson010Passage041 [deonna]
+Here's how <a target="_new" href="https://gist.github.com/kyrathasoft/3d3871d6926ebea796cc2e1d557392f0">the widget</a> works: we should always pass it an even number of arguments, since we want pairs representing link-text and passage destination. Therefore, the widget performs tests to ensure (a) that there actually //are// arguments passed, and (b) that an //even// number of arguments are passed. If either of those tests fail, the widget won't attempt to process any arguments. Furthermore, even if conditions (a) and (b) above are met, the widget will also abort if (c) any link test is less than a minimum of 2-characters in length and (d) if any passage names passed in as arguments fail to correspond to an already-existing passage in our game.
+
+
+
+:: TwineLesson010Passage042 [deonna]
+And <a target="_new" href="https://gist.github.com/kyrathasoft/39010e61f7302d504d8d7ad8e23c8c55">here</a> is a gist of just the {{{<<TableOfChoices>>}}} widget.
+
+
