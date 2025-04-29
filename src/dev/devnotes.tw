@@ -1,6 +1,11 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 4/28/2025__ 
+# finished lesson 10
+# added Brian Rushton's 'Learning from the Best of Text'
+# modified widget {{{<<TableOfChoices>>}}} to give better error-messages
+
 __Notes from 4/27/2025__ 
 # added a generic object to the setup object for alien desc in key/value pairs
 

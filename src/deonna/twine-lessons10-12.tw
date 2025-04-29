@@ -439,11 +439,37 @@ What I want to do now is provide multiple choices to the player, and I want to d
 
 
 :: TwineLesson010Passage041 [deonna]
-Here's how <a target="_new" href="https://gist.github.com/kyrathasoft/3d3871d6926ebea796cc2e1d557392f0">the widget</a> works: we should always pass it an even number of arguments, since we want pairs representing link-text and passage destination. Therefore, the widget performs tests to ensure (a) that there actually //are// arguments passed, and (b) that an //even// number of arguments are passed. If either of those tests fail, the widget won't attempt to process any arguments. Furthermore, even if conditions (a) and (b) above are met, the widget will also abort if (c) any link test is less than a minimum of 2-characters in length and (d) if any passage names passed in as arguments fail to correspond to an already-existing passage in our game.
+Here's how <a target="_new" href="https://gist.github.com/kyrathasoft/3d3871d6926ebea796cc2e1d557392f0">the widget</a> works: we should always pass it an even number of arguments, since we want pairs representing link-text and passage destination. Therefore, the widget performs tests to ensure (a) that there actually //are// arguments passed, and (b) that an //even// number of arguments are passed. If either of those tests fail, the widget won't attempt to process any arguments. Furthermore, even if conditions (a) and (b) above are met, the widget will also abort if (c) any link test is less than a minimum of 2-characters in length and (d) if any passage names passed in as arguments fail to correspond to an already-existing passage in our [[game|TwineLesson010Passage042]].
+
+<<tut-links "TwineLesson010Passage040" "TwineLesson010Passage042">>
 
 
 
 :: TwineLesson010Passage042 [deonna]
-And <a target="_new" href="https://gist.github.com/kyrathasoft/39010e61f7302d504d8d7ad8e23c8c55">here</a> is a gist of just the {{{<<TableOfChoices>>}}} widget.
+And <a target="_new" href="https://gist.github.com/kyrathasoft/39010e61f7302d504d8d7ad8e23c8c55">here</a> is a gist of just the {{{<<TableOfChoices>>}}} widget. You'll notice I've included plenty of whitespace to make it more readable. If you don't have any programming background, you may not be able to appreciate the utility of this widget. As you can see, including whitespace, the widget is about 100 lines of code. That's about 3.45 Kb of code. It would be far too onerous to have to write that code each and every time we want to present 2 to 4 choices for the player. By putting it in a widget, we leverage //code reusability//. To fully grok this code requires that you understand arrays and condiitionals. If your eyes cross when looking at it, that's okay. You can make use of it without fully [[understanding|TwineLesson010Passage043]].
 
+<<tut-links "TwineLesson010Passage041" "TwineLesson010Passage043">>
+
+
+
+:: TwineLesson010Passage043 [deonna]
+Well, we have advanced our story a bit in this lesson, learned about pushing only unique values to arrays, learned how to concatenate two arrays, and developed a fairly significant widget that we can now leverage elsewhere in our game. Let's move on and see where Lesson 11 [[takes us|TwineLesson011Passage001]].
+
+<<tut-links "TwineLesson010Passage042" "TwineLesson011Passage001">>
+
+
+
+/* End of Lesson 10, Beginning of Lesson 11 */
+
+:: TwineLesson011Passage001 [deonna]
+<h2>$tw & $sc <span class="pulse">Lesson # 11</span> $md The Creature Is Down!</h2>
+Welcome to Lesson 11! Near the end of the previous lesson we achieved two milestones: (1) our first sizeable (and, arguably, truly useful) widget and (2) our first real decision-point. Before we continue further, I've <a target="_new" href="https://gist.github.com/kyrathasoft/39010e61f7302d504d8d7ad8e23c8c55">updated</a> the {{{<<TableOfChoices>>}}} widget, so please make sure you update it too, if you're creating the sample game alongside this tutorial. This widget is a bit longer, but the extra code spotlights specific errors if the widget is called with one or more invalid [[arguments|TwineLesson011Passage002]].
+
+<<tut-links "TwineLesson010Passage043" "TwineLesson011Passage002">>
+
+
+
+:: TwineLesson011Passage002 [deonna]
+
+<<tutorial-passages>>
 

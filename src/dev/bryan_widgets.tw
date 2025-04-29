@@ -106,3 +106,131 @@
 		<<set setup.magicWords to setup.magicWords.concat(_output)>>
 	<</nobr>>\
 <</widget>>
+
+<<widget "InventoryItemCount">>
+/* This widget prints a message to the browser window telling the player 
+how many items are in her inventory. I still need to add the Twinescript 
+needed to accomplish this -- but all I have to do is copy/paste it from 
+the YourInventory passage. */ 
+Your inventory contains 
+<<if $inventory.length lt 1>>
+nothing
+<<elseif $inventory.length eq 1>>
+1 item
+<<else>>
+<<= $inventory.length>> items
+<</if>>
+<</widget>>
+
+<<widget "InventoryItemListing">>
+/* This widget prints the inventory's items,
+one per line */
+<<if $inventory.length eq 1>>
+$inventory[0]
+<</if>>
+<<if $inventory.length gt 1>>
+<<= $inventory.join(`<br>`)>><br>
+<</if>>
+<</widget>>
+
+<<widget "TableOfChoices">>
+<<if $args.length>>
+
+    <<set _errors to 0>>
+    <<set _len to $args.length>>
+    
+    <<set _lnk1 to "", _lnk2 to "", _lnk3 to "", _lnk4 to "">>
+    <<set _psg1 to "", _psg2 to "", _psg3 to "", _psg4 to "">>
+    
+	<<if (_len % 2) eq 0>>
+    
+		/* <<= "You sent an even number of arguments: I can work with that!">> */
+        
+        <<if _len gt 7>>
+        	<<set _lnk4 to $args[6], _psg4 to $args[7]>>
+            <<if _lnk4.length gt 1>>
+            	<<if Story.has(_psg4)>><<else>><<set _errors++>><</if>>
+            <<else>>
+            	<<set _errors++>>
+            <</if>>
+        <</if>>
+        
+        <<if _errors gt 0>>
+        	<<= "Either 4th link text is too short or 4th passage does't exist">>
+        <<else>>
+        	<<if _len gt 5>>
+            	<<set _lnk3 to $args[4], _psg3 to $args[5]>>
+                <<if _lnk3.length gt 1>>
+                	<<if Story.has(_psg3)>><<else>><<set _errors++>><</if>>
+                <<else>>
+                	<<set _errors++>>
+                <</if>>
+            <</if>>
+        <</if>>
+        
+        <<if _errors gt 0>>
+        	<<= "Either 3rd link text is too short or 3rd passage doesn't exist">>
+        <<else>>
+        	<<if _len > 3>>
+            	<<set _lnk2 to $args[2], _psg2 to $args[3]>>
+                <<if _lnk2.length gt 1>>
+                	<<if Story.has(_psg2)>><<else>><<set _errors++>><</if>>
+                <<else>>
+                	<<set _errors++>>
+                <</if>>
+            <</if>>
+        <</if>>
+        
+        <<if _errors gt 0>>
+        	<<= "Either 2nd link text is too short or 2nd passage doesn't exist">>
+        <<else>>
+        	<<if _len > 1>>
+            	<<set _lnk1 to $args[0], _psg1 to $args[1]>>
+                <<if _lnk1.length gt 1>>
+                	<<if Story.has(_psg1)>><<else>><<set _errors++>><</if>>
+                <<else>>
+                	<<set _errors++>>
+                <</if>>
+            <</if>>
+        <</if>>
+        
+ 		/* Here's where the magic happens ... */
+        <<if _errors eq 0>>
+        
+        	/* <<= "No errors, proceeding to build table of links...">> */
+            
+            <center><table width="50%">
+            	
+                <tr><td><li style="list-style-type: circle;"><<link _lnk1>><<goto _psg1>><</link>></li></td></tr>
+                
+                <<if $args.length gt 2>>
+                	<tr><td><li style="list-style-type: circle;"><<link _lnk2>><<goto _psg2>><</link>></li></td></tr>
+                <</if>>
+                
+                <<if $args.length gt 4>>
+                	<tr><td><li style="list-style-type: circle;"><<link _lnk3>><<goto _psg3>><</link>></li></td></tr>
+                <</if>>
+                
+                <<if $args.length gt 6>>
+                	<tr><td><li style="list-style-type: circle;"><<link _lnk4>><<goto _psg4>><</link>></li></td></tr>
+                <</if>>
+                
+            </table></center>
+        <<else>>
+        	<<= "Fix your error(s) and try again...">>
+        <</if>>
+        
+    <<else>>
+    
+    	<<set _args to "argument.">><<if $args.length gt 1>><<set _args to "arguments.">><</if>>
+    	<<= "You must supply widget ''{{{<<TableOfChoices>>}}}'' an even number of arguments. You specified _len _args">>
+   
+   <</if>>
+   
+<<else>>
+	
+    <<= "You invoked widget ''<<{{{<<TableOfChoices>>}}}>>'' without passing it any arguments.">>
+
+<</if>>
+
+<</widget>>
