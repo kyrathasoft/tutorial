@@ -550,7 +550,7 @@ The trick is to balance things, to give enough choices with substantive effects 
 
 
 :: TwineLesson011Passage010 [deonna]
-This sample game we're making is not going to win any awards or go down in the annals of interactive-fiction greatness. It's more or less a learning project. And because of this, it won't be super-long. Certainly not long and involved enough to merit implementation of various player stats. But this has its perks: we aren't going to have to track dozens of variables, and we don't have to code any elaborate puzzles. And we won't be writing 150,000 words so that each of three main storylines is novella-length. I guess that I've taken the trouble to explain this so that you are reminded that I'm not holding this up as a stellar example. You can, should and hopefully will far outstrip this game with your own future [[efforts|TwineLesson011Passage011]].
+This sample game we're making is not going to win any awards or go down in the annals of interactive-fiction greatness. It's more or less a learning project. And because of this, it won't be super-long. Certainly not long and involved enough to merit implementation of various player stats. But this has its perks: we aren't going to have to track dozens of variables, and we don't have to code any elaborate puzzles. And we won't be writing 150,000 words so that each of three main storylines is novella-length. I guess that I've taken the trouble to explain this so that you are reminded that I'm not holding this up as a stellar example. You can, should, and hopefully will far outstrip this game with your own future [[efforts|TwineLesson011Passage011]].
 
 <<tut-links "TwineLesson011Passage009" "TwineLesson011Passage011">>
 
@@ -559,6 +559,8 @@ This sample game we're making is not going to win any awards or go down in the a
 In order to get rid of the unsightly broken-link that shows on the Twine storymap, let's replace the back link's brackets notation with link macro notation. This is at the bottom of passage {{{PsgChkVars}}}:
 
 Replace {{{[[back->$return]]}}} with {{{<<link back>><<goto $return>><</link>>}}}. Test it out. The functionality is unchanged, but our storymap is prettier.
+
+If you want to ensure you're using the exact same code (i.e., $ts) that I'm using, <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImM9O9PkLricsXKnfPA">here</a> is a zip archive of the exported sample story, $tut_tit. I also backed up a copy <a target="_new" href="https://bryanmiller.us/twinery/backups/CampfireTaleLess11Psg11.zip">here</a> and <a target="_new" href="http://twinery.42web.io/backups/CampfireTaleLess11Psg11.zip ">here</a>.
 
 
 :: TwineLesson011Passage012 [deonna]
