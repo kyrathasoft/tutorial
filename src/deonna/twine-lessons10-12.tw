@@ -470,6 +470,95 @@ Welcome to Lesson 11! Near the end of the previous lesson we achieved two milest
 
 
 :: TwineLesson011Passage002 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'test-widget-error-msg.png'">Let's test our new and improved widget by intentionally passing it the name of a passage (the sixth argument) that doesn't yet exist because we've not created the passage yet. Add the following beneath passage {{{CreatureDown}}}'s text description:
 
+
+{{{<<TableOfChoices 
+	"Turn on flashlight" "ShineFlashlight" 
+    "Reload" "RevolverReload" 
+    "Remain Silent" "RemainSilent">>}}}
+
+Now run the game in your browser and note the complaint that our {{{<<TableOfChoices>>}}} widget gives us (see the screen shot on this page). Helpful, but could we improve it further? Yes, by having it tell us the {{{name}}} of the non-existent [[passage|TwineLesson011Passage003]].
+
+<<tut-links "TwineLesson011Passage001" "TwineLesson011Passage003">>
+
+
+:: TwineLesson011Passage003 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'improved-error-msg.png'">>Let's <a target="_new" href="https://gist.github.com/kyrathasoft/2d7171d68f1e8d3d0be85241ec6de98d">create</a> a widget to turn text orange, and then update our {{{<<TableOfChoices>>}}} widget to use orange text in order to highlight important error info. <a target="_new" href="https://gist.github.com/kyrathasoft/993f470a32eef6025fcc0076b2357e78">Here</a> is the updated {{{<<TableOfChoices>>}}} widget. After updating our widget, running the game in our browser should now produce the error message displayed on this page as a screen [[shot|TwineLesson011Passage004]].
+
+<<tut-links "TwineLesson011Passage002" "TwineLesson011Passage004">>
+
+
+
+:: TwineLesson011Passage004 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'actual-table-of-choices.png'">Go ahead and create passage {{{RemainSilent}}} and add this text to it: {{{Perhaps that is wise: remain perfectly still and as silent as possible. Did you hit the creature with your shots? You try to increase the keenness of your hearing through sheer willpower.}}} Then, run the game to see the power of our {{{<<TableOfChoices>>}}} widget in action. I should note that in order for widget {{{<<orangetext>>}}} to function as intended, you need to add the following function to the javascript section of our $sg:
+<font size=-1>''
+{{{setup.Trimmed = function(name){}}}
+  	<span class="tab">return name.trimEnd();</span>
+};''</font>
+
+Let's [[$ctl|TwineLesson011Passage005]].
+
+<<tut-links "TwineLesson011Passage003" "TwineLesson011Passage005">>
+
+
+
+:: TwineLesson011Passage005 [deonna]
+Just to demonstrate that $md as advertised $md our {{{<<TableOfChoices>>}}} can indeed handle four pairs of link-text/passage-names, temporarily change the passage {{{CreatureDown}}} so that the widget call looks like this:
+''<font size=-1>
+{{{<<TableOfChoices}}}
+<span class="tab">{{{"Turn on flashlight" "ShineFlashlight"}}}</span>
+<span class="tab">{{{"Reload" "RevolverReload"}}}</span>
+<span class="tab">{{{"Remain Silent" "RemainSilent"}}}</span>
+<span class="tab">{{{"Return to Campfire" "Campfire">>}}}</span>
+</font>''
+Run the game. Sure enough, it gives us a link (as the 4th choice) that allows us to return to the {{{Campfire}}} passage. Let's add a fifth link/passage-name [[combo|TwineLesson011Passage006]].
+
+<<tut-links "TwineLesson011Passage004" "TwineLesson011Passage006">>
+
+
+
+:: TwineLesson011Passage006 [deonna]
+<img @src="setup.imgs1012 + 'fifth-link-psg-pair.png'"><br>Even when we add a fifth link/psg pair, our widget still only creates four links $md because that's how we programmed it. We could add capacity for a fifth or even sixth hyperlink, but I think four is adequate. We could also add some code so that our widget would give an error message if passed more than eight parameters (four link/psg-name pairs) $md but, again, probably not necessary. For our purposes in passage {{{CreatureDown}}}, let's leave it at three hyperlinks (i.e., six arguments passed into the widget).
+
+[[$ct|TwineLesson011Passage007]]
+
+<<tut-links "TwineLesson011Passage005" "TwineLesson011Passage007">>
+
+
+
+:: TwineLesson011Passage007 [deonna]
+(Un?)fortunately, you're now going to have to suffer through me writing about ''choices'' and their importance in interactive fiction. Interactive fiction thrives on the player's sense of ''agency'' and control over the narrative. When choices have tangible consequences, whether they lead to different outcomes, unlock new paths, or alter the player's relationship with characters, the player feels more invested in the [[story|TwineLesson011Passage008]].
+
+<<tut-links "TwineLesson011Passage006" "TwineLesson011Passage008">>
+
+
+:: TwineLesson011Passage008 [deonna]
+The illusion of choice, where choices appear to matter but ultimately don't affect the story's trajectory, can be frustrating for players $md //if// players perceive the illusion. It can erode the player's trust in the author and diminish their engagement with the <<linkreplace narrative.>>narrative.
+
+While some level of illusion might be necessary to maintain narrative flow or create specific emotional effects, it's crucial to balance it with ''meaningful'' choices that provide a sense of ''agency'' and [[impact|TwineLesson011Passage009]].
+
+<<tut-links "TwineLesson011Passage007" "TwineLesson011Passage009">><</linkreplace>> 
+
+
+
+:: TwineLesson011Passage009 [deonna]
+The trick is to balance things, to give enough choices with substantive effects that non-substantive choices become acceptable as flavoring. One generally agreed-upon principle in much of interactive fiction is that the player should not be killed out of hand. There should be some foreshadowing of dangerous outcomes waiting in the wings. However, opinions vary. Some players are okay with death and are eager to try another play-through, while others aren't okay with this. There is even a game //cruelty// <a target="_new" href="https://www.ifwiki.org/Cruelty_scale#:~:text=The%20distinctions%20between%20Tough%2C%20Nasty,are%20only%20obvious%20to%20some.">scale</a> for such [[games|TwineLesson011Passage010]].
+
+<<tut-links "TwineLesson011Passage008" "TwineLesson011Passage010">>
+
+
+
+:: TwineLesson011Passage010 [deonna]
+This sample game we're making is not going to win any awards or go down in the annals of interactive-fiction greatness. It's more or less a learning project. And because of this, it won't be super-long. Certainly not long and involved enough to merit implementation of various player stats. But this has its perks: we aren't going to have to track dozens of variables, and we don't have to code any elaborate puzzles. And we won't be writing 150,000 words so that each of three main storylines is novella-length. I guess that I've taken the trouble to explain this so that you are reminded that I'm not holding this up as a stellar example. You can, should and hopefully will far outstrip this game with your own future [[efforts|TwineLesson011Passage011]].
+
+<<tut-links "TwineLesson011Passage009" "TwineLesson011Passage011">>
+
+
+:: TwineLesson011Passage011 [deonna]
+
+
+
+:: TwineLesson011Passage012 [deonna]
 <<tutorial-passages>>
 

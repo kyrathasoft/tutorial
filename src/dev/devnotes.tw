@@ -1,6 +1,17 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 4/29/2025__ 
+# upgraded widget {{{<<TableOfChoices>>}}} to give better error-messaging
+# psg {{{CreatureDown}}} is our first decision-point (we offer 3 choices)
+# introduced bool var {{{$flashlightOn}}}
+# set {{{$flashlightOn}}} in these passages:
+# - {{{StoryInit}}}
+# - {{{PsgCheckVars}}}
+# - {{{TestRemembrance}}}
+# - {{{TestTheCreature}}}
+# - {{{TestCreatureDown}}}
+
 __Notes from 4/28/2025__ 
 # finished lesson 10
 # added Brian Rushton's 'Learning from the Best of Text'
