@@ -556,7 +556,9 @@ This sample game we're making is not going to win any awards or go down in the a
 
 
 :: TwineLesson011Passage011 [deonna]
+In order to get rid of the unsightly broken-link that shows on the Twine storymap, let's replace the back link's brackets notation with link macro notation. This is at the bottom of passage {{{PsgChkVars}}}:
 
+Replace {{{[[back->$return]]}}} with {{{<<link back>><<goto $return>><</link>>}}}. Test it out. The functionality is unchanged, but our storymap is prettier.
 
 
 :: TwineLesson011Passage012 [deonna]
