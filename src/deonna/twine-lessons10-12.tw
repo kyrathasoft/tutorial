@@ -562,7 +562,57 @@ Replace {{{[[back->$return]]}}} with {{{<<link back>><<goto $return>><</link>>}}
 
 If you want to ensure you're using the exact same code (i.e., $ts) that I'm using, <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImM9O9PkLricsXKnfPA">here</a> is a zip archive of the exported sample story, $tut_tit. I also backed up a copy <a target="_new" href="https://bryanmiller.us/twinery/backups/CampfireTaleLess11Psg11.zip">here</a> and <a target="_new" href="http://twinery.42web.io/backups/CampfireTaleLess11Psg11.zip ">here</a>.
 
+Okay, let's extend our story by coding the $sg's responses to the choices presented to the player in passage {{{CreatureDown}}}. [[$ct|TwineLesson011Passage012]].
+
+<<tut-links "TwineLesson011Passage010" "TwineLesson011Passage012">>
+
+
 
 :: TwineLesson011Passage012 [deonna]
+Realistically, shining the flashlight is probably //the// most logical choice. Now that the main character has fired off two rounds from his .357 revolver, if the alien //didn't// know exactly where he was before, it does //now.// $md or //does// it? We're assuming it has the sense of hearing. 
+
+We've hinted that perhaps the MC has some military or law enforcement training in his history. On the next page we'll make a modification, and then we're going to evaluate these choices and try to assess how players would likely view them. 
+
+[[$ct|TwineLesson011Passage013]]
+
+<<tut-links "TwineLesson011Passage011" "TwineLesson011Passage013">>
+
+
+:: TwineLesson011Passage013 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'three-choices.png'">Modify passage {{{CreatureDown}}} to the following: ''The scent of gunpowder and the coppery tang of blood ride the night air. You have widened your stance still further, dropping into a squat, back to the elm tree.'' 
+
+{{{<<TableOfChoices 
+	"Draw Your Knife" "DrawKnife" 
+    "Reload Your Revolver" "RevolverReload" 
+    "Shine Your Flashlight" "ShineFlashlight">>}}}
+
+Let's rename passage {{{RemainSilent}}} to {{{DrawKnife}}}.  Let's [[$ctl|TwineLesson011Passage014]]
+
+<<tut-links "TwineLesson011Passage012" "TwineLesson011Passage014">>
+
+
+
+
+:: TwineLesson011Passage014 [deonna]
+Why did we rename passage {{{RemainSilent}}}? Glad you asked. Any sensible character, having just been rushed by an alien and not sure if your bullets hit it or missed it, is going to be as silent as possible, so as not to draw a target on oneself. We don't want to offer meaningless choices or suboptimal choices that clearly //are// suboptimal.
+
+After renaming passage {{{RemainSilent}}} to {{{DrawKnife}}}, add this text to the passage: ''Revolver still gripped in your right hand, you reach with your left and draw your K-BAR from its sheath, straining your vision into the inky night, trying to discern a slightly phosphorescent humanoid profile, either erect or lying in a pool of alien blood.''
+
+Let's [[$ctl|TwineLesson011Passage015]]
+
+<<tut-links "TwineLesson011Passage013" "TwineLesson011Passage015">>
+
+
+
+:: TwineLesson011Passage015 [deonna]
+Each of those three choices $md 'draw your knife', 'reload your revolver', 'shine your flashlight' $md make at least a modicum of sense, right? In my mind, flicking on the flashlight is the brightest (no pun intended), as that will allow you (hopefully) to see if you hit the alien and/or if it's still nearby and a threat (alive) or not (dead). We could draw the knife, but how good are most people at stabbing things in the dark? We could also replace the two spent bullets in the revolver, but a .357 has six shots, and you've still got four remaining.
+
+Okay, then, let's code the {{{ShineFlashlight}}} passage first.
+
+
+
+
+:: TwineLesson011Passage016 [deonna]
+
 <<tutorial-passages>>
 
