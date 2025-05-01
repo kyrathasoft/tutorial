@@ -605,14 +605,37 @@ Let's [[$ctl|TwineLesson011Passage015]]
 
 
 :: TwineLesson011Passage015 [deonna]
-Each of those three choices $md 'draw your knife', 'reload your revolver', 'shine your flashlight' $md make at least a modicum of sense, right? In my mind, flicking on the flashlight is the brightest (no pun intended), as that will allow you (hopefully) to see if you hit the alien and/or if it's still nearby and a threat (alive) or not (dead). We could draw the knife, but how good are most people at stabbing things in the dark? We could also replace the two spent bullets in the revolver, but a .357 has six shots, and you've still got four remaining.
+Each of those three choices $md 'draw your knife', 'reload your revolver', 'shine your flashlight' $md make at least a modicum of sense, right? In my mind, flicking on the flashlight is the brightest idea (no pun intended), as that will allow you (hopefully) to see if you hit the alien and/or if it's still nearby and a threat (alive) or not (dead). We could draw the knife, but how good are most people at stabbing things in the dark? And it's not as if we can stab the alien simultaneously with firing the revolver. We could also replace the two spent bullets in the revolver, but a .357 has six shots, so you've still got four remaining.
 
-Okay, then, let's code the {{{ShineFlashlight}}} passage first.
+Okay, then, let's code the {{{ShineFlashlight}}} passage first. To prepare for the contents of this passage, we first need to make a couple modifications in our {{{StoryInit}}} [[passage|TwineLesson011Passage016]].
+
+<<tut-links "TwineLesson011Passage014" "TwineLesson011Passage016">>
 
 
 
 
 :: TwineLesson011Passage016 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'story-details-ifid.png'">On the very first line of passage {{{StoryInit}}}, even before we run the check for test cases with {{{<<run setup.runTestCase()>>}}}, add this line: {{{State.prng.init("4D29B454-6E56-42E7-8925-33589D81EA59", true)}}} $md but, you can modify the long string to use whatever IF-ID Twine has assigned your version of the tutorial game. To find that data, use menu items {{{Story}}}, then {{{Details}}}.
+
+[[$ct|TwineLesson011Passage017]].
+
+<<tut-links "TwineLesson011Passage015" "TwineLesson011Passage017">>
+
+
+
+
+:: TwineLesson011Passage017 [deonna]
+{{{State.prng.init( )}}} is a function call that will help $tw generate the random results we'll need in passage {{{ShineFlashlight}}}. We also want to set a new variable in passages {{{StoryInit, TestRemembrance, TestTheCreature, }}}and {{{TestCreatureDown}}}. Here is the variable setter to add to those passages: {{{<<set $alien to "none">>}}}
+
+This variable signifies that the player hasn't encountered the alien yet at the default starting place of the game (or, in the case of our Test passages, wherever we choose to start the game). In passage {{{ShineFlashlight}}}, we'll wind up changing the value of variable {{{$alien}}} to one of the following: "killed", "winged", or "missed".
+
+Once you've made those changes, let's [[$ctl|TwineLesson011Passage018]].
+
+<<tut-links "TwineLesson011Passage016" "TwineLesson011Passage018">>
+
+
+:: TwineLesson011Passage018 [deonna]
+Here is the $ts that should be pasted into passage {{{ShineFlashlight}}}.
 
 <<tutorial-passages>>
 
