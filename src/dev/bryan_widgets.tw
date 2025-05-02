@@ -234,3 +234,12 @@ $inventory[0]
 <</if>>
 
 <</widget>>
+
+<<widget "printPsgNames">>
+<<set _possiblePlaces = setup.getEveryPassageName()>>
+<<set _cnt to 0>>
+<<for _i to 0; _i lt _possiblePlaces.length; _i++>>
+    <<set _cnt++>>
+    <<= _cnt + " " + _possiblePlaces[_i] + `<br>`>>
+<</for>>
+<</widget>>

@@ -763,7 +763,7 @@ That'll put that edge-case to [[rest|TwineLesson011Passage028]].
 
 
 :: TwineLesson011Passage028
-So, <a target="_new" href="https://gist.github.com/kyrathasoft/9c298baab6edf228a4e7fd16135309e6">here</a> is the updated code-listing for passage {{{ShineFlashlight}}}. Notice that, since I want the 'killed the alien' description to be available in two different places, I set a temp variable, {{{_descKilled}}} to hold that description. Code re-use! And, it saves characters, helping to minimize the compiled HTML file size.
+So, <a target="_new" href="https://gist.github.com/kyrathasoft/9c298baab6edf228a4e7fd16135309e6">here</a> is the updated code-listing for passage {{{ShineFlashlight}}}. Notice that, since I want the 'killed the alien' description to be available in two different places (under both {{{<<case 2>>}}} and {{{<<default>>}}} of the outer {{{<<switch>>}}}), I set a temp variable, {{{_descKilled}}} to hold that description. Code re-use! And, it saves characters, helping to minimize the compiled HTML file size.
 
 <<tutorial-passages>>
 

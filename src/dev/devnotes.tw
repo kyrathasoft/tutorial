@@ -1,6 +1,11 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 5/02/2025__ 
+# worked on sample game some before my Friday 10:30 am P-MUG
+# highlighted use of temp variables
+# highlighted use of multiple cases in a single {{{<<case>>}}}
+
 __Notes from 5/01/2025__ 
 # added explanation of code between top of {{{ShineFlashlight}}}...
 # ...and the beginning of the inner {{{<<switch>>}}}. 

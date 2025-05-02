@@ -127,6 +127,37 @@ setup.DoubleIt = function(mynumber){
 	return 2*mynumber;
 };
 
+setup.getEveryPassageName = function() {
+            const excludedNames = []; 
+            const excludedTags = [];
+            const passageNames = [];
+			let tot_psg = 0;
+            
+            $('tw-passagedata').each(function() {
+				tot_psg += 1;
+                const name = $(this).attr('name');
+                const tags = $(this).attr('tags');
+                let safeTags = true;
+                
+                    if (excludedNames.indexOf(name) === -1) {
+                      
+                      for (let i = 0; i < excludedTags.length; i++) {
+                        if (tags.includes(excludedTags[i])) {
+                            safeTags = false;
+                            break;
+                        }
+                      }
+                      
+                      if (safeTags) {
+                        passageNames.push(name);
+                      }  
+                }
+            });
+			// alert("Returning " + passageNames.length + " of " + tot_psg + " total passages...");
+            return passageNames; 
+   
+};
+
 setup.getPassageNames = function() {
 			
             const excludedNames = [
