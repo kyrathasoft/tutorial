@@ -706,7 +706,7 @@ Let's [[$ctl|TwineLesson011Passage024]].
 
 
 :: TwineLesson011Passage024
-<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'bad-eval.png'">Upon testing the game now, and choosing the third option, Shine Flashlight, we encounter a runtime error. There may be one or two extraneous right-parentheses, perhaps after "killed" and "winged". Remove those and everything should work fine. If you encounter this error, just copy/paste the code from <a target="_new" href="https://gist.github.com/kyrathasoft/f995336ee5c9226e1215afca5a16738a">here</a> into passage {{{ShineFlashlight}}}.
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'bad-eval.png'">Upon testing the game now, and choosing the third option, 'Shine Flashlight', I encounter a runtime error. There may be one or two extraneous right-parentheses, perhaps after "killed" and "winged". Remove those and everything should work fine. If you encounter this error, just copy/paste the code from <a target="_new" href="https://gist.github.com/kyrathasoft/f995336ee5c9226e1215afca5a16738a">here</a> into passage {{{ShineFlashlight}}}.
 
 Let's [[$ctl|TwineLesson011Passage025]].
 
@@ -715,10 +715,40 @@ Let's [[$ctl|TwineLesson011Passage025]].
 
 
 :: TwineLesson011Passage025
-Now it's time to look at and be sure that we //grok// the inner {{{<<switch>>}}} of passage {{{ShineFlashlight}}}.
+Now it's time to look at and be sure that we //grok// the inner {{{<<switch>>}}} of passage {{{ShineFlashlight}}}. It's important to understand that all the $ts that lies between {{{<<case 2>>}}} and {{{<<default>>}}} of the outer {{{<<switch>>}}} is one block of code. Essentially, here's what's happening in ''case 2'': (a) generate a random integer between 1 and 10, inclusive; (b) use that result with the inner {{{<<switch>>}}} to determine what text to show next to the player. 
+
+The structure will look like this:
+''<font size=-1>
+{{{<<switch _chance>>}}}
+{{{<<case 1 2>>}}}
+<span class="tab">do some stuff...</span>
+{{{<<case 3 4 5 6>>}}}
+<span class="tab">do some other stuff...</span>
+{{{<<default>>}}}
+<span class="tab">stuff to do if {{{_chance}}} equals 7, 8, 9, or 10</span>
+{{{<</switch>>}}}
+</font>''
+
+Notice that with a {{{<<switch>>}}} statement, {{{<<default>>}}} handles //anything// that the preceding {{{<<case>>}}}s didn't [[handle|TwineLesson011Passage026]].
+
+<<tut-links "TwineLesson011Passage024" "TwineLesson011Passage026">>
 
 
 
 :: TwineLesson011Passage026
+Notice that we can put multiple ''cases'' in a particular {{{<<case>>}}}. For instance, {{{<<case 1 2>>}}} means //if the temp variable {{{_chance}}} has a value of 1, or 2 (which it will exactly 20% of the time), do the following...//
+
+Given that insight, can you discern what the following line of code does?
+
+{{{<<case 3 4 5 6>>}}}
+
+Right! It handles the cases in which {{{_chance}}} holds a value of 3, 4, 5, or 6. You have to be careful to include a space between the values. If we had made a typo and that case statement read like this $md {{{<<case 3 45 6>>}}} $md then if {{{_chance}}} was equal to 4 or 5, instead of doing what we want the code to do, it would instead do what's under {{{<<default>>}}}.
+
+Let's [[$ctl|TwineLesson011Passage027]]
+
+<<tut-links "TwineLesson011Passage025" "TwineLesson011Passage027">>
+
+
+:: TwineLesson011Passage027
 <<tutorial-passages>>
 
