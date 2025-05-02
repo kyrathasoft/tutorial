@@ -750,5 +750,20 @@ Let's [[$ctl|TwineLesson011Passage027]]
 
 
 :: TwineLesson011Passage027
+Somehow in zigging between passage {{{ShineFlashlight}}} and {{{PsgChkVars}}}, I actually //did// trigger the {{{<<default>>}}} of the //outer// {{{<<switch>>}}}, so I'm replacing it with this $ts:
+
+{{{<<default>>}}}
+	{{{/* We shouldn't get this result, but if we do...*/}}}
+    {{{<<set $alien to "killed">>}}}It appears that you killed the alien. At least, you're fairly certain you did. Playing the bright beam of your halogen flashlight over its white-gray chitinous exoskeleton, you approach cautiously, wrists crossed police-fashion so that both flashlight and gun are aimed at the supine {{{<<link form>><<goto AfterFlashlight>><</link>>}}}.
+
+That'll put that edge-case to [[rest|TwineLesson011Passage028]].
+
+<<tut-links "TwineLesson011Passage026" "TwineLesson011Passage028">>
+
+
+
+:: TwineLesson011Passage028
+So, <a target="_new" href="https://gist.github.com/kyrathasoft/9c298baab6edf228a4e7fd16135309e6">here</a> is the updated code-listing for passage {{{ShineFlashlight}}}. Notice that, since I want the 'killed the alien' description to be available in two different places, I set a temp variable, {{{_descKilled}}} to hold that description. Code re-use! And, it saves characters, helping to minimize the compiled HTML file size.
+
 <<tutorial-passages>>
 
