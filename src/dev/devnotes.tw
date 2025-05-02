@@ -1,6 +1,10 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 5/01/2025__ 
+# added explanation of code between top of {{{ShineFlashlight}}}...
+# ...and the beginning of the inner {{{<<switch>>}}}. 
+
 __Notes from 4/29/2025__ 
 # upgraded widget {{{<<TableOfChoices>>}}} to give better error-messaging
 # psg {{{CreatureDown}}} is our first decision-point (we offer 3 choices)

@@ -635,7 +635,90 @@ Once you've made those changes, let's [[$ctl|TwineLesson011Passage018]].
 
 
 :: TwineLesson011Passage018 [deonna]
-Here is the $ts that should be pasted into passage {{{ShineFlashlight}}}.
+<a target="_new" href="https://gist.github.com/kyrathasoft/f995336ee5c9226e1215afca5a16738a">Here</a> is the $ts that should be pasted into passage {{{ShineFlashlight}}}. Again, I'm using my passage re-use trick. At the very top of passage {{{ShineFlashlight}}}, I set a temp variable, {{{_v}}} to the value of function {{{visited()}}}. When we call function {{{visited()}}} without passing the name of a passage as an argument, $sc presumes we're referencing the //current// passage.
 
+So, the first line of $ts sets a temp variable equal to the number of times passage {{{ShineFlashlight}}} has been visited, i.e., to the value ''1''. With me so far? [[Good|TwineLesson011Passage019]].
+
+<<tut-links "TwineLesson011Passage017" "TwineLesson011Passage019">>
+
+
+
+:: TwineLesson011Passage019 [deonna]
+The second line of $ts in {{{ShineFlashlight}}} is {{{<<switch _v>>}}}. This tells $sc, "Examine the value currently held in temp variable {{{_v}}}, and then we'll do various things based on what that value //is// currently..."
+
+If that value is ''1'', then we just arrived in passage {{{ShineFlashlight}}} because the player opted for choice #3 in passage {{{CreatureDown}}}.  That being the case, we set story variable {{{$flashlightOn}}} to true, will provide accompanying descriptive text for the player to read, and will turn the last word in that descriptive text into a hyperlink that $md when clicked $md brings the player back to {{{ShineFlashlight}}} for visit #2. And of course //that// triggers everything under {{{<<case 2>>}}} to [[happen|TwineLesson011Passage020]].
+
+<<tut-links "TwineLesson011Passage018" "TwineLesson011Passage020">>
+
+
+
+:: TwineLesson011Passage020 [deonna]
+Look under {{{<<case 2>>}}} in the outermost {{{<<switch>>}}} in passage {{{ShineFlashlight}}}. Obviously, this code will be run on the 2nd visit to the passage. Notice the comment at the very beginning of {{{<<case 2>>}}}: 
+
+//{{{/* Let's say there's a 20% chance you hit the alien and killed it, a 40% chance you winged it, and a 40% you missed entirely: shame on you! You should practice more... */ }}}//
+
+Remember, anything we put in between the ''{{{/*}}}'' and the ''{{{*/}}}'' symbols form a comment that is ignored by $sc and $tw when compiling our game to an HTML file. The comment explains what the $ts in the outer {{{<<switch>>}}}'s {{{<<case 2>>}}} will [[accomplish|TwineLesson011Passage021]].
+
+<<tut-links "TwineLesson011Passage019" "TwineLesson021Passage021">>
+
+
+
+:: TwineLesson011Passage021 [deonna]
+Now it's time to learn about the {{{random()}}} function. Here is the critical line of $ts:
+
+{{{<<set _chance to random(1,10)>>/*You rolled a <<= _chance>><br>*/}}}
+
+Can you identify what portion of the above line of code in a <<linkreplace comment?>>
+
+If you identified the following segment as a comment, you're correct!
+
+{{{/*You rolled a <<= _chance>><br>*/}}}
+
+On the next page, I'll show you an optional way to test this code. Let's [[$ctl|TwineLesson011Passage022]].
+
+<<tut-links "TwineLesson011Passage020" "TwineLesson011Passage022">>
+<</linkreplace>>
+
+
+
+:: TwineLesson011Passage022
+To test {{{<<set _chance to random(1,10)>>}}}, temporarily include the following code after {{{<<case 1>>}}} and before the line that sets {{{$flashlightOn}}} to true in passage {{{ShineFlashlight}}}:
+''<font size=-1>
+{{{<br>}}}
+{{{<<for _i range 1, 5>>}}}
+    <span class="tab">{{{<<set _chance to random(1,10)>>Next result: <<= _chance>><br>}}}</span>
+{{{<</for>>}}}
+{{{<br>}}}</font>''
+
+Let's [[$ctl|TwineLesson011Passage023]]
+
+<<tut-links "TwineLesson011Passage021" "TwineLesson011Passage023">>
+
+
+
+:: TwineLesson011Passage023
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'next-result.png'">Here are the results I got with the test code, upon running the game in-browser and after two restarts and returning to passage {{{ShineFlashlight}}}. The best pseudo-random numbers that $tw (or any other computer program) can generate. And this test is sufficient to demonstrate that we're able to get a random integer result between 1 and 10, inclusive. You can now remove the segment of test code from passage {{{ShineFlashlight}}}, returning it to <a target="_new" href="https://gist.github.com/kyrathasoft/f995336ee5c9226e1215afca5a16738a">this</a> status.
+
+Let's [[$ctl|TwineLesson011Passage024]].
+
+<<tut-links "TwineLesson011Passage022" "TwineLesson011Passage024">>
+
+
+
+:: TwineLesson011Passage024
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'bad-eval.png'">Upon testing the game now, and choosing the third option, Shine Flashlight, we encounter a runtime error. There may be one or two extraneous right-parentheses, perhaps after "killed" and "winged". Remove those and everything should work fine. If you encounter this error, just copy/paste the code from <a target="_new" href="https://gist.github.com/kyrathasoft/f995336ee5c9226e1215afca5a16738a">here</a> into passage {{{ShineFlashlight}}}.
+
+Let's [[$ctl|TwineLesson011Passage025]].
+
+<<tut-links "TwineLesson011Passage023" "TwineLesson011Passage025">>
+
+
+
+:: TwineLesson011Passage025
+Now it's time to look at and be sure that we //grok// the inner {{{<<switch>>}}} of passage {{{ShineFlashlight}}}.
+
+
+
+:: TwineLesson011Passage026
 <<tutorial-passages>>
 

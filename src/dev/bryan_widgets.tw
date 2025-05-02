@@ -89,7 +89,7 @@
 /* Note: the [deonna] tag is what identifies a passage as being part of a tutorial */
 <<widget "tutorial-passages">>
   <<set _tut_psgs to setup.getTutorialPassagesCount(), _total to setup.getTotalPassagesCount()>>
-  ''Out of _total total passages in this twine, _tut_psgs passages (<<= setup.calculatePercentage(_tut_psgs, _total)>>%) are dedicated to my $tw tutorial series.''
+  ''Out of _total total passages in this twine, _tut_psgs passages (<<= setup.calculatePercentage(_tut_psgs, _total)>>%) are dedicated to my $tw/$sc tutorial series.''
 <</widget>>
 
 <<widget no-wiki>>
