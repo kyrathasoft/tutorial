@@ -243,3 +243,4 @@ $inventory[0]
     <<= _cnt + " " + _possiblePlaces[_i] + `<br>`>>
 <</for>>
 <</widget>>
+

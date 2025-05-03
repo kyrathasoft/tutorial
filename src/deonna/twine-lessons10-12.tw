@@ -681,7 +681,7 @@ On the next page, I'll show you an optional way to test this code. Let's [[$ctl|
 
 
 
-:: TwineLesson011Passage022
+:: TwineLesson011Passage022 [deonna]
 To test {{{<<set _chance to random(1,10)>>}}}, temporarily include the following code after {{{<<case 1>>}}} and before the line that sets {{{$flashlightOn}}} to true in passage {{{ShineFlashlight}}}:
 ''<font size=-1>
 {{{<br>}}}
@@ -696,7 +696,7 @@ Let's [[$ctl|TwineLesson011Passage023]]
 
 
 
-:: TwineLesson011Passage023
+:: TwineLesson011Passage023 [deonna]
 <img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'next-result.png'">Here are the results I got with the test code, upon running the game in-browser and after two restarts and returning to passage {{{ShineFlashlight}}}. The best pseudo-random numbers that $tw (or any other computer program) can generate. And this test is sufficient to demonstrate that we're able to get a random integer result between 1 and 10, inclusive. You can now remove the segment of test code from passage {{{ShineFlashlight}}}, returning it to <a target="_new" href="https://gist.github.com/kyrathasoft/f995336ee5c9226e1215afca5a16738a">this</a> status.
 
 Let's [[$ctl|TwineLesson011Passage024]].
@@ -705,7 +705,7 @@ Let's [[$ctl|TwineLesson011Passage024]].
 
 
 
-:: TwineLesson011Passage024
+:: TwineLesson011Passage024 [deonna]
 <img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'bad-eval.png'">Upon testing the game now, and choosing the third option, 'Shine Flashlight', I encounter a runtime error. There may be one or two extraneous right-parentheses, perhaps after "killed" and "winged". Remove those and everything should work fine. If you encounter this error, just copy/paste the code from <a target="_new" href="https://gist.github.com/kyrathasoft/f995336ee5c9226e1215afca5a16738a">here</a> into passage {{{ShineFlashlight}}}.
 
 Let's [[$ctl|TwineLesson011Passage025]].
@@ -714,7 +714,7 @@ Let's [[$ctl|TwineLesson011Passage025]].
 
 
 
-:: TwineLesson011Passage025
+:: TwineLesson011Passage025 [deonna]
 Now it's time to look at and be sure that we //grok// the inner {{{<<switch>>}}} of passage {{{ShineFlashlight}}}. It's important to understand that all the $ts that lies between {{{<<case 2>>}}} and {{{<<default>>}}} of the outer {{{<<switch>>}}} is one block of code. Essentially, here's what's happening in ''case 2'': (a) generate a random integer between 1 and 10, inclusive; (b) use that result with the inner {{{<<switch>>}}} to determine what text to show next to the player. 
 
 The structure will look like this:
@@ -735,7 +735,7 @@ Notice that with a {{{<<switch>>}}} statement, {{{<<default>>}}} handles //anyth
 
 
 
-:: TwineLesson011Passage026
+:: TwineLesson011Passage026 [deonna]
 Notice that we can put multiple ''cases'' in a particular {{{<<case>>}}}. For instance, {{{<<case 1 2>>}}} means //if the temp variable {{{_chance}}} has a value of 1, or 2 (which it will exactly 20% of the time), do the following...//
 
 Given that insight, can you discern what the following line of code does?
@@ -749,7 +749,7 @@ Let's [[$ctl|TwineLesson011Passage027]]
 <<tut-links "TwineLesson011Passage025" "TwineLesson011Passage027">>
 
 
-:: TwineLesson011Passage027
+:: TwineLesson011Passage027 [deonna]
 Somehow in zigging between passage {{{ShineFlashlight}}} and {{{PsgChkVars}}}, I actually //did// trigger the {{{<<default>>}}} of the //outer// {{{<<switch>>}}}, so I'm replacing it with this $ts:
 
 {{{<<default>>}}}
@@ -762,8 +762,74 @@ That'll put that edge-case to [[rest|TwineLesson011Passage028]].
 
 
 
-:: TwineLesson011Passage028
+:: TwineLesson011Passage028 [deonna]
 So, <a target="_new" href="https://gist.github.com/kyrathasoft/9c298baab6edf228a4e7fd16135309e6">here</a> is the updated code-listing for passage {{{ShineFlashlight}}}. Notice that, since I want the 'killed the alien' description to be available in two different places (under both {{{<<case 2>>}}} and {{{<<default>>}}} of the outer {{{<<switch>>}}}), I set a temp variable, {{{_descKilled}}} to hold that description. Code re-use! And, it saves characters, helping to minimize the compiled HTML file size.
 
+No matter which of the three outcomes (killed, winged, missed the alien) we get in passage {{{ShineFlashlight}}}, after the second visit to that passage we're going to be linked to passage {{{AfterFlashlight}}}. We'll see the utility of story variable {{{$alien}}} in that [[passage|TwineLesson011Passage029]].
+
+<<tut-links "TwineLesson011Passage027" "TwineLesson011Passage029">>
+
+
+
+:: TwineLesson011Passage029 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'story-map-less11-psg29.png'">Rename passage {{{AfterFlashlight}}} to {{{PostAlien}}}. Why? Because I said so. Just kidding $md that sounded like my dad. I've decided to rename the passage and let it's contents reflect the encounter the main character has just had with what seemed to be an alien. You can see on this page's screenshot how I have chosen to arrange a subset of passages in the $tw storymap. 
+
+You'll also need to replace four instances of the string "AfterFlashlight" in passage {{{ShineFlashlight}}} with "PostAlien".
+
+By this passage arrangement, I've tried to convey that the Eureka moment of returning memory (after two cups of coffee) leads to a flashback in which you recall encountering an alien creature. That encounter leads to gunfire, followed by your first real choice (reload, draw knife, shine flashlight $md represented by passages {{{RevolverReload, DrawKnife,}}} and {{{ShineFlashlight}}}, respectively).
+
+Even though our twine only has 25 passages, it's already beginning to be obvious that working in the twine graphical editor can become a hairy mess when stories attain even moderate size. This is why I'm coding the actual tutorial (that references our $tut_tit $sg) in Visual Studio Code, using the Twee3 [[format|TwineLesson011Passage030]].
+
+<<tut-links "TwineLesson011Passage028" "TwineLesson011Passage030">>
+
+
+
+:: TwineLesson011Passage030 [deonna]
+<img align="right" hspace=10 vspace=5 @src="setup.imgs1012 + 'story-map-less11-psg29.png'">I didn't want to start you off in VSCode and Twee3 because it can seem daunting to the uninitiated, and because the Twine desktop program does offer some advantages, including watching variables, debug views, and it can help you visualize the connection bewteen passages.
+
+You may also have noticed that sometimes $tw shows connecting arrows between passsages, sometimes not. It will draw these arrows if we use standard link notation but not if we use the link macro. I'll show you why this is problematic from the point of view of using the story-map as a storyboard accurately representing the flow from passage to [[passage|TwineLesson011Passage031]].
+
+<<tut-links "TwineLesson011Passage029" "TwineLesson011Passage031">>
+
+
+
+:: TwineLesson011Passage031 [deonna]
+This is one of the functions in the javascript section of our story (if for whatever reason you don't find it there, copy/paste from here in order to add it).
+
+''<font size=-1>setup.getTotalPassagesCount = function() {
+	<span class="tab">return $('tw-passagedata').length;</span>
+};</font>''
+
+If you drop this line of code into passage {{{CreatureDown}}} or {{{PostAlien}}}, and then play the story to that point, it should tell you that there are twenty-five passages in this twine work:
+
+{{{Passages: <<= setup.getTotalPassagesCount()>>}}}
+
+However, if you click menu item {{{Story}}} and then {{{Details}}}, $tw will tell you that there are only 9 links. That's because $tw doesn't count links created using the {{{<<link>>}}} macro. Perhaps a future version of $tw will break links down in Details into the various types of [[links|TwineLesson011Passage032]].
+
+<<tut-links "TwineLesson011Passage030" "TwineLesson011Passage032">>
+
+
+
+:: TwineLesson011Passage032 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'plumbing-psgs.png'">So, how do we use the story-map to best effect in keeping our growing work of $tw organized? I'm sure different people do it in different ways. I do it by organizing passages into clusters, and by taking advantage of passage color-coding. For instance, in the current $tw sample-game, I have certain passages tagged 'plumbing' and colored yellow. Also the current debug-tagged test passage is colored red.
+
+Honestly, it wouldn't be a bad idea to keep one passage for nothing other than to keep notes in it. It wouldn't have any direct bearing on the game, but would, rather, be a meta-document for programmer [[notes|TwineLesson011Passage033]].
+
+<<tut-links "TwineLesson011Passage031" "TwineLesson011Passage033">>
+
+
+
+:: TwineLesson011Passage033 [deonna]
+Even though we will need to go back and flesh out {{{RevolverReload}}} and {{{DrawKnife}}}, for now let's stick with having advanced the story by passing through {{{ShineFlashlight}}}. Give passage {{{PostAlien}}} a {{{nobr}}} tag, and then add <a target="_new" href="https://gist.github.com/kyrathasoft/1f9cb7e3310733944a9cf32c801437b5">this</a> code into the passage.
+
+<a target="_new" href="https://gist.github.com/kyrathasoft/6a1f895ef60adff886fd7ecff5388a68">Here's</a> a version of passage {{{PostAlien}}}'s contents you can use to update that passage. Then, test by playing through {{{ShineFlashlight}}} to test {{{<<switch $alien>>}}} in passage {{{PostAlien}}}.
+
+Let's [[$ctl|TwineLesson011Passage034]]
+
+<<tut-links "TwineLesson011Passage032" "TwineLesson011Passage034">>
+
+
+
+:: TwineLesson011Passage034 [deonna]
 <<tutorial-passages>>
 
