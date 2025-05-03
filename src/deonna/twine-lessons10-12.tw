@@ -912,9 +912,16 @@ Finally, go into passage {{{Campfire}}} and enclose all of the code from the ope
 :: TwineLesson011Passage041 [deonna]
 Here is the {{{if}}} conditional we want to enclose the majority of our {{{Campfire}}} passage code within:
 
-''{{{<<if not visited("CreatureDown")>>}}}'' and <a target="_new" href="https://gist.github.com/kyrathasoft/a1f5053e34d0c4b3560c204d89c7a799">here</a> is a code listing of the updated contents of passage {{{Campfire}}}. We're enclosing this section of passage {{{Campfire}}} in a conditional because if we've already visited passage {{{CreatureDown}}}, then we //know// we've already made and drank two cups of coffee. It's impossible to ever reach passage {{{CreatureDown}}} //without// having done so, and thus we can suppress that portion of passage {{{Campfire}}} upon returning there after killing the alien (which is, itself, a flashback, don't forget).
+''{{{<<if not visited("CreatureDown")>>}}}'' and <a target="_new" href="https://gist.github.com/kyrathasoft/a1f5053e34d0c4b3560c204d89c7a799">here</a> is a code listing of the updated contents of passage {{{Campfire}}}. We're enclosing this section of passage {{{Campfire}}} in a conditional because if we've already visited passage {{{CreatureDown}}}, then we //know// we've already made and drank two cups of coffee. It's impossible to ever reach passage {{{CreatureDown}}} //without// having done so, and thus we can suppress that portion of passage {{{Campfire}}} upon returning there after killing the alien (which is, itself, a flashback, don't forget). Let's [[$ctl|TwineLesson011Passage042]]
+
+<<tut-links "TwineLesson011Passage040" "TwineLesson011Passage042">>
+
 
 
 :: TwineLesson011Passage042 [deonna]
+<a target="_new" href="assets/images/tut-less-10-12/overview-at-27-psgs.png"><img align="left" hspace=10 vspace=5 @src="setup.imgs1012 +'psgs-of-recent-focus.png'"></a>Shown here are the passages on which we have recently been most focused. You can click on the screen shot in order to open a larger image in another browser tab that will give an overview of all 27 passages that currently comprise our $sg.
+
+
+:: TwineLesson011Passage043 [deonna]
 <<tutorial-passages>>
 
