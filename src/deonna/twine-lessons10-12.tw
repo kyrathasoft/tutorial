@@ -833,7 +833,7 @@ Let's [[$ctl|TwineLesson011Passage034]]
 
 
 :: TwineLesson011Passage034 [deonna]
-I've decided that, given the military and/or law-enforcement background we've hinted at for the MC, let's adjust the percentages in passage {{{ShineFlashlight}}}. So, adjust the code in passage {{{ShineFlashlight}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/a24b648a53a02e93166547cccd6e35f7">this</a>. Then, somewhere in passage {{{MyWidgets}}} $md being sure not to paste inside any already existing widgets $md add widget {{{<<AlienInventory>>}}}, as shown <a target="_new" href="https://gist.github.com/kyrathasoft/a08f61952b4910012c5507c8005460ba">here</a>. Finally, ensure that somewhere in the javascript section of our $tut_tit we have <a target="_new" href="https://gist.github.com/kyrathasoft/ada30371956cf3dfccc2b20a375f86d7">this</a> code. We may add additional items to the alien's inventory, but that'll do for [[now|TwineLesson011Passage035]].
+I've decided that, given the military and/or law-enforcement background we've hinted at for the MC, let's adjust the percentages in passage {{{ShineFlashlight}}}. So, adjust the code in passage {{{ShineFlashlight}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/c7e18481e0611eab8dcdb0cadbdaa853">this</a>. Then, somewhere in passage {{{MyWidgets}}} $md being sure not to paste inside any already existing widgets $md add widget {{{<<AlienInventory>>}}}, as shown <a target="_new" href="https://gist.github.com/kyrathasoft/a08f61952b4910012c5507c8005460ba">here</a>. Finally, ensure that somewhere in the javascript section of our $tut_tit we have <a target="_new" href="https://gist.github.com/kyrathasoft/ada30371956cf3dfccc2b20a375f86d7">this</a> code. We may add additional items to the alien's inventory, but that'll do for [[now|TwineLesson011Passage035]].
 
 <<tut-links "TwineLesson011Passage033" "TwineLesson011Passage035">>
 
@@ -945,7 +945,7 @@ If you then play through (Restarting if necessary) until you've killed the alien
 
 
 :: TwineLesson011Passage044 [deonna]
-Having given it more thought, I'm more and more thinking that the chance of killing the alien should be quite high. Currently, we have it set to 80%. Let's tweak the code in passage {{{ShineFlashlight}}} so that the chance of killing the alien is 90%, winging it 5%, and missing altogether 5%. <a target="_new" href="https://gist.github.com/kyrathasoft/c7e18481e0611eab8dcdb0cadbdaa853">Here</a> is the updated code. Bring your sample game's code in passage {{{ShineFlashlight}}} into alignment with that code listing.
+As you'll learn when you see the contents of passages {{{RevolverReload}}} and {{{DrawKnife}}}, ultimately you need to succeed in killing the alien. As long as passage {{{ShineFlashlight}}} is using <a target="_new" href="https://gist.github.com/kyrathasoft/c7e18481e0611eab8dcdb0cadbdaa853">this</a> code, that happens 95% of the time. 
 
 Since passages {{{AlienCorpse}}} and {{{TookAlienItems}}} lead back to passage {{{Campfire}}}, where (given the firelight) we won't need the flashlight's illumination, let's update passage {{{AlienCorpse}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/18ed8fb420910a5d15d7b4c085b3c809">this</a> listing and passage {{{TookAlienItems}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/0629811d9b0223b5de43467f7ab0634a">this</a> listing.
 
