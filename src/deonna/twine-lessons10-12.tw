@@ -463,7 +463,9 @@ Well, we have advanced our story a bit in this lesson, learned about pushing onl
 
 :: TwineLesson011Passage001 [deonna]
 <h2>$tw & $sc <span class="pulse">Lesson # 11</span> $md The Creature Is Down!</h2>
-Welcome to Lesson 11! Near the end of the previous lesson we achieved two milestones: (1) our first sizeable (and, arguably, truly useful) widget and (2) our first real decision-point. Before we continue further, I've <a target="_new" href="https://gist.github.com/kyrathasoft/39010e61f7302d504d8d7ad8e23c8c55">updated</a> the {{{<<TableOfChoices>>}}} widget, so please make sure you update it too, if you're creating the sample game alongside this tutorial. This widget is a bit longer, but the extra code spotlights specific errors if the widget is called with one or more invalid [[arguments|TwineLesson011Passage002]].
+Welcome to Lesson 11! Near the end of the previous lesson we achieved two milestones: (1) our first sizeable (and, arguably, truly useful) widget and (2) our first real decision-point. In this lesson, we'll extend our story to its second decision/branching point and will then return to our campfire.
+
+Before we continue further, I've <a target="_new" href="https://gist.github.com/kyrathasoft/39010e61f7302d504d8d7ad8e23c8c55">updated</a> the {{{<<TableOfChoices>>}}} widget, so please make sure you update it too, if you're creating the sample game alongside this tutorial. This widget is a bit longer, but the extra code spotlights specific errors if the widget is called with one or more invalid [[arguments|TwineLesson011Passage002]].
 
 <<tut-links "TwineLesson010Passage043" "TwineLesson011Passage002">>
 
