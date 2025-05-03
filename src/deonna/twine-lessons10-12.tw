@@ -923,7 +923,31 @@ Here is the {{{if}}} conditional we want to enclose the majority of our {{{Campf
 :: TwineLesson011Passage042 [deonna]
 <a target="_new" href="assets/images/tut-less-10-12/overview-at-27-psgs.png"><img align="left" hspace=10 vspace=5 @src="setup.imgs1012 +'psgs-of-recent-focus.png'"></a>Shown here are the passages on which we have recently been most focused. You can click on the screen shot in order to open a larger image in another browser tab that will give an overview of all 27 passages that currently comprise our $sg.
 
+In passage {{{PostAlien}}}, if we have indeed killed the alien, and if we haven't yet taken the alien's inventory, we present a choice to the player: either take the alien's belongings, or leave them. Looking at the code, we see that if we take the items, we are then moved to passage {{{TookAlienItems}}}. You'll need to copy and then paste <a target="_new" href="https://gist.github.com/kyrathasoft/09494ad67624950e41d609bff0a15032">this</a> code into passage {{{TookAlienItems}}}.
+
+Let's [[$ctl|TwineLesson011Passage043]]
+
+<<tut-links "TwineLesson011Passage041" "TwineLesson011Passage043">>
+
+
 
 :: TwineLesson011Passage043 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 +'alien-killed-inv-taken.png'">Add this line of code to passage {{{PsgCheckVars}}}, placing it immediately beneath the line of code that prints the current value of story variable {{{$alien}}}:
+
+{{{{{{$alienInvTaken}}} = {{{<<= $alienInvTaken>><br>}}}
+
+If you now launch the game to test it, then immediately go to {{{PsgCheckVars}}} via the button in the story sidebar, you'll see that {{{$alien}}} holds a value of "none", and that {{{$alienInvTaken}}} holds the value //false//.
+
+If you then play through (Restarting if necessary) until you've killed the alien and taken its belongings, and //then// view {{{PsgCheckVars}}}, you'll see what is reflected in this page's [[screen-shot|TwineLesson011Passage044]].
+
+<<tut-links "TwineLesson011Passage042" "TwineLesson011Passage044">>
+
+
+
+:: TwineLesson011Passage044 [deonna]
+Having given it more thought, I'm more and more thinking that the chance of killing the alien should be quite high. Currently, we have it set to 80%. Let's tweak the code in passage {{{ShineFlashlight}}} so that the chance of killing the alien is 90%, winging it 5%, and missing altogether 5%. <a target="_new" href="https://gist.github.com/kyrathasoft/c7e18481e0611eab8dcdb0cadbdaa853">Here</a> is the updated code. Bring your sample game's code in passage {{{ShineFlashlight}}} into alignment with that code listing.
+
+Since passages {{{AlienCorpse}}} and {{{TookAlienItems}}} lead back to passage {{{Campfire}}}, where (given the firelight) we won't need the flashlight's illumination, let's update passage {{{AlienCorpse}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/18ed8fb420910a5d15d7b4c085b3c809">this</a> listing and passage {{{TookAlienItems}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/0629811d9b0223b5de43467f7ab0634a">this</a> listing.
+
 <<tutorial-passages>>
 
