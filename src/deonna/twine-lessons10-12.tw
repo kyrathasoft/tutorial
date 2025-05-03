@@ -820,9 +820,9 @@ Honestly, it wouldn't be a bad idea to keep one passage for nothing other than t
 
 
 :: TwineLesson011Passage033 [deonna]
-Even though we will need to go back and flesh out {{{RevolverReload}}} and {{{DrawKnife}}}, for now let's stick with having advanced the story by passing through {{{ShineFlashlight}}}. Give passage {{{PostAlien}}} a {{{nobr}}} tag, and then add <a target="_new" href="https://gist.github.com/kyrathasoft/1f9cb7e3310733944a9cf32c801437b5">this</a> code into the passage.
+Even though we will need to go back and flesh out {{{RevolverReload}}} and {{{DrawKnife}}}, for now let's stick with having advanced the story by passing through {{{ShineFlashlight}}}. Give passage {{{PostAlien}}} the {{{nobr}}} tag, and then add <a target="_new" href="https://gist.github.com/kyrathasoft/a24b648a53a02e93166547cccd6e35f7">this</a> code into the passage.
 
-Ensure that you have this code in the javascript section of your sample game. <a target="_new" href="https://gist.github.com/kyrathasoft/6a1f895ef60adff886fd7ecff5388a68">Here's</a> a version of passage {{{PostAlien}}}'s contents you can use to update that passage. Then, test by playing through {{{ShineFlashlight}}} to test {{{<<switch $alien>>}}} in passage {{{PostAlien}}}.
+Ensure that you have <a target="_new" href="https://gist.github.com/kyrathasoft/ada30371956cf3dfccc2b20a375f86d7">this</a> code in the javascript section of your sample game. <a target="_new" href="https://gist.github.com/kyrathasoft/6a1f895ef60adff886fd7ecff5388a68">Here's</a> a version of passage {{{PostAlien}}}'s contents you can use to update that passage. 
 
 Let's [[$ctl|TwineLesson011Passage034]]
 
@@ -839,13 +839,82 @@ I've decided that, given the military and/or law-enforcement background we've hi
 
 
 :: TwineLesson011Passage035 [deonna]
-Now, in passage {{{PostAlien}}}, update the code to <a target="_new" href="https://gist.github.com/kyrathasoft/6a1f895ef60adff886fd7ecff5388a68">this</a> listing. Ensure that this passage has a {{{nobr}}} tag. Test the game by launching it in your default web browser. If needed, Restart as many times as necessary (it shouldn't take many) until you have killed the alien. Finally, let's add the following line of code to passage {{{StoryInit}}} //and// to each of our three passages whose names start with 'Test':
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'alien-inv-widget-output.png'">Now, in passage {{{PostAlien}}}, update the code to <a target="_new" href="https://gist.github.com/kyrathasoft/6a1f895ef60adff886fd7ecff5388a68">this</a> listing. Ensure that this passage has a {{{nobr}}} tag. Test the game by launching it in your default web browser. If needed, Restart as many times as necessary (it shouldn't take many) until you have killed the alien. Finally, let's add the following line of code to passage {{{StoryInit}}} //and// to each of our three passages whose names start with 'Test':
 
 {{{<<set $alienInvTaken to false>>}}}
 
-As I'm sure you can guess, this story variable represents whether the main character is in possession of the alien's inventory. That's what we'll code next $md the taking of that inventory and adding it to the player's own inventory.
+As I'm sure you can guess, this story variable represents whether the main character is in possession of the alien's inventory. That's what we'll code next $md the taking of that inventory and adding it to the player's own [[inventory|TwineLesson011Passage036]].
+
+<<tut-links "TwineLesson011Passage034" "TwineLesson011Passage036">>
+
 
 
 :: TwineLesson011Passage036 [deonna]
+For clarity and to ensure we're making appropriate use of story variables, let's enclose the $ts that shows the killed alien's inventory in a conditional:
+
+ {{{<<if $alien eq "killed" && not $alienInvTaken>>}}}
+    <span class="tab">The alien was carrying/wearing:{{{<br><br>}}}</span>
+	<span class="tab">{{{<<AlienInventory>>}}}</span>
+{{{<</if>>}}}
+
+Update the contents of passage {{{PostAlien}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/78dbacc00328d9681c5a166878661041">this</a> code listing. Let's [[$ctl|TwineLesson011Passage037]]
+
+<<tut-links "TwineLesson011Passage035" "TwineLesson011Passage037">>
+
+
+
+
+:: TwineLesson011Passage037 [deonna]
+If the player has access to the item's on the alien's corpse, then we should give the player the option to take those items:
+
+{{{<<if $alien eq "killed" && not $alienInvTaken>>}}}
+    <span class="tab">The alien was carrying/wearing:{{{<br><br>}}}</span>
+	<span class="tab">{{{<<AlienInventory>>}}}</span>
+    <span class="tab">{{{<<TableOfChoices}}} "Take these alien items"</span>
+    <span class="tab">"TookAlienItems"</span>
+    <span class="tab">"Leave these alien items"</span>
+    <span class="tab">"AlienCorpse"{{{>>}}}</span>
+{{{<</if>>}}}
+
+Update the contents of passage {{{PostAlien}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/b705a65cc7fdd11becbe6b88cc3ae295">this</a> code listing. Let's [[$ctl|TwineLesson011Passage038]]
+
+<<tut-links "TwineLesson011Passage036" "TwineLesson011Passage038">>
+
+
+
+:: TwineLesson011Passage038 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 +'psg-alien-corpse-doesnt-exist.png'">When you test the game now, you'll get the error message shown in this page's screen shot. Okay, so create a passage in the Twine editor and name it {{{AlienCorpse}}}. Give the passage this text: ''You decided not to take the alien's items. Perhaps that's wise: what good can come from fooling with technology that is doubtless far beyond that of Earth?''
+
+Now, re-run the game in your browser and playthrough (Restarting if needed) until you've killed the [[alien|TwineLesson011Passage039]].
+
+<<tut-links "TwineLesson011Passage037" "TwineLesson011Passage039">>
+
+
+
+:: TwineLesson011Passage039 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 +'psg-took-items-doesnt-exist.png'">This time, our {{{<<TableOfChoices>>}}} widget catches the fact that passage {{{TookAlienItems}}} doesn't exist. Very well, create //that// passage in the Twine editor and add this passage text: ''You have taken the alien's belongings.'' Now when you test the game by running it in your default browser, widget {{{<<TableOfChoices>>}}} doesn't print any errors, and the game will produce a branching choice as shown on the next [[page|TwineLesson011Passage040]].
+
+<<tut-links "TwineLesson011Passage038" "TwineLesson011Passage040">>
+
+
+
+:: TwineLesson011Passage040 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 +'second-branch-point.png'">Very good. Our story produces the second branch point to the player (the first branch point presented the choices Shine Flashlight, Draw Knife, or Revolver Reload). Here, also, is a good illustration of code-reuse. We were able to use our previously written widget, {{{<<TableOfChoices>>}}} to present this second branching point in a screen-centered, pleasing format.
+
+Now, let's update the text of passage {{{AlienCorpse}}} to the following: ''You decided not to take the alien's items. Perhaps that's wise: what good can come from fooling with technology that is doubtless far beyond that of Earth? Having made your decision, you return to your {{{[[campfire|Campfire]]}}}.'' And let's update the text of passage {{{TookAlienItems}}} to ''You have taken the alien's belongings and returned to your {{{[[campfire|Campfire]]}}}.''
+
+Finally, go into passage {{{Campfire}}} and enclose all of the code from the opening {{{<<nobr>>}}} to the closing {{{<</nobr>>}}} tags in the following {{{if}}} [[conditional|TwineLesson011Passage041]].
+
+<<tut-links "TwineLesson011Passage039" "TwineLesson011Passage041">>
+
+
+
+:: TwineLesson011Passage041 [deonna]
+Here is the {{{if}}} conditional we want to enclose the majority of our {{{Campfire}}} passage code within:
+
+''{{{<<if not visited("CreatureDown")>>}}}'' and <a target="_new" href="https://gist.github.com/kyrathasoft/a1f5053e34d0c4b3560c204d89c7a799">here</a> is a code listing of the updated contents of passage {{{Campfire}}}. We're enclosing this section of passage {{{Campfire}}} in a conditional because if we've already visited passage {{{CreatureDown}}}, then we //know// we've already made and drank two cups of coffee. It's impossible to ever reach passage {{{CreatureDown}}} //without// having done so, and thus we can suppress that portion of passage {{{Campfire}}} upon returning there after killing the alien (which is, itself, a flashback, don't forget).
+
+
+:: TwineLesson011Passage042 [deonna]
 <<tutorial-passages>>
 
