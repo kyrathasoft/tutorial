@@ -822,7 +822,7 @@ Honestly, it wouldn't be a bad idea to keep one passage for nothing other than t
 :: TwineLesson011Passage033 [deonna]
 Even though we will need to go back and flesh out {{{RevolverReload}}} and {{{DrawKnife}}}, for now let's stick with having advanced the story by passing through {{{ShineFlashlight}}}. Give passage {{{PostAlien}}} a {{{nobr}}} tag, and then add <a target="_new" href="https://gist.github.com/kyrathasoft/1f9cb7e3310733944a9cf32c801437b5">this</a> code into the passage.
 
-<a target="_new" href="https://gist.github.com/kyrathasoft/6a1f895ef60adff886fd7ecff5388a68">Here's</a> a version of passage {{{PostAlien}}}'s contents you can use to update that passage. Then, test by playing through {{{ShineFlashlight}}} to test {{{<<switch $alien>>}}} in passage {{{PostAlien}}}.
+Ensure that you have this code in the javascript section of your sample game. <a target="_new" href="https://gist.github.com/kyrathasoft/6a1f895ef60adff886fd7ecff5388a68">Here's</a> a version of passage {{{PostAlien}}}'s contents you can use to update that passage. Then, test by playing through {{{ShineFlashlight}}} to test {{{<<switch $alien>>}}} in passage {{{PostAlien}}}.
 
 Let's [[$ctl|TwineLesson011Passage034]]
 
@@ -831,5 +831,21 @@ Let's [[$ctl|TwineLesson011Passage034]]
 
 
 :: TwineLesson011Passage034 [deonna]
+I've decided that, given the military and/or law-enforcement background we've hinted at for the MC, let's adjust the percentages in passage {{{ShineFlashlight}}}. So, adjust the code in passage {{{ShineFlashlight}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/a24b648a53a02e93166547cccd6e35f7">this</a>. Then, somewhere in passage {{{MyWidgets}}} $md being sure not to paste inside any already existing widgets $md add widget {{{<<AlienInventory>>}}}, as shown <a target="_new" href="https://gist.github.com/kyrathasoft/a08f61952b4910012c5507c8005460ba">here</a>. Finally, ensure that somewhere in the javascript section of our $tut_tit we have <a target="_new" href="https://gist.github.com/kyrathasoft/ada30371956cf3dfccc2b20a375f86d7">this</a> code. We may add additional items to the alien's inventory, but that'll do for [[now|TwineLesson011Passage035]].
+
+<<tut-links "TwineLesson011Passage033" "TwineLesson011Passage035">>
+
+
+
+
+:: TwineLesson011Passage035 [deonna]
+Now, in passage {{{PostAlien}}}, update the code to <a target="_new" href="https://gist.github.com/kyrathasoft/6a1f895ef60adff886fd7ecff5388a68">this</a> listing. Ensure that this passage has a {{{nobr}}} tag. Test the game by launching it in your default web browser. If needed, Restart as many times as necessary (it shouldn't take many) until you have killed the alien. Finally, let's add the following line of code to passage {{{StoryInit}}} //and// to each of our three passages whose names start with 'Test':
+
+{{{<<set $alienInvTaken to false>>}}}
+
+As I'm sure you can guess, this story variable represents whether the main character is in possession of the alien's inventory. That's what we'll code next $md the taking of that inventory and adding it to the player's own inventory.
+
+
+:: TwineLesson011Passage036 [deonna]
 <<tutorial-passages>>
 
