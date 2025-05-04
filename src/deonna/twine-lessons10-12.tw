@@ -1019,8 +1019,12 @@ Okay, let's [[$ctl|TwineLesson011Passage050]].
 
 
 :: TwineLesson011Passage050 [deonna]
-<<tutorial-passages>>
+Let's expand passage {{{PostAlien}}} a bit by adding text under {{{<<case "missed">>}}}. Here is the text to add there:
 
+''{{{<<case "missed">>}}}
+    		You sweep the area with your flashlight beam. Nothing. You got back over it again, like you were trained, looking for bodily fluids on the forest floor, a blood stain on a tree. Nothing except for the alien's oddly taloned tracks. {{{//}}}No plan survives contact with the enemy,{{{//}}} you think wryly. Still, even given the darkness, it's hard to credit a marksman like you missing at such short {{{[[range|WingedTheAlien]]}}}.''
+
+Notice that we link to passage {{{WingedTheAlien}}} even though in this particular case we missed it with both shots. If you read the contents of passage {{{WingedTheAlien}}}, you'll see that its contents really are rather appropriate, regardless of whether we missed the alien with our two shots, or winged it. Therefore, why create another passage?
 
 :: TwineLesson011Passage051 [deonna]
 <<tutorial-passages>>
