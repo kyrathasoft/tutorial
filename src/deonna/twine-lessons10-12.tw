@@ -1024,8 +1024,35 @@ Let's expand passage {{{PostAlien}}} a bit by adding text under {{{<<case "misse
 ''{{{<<case "missed">>}}}
     		You sweep the area with your flashlight beam. Nothing. You got back over it again, like you were trained, looking for bodily fluids on the forest floor, a blood stain on a tree. Nothing except for the alien's oddly taloned tracks. {{{//}}}No plan survives contact with the enemy,{{{//}}} you think wryly. Still, even given the darkness, it's hard to credit a marksman like you missing at such short {{{[[range|WingedTheAlien]]}}}.''
 
-Notice that we link to passage {{{WingedTheAlien}}} even though in this particular case we missed it with both shots. If you read the contents of passage {{{WingedTheAlien}}}, you'll see that its contents really are rather appropriate, regardless of whether we missed the alien with our two shots, or winged it. Therefore, why create another passage?
+Notice that we link to passage {{{WingedTheAlien}}} even though in this particular case we missed it with both shots. If you read the contents of passage {{{WingedTheAlien}}}, you'll see that its contents really are rather appropriate, regardless of whether we missed the alien with our two shots, or winged it. Therefore, why create another [[passage|TwineLesson011Passage051]]?
+
+<<tut-links "TwineLesson011Passage049" "TwineLesson011Passage051">>
+
+
 
 :: TwineLesson011Passage051 [deonna]
+I experienced some sort of bug or syntax error, but think I've got it fixed now. Word to the wise, if you're serious about writing works of interactive fiction $md in $tw or any other system $md use version control. I'm glad that I do. To re-sync your code with mine, you should download <a target="_new" href="https://1drv.ms/u/s!AmCkA_L-M0FImNIRLpetD7E9ac4LuQ">this</a> zip archive, extract it, and then import it into $tw. It can also be downloaded with <a target="_new" href="sftp://dh_4gg2za@pdx1-shared-a1-13.dreamhost.com/home/dh_4gg2za/bryanmiller.us/twinery/backups/CampfireTaleLesson11Psg50.zip">this</a> link, or <a target="_new" href=" http://twinery.42web.io/backups/CampfireTaleLesson11Psg50.zip">this</a> one. I'll now try to catch you up on a few [[changes|TwineLesson011Passage052]].
+
+<<tut-links "TwineLesson011Passage050" "TwineLesson011Passage052">>
+
+
+
+:: TwineLesson011Passage052 [deonna]
+I should notify you that, for the purpose of testing the story for when we wing the alien (one or both bullets strike it but don't immediately kill it), I have this code in passage {{{ShineFlashlight}}}:
+
+{{{<<set}}} _chance to {{{random(1,100)>>/*You rolled a <<= _chance>><br>}}}
+
+{{{/* remove the following line as soon as done testing!!! */}}}
+{{{<<set _chance to 3>>}}}
+{{{/* remove the line above as soon as done testing!!! */}}}
+}}}
+
+That code ensures we //wing// the alien 100% of our playthroughs, while [[testing|TwineLesson011Passage053]].
+
+<<tut-links "TwineLesson011Passage051" "TwineLesson011Passage053">>
+
+
+
+:: TwineLesson011Passage053 [deonna]
 <<tutorial-passages>>
 
