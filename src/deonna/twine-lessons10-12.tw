@@ -949,5 +949,79 @@ As you'll learn when you see the contents of passages {{{RevolverReload}}} and {
 
 Since passages {{{AlienCorpse}}} and {{{TookAlienItems}}} lead back to passage {{{Campfire}}}, where (given the firelight) we won't need the flashlight's illumination, let's update passage {{{AlienCorpse}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/18ed8fb420910a5d15d7b4c085b3c809">this</a> listing and passage {{{TookAlienItems}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/0629811d9b0223b5de43467f7ab0634a">this</a> listing.
 
+Let's [[$ctl|TwineLesson011Passage045]]
+
+<<tut-links "TwineLesson011Passage043" "TwineLesson011Passage045">>
+
+
+
+:: TwineLesson011Passage045 [deonna]
+Okay, our player can now play through killing the alien with a .357 Magnum double-tap, and then choosing to either take or leave the alien's belongings. Let's now go back into passage {{{PostAlien}}} and replace the {{{[Placeholder]}}} with the following:
+
+{{{    	<<case "winged">>
+    		Bringing honed skills to bear, you play the beam of your flashlight over the ground and nearby trees in slow, steady arcs. //There!// Blood on the bole of a birch tree, ten or twelve feet away. You grunt softly. //So... I [[winged it|WingedTheAlien]].
+
+}}}
+
+<a target="_new" href="https://gist.github.com/kyrathasoft/dd8792df5841dfb458b4b45cc01e5731">Here's</a> what that passage should contain after this [[update|TwineLesson011Passage046]].
+
+<<tut-links "TwineLesson011Passage044" "TwineLesson011Passage046">>
+
+
+
+:: TwineLesson011Passage046 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 +'winged-the-alien.png'">If you look at the story-map after updating passage {{{PostAlien}}}, you see that a new passage has been added; passage {{{WingedTheAlien}}} has been created by Twine because of the $ts we added to passage {{{PostAlien}}}. In this page's screenshot, the new passage has a dotted-line boundary. I have read somewhere under what condiitions this happens, and why, but I don't remember the details. Once you enter some text into passage {{{WingedTheAlien}}}, the dotted-line border will become solid.
+
+As I've said earlier in this tutorial, we need for the player to kill the alien. You understand why, right? Because the encounter with the alien that the player experiences is understood to be a flashback. Therefore, the MC must have survived the alien encounter ... in order to be having a //flashback//. Therefore, our implementation of reloading the revolver and drawing the K-BAR from its sheath will be fairly shallow &mdash; not //filler material//, no $md we will use those actions to shed more light on the MC. But ultimately, {{{RevolverReload}}} and {{{DrawKnife}}} will each eventually lead to either {{{AlienCorpse}}} or {{{TookAlienItems}}}.
+
+But, where were we? Oh yes, new passage {{{WingedTheAlien}}}. Let's [[$ctl|TwineLesson011Passage047]].
+
+<<tut-links "TwineLesson011Passage045" "TwineLesson011Passage047">>
+
+
+
+:: TwineLesson011Passage047 [deonna]
+We're going to use passage {{{wingedTheAlien}}} to narrate for the drama of tracking down and finishing off the alien. We may even include a few pseudo-choices. Remember, it's important that some legitimately important choices are in our $sg, but that doesn't mean //all// of them must be. Sometimes, the illusion of choice can be powerful, even when in reality we're railroading the player.
+
+Add a new story variable initialization to {{{StoryInit}}} by copying and pasting the following line in between the lines that initialize {{{$alienInvTaken}}} and {{{$flashlightOn}}}:
+
+{{{<<set $catMouse to "track">>}}}
+
+Let's [[$ctl|TwineLesson011Passage048]]
+
+<<tut-links "TwineLesson011Passage046" "TwineLesson011Passage048">>
+
+
+
+:: TwineLesson011Passage048 [deonna]
+Let's update {{{StoryInit}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/dac882ab75089a94e673df86107e6abf">this</a> code listing (I've added some comments). We need to create a new test passage named {{{TestWingedIt}}}. Create that passage now and paste <a target="_new" href="https://gist.github.com/kyrathasoft/f5e720708140e3bf92f4a542b4db191f">this</a> code into it. Remember to remove the tag {{{debug}}} from passage {{{TestCreatureDown}}} and add tag {{{debug}}} to passage {{{TestWingedIt}}}.
+
+If you've done those things, then the next time you test the game in your browser, it should start you in passage {{{WingedTheAlien}}}. <a target="_new" href="https://gist.github.com/kyrathasoft/cae88702f27dc3af7ad0adc721493a4a">Here</a> is the code you should put into passage {{{WingedTheAlien}}} before testing.
+
+Let's [[$ctl|TwineLesson011Passage049]]
+
+<<tut-links "TwineLesson011Passage047" "TwineLesson011Passage049">>
+
+
+
+:: TwineLesson011Passage049 [deonna]
+That last line of code in passage {{{TestWingedIt}}} is sweet, eh? It allows us to jump to the place in the story where we've winged the alien and it's time to decide what to do next. What's more, it allows us to do so after we've simulated other passage visits and have set various variables as we like. 
+
+What you'll find now when you run the game is that the text orients us, then provides three choices. Currently, no matter which choice you make, you get redirected back to the same passage (not that the player of our $sg will realize that's what's happening). For the sake of demonstrating that each choice-link has set story variable {{{$catMouse}}} to an appropriate value, I temporarily used the following code in case {{{<<default>>}}}:
+
+{{{$catMouse}}} = {{{<<= $catMouse>>}}} Because there's currently only a {{{<<case 1>>>}}} and {{{<<default>>}}}, when we return to passage {{{WingedTheAlien}}} the second time, we're shown the value held in story variable {{{$catMouse}}}.
+    
+Okay, let's [[$ctl|TwineLesson011Passage050]].
+
+<<tut-links "TwineLesson011Passage048" "TwineLesson011Passage050">>
+
+
+
+
+:: TwineLesson011Passage050 [deonna]
+<<tutorial-passages>>
+
+
+:: TwineLesson011Passage051 [deonna]
 <<tutorial-passages>>
 
