@@ -5,6 +5,9 @@ __Notes from 5/4/2025__
 # removed fourth test passage and reverted to using {{{TestCreatureDown}}}
 # I'm using a kludge in {{{ShineFlashlight}}}; be sure to remove it...
 # the above kludge is to simulate 'winging' alien (only occurs 5% normally)
+# advanced through passage 57 of Lesson 11
+# removed kludge from {{{ShineFlashlight}}}
+# our two current endpoints: {{{AfterEncounter}}} and {{{ExperimentedOn}}}
 
 __Notes from 5/3/2025__ 
 # modified % chance of killing, winging, missing the alien

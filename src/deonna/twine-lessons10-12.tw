@@ -1047,12 +1047,58 @@ I should notify you that, for the purpose of testing the story for when we wing 
 {{{/* remove the line above as soon as done testing!!! */}}}
 }}}
 
-That code ensures we //wing// the alien 100% of our playthroughs, while [[testing|TwineLesson011Passage053]].
+That code ensures we //wing// the alien 100% of the time during our playthroughs, while [[testing|TwineLesson011Passage053]].
 
 <<tut-links "TwineLesson011Passage051" "TwineLesson011Passage053">>
 
 
 
 :: TwineLesson011Passage053 [deonna]
+If we winged the alien, eventually, we kill it and wind up back at {{{Campfire}}}. Now let's test the playthrough when we miss the alien with both revolver shots. To do that, we'll modify the following section of $ts in passage {{{ShineFlashlight}}}:
+
+{{{/* remove the following line as soon as done testing!!! */}}}
+{{{<<set _chance to 3>>}}}
+{{{/* remove the line above as soon as done testing!!! */}}}
+
+Change the number ''3'' to ''2'' and then test the game's playthrough, selecting the 'Shine Flashlight' choice/[[hyperlink|TwineLesson011Passage054]].
+
+<<tut-links "TwineLesson011Passage052" "TwineLesson011Passage054">>
+
+
+
+:: TwineLesson011Passage054 [deonna]
+If we missed the alien with our first two shots, but then subsequently choose to track it, we wind up killing it. If we miss with our first two shots and subsequently decide to flee, we wind up back at {{{Campfire}}}, packing up our gear. If we miss and then choose to ignore the remaining alien threat, we wind up back at {{{Campfire}}} pretending to be care-free. No matter what we do after missing with our initial two shots, we eventually wind up back at {{{Campfire}}}. That's called branch-and-bottleneck. At some point in our story, two more more branches lead off in different directions but then at some point all converge back on a certain point. Branch-and-bottlenecking helps keep our $sg manageable in terms of [["overall length"|TwineLesson011Passage055]].
+
+<<tut-links "TwineLesson011Passage053" "TwineLesson011Passage055">>
+
+
+
+:: TwineLesson011Passage055 [deonna]
+If, after shining our flashlight and missing with our two shots we choose to reload the revolver, that distraction allows the alien to hit us with some sort of webbing, undoubtedly with the aim to capture us. But we manager to shoot and kill the alien through the netting, and we wind up back at {{{Campfire}}}. If we draw our knife, the game hints that maybe that's not the best choice and even gives us a chance to undo the choice. If we stick with gun/knife, we'll wind up knocked off the cliff and taken captive in the alien's ship, where we'll undoubtedly be experimented upon. But if we do take the hint and switch to gun/flashlight, then we either wind up killing the alien or choosing to abandon our campout, or (even more foolishly) choosing to ignore this alien threat. And we wind up back at the {{{Campfire}}} once [[more|TwineLesson011Passage056]].
+
+<<tut-links "TwineLesson011Passage054" "TwineLesson011Passage056">>
+
+
+
+:: TwineLesson011Passage056 [deonna]
+Passage {{{DrawKnife}}} has <a target="_new" href="https://gist.github.com/kyrathasoft/81cdc1fe93ca974713f546ccfca90169">this</a> code and ultimately links to passage {{{ExperimentedOn}}}. Give the latter passage the {{{nobr}}} tag and this code:
+
+[PLACEHOLDER IN PSG EXPERIMENTEDON]<br>
+{{{$alien}}} equals {{{<<= $alien>>}}}<br>
+{{{$catMouse}}} equals {{{<<= $catMouse>><br><br>}}}
+
+Now let's playthrough, choose knife/gun combo, and see what those variables hold upon reaching {{{ExperimentedOn}}}. Let's [[$ctl|TwineLesson011Passage057]].
+
+
+
+:: TwineLesson011Passage057 [deonna]
+<img align="left" hspace=10 vspace=5 @src="setup.imgs1012 + 'psg-experimented-on.png'">Remove or comment-out the following line in passage {{{ShineFlashlight}}}:
+
+{{{<<set _chance to 2>>}}} Next, in passage {{{TookAlienItems}}}, change the word 'returned' to 'return'.
+
+If you do a few playthroughs, you'll find that, currently, our two endpoints are passages {{{AfterEncounter}}} and {{{ExperimentedOn}}}. We have eventually have both these branches reconverge, or not. I'm making the story up as we go, so we'll just have to see what happens.
+
+
+:: TwineLesson011Passage058 [deonna]
 <<tutorial-passages>>
 
