@@ -1,6 +1,14 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 5/5/2025__ 
+# removed {{{debug}}} tag from {{{TestCreatureDown}}}
+# added psg {{{TestExperimentedOn}}} and gave it {{{debug}}} tag
+# linked to gist of {{{testExperimentedOn}}}'s code from Ls 11 Psg 58
+# made quick-n-dirty version of widget {{{<<TableOfChoices>>}}}
+# the quick version is called {{{<<QuickChoices>>}}}
+# I need to introduce this widget to the reader and explain it
+
 __Notes from 5/4/2025__ 
 # removed fourth test passage and reverted to using {{{TestCreatureDown}}}
 # I'm using a kludge in {{{ShineFlashlight}}}; be sure to remove it...

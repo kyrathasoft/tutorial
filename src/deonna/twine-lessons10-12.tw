@@ -1096,9 +1096,49 @@ Now let's playthrough, choose knife/gun combo, and see what those variables hold
 
 {{{<<set _chance to 2>>}}} Next, in passage {{{TookAlienItems}}}, change the word 'returned' to 'return'.
 
-If you do a few playthroughs, you'll find that, currently, our two endpoints are passages {{{AfterEncounter}}} and {{{ExperimentedOn}}}. We have eventually have both these branches reconverge, or not. I'm making the story up as we go, so we'll just have to see what happens.
+If you do a few playthroughs, you'll find that, currently, our two endpoints are passages {{{AfterEncounter}}} and {{{ExperimentedOn}}}. We can eventually have both these branches reconverge, or not. I'm making the story up as we go, so we'll just have to see what [[happens|TwineLesson011Passage058]].
+
+<<tut-links "TwineLesson011Passage056" "TwineLesson011Passage058">>
+
 
 
 :: TwineLesson011Passage058 [deonna]
+If you synced your code with mine a few passages ago, you may have noticed that I'd gotten rid of passage {{{TestWingedIt}}}. Turned out it wasn't essential. But now I'd like to be able to test the story from a starting position as if we'd played through all the way from the very beginning to winding up knocked off the cliff and tractor-beamed into the waiting flying saucer.
+
+Create a new test passaged named {{{TestExperimentedOn}}}. Give it <a target="_new" href="https://gist.github.com/kyrathasoft/648c6738aeec4a92a2beefc4889e7c26">this</a> code. Also, <a target="_new" href="https://gist.github.com/kyrathasoft/ea14c587e3fc5f314f8a983e3c8f8f99">update</a> the contents of {{{StoryInit}}} so that the call to our {{{runTestCase()}}} function, which we defined on our setup object, comes at the very end. Reason: if we leave it at the top, then statements further down in passage {{{StoryInit}}} overwrite our desired test-case variable assignments.
+
+Don't forget to remove the {{{debug}}} tag from passage {{{TestCreatureDown}}}. Now we turn out attention to the [[Lesson 12|TwineLesson012Passage001]].
+
+<<tut-links "TwineLesson011Passage057" "TwineLesson012Passage001">>
+
+
+
+/* End of Lesson 10, Beginning of Lesson 11 */
+
+
+
+
+:: TwineLesson012Passage001 [deonna]
+<h2>$tw & $sc <span class="pulse">Lesson # 12</span> $md Captured By Aliens</h2>
+<img align="left" width="64" hspace=10 vspace=5 @src="setup.imgs1012 + 'flying-saucer.png'">Welcome to Lesson 12! In Lesson 11, we coded our first two decision-points, i.e., branchings. In Lesson 12, we will code the MC's experience inside the UFO. Because it will form a pretty good chunk of story, we want to ensure that the player gets to experience it. Therefore, add <a target="_new" href="https://gist.github.com/kyrathasoft/0ba1d717433b78af4f8c7eaa55d6e162">this</a> code to passage {{{AfterEncounter}}}. This will cause the player to experience the capture/flying-saucer, regardless of the decision the player makes. We're railroading, but no more (and considerably less) that a novel railroads its [[reader|TwineLesson012Passage002]].
+
+<<tut-links "TwineLesson011Passage058" "TwineLesson012Passage002">>
+
+
+
+:: TwineLesson012Passage002 [deonna]
+<img align="left" vspace=5 hspace=10 @src="setup.imgs1012 + 'convergence-less12-psg1.png'">Remember at the tail-end of Lesson 11 I showed you that our story has two endpoints, {{{AfterEncounter}}} and {{{ExperimentedOn}}}. Well, as you can see by this page's screenshot, the code I had you add to passage {{{AfterEncounter}}} develops the story a bit futher but then ultimately leads to passage {{{ExperimentedOn}}}. We'd branched out, but now we're bottlenecking again.
+
+After satisfying yourself that passage {{{TextEperimentedOn}}} works well in conjunction with function {{{runTestCase()}}} in our story's javascript section, let's create another test passage. Name it {{{TestKilledAlien}}} and add <a target="_new" href="https://gist.github.com/kyrathasoft/188244a297052cd54d3c0e4df314900e">this</a> code to it. Remove the {{{debug}}} tag from passage {{{TestExperimentedOn}}} and add it instead to the new passage you just created.
+
+Has it crossed your mind that we're accumulating test passages that will bloat our compiled HTML file? It's true. I'm backing those passages up to a secret github.com gist file; that way, we can prune off test passages as desired, but can bring them back if needed in the future.
+
+
+:: TwineLesson012Passage003 [deonna]
+Run the game in your browser to test it. After successfully testing the text and links that run through {{{AfterEncouter}}}, you can modify test passage {{{TestKilledAlien}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/4c5bc9de50d4cdb7b183b77eed0b8c33">version 2</a> of that passage. After making that change, run and test the game again, and you'll be taken to passage {{{ExperimentedOn}}}.
+
+
+:: TwineLesson012Passage004 [deonna]
+
 <<tutorial-passages>>
 
