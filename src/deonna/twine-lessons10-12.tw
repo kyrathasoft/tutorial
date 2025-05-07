@@ -1126,19 +1126,49 @@ Don't forget to remove the {{{debug}}} tag from passage {{{TestCreatureDown}}}. 
 
 
 
+
 :: TwineLesson012Passage002 [deonna]
 <img align="left" vspace=5 hspace=10 @src="setup.imgs1012 + 'convergence-less12-psg1.png'">Remember at the tail-end of Lesson 11 I showed you that our story has two endpoints, {{{AfterEncounter}}} and {{{ExperimentedOn}}}. Well, as you can see by this page's screenshot, the code I had you add to passage {{{AfterEncounter}}} develops the story a bit futher but then ultimately leads to passage {{{ExperimentedOn}}}. We'd branched out, but now we're bottlenecking again.
 
 After satisfying yourself that passage {{{TextEperimentedOn}}} works well in conjunction with function {{{runTestCase()}}} in our story's javascript section, let's create another test passage. Name it {{{TestKilledAlien}}} and add <a target="_new" href="https://gist.github.com/kyrathasoft/188244a297052cd54d3c0e4df314900e">this</a> code to it. Remove the {{{debug}}} tag from passage {{{TestExperimentedOn}}} and add it instead to the new passage you just created.
 
-Has it crossed your mind that we're accumulating test passages that will bloat our compiled HTML file? It's true. I'm backing those passages up to a secret github.com gist file; that way, we can prune off test passages as desired, but can bring them back if needed in the future.
+Has it crossed your mind that we're accumulating test passages that will bloat our compiled HTML file? It's true. I'm backing those passages up to a secret github.com gist file; that way, we can prune off test passages as desired, but can bring them back if needed in the [[future|TwineLesson012Passage003]].
+
+<<tut-links "TwineLesson012Passage001" "TwineLesson012Passage003">>
+
+
 
 
 :: TwineLesson012Passage003 [deonna]
-Run the game in your browser to test it. After successfully testing the text and links that run through {{{AfterEncouter}}}, you can modify test passage {{{TestKilledAlien}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/4c5bc9de50d4cdb7b183b77eed0b8c33">version 2</a> of that passage. After making that change, run and test the game again, and you'll be taken to passage {{{ExperimentedOn}}}.
+Run the game in your browser to test it. After successfully testing the text and links that run through {{{AfterEncouter}}}, you can modify test passage {{{TestKilledAlien}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/4c5bc9de50d4cdb7b183b77eed0b8c33">version 2</a> of that passage. After making that change, update passage {{{ExperimentedOn}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/57ddc2ea7b3552f497a7f91b7f0aaaad">this</a> listing; you'll need to create passages {{{FakeFainted}}} and {{{StrainToSee}}}. Give each of those some placeholder text.
+
+Now run and test the game again, and you'll be taken to passage {{{ExperimentedOn}}}. [[$ct|TwineLesson012Passage004]].
+
+<<tut-links "TwineLesson012Passage002" "TwineLesson012Passage004">>
+
 
 
 :: TwineLesson012Passage004 [deonna]
+If you look at passage {{{ExperimentedOn}}}, you'll see that if we're coming from visiting {{{DrawKnife}}} we're unconscious as we're drawn into the UFO; otherwise, we're conscious and can decide to fake unconsciousness or try to visually catalog everything. Notice that regardless of whether we're conscious or unconscious upon being drawn into the flying-saucer, ultimately we're confronted with the same pair of options. We took advantage of returning consciousness to paint the scene a tad (hence the repeated visits to the passage to display different blocks of text). 
 
+We're going to have {{{FakeFainted}}} (i.e., pretending to remain unconscious) lead to the MC overhearing some things that will provide intel. {{{StrainToSee}}}, on the other hand, will lead the aliens to immediately prepare to perform tests on this terran [[mammal|TwineLesson012Passage005]].
+
+<<tut-links "TwineLesson012Passage003" "TwineLesson012Passage005">>
+
+
+
+:: TwineLesson012Passage005 [deonna]
+In the previous two branching points in the story, we almost immediately bottlenecked again. For this third branching point, we're going to branch a bit more extendedly. As we said on the previous page, one branch will play to the MC's covert-ops strengths, the other to his <a target="_new" href="https://www.ptsd.va.gov/professional/articles/article-pdf/id80573.pdf">SERE</a> <a target="_new" href="https://allhands.navy.mil/Stories/Display-Story/Article/1840396/training-the-best-for-the-worst/">training</a>.
+
+We'll refer to these as ''Branch Recon'' and ''Branch Torture''.
+
+Let's [[$ct|TwineLesson012Passage006]]
+
+<<tut-links "TwineLesson012Passage004" "TwineLesson012Passage006">>
+
+
+
+
+:: TwineLesson012Passage006 [deonna]
 <<tutorial-passages>>
 
