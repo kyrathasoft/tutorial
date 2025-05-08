@@ -1194,9 +1194,15 @@ When you're done testing, you can remove the {{{debug}}} tag from {{{TestExperim
 
 
 :: TwineLesson012Passage008 [deonna]
-Now let's turn our attention back to branch Recon.
+Now let's turn our attention back to branch Recon. If you haven't already, be sure passages {{{FakeFainted}}} and {{{StrainToSee}}} have been created. {{{FakeFainted}}} should be given <a target="_new" href="https://gist.github.com/kyrathasoft/c321262a667c9ed34383566563c3760e">this</a> code. Passage {{{StrainToSee}}} begins branch ''Torture''; we're not really working on that branch yet, so just give it this text: {{{Straining to see...}}}
 
+You'll notice that in {{{FakeFainted}}} we used our widget {{{<<TableOfChoices>>}}} to link to either passage {{{IgnoreDrone}}} or {{{SmashDrone}}}. Give passage {{{IgnoreDrone}}} <a target="_new" href="https://gist.github.com/kyrathasoft/7484ba369d3a419282b82fdf1adf8704">this</a> code, and passage {{{SmashDrone}}} <a target="_new" href="https://gist.github.com/kyrathasoft/d2ba99d71812f678d3b91db65d89af37">this</a> code.
 
 :: TwineLesson012Passage009 [deonna]
+
+
+
+
+:: TwineLesson012Passage010 [deonna]
 <<tutorial-passages>>
 
