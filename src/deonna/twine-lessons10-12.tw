@@ -1170,10 +1170,33 @@ Let's [[$ct|TwineLesson012Passage006]]
 
 
 :: TwineLesson012Passage006 [deonna]
-You know what? Make an adjustment to widget {{{<<loop>>}}}. Rename it to {{{<<lb>}}} $md signifies we're telling $sc to ''l''oop ''b''ack to the same passage. Why bother renaming the widget? Well, it saves two characters each type the widget is called. If we use the widget many dozens of times through the $sg, that can add up. We want to keep the compiled HTML story file as compact as possible. Now go through menu combo {{{Story}}} >> {{{Search and Replace}}} and replace instances of {{{<<loop>>}}} with {{{<<lp>>}}}.
+You know what? Make an adjustment to widget {{{<<loop>>}}}. Rename it to {{{<<lb>}}} $md signifies we're telling $sc to ''l''oop ''b''ack to the same passage. Why bother renaming the widget? Well, it saves two characters each time the widget is called. If we use the widget many dozens of times through the $sg, that can add up. We want to keep the compiled HTML story file as compact as possible. Now go through menu combo {{{Story}}} >> {{{Search and Replace}}} and replace instances of {{{<<loop>>}}} with {{{<<lb>>}}}.
+
+To support the operation of widget {{{<<lb>>}}}, create a special passage named {{{PassageDone}}}. In that passage, add the following $ts: {{{<<set $p to passage()>>}}}. Then, in special passage {{{StoryInit}}}, add the following comment: {{{/* reserve $p for use by special passage PassageDone */}}}. Your {{{StoryInit}}} passage should now read like <a target="_new" href="https://gist.github.com/kyrathasoft/c1e3c2e19b6a80f4121c9d5b612720b8">this</a>.
+
+Let's [[$ctl|TwineLesson012Passage007]]
+
+<<tut-links "TwineLesson012Passage005" "TwineLesson012Passage007">>
 
 
 
 :: TwineLesson012Passage007 [deonna]
+Update passage {{{ExperimentedOn}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/ce4894a2a0f8068085ed0df9cb3ab3be">this</a> listing, and note the additional $ts added near the top of the passage.
+
+Add the following $ts to passage {{{PsgCheckVars}}}, immediately below the line that sets {{{$inventory}}}:
+
+{{{$specimenInventory}}} = {{{<<= $specimenInventory>><br>}}} Now, to test this change to passage {{{ExperimentedOn}}}, temporarily remove the {{{debug}}} tag from passage {{{TestKilledAlien}}} and add the tag instead to {{{TestExperimentedOn}}}.
+
+When you're done testing, you can remove the {{{debug}}} tag from {{{TestExperimentedOn}}} and return it to {{{TestKilledAlien}}}. Notice we're using a story variable, {{{$releaseVersionOfGame}}} to control whether or not a //This Game's Still In Development// message is displayed. Pretty [[handy|TwineLesson012Passage008]].
+
+<<tut-links "TwineLesson012Passage006" "TwineLesson012Passage008">>
+
+
+
+:: TwineLesson012Passage008 [deonna]
+Now let's turn our attention back to branch Recon.
+
+
+:: TwineLesson012Passage009 [deonna]
 <<tutorial-passages>>
 
