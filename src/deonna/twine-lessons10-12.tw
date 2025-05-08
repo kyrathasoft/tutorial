@@ -1170,5 +1170,10 @@ Let's [[$ct|TwineLesson012Passage006]]
 
 
 :: TwineLesson012Passage006 [deonna]
+You know what? Make an adjustment to widget {{{<<loop>>}}}. Rename it to {{{<<lb>}}} $md signifies we're telling $sc to ''l''oop ''b''ack to the same passage. Why bother renaming the widget? Well, it saves two characters each type the widget is called. If we use the widget many dozens of times through the $sg, that can add up. We want to keep the compiled HTML story file as compact as possible. Now go through menu combo {{{Story}}} >> {{{Search and Replace}}} and replace instances of {{{<<loop>>}}} with {{{<<lp>>}}}.
+
+
+
+:: TwineLesson012Passage007 [deonna]
 <<tutorial-passages>>
 
