@@ -1219,5 +1219,28 @@ Let's [[$ctl|TwineLesson012Passage010]].
 
 
 :: TwineLesson012Passage010 [deonna]
+Since we've implement saves only being permissible in passages tagged {{{checkpoint}}}, let's also turn off the back and forward history buttons by adding this line to the javascript section of our sample story: {{{Config.history.controls = false;}}} 
+
+Now, we've got to ensure that there'a back link where needed. Passage {{{PsgChkVars}}} already has one at the bottom, but add one to the top of that passage. Also add one (see the following $ts) at the top of our {{{YourInventory}}} passage: {{{<<link back>><<goto $return>><</link>><br><br>}}} You may need to add line [[breaks|TwineLesson012Passage011]].
+
+<<tut-links "TwineLesson012Passage009" "TwineLesson012Passage011">>
+
+
+
+:: TwineLesson012Passage011 [deonna]
+Add this to your StoryStylesheet section:
+
+  {{{.yellow {}}}
+	  <span class="tab">color: #FFFF8F;</span>
+  {{{}}}}
+{{{}}}
+Then, create <a target="_new" href="https://gist.github.com/kyrathasoft/151035e46cb8f4c4946e9f8aa902bd66">this</a> widget in your {{{<<MyWidgets>>}}} passage. Finally, add a {{{checkpoint}}} tag to passages {{{CreatureDown}}} and {{{ExperimentedOn}}}.
+
+Let's [[$ctl|TwineLesson012Passage012]].
+
+<<tut-links "TwineLesson012Passage010" "TwineLesson012Passage012">>
+
+
+:: TwineLesson012Passage012 [deonna]
 <<tutorial-passages>>
 
