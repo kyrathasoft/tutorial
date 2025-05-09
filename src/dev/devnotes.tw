@@ -1,6 +1,12 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 5/9/2025__ 
+# commented-out brevity toggle; whole game is now {{{brevity == false}}}
+
+__Notes from 5/8/2025__ 
+# made considerable progress; word-count is 7K+, 40 passages
+
 __Notes from 5/6/2025__ 
 # decided to make third branching-point at {{{ExperimentedOn}}} more extended that the previous two
 

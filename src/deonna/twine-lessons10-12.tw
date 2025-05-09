@@ -1205,7 +1205,16 @@ You'll notice that in {{{FakeFainted}}} we used our widget {{{<<TableOfChoices>>
 
 
 :: TwineLesson012Passage009 [deonna]
+Since it turns out this game is not one based on locations that can be repeatedly visited (triggering their descriptions to display), I'm commenting out the brevity toggle in the sidebar. Brevity will be false for entire story. To see this in the code, look in $tut_tit's javascript section. You'll see that the following block of code has been made 'invisible' to $sc via commenting:
 
+{{{Setting.addToggle("brevity", {}}}
+	<span class="tab">label : "set Brevity to true for shorter passage descriptions",</span>
+  <span class="tab">default: false</span>
+{{{});}}}
+
+Let's [[$ctl|TwineLesson012Passage010]].
+
+<<tut-links "TwineLesson012Passage008" "TwineLesson012Passage010">>
 
 
 
