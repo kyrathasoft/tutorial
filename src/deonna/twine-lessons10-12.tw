@@ -1242,5 +1242,16 @@ Let's [[$ctl|TwineLesson012Passage012]].
 
 
 :: TwineLesson012Passage012 [deonna]
+Sometimes during development (whether a game specifically, or other software), you'll suddenly realize you left something out minutes, hours, or even days ago in your programming efforts. I left out a description of the alien for passage. Add widget {{{<<AlienDesc>>}}} to your {{{MyWidgets}}} passage and use <a target="_new" href="https://gist.github.com/kyrathasoft/71c00e51fac3779a62bdd31d597c1dbe">this</a> code. Then, update passage {{{TookAlienItems}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/d7403c77287c589b4fc8b01885c765f5">this</a>, and passage {{{AlienCorpse}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/2f3ac6477b7f98470da00e2e00bf6ba3">this</a> code [[listing|TwineLesson012Passage013]].
+
+<<tut-links "TwineLesson012Passage011" "TwineLesson012Passage013">>
+
+
+
+:: TwineLesson012Passage013 [deonna]
+Add a couple story variables to {{{StoryInit}}} $md {{{$currentScore}}} and set it to zero, and {{{$maxScore}}} and set it to 100. Then, create passage {{{StoryCaption}}}. Give it the {{{plumbing}}} tag and the following contents: {{{Score: <<= $currentScore>> of <<= $maxScore>> points}}}. Test-run the game and you'll see we now have a way to give the player feedback on their progress.
+
+
+:: TwineLesson012Passage014 [deonna]
 <<tutorial-passages>>
 
