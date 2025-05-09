@@ -1183,6 +1183,8 @@ Let's [[$ctl|TwineLesson012Passage007]]
 :: TwineLesson012Passage007 [deonna]
 Update passage {{{ExperimentedOn}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/ce4894a2a0f8068085ed0df9cb3ab3be">this</a> listing, and note the additional $ts added near the top of the passage.
 
+This will require that you add <a target="_new" href="https://gist.github.com/kyrathasoft/8b063a684f2b7bd43bda54f2ef39ca5b">this</a> widget to passage {{{MyWidgets}}}.
+
 Add the following $ts to passage {{{PsgCheckVars}}}, immediately below the line that sets {{{$inventory}}}:
 
 {{{$specimenInventory}}} = {{{<<= $specimenInventory>><br>}}} Now, to test this change to passage {{{ExperimentedOn}}}, temporarily remove the {{{debug}}} tag from passage {{{TestKilledAlien}}} and add the tag instead to {{{TestExperimentedOn}}}.
