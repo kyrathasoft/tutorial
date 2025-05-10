@@ -1249,9 +1249,20 @@ Sometimes during development (whether a game specifically, or other software), y
 
 
 :: TwineLesson012Passage013 [deonna]
-Add a couple story variables to {{{StoryInit}}} $md {{{$currentScore}}} and set it to zero, and {{{$maxScore}}} and set it to 100. Then, create passage {{{StoryCaption}}}. Give it the {{{plumbing}}} tag and the following contents: {{{Score: <<= $currentScore>> of <<= $maxScore>> points}}}. Test-run the game and you'll see we now have a way to give the player feedback on their progress.
+Add a couple story variables to {{{StoryInit}}} $md {{{$currentScore}}} and set it to zero, and {{{$maxScore}}} and set it to 100. Then, create passage {{{StoryCaption}}}. Give it the {{{plumbing}}} tag and the following contents: {{{Score: <<= $currentScore>> of <<= $maxScore>> points}}}. 
+
+Create passage {{{TestFakeFainted}}} and give it <a target="_new" href="https://gist.github.com/kyrathasoft/065c79bfe56de39d45df901097cbb6c9">this</a> code. Notice that lines 25 through 28 push a total of four past visits to passage {{{FakeFainted}}} onto State.expired. That way, when we go to that passage via {{{TestFakeFainted}}}, we trigger the 5th visit giving us a choice-point to ignore or smash the small drone that has pierced our skin. Move the {{{debug}}} tag to passage {{{TestFakeFainted}}}, from {{{TestKilledAlien}}}.
+
+Test-run the game and you'll see we now have a way via {{{StoryCaption}}} to give the player feedback on their progress via their current accumulate points out of a [[maximumm of 100|TwineLesson012Passage014]].
+
+<<tut-links "TwineLesson012Pasage012" "TwineLesson012Passage014">>
+
 
 
 :: TwineLesson012Passage014 [deonna]
+Passage 14...
+
+
+:: TwineLesson012Passage015 [deonna]
 <<tutorial-passages>>
 
