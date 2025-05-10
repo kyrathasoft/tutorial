@@ -1260,9 +1260,29 @@ Test-run the game and you'll see we now have a way via {{{StoryCaption}}} to giv
 
 
 :: TwineLesson012Passage014 [deonna]
-Passage 14...
+I've made a backup of our various test passages in {{{/src/ts-listings}}} of this tutorial project, and at <a target="_new" href="https://gist.github.com/kyrathasoft/23b0cb3c4df3383f1ba6b3800fa824bf">this</a> secret Github gist URL. Create a new test passage named {{{TestSmashDrone}}} and give it <a target="_new" href="https://gist.github.com/kyrathasoft/d0324efa763f312180b6a709b516128d">this</a> code.
+
+Now, delete these passages: {{{TestRemembrance, TestTheCreature}}}. If we ever need the two test passages we deleted, we can retrieve them from backup. You should now have five test passages remaining: {{{TestCreatureDown, TestExperimentedOn, TestKilledAlien, TestFakeFainted}}} and {{{TestSmashDrone}}}.
+
+Let's [[$ctl|TwineLesson012Passage015]].
+
+<<tut-links "TwineLesson012Passage013" "TwineLesson012Passage015">>
+
 
 
 :: TwineLesson012Passage015 [deonna]
+Modify passage {{{EscapeFrom}}} so that it has a {{{nobr}}} tag and <a target="_new" href="https://gist.github.com/kyrathasoft/b815796477dfc970f3366dd27d70b493">these</a> contents. 
+
+Next, modify passage {{{TestSmashDrone}}} to <a target="_new" href="https://gist.github.com/kyrathasoft/30a2cc214b17b32f77a6c23c67977ecd">this</a> code listing.
+
+Now, when you test-run the game, $sc should take you to what it believes is your third visit to passage {{{EscapeFrom}}} and should give you this sentence: ''You are seeking a way out of this room.''
+
+Let's [[$ctl|TwineLesson012Passage016]].
+
+<<tut-links "TwineLesson012Passage014" "TwineLesson012Passage016">>
+
+
+
+:: TwineLesson012Passage016 [deonna]
 <<tutorial-passages>>
 

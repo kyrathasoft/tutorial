@@ -1,0 +1,318 @@
+/**************************************************
+/* code for TestRemembrance follows */
+/**************************************************
+
+/* Thanks to GreyElf for suggesting a dedicated passage (in this case, with a tag named "debug") for simulating playthrough to a certain place in the story, for debugging purposes.  There is a function defined on the setup object in the javascript section of this twine named runTestCase( ). It looks for a passage tagged "debug". Finding one, it then executes whatever is in that passage via jQuery.wikiPassage(testcase.name) */
+
+/* Code for padding history with the required Moments */
+ <<script>>
+  setup.addVisits("Campfire")
+  setup.addVisits("YourTent")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourTent")
+  setup.addVisits("Campfire")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("Campfire") 
+  setup.addVisits("SkeletonHollow")
+  <</script>>
+
+/* Code for assigning alternative defaults to Story Variables */
+<<set $alien to "none">>
+<<set $alienInvTaken to false>>
+<<set $cupsOfCoffeeDrank to 2>>
+<<set $instantCoffeePackets to 0>>
+<<set $flashlightOn to false>>
+
+/* Change which Passage is shown first, if not using "Test From Here" */
+<<set Config.passages.start to "Remembrance">>
+
+
+/**************************************************
+/* code for TestTheCreature follows */
+/**************************************************
+
+/* Code for padding history with the required Moments */
+ <<script>>
+  setup.addVisits("Campfire")
+  setup.addVisits("YourTent")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourTent")
+  setup.addVisits("Campfire")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("Campfire")  
+  setup.addVisits("SkeletonHollow")
+  setup.addVisits("Remembrance")
+  <</script>>
+
+/* Code for assigning alternative defaults to Story Variables */
+<<set $alien to "none">>
+<<set $alienInvTaken to false>>
+<<set $cupsOfCoffeeDrank to 2>>
+<<set $instantCoffeePackets to 0>>
+<<set $flashlightOn to false>>
+
+/* Change which Passage is shown first, if not using "Test From Here" */
+<<set Config.passages.start to "TheCreature">>
+
+
+/**************************************************
+/* code for TestCreatureDown follows */
+/**************************************************
+
+/* Code for padding history with the required Moments */
+ <<script>>
+  setup.addVisits("Campfire")
+  setup.addVisits("YourTent")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourTent")
+  setup.addVisits("Campfire")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("Campfire")  
+  setup.addVisits("SkeletonHollow")
+  setup.addVisits("Remembrance")
+  setup.addVisits("TheCreature")
+  <</script>>
+
+/* Code for assigning alternative defaults to Story Variables */
+<<set $alien to "none">>
+<<set $alienInvTaken to false>>
+<<set $cupsOfCoffeeDrank to 2>>
+<<set $instantCoffeePackets to 0>>
+<<set $flashlightOn to false>>
+
+/* Change which Passage is shown first, if not using "Test From Here" */
+<<set Config.passages.start to "CreatureDown">>
+
+
+/**************************************************
+/* code for TestWingedIt follows */
+/**************************************************
+
+/* Code for padding history with the required Moments */
+ <<script>>
+  setup.addVisits("Campfire")
+  setup.addVisits("YourTent")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourTent")
+  setup.addVisits("Campfire")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("Campfire")  
+  setup.addVisits("SkeletonHollow")
+  setup.addVisits("Remembrance")
+  setup.addVisits("TheCreature")
+  setup.addVisits("CreatureDown")
+  setup.addVisits("ShineFlashlight")
+  setup.addVisits("PostAlien")
+  <</script>>
+
+/* Code for assigning alternative defaults to Story Variables */
+<<set $alien to "none">>
+<<set $alienInvTaken to false>>
+<<set $catMouse to "track">>
+<<set $cupsOfCoffeeDrank to 2>>
+<<set $instantCoffeePackets to 0>>
+<<set $flashlightOn to false>>
+
+/* Change which Passage is shown first, if not using "Test From Here" */
+<<set Config.passages.start to "WingedTheAlien">>
+
+/**************************************************
+/* code for TestExperimentedOn follows */
+/**************************************************
+
+/* Code for padding history with the required Moments */
+ <<script>>
+  setup.addVisits("Campfire")
+  setup.addVisits("YourTent")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourTent")
+  setup.addVisits("Campfire")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("Campfire")  
+  setup.addVisits("SkeletonHollow")
+  setup.addVisits("Remembrance")
+  setup.addVisits("TheCreature")
+  setup.addVisits("CreatureDown")
+  setup.addVisits("DrawKnife")
+  <</script>>
+
+/* Code for assigning alternative defaults to Story Variables */
+<<set $alien to "experimentedOnYou">>
+<<set $alienInvTaken to false>>
+<<set $catMouse to "none">>
+<<set $cupsOfCoffeeDrank to 2>>
+<<set $instantCoffeePackets to 0>>
+<<set $flashlightOn to false>>
+
+/* Change which Passage is shown first, if not using "Test From Here" */
+<<set Config.passages.start to "ExperimentedOn">>
+
+
+/**************************************************
+/* code for TestExperimentedOn follows */
+/**************************************************
+
+/* Code for padding history with the required Moments */
+ <<script>>
+  setup.addVisits("Campfire")
+  setup.addVisits("YourTent")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourTent")
+  setup.addVisits("Campfire")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("Campfire")  
+  setup.addVisits("SkeletonHollow")
+  setup.addVisits("Remembrance")
+  setup.addVisits("TheCreature")
+  setup.addVisits("CreatureDown")
+  setup.addVisits("ShineFlashlight")
+  setup.addVisits("PostAlien")
+  setup.addVisits("TookAlienItems")
+  setup.addVisits("Campfire")
+  <</script>>
+
+/* Code for assigning alternative defaults to Story Variables */
+<<set $alien to "killed">>
+  <<for _i = 0; _i lt setup.alien.carried.length; _i++>>
+  	<<run $inventory.pushUnique(setup.alien.carried[_i])>>
+  <</for>>
+<<set $alienInvTaken to true>>
+<<set $catMouse to "track">>
+<<set $cupsOfCoffeeDrank to 2>>
+<<set $instantCoffeePackets to 0>>
+<<set $flashlightOn to false>>
+
+/* Change which Passage is shown first, if not using "Test From Here" */
+<<set Config.passages.start to "AfterEncounter">>
+
+/**************************************************
+/* code for TestFakeFainted follows */
+/**************************************************
+
+/* Code for padding history with the required Moments */
+ <<script>>
+  setup.addVisits("Campfire")
+  setup.addVisits("YourTent")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourTent")
+  setup.addVisits("Campfire")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("Campfire")  
+  setup.addVisits("SkeletonHollow")
+  setup.addVisits("Remembrance")
+  setup.addVisits("TheCreature")
+  setup.addVisits("CreatureDown")
+  setup.addVisits("ShineFlashlight")
+  setup.addVisits("PostAlien")
+  setup.addVisits("TookAlienItems")
+  setup.addVisits("Campfire")
+  setup.addVisits("AfterEncounter")
+  setup.addVisits("ExperimentedOn")
+  setup.addVisits("FakeFainted")
+  setup.addVisits("FakeFainted")
+  setup.addVisits("FakeFainted")
+  setup.addVisits("FakeFainted")
+  <</script>>
+
+/* Code for assigning alternative defaults to Story Variables */
+<<set $alien to "killed">>
+  <<for _i = 0; _i lt setup.alien.carried.length; _i++>>
+  	<<run $inventory.pushUnique(setup.alien.carried[_i])>>
+  <</for>>
+<<set $alienInvTaken to true>>
+<<set $catMouse to "track">>
+<<set $cupsOfCoffeeDrank to 2>>
+<<set $instantCoffeePackets to 0>>
+<<set $flashlightOn to false>>
+
+/* Change which Passage is shown first, if not using "Test From Here" */
+<<set Config.passages.start to "FakeFainted">>
+
+/**************************************************
+/* code for TestSmashDrone follows */
+/**************************************************
+
+/* Code for padding history with the required Moments */
+ <<script>>
+  setup.addVisits("Campfire")
+  setup.addVisits("YourTent")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourBackpack")
+  setup.addVisits("YourTent")
+  setup.addVisits("Campfire")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("MakeCoffee")
+  setup.addVisits("EnjoyCoffee")
+  setup.addVisits("Campfire")  
+  setup.addVisits("SkeletonHollow")
+  setup.addVisits("Remembrance")
+  setup.addVisits("TheCreature")
+  setup.addVisits("CreatureDown")
+  setup.addVisits("ShineFlashlight")
+  setup.addVisits("PostAlien")
+  setup.addVisits("TookAlienItems")
+  setup.addVisits("Campfire")
+  setup.addVisits("AfterEncounter")
+  setup.addVisits("ExperimentedOn")
+  setup.addVisits("FakeFainted")
+  setup.addVisits("FakeFainted")
+  setup.addVisits("FakeFainted")
+  setup.addVisits("FakeFainted")
+  setup.addVisits("FakeFainted")
+  setup.addVisits("SmashDrone")
+  setup.addVisits("SmashDrone")
+  setup.addVisits("AlarmBlares")
+  setup.addVisits("AlarmBlares")
+  
+  <</script>>
+
+/* Code for assigning alternative defaults to Story Variables */
+<<set $alien to "killed">>
+  <<for _i = 0; _i lt setup.alien.carried.length; _i++>>
+  	<<run $inventory.pushUnique(setup.alien.carried[_i])>>
+  <</for>>
+<<set $alienInvTaken to true>>
+<<set $catMouse to "track">>
+<<set $cupsOfCoffeeDrank to 2>>
+<<set $instantCoffeePackets to 0>>
+<<set $flashlightOn to false>>
+
+/* Change which Passage is shown first, if not using "Test From Here" */
+<<set Config.passages.start to "EscapeFrom">>
