@@ -1,6 +1,11 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 5/12/2025__ 
+# factored out showing non-empty inventory in {{{EscapeFrom}}}; <a target="_new" href="https://gist.github.com/kyrathasoft/1180566078529dc54b8412b39f1c39a1">v3</a>
+# used a widget, {{{<<<<ShowNonEmptyInventoryWhileInPsgEscapeFrom>>>>}}}, to factor 3 lines of $ts from {{{EscapeFrom}}}
+# factored-out into a <a target="_new" href="https://gist.github.com/kyrathasoft/11d3f2e7dfb4320ddb10a4b07cc07098">widget</a> the 19-line $ts to show {{{EscapeFrom}}} room items
+
 __Notes from 5/11/2025__ 
 # working on an action/direct-object system for {{{EscapeFrom}}}
 # v1 of the {{{EscapeFrom}}} code is <a target="_new" href="https://gist.github.com/kyrathasoft/21908ec8f10e1f715f28d0458c1ed2c2">here</a>

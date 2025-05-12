@@ -1284,7 +1284,10 @@ Let's [[$ctl|TwineLesson012Passage016]].
 
 
 :: TwineLesson012Passage016 [deonna]
-It turns out that implementing an action/direct object system for the {{{EscapeFrom}}} room is non-trivial. We're dealing with nine inventory items and three room items available to the player after crushing the drone and destroying the robot. I've moved some of the $ts from {{{EscapeFrom}}} into <a target="_new" href="https://gist.github.com/kyrathasoft/0f9dc162b985efa8d77f4ff38cbe627d">a function</a> on the setup object. Therefore, now, passage {{{EscapeFrom}}} has <a target="_new" href="https://gist.github.com/kyrathasoft/08d88618b370810641135a997681938e">these</a> contents.
+It turns out that implementing an action/direct object system for the {{{EscapeFrom}}} room is non-trivial. We're dealing with nine inventory items and three room items available to the player after crushing the drone and destroying the robot. I've moved some of the $ts from {{{EscapeFrom}}} into <a target="_new" href="https://gist.github.com/kyrathasoft/0f9dc162b985efa8d77f4ff38cbe627d">a function</a> on the setup object. Therefore, now, passage {{{EscapeFrom}}} has <a target="_new" href="https://gist.github.com/kyrathasoft/08d88618b370810641135a997681938e">these</a> contents. And although there is a cogent argument to be made for whitespace in $ts, version 4 of the $ts for {{{EscapeFrom}}} has been condensed to <a target="_new" href="https://gist.github.com/kyrathasoft/692f260cf3578216753f944e67559020">this</a> listing. Let's [[$ctl|TwineLesson012Passage017]]
+
+<<tut-links "TwineLesson012Passage015" "TwineLesson012Passage017">>
+
 
 
 :: TwineLesson012Passage017 [deonna]
