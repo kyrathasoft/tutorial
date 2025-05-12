@@ -4,6 +4,8 @@
 __Notes from 5/11/2025__ 
 # working on an action/direct-object system for {{{EscapeFrom}}}
 # v1 of the {{{EscapeFrom}}} code is <a target="_new" href="https://gist.github.com/kyrathasoft/21908ec8f10e1f715f28d0458c1ed2c2">here</a>
+# <a target="_new" href="https://gist.github.com/kyrathasoft/08d88618b370810641135a997681938e">v2</a> of {{{EscapeFrom}}} after moving some $ts into a function on the setup object
+# retroactively added $ts to increment {{{$currentScore}}} upon 1st visit to {{{Remembrance}}}
 
 __Notes from 5/9/2025__ 
 # commented-out brevity toggle; whole game is now {{{brevity == false}}}
