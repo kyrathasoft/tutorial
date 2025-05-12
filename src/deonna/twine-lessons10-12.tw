@@ -1284,5 +1284,9 @@ Let's [[$ctl|TwineLesson012Passage016]].
 
 
 :: TwineLesson012Passage016 [deonna]
+It turns out that implementing an action/direct object system for the {{{EscapeFrom}}} room is non-trivial. We're dealing with nine inventory items and three room items available to the player after crushing the drone and destroying the robot.
+
+
+:: TwineLesson012Passage017 [deonna]
 <<tutorial-passages>>
 
