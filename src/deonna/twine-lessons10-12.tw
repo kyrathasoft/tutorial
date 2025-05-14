@@ -1291,5 +1291,10 @@ It turns out that implementing an action/direct object system for the {{{EscapeF
 
 
 :: TwineLesson012Passage017 [deonna]
+<a target="_new" href="https://gist.github.com/kyrathasoft/0c8ac5924e100ca6b0a3304a0ae12398">Here</a> is the next version of {{{EscapeFrom}}} and it depends on {{{StoryInit}}} being updated to <a target="_new" href="https://gist.github.com/kyrathasoft/c82924a28b0a4fd6d6a59e4f52fe2879">this</a> listing.
+
+
+
+:: TwineLesson012Passage018 [deonna]
 <<tutorial-passages>>
 
