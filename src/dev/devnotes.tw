@@ -1,6 +1,10 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 5/14/2025__ 
+# decided not to try to do EVERYTHING in passage {{{EscapeFrom}}}
+# moved examining objects into <a target="_new" href="https://gist.github.com/kyrathasoft/78b695415571e188ea898a9f4791b2fa">passage</a> {{{EscapeFromExamine}}}
+
 __Notes from 5/13/2025__ 
 # got 'examine {obj} working for items in passage {{{EscapeFrom}}}
 
