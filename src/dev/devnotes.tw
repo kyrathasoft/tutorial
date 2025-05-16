@@ -1,6 +1,11 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 5/15/2025__ 
+# got plumbing installed for combining two items while "in" passage {{{EscapeFrom}}}
+# I still need to code a passage to describe the result of item combination and that (next line)
+# removes the 'combined' items and replaces them with the resulting item
+
 __Notes from 5/14/2025__ 
 # decided not to try to do EVERYTHING in passage {{{EscapeFrom}}}
 # moved examining objects into <a target="_new" href="https://gist.github.com/kyrathasoft/78b695415571e188ea898a9f4791b2fa">passage</a> {{{EscapeFromExamine}}}
