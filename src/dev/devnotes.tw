@@ -1,6 +1,11 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 5/16/2025__ 
+# got Score incrementing working
+# got two item combos working that produce 1) wet hankie and 2) a small spot of gray sludge
+# somewhere around 1200 words added in the past forty-eight hours (14th-16th of May 2025)
+
 __Notes from 5/15/2025__ 
 # got plumbing installed for combining two items while "in" passage {{{EscapeFrom}}}
 # I still need to code a passage to describe the result of item combination and that (next line)
