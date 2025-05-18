@@ -3,6 +3,14 @@
 
 __Notes from 5/18/2025__ 
 # set up plumbing for using one item on another while trapped in initial chamber in the UFO
+# implemented using objects on self in the initial UFO room
+# implemented result of applying sludge (canteen + capsule) to myself
+# the above implementation includes healing injury and removing remaining sludge from inventory
+# I've now implemented 'use canteen' on 'metallic mesh belt', and 'belt' on 'canteen'
+# I've now implemented 'combine canteen' with 'metallic mesh belt' and vice versa
+# In all four of the above cases, we call <a target="_new" href="https://gist.github.com/kyrathasoft/c017f9db0e4271b8c15602f2b7532762">widget</a> {{{<<CombineMeshBeltWithCanteen>>}}}
+# Implemented combine canteen/drone and drone/canteen
+# Implemented use canteen/drone and drone/canteen
 
 __Notes from 5/17/2025__ 
 # finished {{{EscapeFrom}}} items being combined with water from your canteen
