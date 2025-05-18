@@ -1,6 +1,16 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 5/18/2025__ 
+# set up plumbing for using one item on another while trapped in initial chamber in the UFO
+
+__Notes from 5/17/2025__ 
+# finished {{{EscapeFrom}}} items being combined with water from your canteen
+# tweaked {{{<<widget ItemComboFailed>>}}} to give a better phrased response when your canteen is involved
+# I think I've exhausted item combinations
+# I think I can save myself work by getting rid of 'drop' and 'take' (just make them implicit/automatic) {next line}
+# that'll leave only 'salvage' and 'use' to be implemented
+
 __Notes from 5/16/2025__ 
 # got Score incrementing working
 # got two item combos working that produce 1) wet hankie and 2) a small spot of gray sludge
