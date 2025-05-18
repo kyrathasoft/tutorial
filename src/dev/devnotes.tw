@@ -11,6 +11,7 @@ __Notes from 5/18/2025__
 # In all four of the above cases, we call <a target="_new" href="https://gist.github.com/kyrathasoft/c017f9db0e4271b8c15602f2b7532762">widget</a> {{{<<CombineMeshBeltWithCanteen>>}}}
 # Implemented combine canteen/drone and drone/canteen
 # Implemented use canteen/drone and drone/canteen
+# sorted a bug in {{{ComboResult}}} caused by a missing {{{<</switch>>}}}
 
 __Notes from 5/17/2025__ 
 # finished {{{EscapeFrom}}} items being combined with water from your canteen
