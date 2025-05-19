@@ -12,6 +12,8 @@ __Notes from 5/18/2025__
 # Implemented combine canteen/drone and drone/canteen
 # Implemented use canteen/drone and drone/canteen
 # sorted a bug in {{{ComboResult}}} caused by a missing {{{<</switch>>}}}
+# you can now combine myself/KaBar and vice versa
+# you can now use myself/Kabar and vice versa
 
 __Notes from 5/17/2025__ 
 # finished {{{EscapeFrom}}} items being combined with water from your canteen
