@@ -8,6 +8,10 @@ __Notes from 5/19/2025__
 # In {{{ComboResult}}}, replaced text desc with widget {{{<<CanteenPlusCapsule>>}}} in two places
 # In {{{UsageResult}}}, replaced text desc with widget {{{<<CanteenPlusCapsule>>}}} in two places
 # I now have damp hankie and metallic cloak showing (worn) where/when appropriate
+# installed TADS and read <a target="_new" href="https://www.tads.org/t3doc/doc/t3QuickStart.htm#documentation">here</a> down to No. 2
+# using canteen with all other {{{EscapeFrom}}} room/inv items generate sensical responses
+# refactored desc for canteen/revolver & vice-versa to {{{<<WetRevolver>>}}}
+# used the above line's widget twice each in {{{ComboResult}}} and {{{UsageResult}}}
 
 __Notes from 5/18/2025__ 
 # set up plumbing for using one item on another while trapped in initial chamber in the UFO
