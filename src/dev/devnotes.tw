@@ -12,6 +12,9 @@ __Notes from 5/19/2025__
 # using canteen with all other {{{EscapeFrom}}} room/inv items generate sensical responses
 # refactored desc for canteen/revolver & vice-versa to {{{<<WetRevolver>>}}}
 # used the above line's widget twice each in {{{ComboResult}}} and {{{UsageResult}}}
+# so, I think canteen mated with all other objects in inventory and {{{EscapeFrom}}} is working...
+# widget {{{<<KnifeAndGunBelt>>}}} serves four instances of combining gunbelt/knife across two passages
+
 
 __Notes from 5/18/2025__ 
 # set up plumbing for using one item on another while trapped in initial chamber in the UFO
