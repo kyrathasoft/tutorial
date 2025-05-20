@@ -14,7 +14,7 @@ __Notes from 5/19/2025__
 # used the above line's widget twice each in {{{ComboResult}}} and {{{UsageResult}}}
 # so, I think canteen mated with all other objects in inventory and {{{EscapeFrom}}} is working...
 # widget {{{<<KnifeAndGunBelt>>}}} serves four instances of combining gunbelt/knife across two passages
-
+# combining gunbelt/revolver now gives one of four random responses
 
 __Notes from 5/18/2025__ 
 # set up plumbing for using one item on another while trapped in initial chamber in the UFO
