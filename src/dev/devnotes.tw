@@ -11,6 +11,7 @@ __ Notes from 5/20/2025__
 # tweaked widget {{{<<WearMetallicCloak>>}}} so call to {{{<<IncrementScore>>}}} makes a Dialog unnecessary
 # expanded on widget {{{<<widget WearDampHandkerchief>>}}} so it randomly picks one of two responses
 # no more cases in {{{ComboResult}}} or {{{UsageREsult}}} for which I haven't created a resuable widget
+# implemented cutting handkerchief (dry or damp) into cloth strips
 
 __Notes from 5/19/2025__ 
 # In {{{UsageResult}}}, replaced two duplicate text blocks with widget {{{<<WetHankie>>}}}
