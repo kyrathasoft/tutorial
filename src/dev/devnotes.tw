@@ -1,6 +1,10 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes for 5/21/2025__ 
+# do I want to make it possible to sever the drone with the KaBar?
+# If so, would that have same effect as 'salvage'-> drone
+
 __ Notes from 5/20/2025__ 
 # yesterday I got all canteen interactions sorted
 # replaced all text for canteen/myself with widget {{{<<CanteenAndMe>>}}}, for code re-use
@@ -14,6 +18,8 @@ __ Notes from 5/20/2025__
 # implemented cutting handkerchief (dry or damp) into cloth strips
 # discovered I'd imped knife->myself but not myself->knife; fixed
 # note that 'combine' knife-> or self-knife foreshadows what happens if 'use' knife-myself & reverse
+# found I'd failed to implement 'use' metallic belt -> knife
+# found I'd failed to implement 'combine' gray capsule -> knife
 
 __Notes from 5/19/2025__ 
 # In {{{UsageResult}}}, replaced two duplicate text blocks with widget {{{<<WetHankie>>}}}
