@@ -12,6 +12,8 @@ __ Notes from 5/20/2025__
 # expanded on widget {{{<<widget WearDampHandkerchief>>}}} so it randomly picks one of two responses
 # no more cases in {{{ComboResult}}} or {{{UsageREsult}}} for which I haven't created a resuable widget
 # implemented cutting handkerchief (dry or damp) into cloth strips
+# discovered I'd imped knife->myself but not myself->knife; fixed
+# note that 'combine' knife-> or self-knife foreshadows what happens if 'use' knife-myself & reverse
 
 __Notes from 5/19/2025__ 
 # In {{{UsageResult}}}, replaced two duplicate text blocks with widget {{{<<WetHankie>>}}}
