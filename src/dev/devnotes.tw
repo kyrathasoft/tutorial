@@ -1,6 +1,14 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes for 5/22/2025__ 
+# added code so that when drone cut with knife, becomes a tiny ball of micro-fine wire 
+# added code so that upon being cut, drone no longer shows up in inventory or as a room item
+# removed 'salvage' as action available in {{{EscapeFrom}}}
+# implemented custom msg when you try to use knife->a tiny ball of micro-fine wires
+# added {{{$droneSalvaged}}} to {{{StoryInit}}} with false value
+# added {{{$droneSalvaged}}} to {{{PsgCheckVars}}}
+
 __Notes for 5/21/2025__ 
 # do I want to make it possible to sever the drone with the KaBar?
 # If so, would that have same effect as 'salvage'-> drone
