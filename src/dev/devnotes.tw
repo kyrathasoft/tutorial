@@ -4,6 +4,9 @@
 __Notes for 5/21/2025__ 
 # do I want to make it possible to sever the drone with the KaBar?
 # If so, would that have same effect as 'salvage'-> drone
+# I have implemented knife->drone (whether crushed or repaired)
+# decided we don't really need the 'salvage' option
+# now that I've imped examine, combine, use, we need situations/locations that make use of these items
 
 __ Notes from 5/20/2025__ 
 # yesterday I got all canteen interactions sorted
