@@ -8,6 +8,7 @@ __Notes for 5/22/2025__
 # implemented custom msg when you try to use knife->a tiny ball of micro-fine wires
 # added {{{$droneSalvaged}}} to {{{StoryInit}}} with false value
 # added {{{$droneSalvaged}}} to {{{PsgCheckVars}}}
+# added interaction between knife and holographic interface; chooses 1 of 3 responses randomly
 
 __Notes for 5/21/2025__ 
 # do I want to make it possible to sever the drone with the KaBar?
