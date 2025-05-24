@@ -1,12 +1,20 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes for 5/24/2025__ 
+# I can't seem to figure out why some item pairings in {{{UsageResult}}} aren't working
+# as a workaround, I'm having to add code to widget {{{ItemUseFailed}}}
+# imped combine leather gunbelt and mesh belt: it exchanges one worn belt for the other
+# I've tested canteen with other objects, leather gunbelt with other objects
+# added desc to widget in {{{MyWidgets}}} for a bundle of cloth strips
+
 __Notes for 5/23/2025__ 
 # added widget for combining repaired drone and water from canteen
 # added a time limit in psg {{{EscapeFrom}}}
 # if above time limit reached, moves action along to {{{HoloCombo}}}
 # added <a target="_new" href="https://gist.github.com/kyrathasoft/5409f4df3340d87f0c914274b5cc3a5d">code</a> in JS section to handle local and remote assets
 # tracked down elusive bug involved with the canteen/capsule combo
+# I'm not sure why, but use sludge->myself fails, so I had to add code to {{{<<ItemUseFailed>>}}}
 
 __Notes for 5/22/2025__ 
 # added code so that when drone cut with knife, becomes a tiny ball of micro-fine wire 
