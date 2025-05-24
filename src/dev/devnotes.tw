@@ -6,6 +6,7 @@ __Notes for 5/23/2025__
 # added a time limit in psg {{{EscapeFrom}}}
 # if above time limit reached, moves action along to {{{HoloCombo}}}
 # added <a target="_new" href="https://gist.github.com/kyrathasoft/5409f4df3340d87f0c914274b5cc3a5d">code</a> in JS section to handle local and remote assets
+# tracked down elusive bug involved with the canteen/capsule combo
 
 __Notes for 5/22/2025__ 
 # added code so that when drone cut with knife, becomes a tiny ball of micro-fine wire 
