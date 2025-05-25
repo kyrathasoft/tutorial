@@ -7,6 +7,9 @@ __Notes for 5/24/2025__
 # imped combine leather gunbelt and mesh belt: it exchanges one worn belt for the other
 # I've tested canteen with other objects, leather gunbelt with other objects
 # added desc to widget in {{{MyWidgets}}} for a bundle of cloth strips
+# added message to IncrementScore when wetting handkerchief
+# permit saving in {{{EscapeFrom}}} but don't point it out to player unless time runs out
+# it's now possible to cut the bundled cloth strips; wasteful, but possible
 
 __Notes for 5/23/2025__ 
 # added widget for combining repaired drone and water from canteen
