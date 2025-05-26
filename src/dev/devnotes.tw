@@ -1,6 +1,13 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes for 5/26/2025__ 
+# I'm off work for Memorial Day 2025
+# added a hint in form of item desc for egg-shaped device
+# The hint gives the combination for the keypad in passage {{{HoloCombo}}}
+# installed Gargoyle interpreter and the ADRIFT-5 game-maker and runner
+
+
 __Notes for 5/24/2025__ 
 # I can't seem to figure out why some item pairings in {{{UsageResult}}} aren't working
 # as a workaround, I'm having to add code to widget {{{ItemUseFailed}}}
