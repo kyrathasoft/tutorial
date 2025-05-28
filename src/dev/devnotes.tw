@@ -2,8 +2,9 @@
 [[Developer Resources|DeveloperResources]]
 
 __Notes for 5/27/2025__ 
-# added functions {{{setup.getCheckpointPassageNames()}}} and {{{setup.getCheckpointPassagesCount()}}}
+# added <a target="_new" href="https://gist.github.com/kyrathasoft/abb75618deee73454c2ea8d55aebd2a2">functions</a> {{{setup.getCheckpointPassageNames()}}} and {{{setup.getCheckpointPassagesCount()}}}
 # used the above two functions in {{{PsgChkVars}}} to show checkpoint passages' count and passage names
+# added a <a target="_new" href="https://bryanmiller.us/2025/05/javascript-speech-functions">couple</a> of speech functions to setup object
 
 __Notes for 5/26/2025__ 
 # I'm off work for Memorial Day 2025
