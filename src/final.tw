@@ -158,6 +158,7 @@ setup.getEveryPassageName = function() {
    
 };
 
+
 setup.getPassageNames = function() {
 			
             const excludedNames = [
@@ -204,7 +205,7 @@ setup.getPassageNames = function() {
             });
 			// alert("Returning " + passageNames.length + " of " + tot_psg + " total passages...");
             return passageNames; 
-        };
+};
 
 setup.getTotalPassagesCount = function() {
 	return $('tw-passagedata').length;
@@ -213,6 +214,7 @@ setup.getTotalPassagesCount = function() {
 setup.getTutorialPassagesCount = function(){
 	return (Story.lookup("tags", "deonna")).length;
 };
+
 
 setup.redify = function(arg1){
 	let x = "<span class='red'>" + arg1 + "</span>";

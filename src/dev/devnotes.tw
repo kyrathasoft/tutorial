@@ -1,11 +1,17 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes for 5/27/2025__ 
+# added functions {{{setup.getCheckpointPassageNames()}}} and {{{setup.getCheckpointPassagesCount()}}}
+# used the above two functions in {{{PsgChkVars}}} to show checkpoint passages' count and passage names
+
 __Notes for 5/26/2025__ 
 # I'm off work for Memorial Day 2025
 # added a hint in form of item desc for egg-shaped device
 # The hint gives the combination for the keypad in passage {{{HoloCombo}}}
 # installed Gargoyle interpreter and the ADRIFT-5 game-maker and runner
+# added JS functions setup.ThreeVisits() and setup.HasLink()
+# developed a couple <a target="_new" href="https://gist.github.com/kyrathasoft/f30c7143dcfae30cb48025a56b4c327c">functions</a>
 
 
 __Notes for 5/24/2025__ 
