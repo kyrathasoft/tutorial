@@ -1,6 +1,10 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes for 5/28/2025__ 
+# named the alien race: "Olmedha-Rieu" (see setup.alien.racial-name)
+# added alien ship's name and its closest English equivalent
+
 __Notes for 5/27/2025__ 
 # added <a target="_new" href="https://gist.github.com/kyrathasoft/abb75618deee73454c2ea8d55aebd2a2">functions</a> {{{setup.getCheckpointPassageNames()}}} and {{{setup.getCheckpointPassagesCount()}}}
 # used the above two functions in {{{PsgChkVars}}} to show checkpoint passages' count and passage names
