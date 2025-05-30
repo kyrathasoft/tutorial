@@ -1,8 +1,16 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 5/30/2025__ 
+# added handling for item combo 'tiny repaired drone' -> 'a canteen'
+# modified link between {{{EscapeFrom}}} & {{{HoloCombo}}} so we see connection on StoryMap
+# added handling for item combo 'a KaBar knife' -> 'myself'
+# added picture of old man scientist to passage {{{SurrenderOnShip}}}
+# added item combo 'a revolver' + 'myself' in both directions
+
 __Notes for 5/29/2025__ 
 # added code to {{{setup.protag()}}} to omit comma between text and 'you say'
+# tweaked function {{{setup.protag()}}} to trim trailing period if about to add 'you say'
 
 __Notes for 5/28/2025__ 
 # named the alien race: "Olmedha-Rieu" (see setup.alien.racial-name)
