@@ -1,6 +1,9 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes for 5/29/2025__ 
+# added code to {{{setup.protag()}}} to omit comma between text and 'you say'
+
 __Notes for 5/28/2025__ 
 # named the alien race: "Olmedha-Rieu" (see setup.alien.racial-name)
 # added alien ship's name and its closest English equivalent
