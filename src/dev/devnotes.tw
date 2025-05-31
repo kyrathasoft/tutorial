@@ -9,6 +9,9 @@ __Notes from 5/30/2025__
 # added item combo 'a revolver' + 'myself' in both directions
 # changed passage background color to true black to accommodate animated GIF campfire images
 # replaced older code in {{{MakeCoffee}}} so that we use widget {{{<<TableOfChoices>>}}}
+# corrected a typo in {{{DrawKnife}}}
+# connected {{{DrawKnife, ExperimentedOn, FakeFainted, IgnoreDrone, ContinueCharade, EscapeFrom}}}
+# added functionality to {{{PsgCheckVars}}} to list dead-ends (i.e., psgs with 'incomplete' tag)
 
 __Notes for 5/29/2025__ 
 # added code to {{{setup.protag()}}} to omit comma between text and 'you say'
