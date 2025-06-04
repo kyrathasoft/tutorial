@@ -1,6 +1,15 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 6/03/2025__
+# added function to remove the UUID associated with init PRNG 
+# added function to remove font tags
+# cleaned up psg {{{PsgFilter}}} $ts to only show updates when {{{_text.length}}} decreases
+
+__Notes from 6/02/2025__ 
+# added more functions to remove script tags, towards a better estimation of 'story' length
+# so far, I've used {{{Campfire}}} and {{{PsgCheckVars}}} to test these functions
+
 __Notes from 5/31/2025__ 
 # fine-tuned code in {{{ContinueCharade}}}
 # created and <a target="_new" href="https://gist.github.com/kyrathasoft/5afec15aea17e2852a2dac2d88f36044">tested this</a> function
