@@ -8,6 +8,9 @@ __Notes from 6/04/2025__
 # added function {{{setup.RemoveClearEscVarMacro()}}}
 # added function {{{setup.RemoveOpeningWidgetTags()}}}
 # added function {{{setup.RemoveClosingWidgetTags()}}}
+# added function {{{setup.RemoveOpeningSwitchTags()}}}
+# added function {{{setup.RemoveSwitchCases()}}}
+# added function {{{setup.RemoveDefaultSwitchCase()}}}
 
 __Notes from 6/03/2025__
 # added function to remove the UUID associated with init PRNG 
