@@ -1,6 +1,12 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 6/05/2025__ 
+# added function {{{setup.RemoveSilentOpenTags()}}}
+# added function {{{setup.RemoveSilentOpenTags2ndPass()}}}
+# added function {{{setup.RemoveSilentClosingTags()}}}
+# added function {{{setup.RemoveSilentClosingTags2ndPass()}}}
+
 __Notes from 6/04/2025__ 
 # added function {{{setup.RemoveCustomLinkbackMacro()}}}
 # added function {{{setup.RemoveNoBrOpeningTags()}}}
