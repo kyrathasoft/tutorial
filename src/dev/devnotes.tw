@@ -1,6 +1,10 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 6/06/2025__ 
+# added functions to remove Restart-related $ts
+# began to rearrange order of function calls in {{{setup.getRidOfNonProseTwinescript()}}}
+
 __Notes from 6/05/2025__ 
 # added function {{{setup.RemoveSilentOpenTags()}}}
 # added function {{{setup.RemoveSilentOpenTags2ndPass()}}}
