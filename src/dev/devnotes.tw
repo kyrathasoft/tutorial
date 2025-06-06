@@ -6,6 +6,9 @@ __Notes from 6/05/2025__
 # added function {{{setup.RemoveSilentOpenTags2ndPass()}}}
 # added function {{{setup.RemoveSilentClosingTags()}}}
 # added function {{{setup.RemoveSilentClosingTags2ndPass()}}}
+# added function {{{setup.RemoveFontSize()}}}
+# added function {{{setup.RemovePartialCloseScriptTag()}}}
+# added function {{{setup.RemoveLinkreplaceTags()}}}
 
 __Notes from 6/04/2025__ 
 # added function {{{setup.RemoveCustomLinkbackMacro()}}}
