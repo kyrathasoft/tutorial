@@ -4,7 +4,8 @@
 __Notes from 6/06/2025__ 
 # added functions to remove Restart-related $ts
 # began to rearrange order of function calls in {{{setup.getRidOfNonProseTwinescript()}}}
-# got about 65% of setup functions alphabetized
+# got about 100% of setup functions alphabetized
+# added function {{{setup.RemoveSpanClassTab()}}}
 
 __Notes from 6/05/2025__ 
 # added function {{{setup.RemoveSilentOpenTags()}}}
