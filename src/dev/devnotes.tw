@@ -1,6 +1,11 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 6/07/2025__ 
+# fixed function {{{setup.RemoveSpanClassTab()}}} by replacing {{{.replace}}} with {{{.replaceAll}}}
+# added function {{{setup.RemovePsgEscapeFromItemDesc()}}}
+# updated function {{{setup.RemoveRestart()}}}
+
 __Notes from 6/06/2025__ 
 # added functions to remove Restart-related $ts
 # began to rearrange order of function calls in {{{setup.getRidOfNonProseTwinescript()}}}
