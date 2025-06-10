@@ -6,6 +6,8 @@ __Notes from 6/09/2025__
 # added function {{{setup.RemoveAddVisits()}}}
 # tested the above on passage {{{TestCreatureDown}}}
 # added function {{{setup.RemoveInlineDebugMsg()}}}
+# added function {{{setup.RemoveTableOfChoices()}}}
+# added function {{{setup.RemoveUnset()}}}
 
 __Notes from 6/07/2025__ 
 # fixed function {{{setup.RemoveSpanClassTab()}}} by replacing {{{.replace}}} with {{{.replaceAll}}}
