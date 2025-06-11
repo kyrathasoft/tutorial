@@ -6,6 +6,8 @@ __Notes from 6/10/2025__
 # used above function to fix $ts in {{{PsgFilter}}}
 # corrected bug in {{{PsgFilter}}} -> 
 # error corrected: {{{<<if _after_words}}} becomes {{{<<if _after_words.length...}}
+# added function {{{setup.RemoveImage}}}
+# tested above function successfully on passage {{{HoloCombo}}}
 
 __Notes from 6/09/2025__ 
 # reviewed gruescript; didn't like the interface
