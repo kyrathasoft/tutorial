@@ -1,6 +1,14 @@
 :: DevNotes [noreturn]
 [[Developer Resources|DeveloperResources]]
 
+__Notes from 6/12/2025__ 
+# added text replace for bold tags
+# added text replace for linkreplace tags
+
+__Notes from 6/11/2025__ 
+# added function {{{AddSpaceAfterPunctuation()}}}
+# the above adds missing space after period, question mark, exclamation point
+
 __Notes from 6/10/2025__ 
 # added function {{{setup.SplitStringIntoWords()}}}
 # used above function to fix $ts in {{{PsgFilter}}}
