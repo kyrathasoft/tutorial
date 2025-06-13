@@ -6,6 +6,7 @@ __Notes from 6/12/2025__
 # added text replace for linkreplace tags
 # added function {{{setup.ReplaceVariantLinkifiers()}}}
 # added function {{{setup.RemoveLeftHalfOfPipedLink()}}}
+# next: get only Camel-cased words in which first letter isn't capitalized
 
 __Notes from 6/11/2025__ 
 # added function {{{AddSpaceAfterPunctuation()}}}
