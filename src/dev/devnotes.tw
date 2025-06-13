@@ -5,6 +5,7 @@ __Notes from 6/12/2025__
 # added text replace for bold tags
 # added text replace for linkreplace tags
 # added function {{{setup.ReplaceVariantLinkifiers()}}}
+# added function {{{setup.RemoveLeftHalfOfPipedLink()}}}
 
 __Notes from 6/11/2025__ 
 # added function {{{AddSpaceAfterPunctuation()}}}
